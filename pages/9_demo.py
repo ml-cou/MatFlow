@@ -5,7 +5,7 @@ from subpage.navbar import navbar,body_padding
 navbar()
 base_path = Path().absolute()
 from streamlit_option_menu import option_menu
-from epsilon import Deep4che,Dynamocs,Photoche,Pubche,Experimental,Training,Unknown,Overall_Randomforest_Classifaications,Ovall_RandomForest_Regrassion,OverallData,Prediction
+from epsilon import Deep4che,Dynamocs,Photoche,Pubche,Experimental,Training,Unknown,Overall_Randomforest_Classifaications,Overall_RandomForest_Regrassion,Overall_Data,Prediction
 
 ontions_ = ['Data Extraction', 'Build Dataset', 'Machine Learning']
 
@@ -70,11 +70,11 @@ with col1:
         elif selected2==bd[2]:
                 Unknown.unknown()
         elif selected2==ml[0]:
-            Overall_Randomforest_Classifaications.ovall_randomforest_classifaications()
+            Overall_Randomforest_Classifaications.overall_RandomForest_Classifaications()
         elif selected2==ml[1]:
-            Ovall_RandomForest_Regrassion.ovall_randomforest_regrassion()
+            Overall_RandomForest_Regrassion.overall_RandomForest_Regrassion()
         elif selected2==ml[2]:
-            OverallData.overalldata()
+            Overall_Data.overall_Data()
         else:
             Prediction.prediction()
 
