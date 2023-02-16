@@ -1,0 +1,11 @@
+﻿Dye,SMILES,TD-DFT μ (D),Min ε,Max ε
+Cy3,CN4/C(=C/C=C/C2=[N+](C)c1ccccc1C2(C)C)C(C)(C)c3ccccc34,12.25,136000,150000
+Cy5-hex,CCCCCCOc1ccc4c(c1)C(C)(C)/C(=C\C=C\C=C\C3=[N+](C)c2ccc(OCCCCCC)cc2C3(C)C)N4C,16.22,200900,219800
+Cy5-Peg,COCCOCCOCCOc1ccc4c(c1)C(C)(C)/C(=C\C=C\C=C\C3=[N+](C)c2ccc(OCCOCCOCCOC)cc2C3(C)C)N4C,16.19,209500,221400
+Cy7,CN5/C(=C/C=C\3C=C(/C=C/C2=[N+](C)c1ccccc1C2(C)C)CCC3)C(C)(C)c4ccccc45,17.62,199000,250000
+Cy5.5,CN4/C(=C/C=C/C=C/C3=[N+](C)c2ccc1ccccc1c2C3(C)C)C(C)(C)c5c4ccc6ccccc56,15.57,198000,250000
+Cy5-tBu,CN4/C(=C/C=C/C=C/C2=[N+](C)c1ccc(C(C)(C)C)cc1C2(C)C)C(C)(C)c3cc(C(C)(C)C)ccc34,15.90,249300,261100
+Cy5,CN4/C(=C/C=C/C=C/C2=[N+](C)c1ccccc1C2(C)C)C(C)(C)c3ccccc34,15.35,218810.982,250000
+Cy5-Cl,CN4/C(=C/C=C/C=C/C2=[N+](C)c1ccc(Cl)cc1C2(C)C)C(C)(C)c3cc(Cl)ccc34,15.74,269300,288400
+Cy5-NMe2,CN(C)c1ccc4c(c1)C(C)(C)C(/C=C/C=C/C=C\3N(C)c2ccccc2C3(C)C)=[N+]4C,15.83,,
+Cy5-CN,CN4/C(=C/C=C/C=C/C2=[N+](C)c1ccccc1C2(C)C)C(C)(C)c3cc(C#N)ccc34,15.66,,

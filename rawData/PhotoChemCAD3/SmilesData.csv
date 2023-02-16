@@ -1,0 +1,341 @@
+,Name,Structure,Generated Smiles,Correct Smiles
+0,Benzene,A01_71-43-2_Benzene.str.tif,c1ccccc1,
+1,Toluene,A02_108-88-3_Toluene.str.tif,Cc1ccccc1,
+2,o-Xylene,A03_95-47-6_o-Xylene.str.tif,Cc1ccccc1C,
+3,m-Xylene,A04_108-38-3_m-Xylene.str.tif,Cc1cccc(c1)C,
+4,p-Xylene,A05_106-42-3_p-Xylene.str.tif,Cc1ccc(cc1)C,
+5,Mesitylene,A06_108-67-8_Mesitylene.str.tif,Cc1cc(C)cc(c1)C,
+6,Durene,A07_95-93-2_Durene.str.tif,Cc1cc(C)c(cc1C)C,
+7,Pentamethylbenzene,A08_700-12-9_Pentamethylbenzene.str.tif,Cc1cc(C)c(c(c1C)C)C,
+8,Hexamethylbenzene,A09_ 87-85-4_Hexamethylbenzene.str.tif,Cc1c(C)c(C)c(c(c1C)C)C,
+9,Phenol,A10_108-95-2_Phenol.str.tif,Oc1ccccc1,
+10,Anisole,A11_100-66-3_Anisole.str.tif,COc1ccccc1,
+11,Benzonitrile,A12_100-47-0_Benzonitrile.str.tif,N#Cc1ccccc1,
+12,Benzaldehyde,A13_100-52-7_Benzaldehyde.str.tif,O=Cc1ccccc1,
+13,Benzoic acid,A14_65-85-0_Benzoic acid.str.tif,OC(=O)c1ccccc1,
+14,Acetophenone,A15_98-86-2_Acetophenone.str.tif,CC(=O)c1ccccc1,
+15,Aniline,A16_62-53-3_Aniline.str.tif,Nc1ccccc1,
+16,"N,N-Dimethyl-aniline","A17_121-69-7_N,N-Dimethyl-aniline.str.tif",CN(c1ccccc1)C,
+17,Phenylhydrazine Hydrochloride,A18_59-88-1_Phenylhydrazine_Hydrochloride.str.tif,NNc1ccccc1,C1=CC=C(C=C1)NN.Cl
+18,Chlorobenzene,A19_108-90-7_Chlorobenzene.str.tif,Clc1ccccc1,
+19,Iodobenzene,A20_591-50-4_Iodobenzene.str.tif,Ic1ccccc1,
+20,Nitrobenzene,A21_98-95-3_Nitrobenzene.str.tif,O=N(=O)c1ccccc1,
+21,Styrene,A22_100-42-5_Styrene.str.tif,C=Cc1ccccc1,
+22,Phenylacetylene,A23_536-74-3_Phenylacetylene.str.tif,C#Cc1ccccc1,
+23,"1,4-Diethynylbenzene","A24_935-14-8_1,4-Diethynylbenzene.str.tif",C#Cc1ccc(cc1)C#C,
+24,Phenylpropargyl aldehyde,A25_2579-22-8_Phenylpropargyl_aldehyde.str.tif,O=CC#Cc1ccccc1,
+25,Phenylboronic acid,A26_98-80-6_Phenylboronic_acid.str.tif,OB(c1ccccc1)O,
+26,Vanillin,A27_121-33-5_Vanillin.str.tif,COc1cc(C=O)ccc1O,
+27,3-Hydroxyacetophenone,A28_121-71-1_3-Hydroxyacetophenone.str.tif,Oc1cccc(c1)C(=O)C,
+28,Ethyl 4-(dimethylamino)benzoate,A29_10287-53-3_Ethyl_4-(dimethylamino)benzoate.str.tif,CCOC(=O)c1ccc(cc1)N(C)C,
+29,Gallacetophenone,A30_528-21-2_Gallacetophenone.str.tif,CC(=O)c1ccc(c(c1O)O)O,
+30,Terephthalic acid,A31_100-21-0_Terephthalic_acid.str.tif,OC(=O)c1ccc(cc1)C(=O)O,
+31,p-Phenylenediamine,A32_106-50-3_p-Phenylenediamine.str.tif,Nc1ccc(cc1)N,
+32,Tetraphenylmethane,A33_630-76-2_Tetraphenylmethane.str.tif,c1ccc(cc1)C(c1ccccc1)(c1ccccc1)c1ccccc1,
+33,N-Phenylbenzylamine,A34_103-32-2_N-Phenylbenzylamine.str.tif,c1ccc(cc1)NCc1ccccc1,
+34,trans-Chalcone,A35_614-47-1_trans-Chalcone.str.tif,O=C(c1ccccc1)/C=C/c1ccccc1,
+35,Benzophenone,A36_119-61-9_Benzophenone.str.tif,O=C(c1ccccc1)c1ccccc1,
+36,"4,4'-Dihydroxybenzophenone","A37_611-99-4_4,4'-Dihydroxybenzophenone.str.tif",O=C(c1ccc(cc1)O)c1ccc(cc1)O,
+37,Diethyl phthalate,A38_84-66-2_Diethyl_phthalate.str.tif,CCOC(=O)c1ccccc1C(=O)OCC,
+38,"1,2,4,5-Tetracyanobenzene","A39_712-74-3_1,2,4,5-Tetracyanobenzene.str.tif",N#Cc1cc(C#N)c(cc1C#N)C#N,
+39,Hexafluorobenzene,A40_392-56-3_Hexafluorobenzene.str.tif,Fc1c(F)c(F)c(c(c1F)F)F,
+40,Ferrocene,A41_102-54-5_Ferrocene.str.tif,C1CC2=CC=C(C1)C2 C1C[C@H]2C[C@@H]1C2,[CH-]1C=CC=C1.[CH-]1C=CC=C1.[Fe+2]
+41,Biphenyl,B01_92-52-4_Biphenyl.str.tif,c1ccc(cc1)c1ccccc1,
+42,p-Terphenyl,B02_92-94-4_p-Terphenyl.str.tif,c1ccc(cc1)c1ccc(cc1)c1ccccc1,
+43,p-Quaterphenyl,B03_135-70-6_p-Quaterphenyl.str.tif,c1ccc(cc1)c1ccc(cc1)c1ccc(cc1)c1ccccc1,
+44,p-Quinquephenyl,B04_3073-05-0_p-Quinquephenyl.str.tif,c1ccc(cc1)c1ccc(cc1)c1ccc(cc1)c1ccc(cc1)c1ccccc1,
+45,"1,3,5-Triphenylbenzene ","B05_612-71-5_1,3,5-Triphenylbenzene.str.tif",c1ccc(cc1)c1cc(cc(c1)c1ccccc1)c1ccccc1,
+46,Benzidine,B06_92-87-5_Benzidine.str.tif,Nc1ccc(cc1)c1ccc(cc1)N,
+47,"3,3'-Dimethylbenzidine","B07_119-93-7_3,3'-Dimethylbenzidine.str.tif",Nc1ccc(cc1C)c1ccc(c(c1)C)N,
+48,"3,3',5,5-Tetramethylbenzidine","B08_54827-17-7_3,3',5,5-Tetramethylbenzidine.str.tif",Cc1cc(cc(c1N)C)c1cc(C)c(c(c1)C)N,
+49,"2,5-Diphenyloxazole, [PPO]","B09_92-71-7_2,5-Diphenyloxazole_[PPO].str.tif",c1ccc(cc1)c1ncc(o1)c1ccccc1,
+50,"1,4-Bis(5-phenyl-2-oxazolyl)benzene, [POPOP]","B10_1806-34-4_1,4-Bis(5-phenyl-2-oxazolyl)benzene_[POPOP].str.tif",c1ccc(cc1)c1cnc(o1)c1ccc(cc1)c1ncc(o1)c1ccccc1,
+51,"1,2,3,4,5-Pentaphenyl-1,3-cyclopentadiene","B11_2519-10-0_1,2,3,4,5-Pentaphenyl-1,3-cyclopentadiene.str.tif",c1ccc(cc1)C1C(=C(C(=C1c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,
+52,rac-BINAP,B12_98327-87-8_rac-BINAP.str.tif,c1ccc(cc1)P(c1ccc2c(c1c1c(ccc3c1cccc3)P(c1ccccc1)c1ccccc1)cccc2)c1ccccc1,
+53,(R)-BINOL,B13_18531-94-7_(R)-BINOL.str.tif,Oc1ccc2c(c1c1c(O)ccc3c1cccc3)cccc2,
+54,Naphthalene,C01_91-20-3_Naphthalene.str.tif,c1ccc2c(c1)cccc2,
+55,Anthracene,C02_120-12-7_Anthracene.str.tif,c1ccc2c(c1)cc1c(c2)cccc1,
+56,Tetracene,C03_92-24-0_Tetracene.str.tif,c1ccc2c(c1)cc1c(c2)cc2c(c1)cccc2,
+57,Pentacene,C04_135-48-8_Pentacene.str.tif,c1ccc2c(c1)cc1c(c2)cc2c(c1)cc1c(c2)cccc1,
+58,Phenanthrene,C05_85-01-8_Phenanthrene.str.tif,c1ccc2c(c1)c1ccccc1cc2,
+59,Pyrene,C06_129-00-0_Pyrene.str.tif,c1cc2ccc3c4c2c(c1)ccc4ccc3,
+60,Triphenylene,C07_217-59-4_Triphenylene.str.tif,c1ccc2c(c1)c1ccccc1c1c2cccc1,
+61,"9,10-Diphenylanthracene","C08_1499-10-1_9,10-Diphenylanthracene.str.tif",c1ccc2c(c1)c(c1ccccc1)c1c(c2c2ccccc2)cccc1,
+62,"9,10-Bis(phenylethynyl)anthracene","C09_10075-85-1_9,10-Bis(phenylethynyl)anthracene.str.tif",c1ccc2c(c1)c(C#Cc1ccccc1)c1c(c2C#Cc2ccccc2)cccc1,
+63,Rubrene,C10_517-51-1_Rubrene.str.tif,c1ccc(cc1)c1c2ccccc2c(c2c1c(c1ccccc1)c1ccccc1c2c1ccccc1)c1ccccc1,
+64,"1,8-Naphthalic anhydride","C11_81-84-5_1,8-Naphthalic_anhydride.str.tif",O=C1OC(=O)c2c3c1cccc3ccc2,
+65,2-Aminonaphthalene ,C12_91-59-8_2-Aminonaphthalene.str.tif,Nc1ccc2c(c1)cccc2,
+66,"2,3-Diaminonaphthalene","C13_771-97-1_2,3-Diaminonaphthalene.str.tif",Nc1cc2ccccc2cc1N,
+67,8-Anilino-1-naphthalenesulfonic acid,C14_82-76-8_8-Anilino-1-naphthalenesulfonic_acid.str.tif,OS(=O)(=O)c1cccc2c1c(ccc2)Nc1ccccc1,
+68,"1,4,5,8-Naphthalenetetracarboxylic dianhydride","C15_81-30-1_1,4,5,8-Naphthalenetetracarboxylic_dianhydride.str.tif",O=C1OC(=O)c2c3c1ccc1c3c(cc2)C(=O)OC1=O,
+69,Pyranine,C16_6358-69-6_Pyranine.str.tif,*c1cc(*C2CC2)c2c3c1ccc1c3c(cc2)c(cc1O)*,C1=CC2=C3C(=C(C=C2S(=O)(=O)[O-])S(=O)(=O)[O-])C=CC4=C(C=C(C1=C43)O)S(=O)(=O)[O-].[Na+].[Na+].[Na+]
+70,"1,2-Diphenylacetylene","D01_501-65-5_1,2-Diphenylacetylene.str.tif",C1=CC=[C](=[C]\2=CC=CC=C2)\C=C1,C1=CC=C(C=C1)C#CC2=CC=CC=C2
+71,cis-Stilbene,D02_645-49-8_cis-Stilbene.str.tif,c1ccc(cc1)/C=C\c1ccccc1,
+72,trans-Stilbene,D03_103-30-0_trans-Stilbene.str.tif,c1ccc(cc1)/C=C/c1ccccc1,
+73,"1,4-Diphenylbutadiyne","D04_886-66-8_1,4-Diphenylbutadiyne.str.tif",c1ccc(cc1)C#CC#Cc1ccccc1,
+74,"1,4-Diphenylbutadiene","D05_538-81-8_1,4-Diphenylbutadiene.str.tif",C(=C\c1ccccc1)/C=C/c1ccccc1,
+75,"1,6-Diphenylhexatriene","D06_1720-32-7_1,6-Diphenylhexatriene.str.tif",C(=C\C=C\c1ccccc1)/C=C/c1ccccc1,
+76,4-Dimethylamino-4'-nitrostilbene,D07_2844-15-7_4-Dimethylamino-4'-nitrostilbene.str.tif,CN(c1ccc(cc1)/C=C/c1ccc(cc1)N(=O)=O)C,
+77,Curcumin,D08_458-37-7_Curcumin.str.tif,C*c1cc(/C=C/C(=O)CC(=O)/C=C/c2ccc(c(c2)OC)O)ccc1O,COC1=C(C=CC(=C1)C=CC(=O)CC(=O)C=CC2=CC(=C(C=C2)O)OC)O
+78,all trans-Retinal ,D09_116-31-4_all_trans-Retinal.str.tif,O=C/C=C(/C=C/C=C(/C=C/C1=C(C)CCCC1(C)C)\C)\C,
+79,Beta-carotene,D10_7235-40-7_Beta-carotene.str.tif,C/C(=C\C=C\C=C(\C=C\C=C(\C=C\C1=C(C)CCCC1(C)C)/C)/C)/C=C/C=C(/C=C/C1=C(C)CCCC1(C)C)\C,
+80,Pyridine,E01_110-86-1_Pyridine.str.tif,C1CC=CN=C1,C1=CC=NC=C1
+81,Pyridine N-oxide,E02_694-59-7_Pyridine_N-oxide.str.tif,O[N]1=CC=CC=C1,C1=CC=[N+](C=C1)[O-]
+82,2-Acetylpyridine,E03_1122-62-9_2-Acetylpyridine.str.tif,CC(=O)c1ccccn1,
+83,4-Dimethylaminopyridine,E04_1122-58-3_4-Dimethylaminopyridine.str.tif,CN(c1ccncc1)C,
+84,4-(4-Nitrobenzyl)pyridine ,E05_1083-48-3_4-(4-Nitrobenzyl)pyridine.str.tif,O=N(=O)c1ccc(cc1)Cc1ccncc1,
+85,"1.3,5-Triazine","E06_290-87-9_1.3,5-Triazine.str.tif",n1cncnc1,
+86,Phthalimide,E07_85-41-6_Phthalimide.str.tif,O=C1NC(=O)c2c1cccc2,
+87,"2,2'-Bipyridine","E08_366-18-7_2,2'-Bipyridine.str.tif",c1ccc(nc1)c1ccccn1,
+88,"4,4'-Bipyridine","E09_553-26-4_4,4'-Bipyridine.str.tif",n1ccc(cc1)c1ccncc1,
+89,Quinoline,E10_91-22-5_Quinoline.str.tif,c1ccc2c(c1)nccc2,
+90,8-Quinoline carboxylic acid,E11_86-59-9_8-Quinoline_carboxylic_acid.str.tif,OC(=O)c1cccc2c1nccc2,
+91,3-Quinoline carboxaldehyde,E12_13669-42-6_3-Quinoline_carboxaldehyde.str.tif,O=Cc1cnc2c(c1)cccc2,
+92,Benzothiazole,E13_95-16-9_Benzothiazole.str.tif,c1ccc2c(c1)scn2,
+93,Benzotriazole,E14_95-14-7_Benzotriazole.str.tif,c1ccc2c(c1)[nH]nn2,
+94,2-Methylbenzoxazole,E15_95-21-6_2-Methylbenzoxazole.str.tif,Cc1nc2c(o1)cccc2,
+95,Pyrrole,E16_109-97-7_Pyrrole.str.tif,C/C=C\C=C/C1CCCC1C,C1=CNC=C1
+96,Pyrrole-2-carboxaldehyde,E17_1003-29-8_Pyrrole-2-carboxaldehyde.str.tif,O=Cc1ccc[nH]1,
+97,Thiazole Orange ,E18_107091-89-4_Thiazole_Orange.str.tif,CN1/C(=C/C2=CC=[N](=O)(c3c2cccc3)C)/Sc2c1cccc2 Cc1ccc(cc1)S(=O)(=O)O,CC1=CC=C(C=C1)S(=O)(=O)[O-].CN1C2=CC=CC=C2SC1=CC3=CC=[N+](C4=CC=CC=C34)C
+98,Thioflavin T ,E19_2390-54-7_Thioflavin_T.str.tif,Cc1ccc2c(c1)SC(=[N]2C)c1ccc(cc1)N(C)C,CC1=CC2=C(C=C1)[N+](=C(S2)C3=CC=C(C=C3)N(C)C)C.[Cl-]
+99,"Tris(2,2'-bipyridyl)ruthenium(II)","E20_65034-88-0_Tris(2,2'-bipyridyl)ruthenium(II).str.tif",C[N]1=CC=CC=C1C1=CC=CC=[N]1*12([N]3=CC=CC=C3C3=CC=CC=[N]23)[N]2=CC=CC=C2C2=CC=CC=[N]12,C1=CC=NC(=C1)C2=CC=CC=N2.C1=CC=NC(=C1)C2=CC=CC=N2.C1=CC=NC(=C1)C2=CC=CC=N2.[Ru+2]
+100,4-Chloro-7-nitrobenzofurazan ,E21_10199-89-0_4-Chloro-7-nitrobenzofurazan.str.tif,O=N(=O)c1ccc(c2c1non2)C,C1=C(C2=NON=C2C(=C1)Cl)[N+](=O)[O-]
+101,"7-Benzylamino-4-nitrobenz-2-oxa-1,3-diazole","E22_18378-20-6_7-Benzylamino-4-nitrobenz-2-oxa-1,3-diazole.str.tif",O=N(=O)c1ccc(c2c1non2)NCc1ccccc1,
+102,Carbostyril 124,E23_19840-99-4_Carbostyril_124.str.tif,Nc1ccc2c(c1)[nH]c(=O)cc2C,
+103,Quinoline Yellow ,E24_8004-92-0_Quinoline_Yellow.str.tif,O=C1C(c2ccc3c(n2)cccc3)C(=O)c2c1cccc2,
+104,"2,3,5-Triphenyltetrazolium Chloride","E25_298-96-4_2,3,5-Triphenyltetrazolium_Chloride.str.tif",c1ccc(cc1)C1=NN([N](=N1)c1ccccc1)c1ccccc1,C1=CC=C(C=C1)C2=NN([N+](=N2)C3=CC=CC=C3)C4=CC=CC=C4.[Cl-]
+105,Quinine sulfate,E26_207671-44-1_Quinine_sulfate.str.tif,C=CC1CN2CCC1CC2[C@@H](c1ccnc2c1cc(OC)cc2)O,
+106,L-Alanine,F01_56-41-7_L-Alanine.str.tif,,CC(C(=O)O)N
+107,L-Phenylalanine,F02_63-91-2_L-Phenylalanine.str.tif,N[C@H](C(=O)O)Cc1ccccc1,
+108,L-Tyrosine,F03_60-18-4_L-Tyrosine.str.tif,OC(=O)[C@H](Cc1ccc(cc1)O)N,
+109,L-Histidine,F04_71-00-1_L-Histidine.str.tif,N[C@H](C(=O)O)Cc1c[nH]cn1,
+110,L-Tryptophan,F05_73-22-3_L-Tryptophan.str.tif,OC(=O)[C@H](Cc1c[nH]c2c1cccc2)N,
+111,Adenine,F06_73-24-5_Adenine.str.tif,Nc1ncnc2c1nc[nH]2,
+112,Guanine,F07_73-40-5_Guanine.str.tif,Cc1[nH]c(=O)c2c(n1)[nH]cn2,C1=NC2=C(N1)C(=O)NC(=N2)N
+113,Cytosine,F08_71-30-7_Cytosine.str.tif,Nc1cc[nH]c(=O)n1,
+114,Thymine,F09_65-71-4_Thymine.str.tif,Cc1c[nH]c(=O)[nH]c1=O,
+115,Uracil,F10_66-22-8_Uracil.str.tif,O=c1cc[nH]c(=O)[nH]1,
+116,2-Amino-4-methylpyrimidine ,F11_108-52-1_2-Amino-4-methylpyrimidine.str.tif,Cc1c[nH]c(=O)[nH]c1=O,
+117,"2,4-dihydroxy-6-methylpyrimidine","F12_626-48-2_2,4-dihydroxy-6-methylpyrimidine.str.tif",Cc1ccnc(n1)N,
+118,D-(-)-Salicin,F13_138-52-3_D-(-)-Salicin.str.tif,OCc1ccccc1OC2OC(CO)C(O)C(O)C2O,
+119,Riboflavin,F14_83-88-5_Riboflavin.str.tif,OC[C@H]([C@H]([C@H](Cn1c2-c(nc3c1cc(C)c(c3)C)c(=O)[nH]c(=O)n2)O)O)O,
+120,L-Ascorbic acid,F15_50-81-7_L-Ascorbic_acid.str.tif,OC[C@@H]([C@H]1OC(=O)C(=C1O)O)O,
+121,DL-alpha-Tocopherol,F16_10191-41-0_DL-alpha-Tocopherol.str.tif,CC(CCCC1(C)CCc2c(O1)c(C)c(c(c2C)O)C)CCCC(CCCC(C)C)C,
+122,Vitamin K1,F17_84-80-0_Vitamin_K1.str.tif,C[C@H](CCC[C@@H](CCCC(C)C)C)CCC/C(=C/CC1=C(C)C(=O)c2c(C1=O)cccc2)/C,
+123,Folic acid,F18_59-30-3_Folic_acid.str.tif,OC(=O)CC[C@@H](C(=O)O)NC(=O)c1ccc(cc1)NCc1cnc2c(n1)c(=O)[nH]c(n2)N,
+124,"1,4-Benzoquinone","G01_106-51-4_1,4-Benzoquinone.str.tif",O=C1C=CC(=O)C=C1,
+125,Hydroquinone,G02_123-31-9_Hydroquinone.str.tif,Oc1ccc(cc1)O,
+126,"2,3,5,6-Tetrachloro-1,4-benzoquinone ","G03_118-75-2_2,3,5,6-Tetrachloro-1,4-benzoquinone.str.tif",CC1=C(C)C(=O)C(=C(C1=O)C)C,C1(=C(C(=O)C(=C(C1=O)Cl)Cl)Cl)Cl
+127,Tetrachlorohydroquinone,G04_87-87-6_Tetrachlorohydroquinone.str.tif,Oc1c(Cl)c(Cl)c(c(c1Cl)Cl)O,
+128,"2,3,5,6-Tetramethyl-1,4-benzoquinone","G05_527-17-3_2,3,5,6-Tetramethyl-1,4-benzoquinone.str.tif",CC1=C(C)C(=O)C(=C(C1=O)C)C,
+129,"2,3-Dichloro-5,6-dicyano-1,4-benzoquinone","G06_84-58-2_2,3-Dichloro-5,6-dicyano-1,4-benzoquinone.str.tif",N#CC1=C(C#N)C(=O)C(=C(C1=O)C)C,C(#N)C1=C(C(=O)C(=C(C1=O)Cl)Cl)C#N
+130,"3,4,5,6-Tetrachloro-1,2-benzoquinone","G07_2435-53-2_3,4,5,6-Tetrachloro-1,2-benzoquinone.str.tif",CC1=C(C)C(=C(C(=C)*1=C)*)*,C1(=C(C(=O)C(=O)C(=C1Cl)Cl)Cl)Cl
+131,"2,5-Diphenyl-1,4-benzoquinone","G08_844-51-9_2,5-Diphenyl-1,4-benzoquinone.str.tif",O=C1C=C(C(=O)C=C1c1ccccc1)c1ccccc1,
+132,"2,5-Di-tert-butyl-1,4-benzoquinone","G09_2460-77-7_2,5-Di-tert-butyl-1,4-benzoquinone.str.tif",CC(C1=CC(=O)C(=CC1=O)C(C)(C)C)(C)C,
+133,Tetracyanoethylene,G10_670-54-2_Tetracyanoethylene.str.tif,N#CC(=C(C#N)C#N)C#N,
+134,"7,7,8,8-Tetracyanoquinodimethane","G11_1518-16-7_7,7,8,8-Tetracyanoquinodimethane.str.tif",N#CC(=c1ccc(=C(C#N)C#N)cc1)C#N,
+135,"1,4-Naphthoquinone","G12_130-15-4_1,4-Naphthoquinone.str.tif",O=C1C=CC(=O)C2C1=CC=CC2,C1=CC=C2C(=O)C=CC(=O)C2=C1
+136,"1,4-Naphthoquinone-2-sulfonic acid, Potassium salt","G13_34169-62-5_1,4-Naphthoquinone-2-sulfonic_acid_Potassium_salt.str.tif",O=C1c2ccccc2C(C=C1S(=O)(=O)O)O,C1=CC=C2C(=C1)C(=O)C=C(C2=O)S(=O)(=O)O
+137,"2,3-Dichloro-1,4-naphthoquinone","G14_117-80-6_2,3-Dichloro-1,4-naphthoquinone.str.tif",CC1C(C)C(=O)c2c(C1=O)cccc2,C1=CC=C2C(=C1)C(=O)C(=C(C2=O)Cl)Cl
+138,"2-Methyl-1,4-naphthoquinone","G15_58-27-5_2-Methyl-1,4-naphthoquinone.str.tif",CC1CC(=O)c2c(C1=O)cccc2,CC1=CC(=O)C2=CC=CC=C2C1=O
+139,"9,10-Phenanthrenequinone ","G16_84-11-7_9,10-Phenanthrenequinone.str.tif",O=C1C(=O)c2ccccc2-c2c1cccc2,
+140,"1,2-Naphthoquinone","G17_524-42-5_1,2-Naphthoquinone.str.tif",O=C1C=Cc2c(C1=O)cccc2,
+141,"1,2-Naphthoquinone-4-sulfonic acid, sodium salt","G18_521-24-4_1,2-Naphthoquinone-4-sulfonic_acid_sodium_salt.str.tif",O=C1C=C(*)c2c(C1=O)cccc2,C1=CC=C2C(=C1)C(=CC(=O)C2=O)S(=O)(=O)[O-].[Na+]
+142,"9,10-Anthraquinone","G19_84-65-1_9,10-Anthraquinone.str.tif",O=C1C2=CCCCC2C(=O)c2c1cccc2,C1=CC=C2C(=C1)C(=O)C3=CC=CC=C3C2=O
+143,Alizarin,G20_72-48-0_Alizarin.str.tif,O=C1c2ccccc2C(=O)c2c1ccc(c2O)O,
+144,Alizarin Red S,G21_130-22-3_Alizarin_Red_S.str.tif,O=C1C2=CCCC=C2C(=O)c2c1c(O)c(c(c2)*)O,C1=CC=C2C(=C1)C(=O)C3=CC(=C(C(=C3C2=O)O)O)S(=O)(=O)O
+145,"1,4-Anthraquinone","G22_635-12-1_1,4-Anthraquinone.str.tif",O=C1C=CC(=O)c2c1cc1=CCCC=c1c2,C1=CC=C2C=C3C(=O)C=CC(=O)C3=CC2=C1
+146,"5,12-Naphthacenequinone","G23_1090-13-7_5,12-Naphthacenequinone.str.tif",O=C1c2cc3ccccc3cc2C(=O)c2c1cccc2,
+147,"6,13-Pentacenequinone","G24_3029-32-1_6,13-Pentacenequinone.str.tif",O=C1c2cc3ccccc3cc2C(=O)c2c1cc1ccccc1c2,
+148,Coumarin,H01_91-64-5_Coumarin.str.tif,O=c1ccc2c(o1)cccc2,
+149,4-Hydroxycoumarin,H02_1076-38-6_4-Hydroxycoumarin.str.tif,O=c1cc(O)c2c(o1)cccc2,
+150,7-Hydroxycoumarin,H03_93-35-6_7-Hydroxycoumarin.str.tif,Oc1ccc2c(c1)oc(=O)cc2,
+151,7-Hydroxy-4-(trifluoromethyl)coumarin,H04_575-03-1_7-Hydroxy-4-(trifluoromethyl)coumarin.str.tif,Oc1ccc2c(c1)oc(=O)cc2C(F)(F)F,
+152,7-Methoxycoumarin-4-acetic acid,H05_62935-72-2_7-Methoxycoumarin-4-acetic_acid.str.tif,COc1ccc2c(c1)oc(=O)cc2CC(=O)O,
+153,Coumarin 1,H06_91-44-1_Coumarin_1.str.tif,CCN(c1ccc2c(c1)oc(=O)cc2C)CC,
+154,Coumarin 6,H07_38215-36-0_Coumarin_6.str.tif,CCN(c1ccc2c(c1)oc(=O)c(c2)c1nc2c(s1)cccc2)CC,
+155,Coumarin 7,H08_27425-55-4_Coumarin_7.str.tif,CCN(c1ccc2c(c1)oc(=O)c(c2)c1nc2c([nH]1)cccc2)CC,
+156,Coumarin 30,H09_41044-12-6_Coumarin_30.str.tif,CCN(c1ccc2c(c1)oc(=O)c(c2)c1nc2c(n1C)cccc2)CC,
+157,Coumarin 151,H10_53518-15-3_Coumarin_151.str.tif,Nc1ccc2c(c1)oc(=O)cc2C(F)(F)F,
+158,Coumarin 314,H11_55804-66-5_Coumarin_314.str.tif,CCOC(=O)c1cc2cc3CCCN4c3c(c2oc1=O)CCC4,
+159,Coumarin 343,H12_55804-65-4_Coumarin_343.str.tif,OC(=O)c1cc2cc3CCCN4c3c(c2oc1=O)CCC4,
+160,Calcein Blue,H13_54375-47-2_Calcein_Blue.str.tif,OC(=O)CN(Cc1c(O)ccc2c1oc(=O)cc2C)CC(=O)O,
+161,Urolithin B,H14_1139-83-9_Urolithin_B.str.tif,Oc1ccc2c(c1)oc(=O)c1c2cccc1,
+162,Acridine ,I01_260-94-6_Acridine.str.tif,c1ccc2c(c1)nc1c(c2)cccc1,
+163,Proflavine hydrochloride,I02_952-23-8_Proflavine_hydrochloride.str.tif,Nc1ccc2c(c1)nc1c(c2)ccc(c1)N,C1=CC(=CC2=NC3=C(C=CC(=C3)N)C=C21)N.Cl
+164,Acridine Orange,I03_65-61-2_Acridine_Orange.str.tif,CN(c1ccc2c(c1)nc1c(c2)ccc(c1)N(C)C)C,
+165,Acridine Yellow G,I04_135-49-9_Acridine_Yellow_G.str.tif,Nc1cc2nc3cc(N)c(cc3cc2cc1C)C,CC1=CC2=CC3=C(C=C(C(=C3)C)N)N=C2C=C1N.Cl
+166,Acridone,I05_578-95-0_Acridone.str.tif,O=c1c2ccccc2[nH]c2c1cccc2,
+167,Phenazine,I06_92-82-0_Phenazine.str.tif,c1ccc2c(c1)nc1c(n2)cccc1,
+168,Phenosafranin,I07_81-93-6_Phenosafranin.str.tif,Nc1ccc2c(c1)[N](=c1c(=N2)ccc(c1)N)c1ccccc1,C1=CC=C(C=C1)[N+]2=C3C=C(C=CC3=NC4=C2C=C(C=C4)N)N.[Cl-]
+169,Neutral Red,I08_553-24-2_Neutral_Red.str.tif,Cc1cc2nc3-c([nH]c2cc1N)cc(=[N](C)C)cc3,Cc3cc2nc1ccc(=[N+](C)C)cc1[nH]c2cc3N.[Cl-]
+170,Janus Green B,I09_2869-83-2_Janus_Green_B.str.tif,CCN(c1ccc2c(c1)[N](=c1c(=N2)ccc(c1)/N=N/c1ccc(cc1)N(C)C)c1ccccc1)CC,CCN(CC)C1=CC2=[N+](C3=C(C=CC(=C3)N=NC4=CC=C(C=C4)N(C)C)N=C2C=C1)C5=CC=CC=C5.[Cl-]
+171,Phenothiazine,I10_92-84-2_Phenothiazine.str.tif,c1ccc2c(c1)Sc1c(N2)cccc1,
+172,Thionin,I11_26754-93-8_Thionin.str.tif,Nc1ccc2c(c1)S=c1c(=N2)ccc(c1)N,C1=CC2=C(C=C1N)SC3=CC(=[NH2+])C=CC3=N2.[Cl-]
+173,Methylene blue,I12_61-73-4_Methylene_blue.str.tif,CN(c1ccc2c(c1)sc1-c(n2)ccc(=[N](C)C)c1)C,CN(C)C1=CC2=C(C=C1)N=C3C=CC(=[N+](C)C)C=C3S2.[Cl-]
+174,Azure II,I13_37247-10-2_Azure_II.str.tif,*N(c1ccc2c(c1)sc1-c(n2)ccc(=[N](C)C)c1)C,CN(C)c3ccc2nc1ccc(=[N+](C)C)cc1sc2c3.[Cl-]
+175,Toluidine Blue O,I14_92-31-9_Toluidine_Blue_O.str.tif,Cc1cc2nc3-c(sc2cc1N)cc(=[N](C)C)cc3,CC1=CC2=C(C=C1N)SC3=CC(=[N+](C)C)C=CC3=N2.[Cl-]
+176,Phenoxathiin,I15_262-20-4_Phenoxathiin.str.tif,c1ccc2c(c1)Sc1c(O2)cccc1,
+177,Phenoxazine,I16_135-67-1_Phenoxazine.str.tif,c1ccc2c(c1)Oc1c(N2)cccc1,
+178,Oxazine 1,I17_24796-94-9_Oxazine_1.str.tif,CCN(c1ccc2c(c1)oc1-c(n2)ccc(=[N](CC)CC)c1)CC,CCN(CC)C1=CC2=C(C=C1)N=C3C=CC(=[N+](CC)CC)C=C3O2.[O-]Cl(=O)(=O)=O
+179,Cresyl Violet perchlorate,I18_41830-80-2_Cresyl_Violet_perchlorate.str.tif,Nc1ccc2c(c1)oc1-c(n2)c2ccccc2c(=N)c1,C1=CC=C2C(=C1)C(=[NH2+])C=C3C2=NC4=C(O3)C=C(C=C4)N.[O-]Cl(=O)(=O)=O
+180,Nile Red,I19_7385-67-3_Nile_Red.str.tif,CCN(c1ccc2c(c1)oc1-c(n2)c2ccccc2c(=O)c1)CC,
+181,Nile Blue ,I20_53340-16-2_Nile_Blue.str.tif,CC[N](=c1ccc2-c(c1)oc1c(n2)c2ccccc2c(c1)N)CC,CC[N+](CC)=c4ccc3nc2c(cc(N)c1ccccc12)oc3c4
+182,Oxazine 170,I21_62669-60-7_Oxazine_170.str.tif,CCNc1cc2oc3-c(nc2cc1C)c1c(/c(=[NH]\CC)/c3)cccc1,CCNC1=CC2=C(C3=CC=CC=C31)N=C4C=C(C(=[N+](C)CC)C=C4O2)C.[O-]Cl(=O)(=O)=O
+183,Azobenzene,J01_103-33-3_Azobenzene.str.tif,c1ccc(cc1)/N=N/c1ccccc1,
+184,Acid Red 2,J02_493-52-7_Acid_Red_2.str.tif,CN(c1ccc(cc1)/N=N/c1ccccc1C(=O)O)C,
+185,Methyl Orange,J03_547-58-0_Methyl_Orange.str.tif,*c1ccc(cc1)/N=N/c1ccc(cc1)N(C)C,CN(C)C1=CC=C(C=C1)N=NC2=CC=C(C=C2)S(=O)(=O)[O-].[Na+]
+186,Orange G,J04_1936-15-8_Orange_G.str.tif,Oc1ccc2c(c1/N=N/c1ccccc1)c(*)cc(c2)S(=O)(=O)O,C1=CC=C(C=C1)N=NC2=C(C=CC3=CC(=CC(=C32)S(=O)(=O)O)S(=O)(=O)O)O
+187,Orange II,J05_633-96-5_Orange_II.str.tif,**c1ccc(cc1)/N=N/c1c(O)ccc2c1C=CCC2,C1=CC=C2C(=C1)C=CC(=C2N=NC3=CC=C(C=C3)S(=O)(=O)[O-])O.[Na+]
+188,Acid Red 88,J06_1658-56-6_Acid_Red_88.str.tif,Oc1ccc2c(c1/N=N/c1ccc(c3c1cccc3)*)cccc2,C1=CC=C2C(=C1)C=CC(=C2N=NC3=CC=C(C4=CC=CC=C43)S(=O)(=O)[O-])O.[Na+]
+189,Sudan I,J07_842-07-9_Sudan_I.str.tif,Oc1ccc2c(c1/N=N/c1ccccc1)cccc2,
+190,Sudan II,J08_3118-97-6_Sudan_II.str.tif,Cc1ccc(c(c1)C)/N=N/c1c(O)ccc2c1cccc2,
+191,Acid Violet 3,J09_1681-60-3_Acid_Violet_3.str.tif,Nc1ccc(cc1)/N=N/c1c(*)cc2c(c1O)c(O)cc(c2)S(=O)(=O)O,C1=CC(=CC=C1N)N=NC2=C(C3=C(C=C(C=C3C=C2S(=O)(=O)[O-])S(=O)(=O)[O-])O)O.[Na+].[Na+]
+192,Acid Red 1,J10_3734-67-6_Acid_Red_1.str.tif,CC(=O)Nc1cc(*)cc2c1c(O)c(c(c2)[S](#C)(=O)(=O)O)/N=N/c1ccccc1,CC(=O)NC1=C2C(=CC(=C1)S(=O)(=O)[O-])C=C(C(=C2O)N=NC3=CC=CC=C3)S(=O)(=O)[O-].[Na+].[Na+]
+193,Acid Red 14,J11_3567-69-9_Acid_Red_14.str.tif,*c1cc(/N=N/c2ccc(c3c2cccc3)*)c(c2c1cccc2)O,C1=CC=C2C(=C1)C(=CC=C2S(=O)(=O)[O-])N=NC3=C(C4=CC=CC=C4C(=C3)S(=O)(=O)[O-])O.[Na+].[Na+]
+194,Acid Blue 92,J12_3861-73-2_Acid_Blue_92.str.tif,*[C]1=Cc2cc(*C3CC3)cc(c2C(=C=1)O)/N=N/c1ccc(c2c1cccc2*1=CC=1)Nc1ccccc1,C1=CC=C(C=C1)NC2=C3C(=C(C=C2)N=NC4=C5C(=CC(=C4)S(=O)(=O)[O-])C=C(C=C5O)S(=O)(=O)[O-])C=CC=C3S(=O)(=O)[O-].[Na+].[Na+].[Na+]
+195,Sudan III,J13_85-86-9_Sudan_III.str.tif,Oc1ccc2c(c1/N=N/c1ccc(cc1)/N=N/c1ccccc1)cccc2,
+196,Sudan IV,J14_85-83-6_Sudan_IV.str.tif,Cc1cc(ccc1/N=N/c1c(O)ccc2c1cccc2)/N=N/c1ccccc1C,
+197,Acid Black 1,J15_1064-48-8_Acid_Black_1.str.tif,N=Nc1c(*)cc2c(c1N)c(O)c(c(c2)S(=O)(=O)O)/N=N/c1ccccc1,C1=CC=C(C=C1)N=NC2=C(C3=C(C(=C(C=C3C=C2S(=O)(=O)[O-])S(=O)(=O)[O-])N=NC4=CC=C(C=C4)[N+](=O)[O-])N)O.[Na+].[Na+]
+198,Ponceau S,J16_6226-79-5_Ponceau_S.str.tif,C*c1cc(/N=N/c2ccc(cc2)*)ccc1*c1c(O)c(*)cc2c1ccc(c2)*,C1=CC(=CC=C1N=NC2=CC(=C(C=C2)N=NC3=C4C=CC(=CC4=CC(=C3O)S(=O)(=O)O)S(=O)(=O)O)S(=O)(=O)O)S(=O)(=O)O
+199,Congo Red,J17_573-58-0_Congo_Red.str.tif,*c1cc(/N=N/c2ccc(cc2)c2ccc(cc2)/N=N/c2cc(*)c3c(c2N)cccc3)c(c2c1C=CCC2)N,C1=CC=C2C(=C1)C(=CC(=C2N)N=NC3=CC=C(C=C3)C4=CC=C(C=C4)N=NC5=C(C6=CC=CC=C6C(=C5)S(=O)(=O)[O-])N)S(=O)(=O)[O-].[Na+].[Na+]
+200,Benzopurpurin 4B,J18_992-59-6_Benzopurpurin_4B.str.tif,N=CC=C=[S](=O)(=O)(c1cc(/N=N/c2ccc(cc2C)c2ccc(c(c2)C)/N=N/c2cc(/*(=C/C)=C)c3c(c2N)cccc3)c(c2c1cccc2)N)O,CC1=C(C=CC(=C1)C2=CC(=C(C=C2)N=NC3=C(C4=CC=CC=C4C(=C3)S(=O)(=O)[O-])N)C)N=NC5=C(C6=CC=CC=C6C(=C5)S(=O)(=O)[O-])N.[Na+].[Na+]
+201,Evans Blue,J19_314-13-6_Evans_Blue.str.tif,Cc1cc(ccc1/N=N/c1ccc2c(c1O)c(N)c(cc2*)*)c1ccc(c(c1)C)/N=N/c1ccc2c(c1O)c(N)c(cc2*)*,CC1=C(C=CC(=C1)C2=CC(=C(C=C2)N=NC3=C(C4=C(C=C3)C(=CC(=C4N)S(=O)(=O)[O-])S(=O)(=O)[O-])O)C)N=NC5=C(C6=C(C=C5)C(=CC(=C6N)S(=O)(=O)[O-])S(=O)(=O)[O-])O.[Na+].[Na+].[Na+].[Na+]
+202,"1,1'-Diethyl-2,2'-cyanine iodide","K01_977-96-8_1,1'-Diethyl-2,2'-cyanine_iodide.str.tif",CCN1/C(=C/C2=[N](CC)c3c(C=C2)cccc3)/C=Cc2c1cccc2,CCN1C(=CC2=[N+](C3=CC=CC=C3C=C2)CC)C=CC4=CC=CC=C41.[I-]
+203,"1,1'-Diethyl-2,2'-carbocyanine iodide ","K02_605-91-4_1,1'-Diethyl-2,2'-carbocyanine_iodide.str.tif",CCN1/C(=C/C=C/C2=[N](=O)(CC)c3c(C=C2)cccc3)/C=Cc2c1cccc2,CCN1C(=CC=CC2=[N+](C3=CC=CC=C3C=C2)CC)C=CC4=CC=CC=C41.[I-]
+204,"1,1'-Diethyl-2,2'-dicarbocyanine iodide","K03_14187-31-6_1,1'-Diethyl-2,2'-dicarbocyanine_iodide.str.tif",CCN1/C(=C/C=C/C=C/C2=[N](=O)(CC)c3c(C=C2)cccc3)/C=Cc2c1cccc2,CCN1C(=CC=CC=CC2=[N+](C3=CC=CC=C3C=C2)CC)C=CC4=CC=CC=C41.[I-]
+205,"1,1'-Diethyl-4,4'-cyanine iodide","K04_4727-49-5_1,1'-Diethyl-4,4'-cyanine_iodide.str.tif",CCN1C=C/C(=C\C2=CC=[N](c3c2cccc3)CC)/c2c1cccc2,CCN1C=CC(=CC2=CC=[N+](C3=CC=CC=C23)CC)C4=CC=CC=C41.[I-]
+206,"1,1'-Diethyl-4,4'-carbocyanine iodide","K05_4727-50-8_1,1'-Diethyl-4,4'-carbocyanine_iodide.str.tif",CCN1C=C/C(=C\C=C\C2=CC=[N](=O)(c3c2cccc3)CC)/c2c1cccc2,CCN1C=CC(=CC=CC2=CC=[N+](C3=CC=CC=C23)CC)C4=CC=CC=C41.[I-]
+207,"1,1'-Diethyl-4,4'-dicarbocyanine iodide","K06_18300-31-7_1,1'-Diethyl-4,4'-dicarbocyanine_iodide.str.tif",CCNC1C=CC=CC1/C(=C\O)/C=C/C=C/C=C/1\C=CN(c2c1cccc2)CC,CCN1C=CC(=CC=CC=CC2=CC=[N+](C3=CC=CC=C23)CC)C4=CC=CC=C41.[I-]
+208,"3,3'-Diethyloxacarbocyanine iodide","K07_905-96-4_3,3'-Diethyloxacarbocyanine_iodide.str.tif",CCN1/C(=C/C=C/C2=[N](=O)(CC)c3c(O2)cccc3)/Oc2c1cccc2,CCN1C2=CC=CC=C2OC1=CC=CC3=[N+](C4=CC=CC=C4O3)CC.[I-]
+209,"3,3'-Diethyloxadicarbocyanine iodide","K08_14806-50-9_3,3'-Diethyloxadicarbocyanine_iodide.str.tif",CCN1/C(=C/C=C/C=C/C2=[N](=O)(CC)c3c(O2)cccc3)/Oc2c1cccc2,CCN1C2=CC=CC=C2OC1=CC=CC=CC3=[N+](C4=CC=CC=C4O3)CC.[I-]
+210,"3,3'-Diethyloxatricarbocyanine iodide","K09_15185-43-0_3,3'-Diethyloxatricarbocyanine_iodide.str.tif",CCN1/C(=C/C=C/C=C/C=C/C2=[N](=O)(CC)c3c(O2)cccc3)/Oc2c1cccc2,CCN1C2=CC=CC=C2OC1=CC=CC=CC=CC3=[N+](C4=CC=CC=C4O3)CC.[I-]
+211,"1,1'-Diethyl-3,3,3',3'-tetramethylindocarbocyanine Iodide","K10_14696-39-0_1,1'-Diethyl-3,3,3',3'-tetramethylindocarbocyanine_iodide.str.tif",CCN1c2ccccc2C(/C/1=C\C=C\C1=[N](=O)(CC)c2c(C1(C)C)cccc2)(C)C,CCN1C2=CC=CC=C2C(C1=CC=CC3=[N+](C4=CC=CC=C4C3(C)C)CC)(C)C.[I-]
+212,"1,1'-Diethyl-3,3,3',3'-tetramethylindodicarbocyanine Iodide","K11_17094-16-5_1,1'-Diethyl-3,3,3',3'-tetramethylindodicarbocyanine_iodide.str.tif",CCN1c2ccccc2C(/C/1=C\C=C\C=C\C1=[N](=O)(CC)c2c(C1(C)C)cccc2)(C)C,CCN4/C(=C/C=C/C=C/C2=[N+](CC)c1ccccc1C2(C)C)C(C)(C)c3ccccc34.[I-]
+213,"1,1'-Diethyl-3,3,3',3'-tetramethylindotricarbocyanine Iodide","K12_15185-47-4_1,1'-Diethyl-3,3,3',3'-tetramethylindotricarbocyanine_iodide.str.tif",CCN1c2ccccc2C(/C/1=C\C=C\C=C\C=C\C1=[N](=O)(CC)c2c(C1(C)C)cccc2)(C)C,CCN4/C(=C/C=C/C=C/C=C/C2=[N+](CC)c1ccccc1C2(C)C)C(C)(C)c3ccccc34.[I-]
+214,Indocyanine Green,K13_3599-32-4_Indocyanine_Green.str.tif,*CCCCN1c2ccc3c(c2C(/C/1=C\C=C\C=C\C=C\C1=[N](=O)(CCCCS(=O)(=O)O)c2c(C1(C)C)c1ccccc1cc2)(C)C)cccc3,CC1(C(=[N+](C2=C1C3=CC=CC=C3C=C2)CCCCS(=O)(=O)[O-])C=CC=CC=CC=C4C(C5=C(N4CCCCS(=O)(=O)[O-])C=CC6=CC=CC=C65)(C)C)C.[Na+]
+215,"3,3'-Diethylthiacarbocyanine iodide","K14_905-97-5_3,3'-Diethylthiacarbocyanine_iodide.str.tif",CCN1/C(=C/C=C/C2=[C](#N)(CC)c3c(S2)cccc3)/Sc2c1cccc2,CCN1C2=CC=CC=C2SC1=CC=CC3=[N+](C4=CC=CC=C4S3)CC.[I-]
+216,"3,3'-Diethylthiadicarbocyanine iodide ","K15_514-73-8_3,3'-Diethylthiadicarbocyanine_iodide.str.tif",CCN1/C(=C/C=C/C=C/C2=[N](=O)(CC)c3c(S2)cccc3)/Sc2c1cccc2,CCN1C2=CC=CC=C2SC1=CC=CC=CC3=[N+](C4=CC=CC=C4S3)CC.[I-]
+217,"3,3'-Diethylthiatricarbocyanine iodide ","K16_3071-70-3_3,3'-Diethylthiatricarbocyanine_iodide.str.tif",CCN1/C(=C/C=C/C=C/C=C/C2=[N](=O)(CC)c3c(S2)cccc3)/Sc2c1cccc2,CCN1C2=CC=CC=C2SC1=CC=CC=CC=CC3=[N+](C4=CC=CC=C4S3)CC.[I-]
+218,Merocyanine 540,K17_62796-23-0_Merocyanine_540.str.tif,CCCCN1C(=O)C(=C/C=C/C=C/2\Oc3c(N2CC*)cccc3)C(=O)N(C1=S)CCCC,CCCCN1C(=O)C(=CC=CC=C2N(C3=CC=CC=C3O2)CCCS(=O)(=O)[O-])C(=O)N(C1=S)CCCC.[Na+]
+219,"4-(dicyanomethylene)-2-methyl-6-(p-dimethylaminostyryl)-4H-pyran, [DCM] ",K18_51325-91-8_[DCM].str.tif,N#CC(=C1C=C(/C=C/c2ccc(cc2)N(C)C)OC(=C1)C)C#N,
+220,Stains all,K19_7423-31-6_Stains_all.str.tif,CCN1/C(=C/C(=C/C2=[N](=O)(CC)c3c(S2)ccc2c3cccc2)/C)/Sc2c1c1ccccc1cc2,CCN1C(=CC(=CC2=[N+](C3=C(S2)C=CC4=CC=CC=C43)CC)C)SC5=C1C6=CC=CC=C6C=C5.[Br-]
+221,Auramine O,L01_2465-27-2_Auramine_O.str.tif,N=C[C]1(=CC=C(C=C1)N(C)C)Cc1ccc(cc1)N(C)C,CN(C)C1=CC=C(C=C1)C(=N)C2=CC=C(C=C2)N(C)C.Cl
+222,Malachite Green,L02_2437-29-8_Malachite_Green.str.tif,C[N](=C1C=C/C(=C(/c2ccc(cc2)N(C)C)\c2ccccc2)/C=C1)C,CN(C)C1=CC=C(C=C1)C(=C2C=CC(=[N+](C)C)C=C2)C3=CC=CC=C3.[Cl-]
+223,Crystal Violet,L03_548-62-9_Crystal_Violet.str.tif,C[N](=C1C=CC(=C(c2ccc(cc2)N(C)C)c2ccc(cc2)N(C)C)C=C1)C,CN(C)C1=CC=C(C=C1)C(=C2C=CC(=[N+](C)C)C=C2)C3=CC=C(C=C3)N(C)C.[Cl-]
+224,p-Fuchsin,L04_632-99-5_p-Fuchsin.str.tif,NC1CC=C(C=C1)/C(=C\1/C=C/C(=N)/C=C1)/c1ccc(c(c1)C)N,Cc3cc(C(C1=CCC(N)C=C1)=c2ccc(=N)cc2)ccc3N.Cl
+225,Methyl Violet,L05_8004-87-3_Methy_Violet.str.tif,C/N=C/1\C=CC(=C(c2ccc(cc2)N(C)C)c2ccc(cc2)N(C)C)C=C1,
+226,Methyl Green,L06_7114-03-6_Methyl_Green.str.tif,CC[N](=O)(c1ccc(cc1)/C(=C/1\C=CC(=[N](C)C)C=C1)/c1ccc(cc1)N(C)C)(C)C,CN(C)C1=CC=C(C=C1)C(=C2C=CC(=[N+](C)C)C=C2)C3=CC=C(C=C3)[N+](C)(C)C.[Cl-]
+227,Methyl Blue,L07_28983-56-4_Methyl_Blue.str.tif,OS(=O)(=O)c1ccc(cc1)/N=C/1\C=CC(=C(c2ccc(cc2)Nc2ccc(cc2)S(=O)(=O)O)c2ccc(cc2)Nc2ccc(cc2)S(=O)(=O)O)C=C1,
+228,Phenolphthalein,L08_77-09-8_Phenolphthalein.str.tif,Oc1ccc(cc1)C1(OC(=O)c2c1cccc2)c1ccc(cc1)O,
+229,Phenol Red,L09_143-74-8_Phenol_Red.str.tif,Oc1ccc(cc1)C1(OS(=O)(=O)c2c1cccc2)c1ccc(cc1)O,
+230,Cresol Red,L10_1733-12-6_Cresol_Red.str.tif,Cc1cc(ccc1O)C1(OS(=O)(=O)c2c1cccc2)c1ccc(c(c1)C)O,
+231,Thymol Blue,L11_76-61-9_Thymol_Blue.str.tif,CC1=CC(=O)C(=C/C/1=C(\c1ccccc1S(=O)(=O)O)/c1cc(C(C)C)c(cc1C)O)C(C)C,CC1=CC(=O)C(=C/C/1=C(\c1ccccc1S(=O)(=O)O)/c1cc(C(C)C)c(cc1C)O)C(C)C
+232,Perylene,M01_198-55-0_Perylene.str.tif,c1cc2cccc3c2c(c1)c1cccc2c1c3ccc2,
+233,"Perylene, PMI",M02_165550-61-8_Perylene_PMI.str.tif,Cc1cccc(c1N1C(=O)c2ccc3c4c2c(C1=O)ccc4c1c2c3cccc2ccc1)P,
+234,"Perylene, PMI(OR)",M03_Perylene_PMI(OR).str.tif,*c1ccc(cc1)Oc1ccc2c3c1cccc3c1c3c2ccc2c3c(cc1)C(=O)N(C2=O)c1c(C)cccc1P,CCCc1cccc(C(C)C)c1n3c(=O)c4ccc5c8cccc7c(Oc2ccc(C(C)(C)C)cc2)ccc(c6ccc(c3=O)c4c56)c78
+235,"Perylene, PMI(OR)3",M04_468083-01-4_Perylene_PMI(OR)3.str.tif,CCC[C](=CC)(c1ccc(cc1)Oc1cc2C(=O)N(c3c(C)cc(cc3P*)C#C)C(=O)c3c2c2c1c1ccc(c4c1c(c2c(c3)Oc1ccc(cc1)*)ccc4)Oc1ccc(cc1)C)C,C#Cc%10cc(C(C)C)c(n4c(=O)c5cc(Oc1ccc(C(C)(C)C)cc1)c6c9cccc8c(Oc2ccc(C(C)(C)C)cc2)ccc(c7c(Oc3ccc(C(C)(C)C)cc3)cc(c4=O)c5c67)c89)c(C(C)C)c%10
+236,"Perylene, PDI",M05_83054-80-2_Perylene_PDI.str.tif,CCCC(*c1ccc(cc1N1C(=O)c2ccc3c4c2c(C1=O)ccc4c1c2c3ccc3c2c(cc1)C(=O)N(C3=O)c1cc(*)ccc1C(CCC)(C)*)C(CCC)C)C,CC(C)(C)c9ccc(C(C)(C)C)c(n2c(=O)c3ccc4c6ccc7c(=O)n(c1cc(C(C)(C)C)ccc1C(C)(C)C)c(=O)c8ccc(c5ccc(c2=O)c3c45)c6c78)c9
+237,Fluorescein ,N01_2321-07-5_Fluorescein.str.tif,Oc1ccc2c(c1)oc1-c(c2c2ccccc2C(=O)O)ccc(=O)c1,Oc1ccc2c(c1)oc1-c(c2c2ccccc2C(=O)O)ccc(=O)c1
+238,"2',7'-Dichlorofluorescein","N02_76-54-0_2',7'-Dichlorofluorescein.str.tif",OC(=O)c1ccccc1c1c2-c(oc3c1cc(Cl)c(c3)O)cc(=O)c(c2)Cl,OC(=O)c1ccccc1c1c2-c(oc3c1cc(Cl)c(c3)O)cc(=O)c(c2)Cl
+239,"3,4,5,6-Tetrachlorofluorescein","N03_6262-21-1_3,4,5,6-Tetrachlorofluorescein.str.tif",O=c1ccc2-c(c1)oc1c(c2c2c(Cl)c(Cl)c(c(c2C(=O)O)Cl)Cl)ccc(c1)O,O=c1ccc2-c(c1)oc1c(c2c2c(Cl)c(Cl)c(c(c2C(=O)O)Cl)Cl)ccc(c1)O
+240,Eosin B,N04_548-24-3_Eosin_B.str.tif,O=N(=O)c1cc2c(c3ccccc3*)c3-c(oc2c(c1*)Br)c(c(=O)c(c3)N(=O)=O)Br,C1=CC=C(C(=C1)C2=C3C=C(C(=O)C(=C3OC4=C(C(=C(C=C24)[N+](=O)[O-])[O-])Br)Br)[N+](=O)[O-])C(=O)[O-].[Na+].[Na+]
+241,Eosin B,N04_548-24-3_Eosin_B.str.tif,O=N(=O)c1cc2c(c3ccccc3*)c3-c(oc2c(c1*)Br)c(c(=O)c(c3)N(=O)=O)Br,C1=CC=C(C(=C1)C2=C3C=C(C(=O)C(=C3OC4=C(C(=C(C=C24)[N+](=O)[O-])[O-])Br)Br)[N+](=O)[O-])C(=O)[O-].[Na+].[Na+]
+242,Eosin Y,N05_17372-87-1_Eosin_Y.str.tif,*c1ccccc1c1c2cc(Br)c(c(c2oc2-c1cc(Br)c(=O)c2Br)Br)*,C1=CC=C(C(=C1)C2=C3C=C(C(=O)C(=C3OC4=C(C(=C(C=C24)Br)O)Br)Br)Br)C(=O)O.[Na+]
+243,Phloxine B,N06_18472-87-2_Phloxine_B.str.tif,Clc1c(Cl)c(*)c(c(c1Cl)Cl)c1c2-c(oc3c1cc(Br)c(c3Br)*)c(c(=O)c(c2)Br)Br,C1=C2C(=C3C=C(C(=O)C(=C3OC2=C(C(=C1Br)[O-])Br)Br)Br)C4=C(C(=C(C(=C4Cl)Cl)Cl)Cl)C(=O)[O-].[Na+].[Na+]
+244,Erythrosine B,N07_16423-68-0_Erythrosine_B.str.tif,*c1ccccc1c1c2cc(I)c(c(c2oc2-c1cc(I)c(=O)c2I)I)*,C1=CC=C2C(=C1)C(=O)OC23C4=CC(=C(C(=C4OC5=C(C(=C(C=C35)I)[O-])I)I)[O-])I.[Na+].[Na+]
+245,Rose bengal,N08_11121-48-5_Rose_bengal.str.tif,Clc1c(Cl)c(*)c(c(c1Cl)Cl)c1c2-c(oc3c1cc(I)c(c3I)*)c(c(=O)c(c2)I)I,C1=C2C(=C3C=C(C(=O)C(=C3OC2=C(C(=C1I)[O-])I)I)I)C4=C(C(=C(C(=C4Cl)Cl)Cl)Cl)C(=O)[O-].[Na+].[Na+]
+246,Xantphos,N09_161265-03-8_Xantphos.str.tif,CC1(C)c2cccc(c2Oc2c1cccc2P(c1ccccc1)c1ccccc1)P(c1ccccc1)c1ccccc1,
+247,Rhodamine 123,N10_62669-70-9_Rhodamine_123.str.tif,COC(=O)c1ccccc1c1c2-c(cc(=[N]=O)cc2)oc2c1ccc(c2)N,COC(=O)C1=CC=CC=C1C2=C3C=CC(=N)C=C3OC4=C2C=CC(=C4)N.Cl
+248,Rhodamine B,N11_81-88-9_Rhodamine_B.str.tif,CCN(c1ccc2c(c1)oc1-c(c2c2ccccc2C(=O)O)ccc(=[N](CC)CC)c1)CC,CCN(CC)C1=CC2=C(C=C1)C(=C3C=CC(=[N+](CC)CC)C=C3O2)C4=CC=CC=C4C(=O)O.[Cl-]
+249,Sulforhodamine B,N12_3520-42-1_Sulforhodamine_B.str.tif,CCN(c1ccc2c(c1)oc1-c(c2c2ccc(cc2S(=O)(=O)O)*)ccc(=[N](CC)CC)c1)CC,CCN(CC)C1=CC2=C(C=C1)C(=C3C=CC(=[N+](CC)CC)C=C3O2)C4=C(C=C(C=C4)S(=O)(=O)O)S(=O)(=O)[O-]
+250,Rhodamine 6G,N13_989-38-8_Rhodamine_6G.str.tif,CCOC(=O)c1ccccc1c1c2-c(oc3c1cc(C)c(c3)NCC)c/c(=N\CC)/c(c2)C,
+251,Rhodamine 101 inner salt ,N14_41175-43-3_Rhodamine_101_inner_salt.str.tif,OC(=O)c1ccccc1c1c2cc3CCCN4c3c(c2[o]c2c1cc1CCCN3c1c2CCC3)CCC4,C1CC2=CC3=C(C4=C2N(C1)CCC4)OC5=C6CCC[N+]7=C6C(=CC5=C3C8=CC=CC=C8C(=O)[O-])CCC7
+252,Sulforhodamine 101,N15_60311-02-6_Sulforhodamine_101.str.tif,OS(=O)(=O)c1cc(ccc1c1c2cc3CCCN4c3c(c2[o]c2c1cc1CCCN3c1c2CCC3)CCC4)S(=O)(=O)O,C1CC2=CC3=C(C4=C2N(C1)CCC4)OC5=C6CCC[N+]7=C6C(=CC5=C3C8=C(C=C(C=C8)S(=O)(=O)O)S(=O)(=O)[O-])CCC7
+253,Dansylglycine  ,O01_1091-85-6_Dansylglycine.str.tif,OC(=O)CNS(=O)(=O)c1cccc2c1cccc2N(C)C,CN(C)C1=CC=CC2=C1C=CC=C2S(=O)(=O)NCC(=O)O
+254,Lucifer Yellow CH,O02_67769-47-5_Lucifer_Yellow_CH.str.tif,NNC(=O)NN1Cc2cc(*)cc3c2c(C1=O)cc(c3N)*,[Li+].[Li+].C1=C(C=C2C3=C1C(=C(C=C3C(=O)N(C2=O)NC(=O)NN)S(=O)(=O)[O-])N)S(=O)(=O)[O-]
+255,Piroxicam,O03_36322-90-4_Piroxicam.str.tif,O=C(C1=C(O)c2ccccc2S(=O)(=O)N1C)Nc1ccccn1,
+256,"1,2,3,4,5-Pentamethylcyclopentadiene","O04_4045-44-7_1,2,3,4,5-Pentamethylcyclopentadiene.str.tif",CC1C(=C(C(=C1C)C)C)C,
+257,Ethidium Bromide,O05_1239-45-8_Ethidium_Bromide.str.tif,CC[N]1=C(c2ccccc2)c2cc(N)ccc2-c2c1cc(N)cc2,CC[N+]1=C(c2ccccc2)c2cc(N)ccc2-c2c1cc(N)cc2.[Br-]
+258,"4',6-Diamidino-2-phenylindole, [DAPI]","O06_28718-90-3_4',6-Diamidino-2-phenylindole_[DAPI].str.tif",NC(=N)c1ccc(cc1)c1cc2c([nH]1)cc(cc2)C(=N)N,
+259,Hoechst 33258,O07_23491-45-4_Hoechst_33258.str.tif,CN1CCN(CC1)c1ccc2c(c1)nc([nH]2)c1ccc2c(c1)nc([nH]2)c1ccc(cc1)O,
+260,Squarylium dye III,O08_43134-09-4_Squarylium_dye_III.str.tif,C*C1C(c2ccc(cc2)N(C)C)C(C1c1ccc(cc1)N(C)C)O,CN(C)C1=CC=C(C=C1)C2=C(C(=C3C=CC(=[N+](C)C)C=C3)C2=O)[O-]
+261,Ellagic Acid Dihydrate,O09_133039-73-3_Ellagic_Acid_Dihydrate.str.tif,Oc1cc2c(=O)oc3c4c2c(c1O)oc(=O)c4cc(c3O)O,C1=C2C3=C(C(=C1O)O)OC(=O)C4=CC(=C(C(=C43)OC2=O)O)O.O.O
+262,Betalamic Acid,O10_18766-66-0_Betalamic_Acid.str.tif,O=C/C=C/1\C[C@@H](NC(=C1)C(=O)O)C(=O)O,
+263,Betanin,O11_7659-95-2_Betanin.str.tif,COC1C(O)[C@H](O)C(O[C@@H]1[O](c1cc2C[C@@H](/[N](=C\C=C\3/C[C@@H](NC(=C3)C(=O)O)C(=O)O)/c2cc1O)C(=O)O)C)CO,C1C(NC(=CC1=CC=[N+]2C(CC3=CC(=C(C=C32)O)OC4C(C(C(C(O4)CO)O)O)O)C(=O)[O-])C(=O)O)C(=O)O
+264,Rutin trihydrate,O12_153-18-4_Rutin_trihydrate.str.tif,OC1C(O)[C@@H](OC([C@H]1O)CO[C@@H]1OC(C)[C@@H](C(C1C)*)O)Oc1c(oc2c(c1=O)c(O)c(cc2)O)c1ccc(c(c1)O)O,CC1C(C(C(C(O1)OCC2C(C(C(C(O2)OC3=C(OC4=CC(=CC(=C4C3=O)O)O)C5=CC(=C(C=C5)O)O)O)O)O)O)O)O.O.O.O
+265,Hesperidin,O13_520-26-3_Hesperidin.str.tif,COc1ccc(cc1O)[C@@H]1CC(=O)c2c(O1)cc(cc2O)O[C@@H]1OC(CO[C@@H]2OC(C)[C@@H](C(C2C)*)O)[C@H](C(C1O)O)O,CC1C(C(C(C(O1)OCC2C(C(C(C(O2)OC3=CC(=C4C(=O)CC(OC4=C3)C5=CC(=C(C=C5)OC)O)O)O)O)O)O)O)O
+266,5-Phenyldipyrromethane,P01_107798-98-1_5-Phenyldipyrromethane.str.tif,c1ccc(cc1)C(c1ccc[nH]1)c1ccc[nH]1,
+267,5-Phenyldipyrrin,P02_118762-53-1_5-Phenyldipyrrin.str.tif,c1ccc(cc1)/C(=C/1\C=CC=N1)/c1ccc[nH]1,
+268,"N,N'-Difluoroboryl-1,9-dimethyl-5-phenydipyrrin","P03_N,N'-Difluoroboryl-1,9-dimethyl-5-phenydipyrrin.str.tif",CC1=[N]2C(=C(c3ccccc3)c3n([B]2(F)F)c(C)cc3)C=C1,Cc3ccc4C(c1ccccc1)=c2ccc(C)[n+]2[B-](F)(F)n34
+269,"N,N'-Difluoroboryl-1,9-dimethyl-5-(4-iodophenyl)dipyrrin","P04_N,N'-Difluoroboryl-1,9-dimethyl-5-(4-iodophenyl)dipyrrin.str.tif",Cc1ccc(cc1)C1=C2C=CC(=[N]2[B](n2c1ccc2C)(F)F)C,Cc3ccc4C(c1ccc(I)cc1)=c2ccc(C)[n+]2[B-](F)(F)n34
+270,"N,N'-Difluoroboryl-1,9-dimethyl-5-[(4-(2-trimethylsilylethynyl)pheny]dipyrrin","P05_N,N'-Difluoroboryl-1,9-dimethyl-5-[(4-(2-TMS-ethynyl)pheny]dipyrrin.str.tif",CC1=CCC2N1[B](F)(F)[N]1=C(C)C=CC1=C2c1ccc(cc1)C#C[Si](C)(C)C,C/C3=C/CC4C(c1ccc(C#C[Si](C)(C)C)cc1)=c2ccc(C)[n+]2[B-](F)(F)N34
+271,Bis(5-phenyldipyrrinato)zinc,P06_Bis(5-phenyldipyrrinato)zinc.str.tif,c1ccc(cc1)[C@H]1C2CCC=[N]2[Zn]2(n3c1ccc3)[N]1=CC=CC1=C(c1n2ccc1)c1ccccc1,C/1=[N+]\4C(CC1)[C@H](c2ccccc2)c3cccn3[Zn]48n5cccc5C(c6ccccc6)=c7ccc[n+]78
+272,Bis(5-mesityldipyrrinato)zinc,P07_Bis(5-mesityldipyrrinato)zinc.str.tif,C[C@@H]1CC(C)C(C(=C1)C)C1=C2C=CC=[N]2[Zn]2(n3c1ccc3)[N]1=CCCC1C(c1n2ccc1)c1c(C)cc(cc1C)C,C/C1=C/[C@H](C)CC(C)C1C3=c2ccc[n+]2[Zn]8(n4cccc34)n5cccc5C(c6c(C)cc(C)cc6C)C\7CC/C=[N+]78
+273,H2P,Q01_101-60-0_H2P.str.tif,C1=C/C/2=C/C3=N/C(=C\c4[nH]c(/C=C/5\N=C(CC1N2)C=C5)cc4)/C=C3,
+274,MgP,Q02_MgP.str.tif,CN1C2C=C/C/1=C/C1=[N]3C*4C[N]5=C(C2)C=CC5=Cc2n4c(C=C3C=C1)cc2,CN1/C\2=C\c5ccc(=Cc4ccc(C=c3ccc(CC1/C=C2)n3)n4[MgH])n5
+275,ZnP,Q03_ZnP.str.tif,C1=CC2=CC3=[N]4[Zn]56N2C1CC1=[N]5C(=Cc2n6c(C=C4C=C3)cc2)C=C1,CN1/C\2=C\c5ccc(=Cc4ccc(C=c3ccc(CC1/C=C2)n3)n4[Zn])n5
+276,H2OEP,Q04_2683-82-1_H2OEP.str.tif,CCC1/C/2=C/c3[nH]c(c(c3CC)CC)CC3N=C(/C=c/4\[nH]/c(=C\C(=N2)C1CC)/c(CC)c4CC)C(=C3CC)CC,
+277,MgOEP,Q05_20910-35-4_MgOEP.str.tif,CCC1C(CC)/C/2=C/c3n(*)c(c(c3CC)CC)CC3[N](=C(/C=c/4\n(/c(=C\C1=[N]2C)/c(CC)c4CC)C)C(=C3CC)CC)C,CC/C/1=C(CC)/C\2Cc5c(CC)c(CC)c(/C=C/4\N=C(C=c3c(CC)c(CC)c(=CC1=N2)n3C)/C(CC)C4CC)n5[Mg]
+278,CuOEP,Q06_14409-63-3_CuOEP.str.tif,CCc1c(CC)c2n3c1/C=C\1/C(CC)C(C4=N1([N]1=C(C(=C(C1C2)CC)CC)/C=c/1\n(*3)/c(=C\4)/c(c1CC)CC)C)CC,CC/C/1=C(CC)/C\2Cc5c(CC)c(CC)c(/C=C/4\N=C(C=c3c(CC)c(CC)c(=CC1=N2)n3C)/C(CC)C4CC)n5[Cu]
+279,ZnOEP,Q07_17632-18-7_ZnOEP.str.tif,CCC1/C/2=C/c3c(CC)c(c4n3[Zn]3n5/c(=C\C(=[N]2C)C1CC)/c(CC)c(c5=CC1=[N]3C(C4)C(=C1CC)CC)CC)CC,CC/C/1=C(CC)/C\2Cc5c(CC)c(CC)c(/C=C/4\N=C(C=c3c(CC)c(CC)c(=CC1=N2)n3C)/C(CC)C4CC)n5[Zn]
+280,H2TPP,Q08_917-23-7_H2TPP.str.tif,CN1/C/2=C(/c3ccccc3)\c3ccc([nH]3)/C(=C\3/C=CC(=N3)/C(=c/3\[nH]/c(=C(\C1C=C2)/c1ccccc1)/cc3)/c1ccccc1)/c1ccccc1,c9ccc(c7c1ccc(n1)c(c2ccccc2)c3ccc([nH]3)c(c4ccccc4)c5ccc(n5)c(c6ccccc6)c8ccc7[nH]8)cc9
+281,MgTPP,Q09_14640-21-2_MgTPP.str.tif,C[N]1=C2C=C/C/1=C(\c1ccccc1)/c1ccc(n1*)/C(=C\1/C=CC(/C(=c/3\n(/c(=C\2/c2ccccc2)/cc3)C)/c2ccccc2)[N]1(C)C)/c1ccccc1,c%10ccc(c6c1ccc(n1)c(c2ccccc2)c8ccc9c(c3ccccc3)c4ccc(n4)c(c5ccccc5)c7ccc6n7[Mg]n89)cc%10
+282,ZnTPP,Q10_14074-80-7_ZnTPP.str.tif,C[N]12C3=C(c4ccccc4)c4n5[Zn]62[N]2=C(C=CC2=C(c5cc4)c2ccccc2)C(=c2n6c(=C(C1C=C3)c1ccccc1)cc2)c1ccccc1,c%10ccc(c6c1ccc(n1)c(c2ccccc2)c8ccc9c(c3ccccc3)c4ccc(n4)c(c5ccccc5)c7ccc6n7[Zn]n89)cc%10
+283,H2TMP,Q11_56396-12-4_H2TMP.str.tif,Cc1cc(C)c(c(c1)C)/C/1=C/2\C=CC(=N2)/C(=c\2/cc/c(=C(/C3N(/C(=C(\c4[nH]c1cc4)/c1c(C)cc(cc1C)C)/C=C3)C)\c1c(C)cc(cc1C)C)/[nH]2)/c1c(C)cc(cc1C)C,Cc9cc(C)c(/C4=C/8\C=C/C(C(c1c(C)cc(C)cc1C)=c7ccc(=C(c2c(C)cc(C)cc2C)c6ccc(=C(c3c(C)cc(C)cc3C)c5ccc4[nH]5)n6)[nH]7)N8C)c(C)c9
+284,MgTMP,Q12_MgTMP.str.tif,Cc1cc(C)c(c(c1)C)/C/1=C/2\C=CC(=[N]2C)/C(=c\2/cc/c(=C(/C3[N](/C(=C(\c4n(c1cc4)*)/c1c(C)cc(cc1C)C)/C=C3)(C)C)\c1c(C)cc(cc1C)C)/n2C)/c1c(C)cc(cc1C)C,Cc%10cc(C)c(/C4=C/9\C=C/C(C(c1c(C)cc(C)cc1C)=c7ccc6=C(c2c(C)cc(C)cc2C)c8ccc(=C(c3c(C)cc(C)cc3C)c5ccc4n5[Mg]n67)n8)N9C)c(C)c%10
+285,ZnTMP,Q13_ZnTMP.str.tif,Cc1cc(C)c(c(c1)C)/C/1=C/2\C=CC(=[N]2C)/C(=c/2\n3[Zn]4n5c1ccc5C(=C1[N]4(C)C(C(=c3cc2)c2c(C)cc(cc2C)C)C=C1)c1c(C)cc(cc1C)C)/c1c(C)cc(cc1C)C,Cc%10cc(C)c(/C4=C/9\C=C/C(C(c1c(C)cc(C)cc1C)=c7ccc6=C(c2c(C)cc(C)cc2C)c8ccc(=C(c3c(C)cc(C)cc3C)c5ccc4n5[Zn]n67)n8)N9C)c(C)c%10
+286,H2TTP,Q14_14527-51-6_H2TTP.str.tif,Cc1ccc(cc1)/C/1=C/2\C=CC(=N2)/C(=c\2/cc/c(=C(/C3=N/C(=C(\c4[nH]c1cc4)/c1ccc(cc1)C)/C=C3)\c1ccc(cc1)C)/[nH]2)/c1ccc(cc1)C,
+287,(o-H2NPh)H2P,Q15_52199-35-6_(o-H2NPh)H2P.str.tif,Nc1ccccc1C1C2C=C/C(=C(/C3=N/C(=C(\c4[nH]c(/C(=C/5\N=C1C=C5)/c1ccccc1N)cc4)/c1ccccc1N)/C=C3)\c1ccccc1N)/N2,
+288,(ODC)H2P,Q16_37083-37-7_(ODC)H2P.str.tif,Cc1cccc(c1/C/1=C/2\C=CC(=N2)/C(=c\2/cc/c(=C(/C3=N/C(=C(\c4[nH]c1cc4)/c1c(Cl)cccc1Cl)/C=C3)\c1c(C)cccc1C)/[nH]2)/c1c(C)cccc1C)Cl,Cc1cccc(Cl)c1c8c2ccc(n2)c(c3c(Cl)cccc3Cl)c4ccc([nH]4)c(c5c(Cl)cccc5Cl)c6ccc(n6)c(c7c(Cl)cccc7Cl)c9ccc8[nH]9
+289,C6F5-H2P,Q17_25440-14-6_C6F5-H2P.str.tif,Fc1c(c(F)c(c(c1F)F)F)/C/1=C/2\CCC(=N2)/C(=c\2/cc/c(=C(/C3=N/C(=C(\c4[nH]c1cc4)/c1c(F)c(F)c(c(c1F)F)F)/C=C3)\c1c(F)c(F)c(c(c1F)F)F)/[nH]2)/c1c(F)c(F)c(c(c1F)F)F,
+290,N-Confused tetraphenylporphyrin,Q18_N-Confused_tetraphenylporphyrin.str.tif,c1ccc(cc1)/C/1=C/2\C=NC(=C2)/C(=c\2/cc/c(=C(/C3=N/C(=C(\c4[nH]c1cc4)/c1ccccc1)/C=C3)\c1ccccc1)/[nH]2)/c1ccccc1,
+291,H4TPP2+,Q19_H4TPP2+.str.tif,c1ccc(cc1)/C/1=C/2\C=CC(=N2)/C(=c\2/cc/c(=C(/C3=N/C(=C(\c4[nH]c1cc4)/c1ccccc1)/C=C3)\c1ccccc1)/[nH]2)/c1ccccc1,c9ccc(c7c1ccc([nH]1)c(c2ccccc2)c3ccc([nH+]3)c(c4ccccc4)c5ccc([nH]5)c(c6ccccc6)c8ccc7[nH+]8)cc9
+292,ZnTMP.+,Q20_ZnTMP+.str.tif,Cc1cc(C)c(c(c1)C)C1=C2C=CC3=[N]2[Zn]24n5c1ccc5C(=C1[N]2=C(C=C1)C(=c1n4c(=C3c2c(C)cc(cc2C)C)cc1)c1c(C)cc(cc1C)C)c1c(C)cc(cc1C)C,Cc%10cc(C)c(c6c1ccc(n1)c(c2c(C)cc(C)cc2C)c8ccc9c(c3c(C)cc(C)cc3C)c4ccc(n4)c(c5c(C)cc(C)cc5C)c7ccc6n7[Zn]n89)c(C)c%10
+293,Protoporphyrin IX dimethyl ester,Q21_5522-66-7_Protoporphyrin_IX_dimethyl_ester.str.tif,COC(=O)CCC1=C(C)/C/2=C/c3[nH]c(c(c3C)C=C)/C=C/3\N=C(/C=c/4\[nH]/c(=C\C1=N2)/c(CCC(=O)OC)c4C)C(=C3C)C=C,
+294,Hematin,Q22_15489-90-4_Hematin.str.tif,C=CC1=C(C)C2=Cc3n4[Fe]5([N]2=C1C=c1c(C)c(/c(=C/C2=[N](/C(=C\c4c(c3C=C)C)/C(=C2CCC(=O)O)C)C)/n51)CCC(=O)O)O,C=Cc1c(C)c2cc4c(C)c(CCC(=O)O)c5cc6nc(cc3c(C=C)c(C)c(cc1n2)n3[Fe+](O)n45)c(C)c6CCC(=O)O
+295,Tetrabenzoporphine,Q23_52952-31-5_Tetrabenzoporphine.str.tif,C1=CC2C(C=C1)/C/1=C/C3=N/C(=C\c4[nH]c(/C=C/5\N=C(/C=C/2\N1)c1ccccc51)c1c4cccc1)/c1c3cccc1,c3ccc2c1cc8[nH]c(cc6nc(cc4[nH]c(cc(n1)c2c3)c5ccccc45)c7ccccc67)c9ccccc89
+296,H2TBP(CO2Bu),Q24_H2TBP(CO2Bu).str.tif,OC(=O)c1cc2/C/3=C/c4[nH]c(c5c4cc(*)c(c5)*)/C=C/4\N=C(/C=c/5\[nH]/c(=C\C(=N3)c2cc1C(=O)O)/c1cc(C(=O)O)c(cc51)C(=O)O)c1c4cc(*)c(c1)*,CCCCC(O)(O)c3cc2c1cc8[nH]c(cc6nc(cc4[nH]c(cc(n1)c2cc3C(O)(O)CCCC)c5cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc45)c7cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc67)c9cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc89
+297,ZnTBP(CO2Bu),Q25_ZnTBP(CO2Bu).str.tif,OC(=O)c1cc2c(cc1C(=O)O)C1=[N]3C2=Cc2c4cc(*)c(cc4c4n2[Zn]23[N]3=C(C=c5n2c(=C1)c1cc(C(=O)O)c(cc51)C(=O)O)c1c(C3=C4)cc(c(c1)*)*)*,CCCCC(O)(O)c5cc4c3cc7c1cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc1c8cc9nc(cc6c2cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc2c(cc(n3)c4cc5C(O)(O)CCCC)n6[Zn]n78)c%10cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc9%10
+298,PdTBP(CO2Bu),Q26_PdTBP(CO2Bu).str.tif,OC(=O)c1cc2c3=CC4=[N]5*6n3/c(=C\C3=[N](C)/C(=C\c7n6c(C=C5c5c4cc(C(=O)O)c(c5)C(=O)O)c4c7cc(c(c4)*)*)/c4c3cc(*)c(c4)*)/c2cc1C(=O)O,CCCCC(O)(O)c5cc4c3cc7c1cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc1c8cc9nc(cc6c2cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc2c(cc(n3)c4cc5C(O)(O)CCCC)n6[Pd]n78)c%10cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc9%10
+299,H2TBP(CO2Me)Ph,Q27_H2TBP(CO2Me)Ph.str.tif,COC(=O)C1=CC=C(CC1)C1C2N/C(=C(/c3ccc(cc3)C(=O)OC)\C3=N/C(=C(\c4[nH]c(/C(=C/5\N=C1c1ccccc51)/c1ccc(cc1)C(=O)OC)c1ccccc41)/c1ccc(cc1)C(=O)OC)/c1c3cccc1)/c1c2cccc1,
+300,ZnTBP(CO2Me)Ph,Q28_ZnTBP(CO2Me)Ph.str.tif,COC(=O)C1=CC=C(CC1)C1C2c3ccccc3C3=C(c4ccc(cc4)C(=O)OC)C4=[N]5[Zn]6(N23)[N]2=C1c1ccccc1C2=C(c1n6c(C(=C5c2c4cccc2)c2ccc(cc2)C(=O)OC)c2c1cccc2)c1ccc(cc1)C(=O)OC,COC(=O)/C%14=C/C=C(C6c%12nc(=C(c1ccc(C(=O)OC)cc1)c9c2ccccc2c8C(c3ccc(C(=O)OC)cc3)=c%10nc(/C(c4ccc(C(=O)OC)cc4)=C\7c5ccccc5C6N7[Zn]n89)c%11ccccc%10%11)c%13ccccc%12%13)\CC%14
+301,PdTBP(CO2Me)Ph,Q29_PdTBP(CO2Me)Ph.str.tif,COC(=O)C1=CC=C(CC1)C1C2=[N](C)/C(=C(/c3ccc(cc3)C(=O)OC)\c3n4P[C]56(N7C1c1ccccc1C7=C(c1ccc(cc1)C(=O)OC)C1=[N](C6)C(=C(c4c4c3cccc4)c3ccc(cc3)C(=O)OC)c3c1cccc3)CC5)/c1c2cccc1,COC(=O)/C%14=C/C=C(C6c%12nc(=C(c1ccc(C(=O)OC)cc1)c9c2ccccc2c8C(c3ccc(C(=O)OC)cc3)=c%10nc(/C(c4ccc(C(=O)OC)cc4)=C\7c5ccccc5C6N7[Pd]n89)c%11ccccc%10%11)c%13ccccc%12%13)\CC%14
+302,ZnTCPH(CO2Me)Ph,Q30_ZnTCPH(CO2Me)Ph.str.tif,COC(=O)c1ccc(cc1)C1=C2C3=C(C4=[N]2[Zn]25n6c1c1CCCCc1c6C(=C1[N]2=C(C2=C1CCCC2)C(=c1n5c(=C4c2ccc(cc2)C(=O)OC)c2c1CCCC2)c1ccc(cc1)C(=O)OC)c1ccc(cc1)C(=O)OC)CCCC3,COC(=O)c%14ccc(c%10c2nc(c1CCCCc12)c(c3ccc(C(=O)OC)cc3)c%12c4CCCCc4c%13c(c5ccc(C(=O)OC)cc5)c7nc(c6CCCCc67)c(c8ccc(C(=O)OC)cc8)c%11c9CCCCc9c%10n%11[Zn]n%12%13)cc%14
+303,PdTCPH(CO2Me)Ph,Q31_PdTCPH(CO2Me)Ph.str.tif,COC(=O)c1ccc(cc1)C1=C2C3=C(C4=[N]2*25n6c1c1CCCCc1c6C(=C1[N](=C(C(=c6n5c(=C4c4ccc(cc4)C(=O)OC)c4c6CCCC4)c4ccc(cc4)C(=O)OC)C4=C1CCCC4)*2)c1ccc(cc1)C(=O)OC)CCCC3,COC(=O)c%14ccc(c%10c2nc(c1CCCCc12)c(c3ccc(C(=O)OC)cc3)c%12c4CCCCc4c%13c(c5ccc(C(=O)OC)cc5)c7nc(c6CCCCc67)c(c8ccc(C(=O)OC)cc8)c%11c9CCCCc9c%10n%11[Pd]n%12%13)cc%14
+304,H2TBP(CO2Bu)Ph,Q32_H2TBP(CO2Bu)Ph.str.tif,*c1cc2C3=N/C(=C(/c4ccccc4)\c4[nH]c(c5c4cc(*)c(c5)*)/C(=C/4\N=C(/C(=c/5\[nH]/c(=C\3/c3ccccc3)/c3cc(C(=O)O)c(cc53)C(=O)O)/c3ccccc3)c3cc(C(=O)O)c(cc43)*)/c3ccccc3)/c2cc1*,CCCCC(O)(O)c1cc2c(cc1C(O)(O)CCCC)c6nc2c(c3ccccc3)c%13[nH]c(c(c4ccccc4)c%11nc(c(c5ccccc5)c9[nH]c(c6c7ccccc7)c8cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc89)c%10cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc%10%11)c%12cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc%12%13
+305,ZnTBP(CO2Bu)Ph,Q33_ZnTBP(CO2Bu)Ph.str.tif,*c1cc2c(cc1*)C1=[N]3C2=C(c2ccccc2)c2c4cc(*)c(cc4c4n2[Zn]23[N]3=C(c5c(C3=C4c3ccccc3)cc(c(c5)C(=O)O)*)C(=c3n2c(=C1c1ccccc1)c1cc(C(=O)O)c(cc31)C(=O)O)c1ccccc1)*,CCCCC(O)(O)c1cc2c(cc1C(O)(O)CCCC)c8nc2c(c3ccccc3)c%11c4cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc4c%12c(c5ccccc5)c%14nc(c(c6ccccc6)c%10c7cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc7c(c8c9ccccc9)n%10[Zn]n%11%12)c%13cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc%13%14
+306,PdTBP(CO2Bu)Ph,Q34_PdTBP(CO2Bu)Ph.str.tif,*c1cc2c3C(=C4[N]5=C(c6c4cc(*)c(c6)*)C(=c4n6C7P(n3c(c2cc1*)C(=C1[N](=C(c2c1cc(*)c(c2)C(=O)O)C(=c6c1c4cc(c(c1)C(=O)O)C(=O)O)c1ccccc1)C7)c1ccccc1)C5)c1ccccc1)c1ccccc1,CCCCC(O)(O)c1cc2c(cc1C(O)(O)CCCC)c8nc2c(c3ccccc3)c%11c4cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc4c%12c(c5ccccc5)c%14nc(c(c6ccccc6)c%10c7cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc7c(c8c9ccccc9)n%10[Pd]n%11%12)c%13cc(C(O)(O)CCCC)c(C(O)(O)CCCC)cc%13%14
+307,Ph-Corrole,R01_246231-45-8_Ph-Corrole.str.tif,c1ccc(cc1)/C/1=c/2\cc/c(=C(/C3=CCC(N3)c3[nH]c(/C(=C/4\N=C1C=C4)/c1ccccc1)cc3)\c1ccccc1)/[nH]2,Oc8ccc(C4=c7ccc(=C(c1ccc(O)cc1)c6ccc(=C(c2ccc(O)cc2)c3ccc([nH]3)C5CC=C4N5)n6)[nH]7)cc8
+308,C6F5-Corrole,R02_262280-80-8_C6F5-Corrole.str.tif,Fc1c(F)c(/C/2=C/3\C=CC(=N3)/C(=c\3/cc/c(=C(/c4[nH]c(-c5[nH]c2cc5)cc4)\c2c(F)c(F)c(c(c2F)F)F)/[nH]3)/c2c(F)c(F)c(c(c2F)F)F)c(c(c1F)F)F,
+309,Sapphyrin,R03_Sapphyrin.str.tif,c1ccc(cc1)/C/1=C/2\C=CC(=N2)/C(=c\2/cc/c(=C(/C3=N/C(=C(\c4[nH]c(C5NC1=CC5)cc4)/c1ccccc1)/C=C3)\c1ccccc1)/[nH]2)/c1ccccc1,Oc%10ccc(C6=c1ccc(n1)C(c2ccc(O)cc2)=c9ccc(=C(c3ccc(O)cc3)c8ccc(=C(c4ccc(O)cc4)c5ccc([nH]5)C7CC=C6N7)n8)[nH]9)cc%10
+310,Bilirubin,R04_635-65-4_Bilirubin.str.tif,C=CC1=C(C)/C(=C/c2[nH]c(c(c2C)CCC(=O)O)Cc2[nH]c(c(c2CCC(=O)O)C)/C=C/2\NC(=O)C(=C2C=C)C)/NC1=O,
+311,Biliverdin dimethyl ester,R05_10035-62-8_Biliverdin_dimethyl_ester.str.tif,COC(=O)CCc1c(/C=C/2\N=C(C(=C2CCC(=O)OC)C)/C=C/2\NC(=O)C(=C2C=C)C)[nH]c(c1C)/C=C/1\NC(=O)C(=C1C)C=C,COC(=O)CCc1c(/C=C/2\N=C(C(=C2CCC(=O)OC)C)/C=C/2\NC(=O)C(=C2C=C)C)[nH]c(c1C)/C=C/1\NC(=O)C(=C1C)C=C
+312,Cyanocobalamin,R06_68-19-9_Cyanocobalamin.str.tif,*CC[C@@H]1C2=[N]3C([C@@]1(C)C*)[C@H]1[C@H](C*)[C@@](/C/4=C(\C)/C5=[N](/C(=C\C6=[N](C(=C2C)[C@@](C)(CC(=O)N)[C@@H]6[IH]CC(=O)N)*(C3)(N14)(C#N)C1C*=C1)/C(C)C[C@@H]5CCC(=O)N)CO)(C)CCC(=O)NC[C@H](O*(=O)(OC1C(CO)OC(C1O)N1C=[N](c2c1cc(C)c(c2)C)I)O)C,C/C1=C\8N=C(/C=C/7N=C(/C(C)=C\6C(CCC(N)=O)C(C)(CC(N)=O)C(C)(C5N=C1C(C)(CCC(=O)NCC(C)OP(=O)([O-])OC4C(O)C(n3cnc2cc(C)c(C)cc23)OC4CO)C5CC(N)=O)N6[Co+3])C(C)(CC(N)=O)C7CCC(N)=O)C(C)(C)C8CCC(N)=O.[C-]#N
+313,H2Pc,S01_574-93-6_H2Pc.str.tif,c1ccc2c(c1)C1=N/C/2=N\c2[nH]c(c3c2cccc3)/N=C/2\N=C(/N=c/3\[nH]/c(=N\1)/c1ccccc31)c1c2cccc1,c1ccc2c(c1)C1=N/C/2=N\c2[nH]c(c3c2cccc3)/N=C/2\N=C(/N=c/3\[nH]/c(=N\1)/c1ccccc31)c1c2cccc1
+314,MgPc,S02_1661-03-6_MgPc.str.tif,C[N]1=C2/N=c\3/c4ccccc4/c(=N/C4=[N]5C*n6c(/N=C\1/c1c2cccc1)c1ccccc1c6N=C5c1c4cccc1)/n3C,c%10ccc9c3nc(nc5c1ccccc1c6nc7nc(nc4c2ccccc2c(n3)n4[Mg]n56)c8ccccc78)c9c%10
+315,FePc,S03_132-16-1_FePc.str.tif,C[N]1=C2/N=c\3/c4CCC=Cc4c4=NC5=[N]6[Fe](n7c(/N=C\1/c1c2cccc1)c1ccccc1c7N=C6c1c5cccc1)n34,c%10ccc9c3nc(nc5c1ccccc1c6nc7nc(nc4c2ccccc2c(n3)n4[Fe]n56)c8ccccc78)c9c%10
+316,ZnPc,S04_14320-04-8_ZnPc.str.tif,C[N]1=C2/N=C\3/C4CCC=CC4C4=NC5=[N]6[Zn](n7c(/N=C\1/c1c2cccc1)c1ccccc1c7N=C6c1c5cccc1)N34,c%10ccc9c3nc(nc5c1ccccc1c6nc7nc(nc4c2ccccc2c(n3)n4[Zn]n56)c8ccccc78)c9c%10
+317,H2Pc(OBu),S05_116453-73-7_H2Pc(OBu).str.tif,*c1ccc(c2c1C1=N/C/2=N\c2[nH]c(c3c2c(*)ccc3*)/N=C/2\N=C(/N=c/3\[nH]/c(=N\1)/c1c(*)ccc(c31)*)c1c(*)ccc(c21)*)*,CCCC(O)c1cc2c(cc1C(C)O)c3nc9nc(nc7[nH]c(nc5nc(nc2[nH]3)c4cc(C(O)CCC)c(C(O)CCC)cc45)c6cc(C(O)CCC)c(C(O)CCC)cc67)c8cc(C(O)CCC)c(C(O)CCC)cc89
+318,H2Pc(tBu),S06_35984-93-1_H2Pc(tBu).str.tif,c1ccc2c(c1)C1=N/C/2=N\c2[nH]c(c3c2cccc3)/N=C/2\N=C(/N=c/3\[nH]/c(=N\1)/c1ccccc31)c1c2cccc1,CC(C)(C)c9ccc8c1nc(nc6[nH]c(nc4nc(nc2[nH]c(n1)c3cc(C(C)(C)C)ccc23)c5cc(C(C)(C)C)ccc45)c7cc(C(C)(C)C)ccc67)c8c9
+319,ZnPc(tBu),S07_39001-65-5_ZnPc(tBu).str.tif,C[N]1=C2/N=c\3/c4ccccc4c4=NC5=[N]6[Zn](n34)n3c(/N=C\1/c1c2cccc1)c1ccccc1c3N=C6c1c5cccc1,CC(C)(C)c%10ccc9c3nc(nc5c1ccc(C(C)(C)C)cc1c6nc7nc(nc4c2ccc(C(C)(C)C)cc2c(n3)n4[Zn]n56)c8cc(C(C)(C)C)ccc78)c9c%10
+320,H2Nc(OnBu),S08_105528-25-4_H2Nc(OnBu).str.tif,*C1=C2C=CC=CC2C(c2c1c1[nH]c2/N=C/2\N=C(c3c2c(*)c2c(c3*)cccc2)/N=c/2\[nH]/c(=N\C3=N/C(=N\1)/c1c3c(*)c3c(c1*)cccc3)/c1c(*)c3ccccc3c(c21)*)*,CCCCC(O)/C2=C/1\C=C/C=C\C1C(C(O)CCCC)c3c2c4nc%12nc(nc9[nH]c(nc6nc(nc3[nH]4)c7c(C(O)CCCC)c5ccccc5c(C(O)CCCC)c67)c%10c(C(O)CCCC)c8ccccc8c(C(O)CCCC)c9%10)c%13c(C(O)CCCC)c%11ccccc%11c(C(O)CCCC)c%12%13
+321,H2Nc(tBu),S09_58687-99-3_H2Nc(tBu).str.tif,CC(C1=CC2C(=CC3=C(C2)C2=N/C/3=N\c3[nH]c(c4c3cc3cc(ccc3c4)C(C)(C)C)/N=C/3\N=C(/N=c/4\[nH]/c(=N\2)/c2cc5ccc(cc5cc42)C(C)(C)C)c2c3cc3c(c2)ccc(c3)C(C)(C)C)C=C1)(C)C,
+322,H2N4P(tBu),S10_64987-70-8_H2N4P(tBu).str.tif,C1=CC2=N/C/1=N\c1ccc([nH]1)/N=C\1/C=CC(=N1)/N=c/1\[nH]/c(=N\2)/cc1,CC(C)(C)c1cc3nc1nc5cc(C(C)(C)C)c(nc2cc(C(C)(C)C)c(n2)nc4cc(C(C)(C)C)c(n3)[nH]4)[nH]5
+323,Boron subphthalocyanine chloride,S11_36530-06-0_Boron_subphthalocyanine_chloride.str.tif,C[B]12[N]3=C4N=c5n2c(=Nc2n1c(N=C3c1c4cccc1)c1c2cccc1)c1c5cccc1,B1(N2C3=C4C=CC=CC4=C2N=C5N1C(=NC6=NC(=N3)C7=CC=CC=C76)C8=CC=CC=C85)Cl
+324,Chlorophyll a  ,T01_479-61-8_Chlorophyll_a.str.tif,COC(=O)[C@@H]1C2=c3c(C1=O)c(/c(=C/C1=[N]4*5[N]6=C2[C@@H](CCC(=O)OC/C=C(/CCC[C@@H](CCC[C@@H](CCCC(C)C)C)C)\C)[C@@H](C6=Cc2n5c(CC4C(=C1CC)C)c(c2C)C=C)I)/n3C)C,C=Cc2c(C)c3cc7nc(c1c5c(C(=O)C1C(=O)OC)c(C)c4cc6nc(cc2n3[Mg]n45)c(C)c6CC)C(CCC(=O)OC/C=C(C)/CCCC(C)CCCC(C)CCCC(C)C)C7C
+325,Chlorophyll b,T02_519-62-0_Chlorophyll_b.str.tif,CO[C](#C[C@H]1C(=O)C2=C(C)/C/3=C/C4=[N]5*6[N]7=C(C1C2N3C)[C@@H](CCC(=O)OC/C=C(/CCC[C@@H](CCC[C@@H](CCCC(C)C)C)C)\C)[C@@H](C7=Cc1n6c(C=C5C(=C4CC)C=O)c(c1C)C=C)C#C)=O,C=Cc2c(C)c3cc7nc(c1c5c(C(=O)C1C(=O)OC)c(C)c4cc6nc(cc2n3[Mg]n45)c(C=O)c6CC)C(CCC(=O)OC/C=C(C)/CCCC(C)CCCC(C)CCCC(C)C)C7C
+326,Pheophorbide a,T03_15664-29-6_Pheophorbide_a.str.tif,COC1*[C]1#C[C@@H]1C2=c3c(C1=O)c(/c(=C/C1=N/C(=C\c4[nH]c(CC5N=C2[C@@H](CCC(=O)O)[C@@H]5C)c(C)c4C=C)/C(=C1CC)C)/[nH]3)C,C=Cc1c(C)c2cc6nc(c5c4[nH]c(cc3nc(cc1[nH]2)c(C)c3CC)c(C)c4C(=O)C5C(=O)OC)C(CCC(=O)O)C6C
+327,Pyropheophorbide a,T04_24533-72-0_Pyropheophorbide_a.str.tif,C#C[C@@H]1C2Cc3[nH]c(c(c3C)C=C)/C=C/3\N=C(/C=c/4\[nH]c5=C(C(=N2)[C@H]1CCC(=O)O)CC(=O)c5c4C)C(=C3C)CC,C=Cc1c(C)c2cc6nc(c4CC(=O)c5c(C)c(cc3nc(cc1[nH]2)c(C)c3CC)[nH]c45)C(CCC(=O)O)C6C
+328,Pyropheophorbide a methyl ester,T05_6453-67-4_Pyropheophorbide_a_methyl_ester.str.tif,COC(=O)CC[C@H]1[C@H](C)/C/2=C/c3[nH]c(c(c3C)C=C)/C=C/3\N=C(/C=C/4\NC5=C(C1=N2)CC(=O)C5C4C)C(=C3C)CC,C=Cc1c(C)c2cc6nc(c4CC(=O)c5c(C)c(cc3nc(cc1[nH]2)c(C)c3CC)[nH]c45)[C@@H](CCC(=O)OC)[C@@H]6C
+329,Chlorin e6 ,T06_19660-77-6_Chlorin_e6.str.tif,C#C[C@@H]1/C/2=C/c3[nH]c(c(c3C)C=C)/C=C/3\N=C(/C=c/4\[nH]/c(=C(\C(=N2)[C@H]1CCC(=O)O)/CC(=O)O)/c(C(=O)O)c4C)C(=C3C)CC,C=Cc1c(C)c2cc6nc(c5c(=O)oc(=O)c4c(C)c(cc3nc(cc1[nH]2)c(C)c3CC)[nH]c45)[C@@H](CCC(=O)O)[C@@H]6C
+330,Purpurin 18,T07_25465-77-4_Purpurin_18.str.tif,CCC1=C(C)/C/2=C/c3[nH]c(c(c3C=C)C)/C=C/3\N=C(C4=c5[nH]/c(=C\C1=N2)/c(C)c5C(=O)OC4=O)[C@@H](CCC(=O)O)[C@@H]3C,
+331,H2TPC,T08_2669-65-0_H2TPC.str.tif,c1ccc(cc1)C1c2ccc([nH]2)/C(=C\2/CCC(=N2)/C(=c/2\[nH]/c(=C(\C3=NC1C=C3)/c1ccccc1)/cc2)/c1ccccc1)/c1ccccc1,
+332,H2C-1,T09_H2C-1.str.tif,Cc1ccc(cc1)/C/1=C/2\C=CC(=N2)/C(=c\2/cc/c(=C/C3=N/C(=C\c4[nH]c1cc4)/C(C)(C)C3)/[nH]2)/c1c(C)cc(cc1C)C,
+333,CuC-1,T10_CuC-1.str.tif,Cc1ccc(cc1)C1=C2C=CC3=[N]2[*@]24n5c1ccc5C=C1[N]4=C(C=c4n2c(=C3c2c(C)cc(cc2C)C)cc4)CC1(C)C,Cc8ccc(c3c1ccc(n1)c(c2c(C)cc(C)cc2C)c6ccc5cc7CC(C)(C)c(cc4ccc3n4[Cu]n56)n7)cc8
+334,ZnC-1,T11_ZnC-1.str.tif,Cc1ccc(cc1)C1=C2C=CC3=[N]2[Zn]24n5c1ccc5C=C1[N]4=C(C=c4n2c(=C3c2c(C)cc(cc2C)C)cc4)CC1(C)C,Cc8ccc(c3c1ccc(n1)c(c2c(C)cc(C)cc2C)c6ccc5cc7CC(C)(C)c(cc4ccc3n4[Cu]n56)n7)cc8
+335,H2COxo-1,T12_H2COxo-1.str.tif,Cc1ccc(cc1)/C/1=C/2\C=CC(=N2)/C(=c\2/cc/c(=C/C3=N/C(=C\c4[nH]c1cc4)/C(C)(C)C3=O)/[nH]2)/c1c(C)cc(cc1C)C,
+336,MgCOxo-1,T13_MgCOxo-1.str.tif,Cc1ccc(cc1)C1=C2C=CC3=[N]2C*2n4c1ccc4C=C1[N](=C(/C=c/4\n(/c(=C\3/c3c(C)cc(cc3C)C)/cc4)C)C(=O)C1(C)C)C2,Cc7ccc(c3c1ccc(n1)c(c2c(C)cc(C)cc2C)c6ccc(cc5nc(cc4ccc3n4[Mg])C(C)(C)C5=O)n6C)cc7
+337,CuCOxo-1,T14_CuCOxo-1.str.tif,Cc1ccc(cc1)C1=C2C=CC3=[N]2[*@]24n5c1ccc5C=C1[N]4=C(C=c4n2c(=C3c2c(C)cc(cc2C)C)cc4)C(=O)C1(C)C,Cc7ccc(c3c1ccc(n1)c(c2c(C)cc(C)cc2C)c6ccc(cc5nc(cc4ccc3n4[Cu])C(C)(C)C5=O)n6C)cc7
+338,ZnCOxo-1,T15_ZnCOxo-1.str.tif,Cc1ccc(cc1)C1=C2C=CC3=[N]2[Zn]24n5c1ccc5C=C1[N]4=C(C=c4n2c(=C3c2c(C)cc(cc2C)C)cc4)C(=O)C1(C)C,Cc7ccc(c3c1ccc(n1)c(c2c(C)cc(C)cc2C)c6ccc(cc5nc(cc4ccc3n4[Zn])C(C)(C)C5=O)n6C)cc7
+339,Bacteriochlorophyll a,T16_17499-98-8_Bacteriochlorophyll_a.str.tif,COC(=O)CC[C@H]1[C@H](C#C)/C/2=C/c3n4*C[N]5=C(/C=c/6\n(c7=C(C1=[N]2C)[C@@H](C(=O)OC)C(=O)c7c6C)C)C([C@H](C5=Cc4c(c3C)C(=O)C)C)(C)CC,CCC2c1cc4c(C)c5C(=O)C(C(=O)OC)c6c7nc(cc3c(C)c(C(C)=O)c(cc(n1)C2C)n3[Mg]n4c56)C(C)C7CCC(=O)OC/C=C(C)/CCCC(C)CCCC(C)CCCC(C)C

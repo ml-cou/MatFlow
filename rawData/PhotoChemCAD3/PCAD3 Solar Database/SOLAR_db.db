@@ -1,0 +1,994 @@
+[Spectra]
+Number = 30
+
+[1 Absorption]
+Name = Barrow 0715 Mar 24, 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Barrow, AK.str.bmp
+[1 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[1 LightSource]
+File = Barrow 0715 Mar 24, 2000 NSF.els.txt
+Cloud = 
+Date = 3/24/2000
+Instrument = 
+Inv = 
+Location = Borrows, Alaska, USA
+Ref = http://www.biospherical.com/NSF
+Time = 7:15 AM
+
+[2 Absorption]
+Name = Barrow 0700 Sept 2, 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Barrow, AK.str.bmp
+[2 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[2 LightSource]
+File = Barrow 0700 Sept 2, 2000 NSF.els.txt
+Cloud = 
+Date = 9/2/2000
+Instrument = 
+Inv = 
+Location = Barrows, Alaska, USA
+Ref = www.biospherical.com/NSF
+Time = 7:00 AM
+
+[3 Absorption]
+Name = Barrow 1200 Oct 31, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Barrow, AK.str.bmp
+[3 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[3 LightSource]
+File = Barrow 1200 Oct 31, 1997 NSF.els.txt
+Cloud = 
+Date = 10/31/1997
+Instrument = 
+Inv = 
+Location = Barrows, Alaska, USA
+Ref = www.biospherical.com/NSF
+Time = 12:00 PM
+
+[4 Absorption]
+Name = Barrow 1500 Mar 20, 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Barrow, AK.str.bmp
+[4 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[4 LightSource]
+File = Barrow 1500 Mar 20, 2000 NSF.els.txt
+Cloud = 
+Date = 3/20/2000
+Instrument = 
+Inv = 
+Location = Barrows, Alaska, USA
+Ref = www.biospherical.com/NSF
+Time = 3:00 PM
+
+[5 Absorption]
+Name = Barrow 1500 Oct 31, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Barrow, AK.str.bmp
+[5 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[5 LightSource]
+File = Barrow 1500 Oct 31, 1997 NSF.els.txt
+Cloud = 
+Date = 10/31/1997
+Instrument = 
+Inv = 
+Location = Barrows, Alaska, USA
+Ref = www.biospherical.com/NSF
+Time = 3:00 PM
+
+[6 Absorption]
+Name = Barrow 1700 Oct 28, 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Barrow, AK.str.bmp
+[6 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[6 LightSource]
+File = Barrow 1700 Oct 28, 2000 NSF.els.txt
+Cloud = 
+Date = 10/28/2000
+Instrument = 
+Inv = 
+Location = Barrows, Alaska, USA
+Ref = www.biospherical.com/NSF
+Time = 5:00 PM
+
+[7 Absorption]
+Name = San Diego 0600 Dec 9, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = San Diego, CA.str.bmp
+[7 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[7 LightSource]
+File = San Diego 0600 Dec 9, 1997 NSF.els.txt
+Cloud = 
+Date = 12/9/1997
+Instrument = 
+Inv = 
+Location = San Diego, CA, USA
+Ref = www.biospherical.com/NSF
+Time = 6:00 AM
+
+[8 Absorption]
+Name = San Diego 0600 July 6, 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = San Diego, CA.str.bmp
+[8 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[8 LightSource]
+File = San Diego 0600 July 6, 2000 NSF.els.txt
+Cloud = 
+Date = 7/6/2000
+Instrument = 
+Inv = 
+Location = San Diego, CA, USA
+Ref = www.biospherical.com/NSF
+Time = 6:00 AM
+
+[9 Absorption]
+Name = San Diego 0700 Dec 21, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = San Diego, CA.str.bmp
+[9 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[9 LightSource]
+File = San Diego 0700 Dec 21, 1997 NSF.els.txt
+Cloud = 
+Date = 12/21/1997
+Instrument = 
+Inv = 
+Location = San Diego, CA, USA
+Ref = www.biospherical.com/NSF
+Time = 7:00 AM
+
+[10 Absorption]
+Name = San Diego 0900 Feb, 29 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = San Diego, CA.str.bmp
+[10 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[10 LightSource]
+File = San Diego 0900 Feb, 29 2000 NSF.els.txt
+Cloud = 
+Date = 2/29/2000
+Instrument = 
+Inv = 
+Location = San Diego, CA, USA
+Ref = www.biospherical.com/NSF
+Time = 9:00 AM
+
+[11 Absorption]
+Name = San Diego 1600 Dec 20, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = San Diego, CA.str.bmp
+[11 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[11 LightSource]
+File = San Diego 1600 Dec 20, 1997 NSF.els.txt
+Cloud = 
+Date = 12/20/1997
+Instrument = 
+Inv = 
+Location = San Diego, CA, USA
+Ref = www.biospherical.com/NSF
+Time = 4:00 PM
+
+[12 Absorption]
+Name = San Diego 1600 Dec 8, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = San Diego, CA.str.bmp
+[12 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[12 LightSource]
+File = San Diego 1600 Dec 8, 1997 NSF.els.txt
+Cloud = 
+Date = 12/8/1997
+Instrument = 
+Inv = 
+Location = San Diego, CA, USA
+Ref = www.biospherical.com/NSF
+Time = 4:00 PM
+
+[13 Absorption]
+Name = South Pole 0000 Sept 23, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = South Pole.str.bmp
+[13 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[13 LightSource]
+File = South Pole 0000 Sept 23, 1997 NSF.els.txt
+Cloud = 
+Date = 9/23/1997
+Instrument = 
+Inv = 
+Location = South Pole
+Ref = www.biospherical.com/NSF
+Time = 12:00 AM
+
+[14 Absorption]
+Name = South Pole 0100 Feb 9, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = South Pole.str.bmp
+[14 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[14 LightSource]
+File = South Pole 0100 Feb 9, 1997 NSF.els.txt
+Cloud = 
+Date = 2/9/1997
+Instrument = 
+Inv = 
+Location = South Pole
+Ref = www.biospherical.com/NSF
+Time = 1:00 AM
+
+[15 Absorption]
+Name = South Pole 0500 Sept 22, 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = South Pole.str.bmp
+[15 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[15 LightSource]
+File = South Pole 0500 Sept 22, 2000 NSF.els.txt
+Cloud = 
+Date = 9/22/2000
+Instrument = 
+Inv = 
+Location = South Pole
+Ref = http://www.biospherical.com/NSF
+Time = 5:00 AM
+
+[16 Absorption]
+Name = South Pole 1100 Feb 8, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = South Pole.str.bmp
+[16 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[16 LightSource]
+File = South Pole 1100 Feb 8, 1997 NSF.els.txt
+Cloud = 
+Date = 2/8/1997
+Instrument = 
+Inv = 
+Location = South Pole
+Ref = http://www.biospherical.com/NSF
+Time = 11:00 AM
+
+[17 Absorption]
+Name = South Pole 1300 Sept 23, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = South Pole.str.bmp
+[17 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[17 LightSource]
+File = South Pole 1300 Sept 23, 1997 NSF.els.txt
+Cloud = 
+Date = 9/23/1997
+Instrument = 
+Inv = 
+Location = South Pole
+Ref = http://www.biospherical.com/NSF
+Time = 1:00 PM
+
+[18 Absorption]
+Name = South Pole 2000 Sept 17, 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = South Pole.str.bmp
+[18 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[18 LightSource]
+File = South Pole 2000 Sept 17, 2000 NSF.els.txt
+Cloud = 
+Date = 9/17/2000
+Instrument = 
+Inv = 
+Location = South Pole
+Ref = http://www.biospherical.com/NSF
+Time = 8:00 PM
+
+[19 Absorption]
+Name = Ushuaia 0900 Dec 16, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Ushuaia, Argentina.str.bmp
+[19 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[19 LightSource]
+File = Ushuaia 0900 Dec 16, 1997 NSF.els.txt
+Cloud = 
+Date = 12/16/1997
+Instrument = 
+Inv = 
+Location = Ushuaia, Argentina
+Ref = http://www.biospherical.com/NSF
+Time = 9:00 AM
+
+[20 Absorption]
+Name = Ushuaia 1000 July 10, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Ushuaia, Argentina.str.bmp
+[20 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[20 LightSource]
+File = Ushuaia 1000 July 10, 1997 NSF.els.txt
+Cloud = 
+Date = 7/10/1997
+Instrument = 
+Inv = 
+Location = Ushuaia, Argentina
+Ref = http://www.biospherical.com/NSF
+Time = 10:00 AM
+
+[21 Absorption]
+Name = Ushuaia 1400 June 11, 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Ushuaia, Argentina.str.bmp
+[21 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[21 LightSource]
+File = Ushuaia 1400 June 11, 2000 NSF.els.txt
+Cloud = 
+Date = 6/11/2000
+Instrument = 
+Inv = 
+Location = Ushuaia, Argentina
+Ref = http://www.biospherical.com/NSF
+Time = 2:00 PM
+
+[22 Absorption]
+Name = Ushuaia 1700 July 10, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Ushuaia, Argentina.str.bmp
+[22 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[22 LightSource]
+File = Ushuaia 1700 July 10, 1997 NSF.els.txt
+Cloud = 
+Date = 7/10/1997
+Instrument = 
+Inv = 
+Location = Ushuaia, Argentina
+Ref = http://www.biospherical.com/NSF
+Time = 5:00 PM
+
+[23 Absorption]
+Name = Ushuaia 1700 July 10, 2000 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Ushuaia, Argentina.str.bmp
+[23 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[23 LightSource]
+File = Ushuaia 1700 July 10, 2000 NSF.els.txt
+Cloud = 
+Date = 7/10/2000
+Instrument = 
+Inv = 
+Location = Ushuaia, Argentina
+Ref = http://www.biospherical.com/NSF
+Time = 5:00 PM
+
+[24 Absorption]
+Name = Ushuaia 2100 Dec 15, 1997 NSF
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Ushuaia, Argentina.str.bmp
+[24 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Science Foundation (NSF)
+Notes = NSF spectra were manipulated to have a set interval between wavelength values.  The units are microWcm-2nm-1.
+[24 LightSource]
+File = Ushuaia 2100 Dec 15, 1997 NSF.els.txt
+Cloud = 
+Date = 12/15/1997
+Instrument = 
+Inv = 
+Location = Ushuaia, Argentina
+Ref = http://www.biospherical.com/NSF
+Time = 9:00 PM
+
+[25 Absorption]
+Name = Golden 1200 July 28, 2003 Mostly Sunny NREL-SRRL
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Golden, CO.str.bmp
+[25 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Renewable Energy Laboratory (NREL)
+Notes = National Renewable Energy Laboratory (NREL) and Solar Radiation Research Laboratory.  With units Wm-2nm-1.
+[25 LightSource]
+File = Golden 1200 July 28, 2003 Mostly Sunny NREL-SRRL.els.txt
+Cloud = Mostly Sunny
+Date = 7/28/2003
+Instrument = 
+Inv = 
+Location = Golden, Colorado, USA
+Ref = http://rredc.nrel.gov/solar/
+Time = 12:00 PM
+
+[26 Absorption]
+Name = Golden 1300 Dec 8, 2003 Mostly Cloudy NREL-SRRL
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Golden, CO.str.bmp
+[26 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Renewable Energy Laboratory (NREL)
+Notes = National Renewable Energy Laboratory (NREL) and Solar Radiation Research Laboratory.  With units Wm-2nm-1.
+[26 LightSource]
+File = Golden 1300 Dec 8, 2003 Mostly Cloudy NREL-SRRL.els.txt
+Cloud = Mostly Cloudy
+Date = 12/8/2003
+Instrument = 
+Inv = 
+Location = Golden, Colorado, USA
+Ref = http://rredc.nrel.gov/solar/
+Time = 1:00 PM
+
+[27 Absorption]
+Name = Golden 1300 Dec 9, 2003 Mostly Sunny NREL-SRRL
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Golden, CO.str.bmp
+[27 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Renewable Energy Laboratory (NREL)
+Notes = National Renewable Energy Laboratory (NREL) and Solar Radiation Research Laboratory.  With units Wm-2nm-1.
+[27 LightSource]
+File = Golden 1300 Dec 9, 2003 Mostly Sunny NREL-SRRL.els.txt
+Cloud = Mostly Sunny
+Date = 12/9/2003
+Instrument = 
+Inv = 
+Location = Golden, Colorado, USA
+Ref = http://rredc.nrel.gov/solar/
+Time = 1:00 PM
+
+[28 Absorption]
+Name = Golden 1330 July 15, 2003 Mostly Cloudy NREL-SRRL
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Golden, CO.str.bmp
+[28 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Renewable Energy Laboratory (NREL)
+Notes = National Renewable Energy Laboratory (NREL) and Solar Radiation Research Laboratory.  With units Wm-2nm-1.
+[28 LightSource]
+File = Golden 1330 July 15, 2003 Mostly Cloudy NREL-SRRL.els.txt
+Cloud = Mostly Cloudy
+Date = July 15, 2003
+Instrument = 
+Inv = 
+Location = Golden, Colorado, USA
+Ref = http://rredc.nrel.gov/solar/
+Time = 1:30 PM
+
+[29 Absorption]
+Name = Golden 1400 July 15, 2003 Mostly Cloudy NREL-SRRL
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Golden, CO.str.bmp
+[29 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Renewable Energy Laboratory (NREL)
+Notes = National Renewable Energy Laboratory (NREL) and Solar Radiation Research Laboratory.  With units Wm-2nm-1.
+[29 LightSource]
+File = Golden 1400 July 15, 2003 Mostly Cloudy NREL-SRRL.els.txt
+Cloud = Mostly Cloudy
+Date = July 15, 2003
+Instrument = 
+Inv = 
+Location = Golden, Colorado, USA
+Ref = http://rredc.nrel.gov/solar/
+Time = 2:00 PM
+
+[30 Absorption]
+Name = Golden 1400 July 22, 2003 Mostly Sunny NREL-SRRL
+Class = 
+Instrument = 
+Solvent = 
+Epsilon = 0.000000
+Wavelength = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Structure = Golden, CO.str.bmp
+[30 Emission]
+Instrument = 
+Solvent = 
+QuantumYield = 0.000000
+Reference = 
+Date = 
+File = 
+Inv = 
+Provided = National Renewable Energy Laboratory (NREL)
+Notes = National Renewable Energy Laboratory (NREL) and Solar Radiation Research Laboratory.  With units Wm-2nm-1.
+[30 LightSource]
+File = Golden 1400 July 22, 2003 Mostly Sunny NREL-SRRL.els.txt
+Cloud = Mostly Sunny
+Date = 722/2003
+Instrument = 
+Inv = 
+Location = Golden, Colorado, USA
+Ref = http://rredc.nrel.gov/solar/
+Time = 2:00 PM
+
+[-842150451 Absorption]
+Name=
+Class=
+Instrument=
+Solvent=
+Epsilon=0.000000
+Wavelength=0.000000
+Reference=
+Date=
+File=
+Inv=
+Structure=
+[-842150451 Emission]
+Instrument=
+Solvent=
+QuantumYield=0.000000
+Reference=
+Date=
+File=
+Inv=
+Provided=
+Notes=
+[-842150451 LightSource]
+File=
+Cloud=
+Date=
+Instrument=
+Inv=
+Location=
+Ref=
+Time=

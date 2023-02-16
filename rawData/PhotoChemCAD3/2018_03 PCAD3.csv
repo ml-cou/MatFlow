@@ -1,0 +1,340 @@
+,Absorption,Name,Structure,Class,File,Wavelength,Epsilon,Solvent,Emission,File.1,Solvent.1,Quantum Yield
+0,,Benzene,A01_71-43-2_Benzene.str.tif,Aromatic Hydrocarbons,A01_71-43-2_Benzene.abs.txt,254.75,210,cyclohexane,,A01_71-43-2_Benzene.ems.txt,hexane,0.053
+1,,Toluene,A02_108-88-3_Toluene.str.tif,Aromatic Hydrocarbons,A02_108-88-3_Toluene.abs.txt,261.75,"2,860",cyclohexane,,A02_108-88-3_Toluene.ems.txt,cyclohexane,0.17
+2,,o-Xylene,A03_95-47-6_o-Xylene.str.tif,Aromatic Hydrocarbons,A03_95-47-6_o-Xylene.abs.txt,263.0,254,cyclohexane,,A03_95-47-6_o-Xylene.ems.txt,hexane,0.17
+3,,m-Xylene,A04_108-38-3_m-Xylene.str.tif,Aromatic Hydrocarbons,A04_108-38-3_m-Xylene.abs.txt,265.0,284,cyclohexane,,A04_108-38-3_m-Xylene.ems.txt,hexane,0.13
+4,,p-Xylene,A05_106-42-3_p-Xylene.str.tif,Aromatic Hydrocarbons,A05_106-42-3_p-Xylene.abs.txt,275.0,770,cyclohexane,,A05_106-42-3_p-Xylene.ems.txt,hexane,0.22
+5,,Mesitylene,A06_108-67-8_Mesitylene.str.tif,Aromatic Hydrocarbons,A06_108-67-8_Mesitylene.abs.txt,265.0,190,cyclohexane,,A06_108-67-8_Mesitylene.ems.txt,hexane,0.088
+6,,Durene,A07_95-93-2_Durene.str.tif,Aromatic Hydrocarbons,A07_95-93-2_Durene.abs.txt,278.0,214,cyclohexane,,A07_95-93-2_Durene.ems.txt,hexane,0.3
+7,,Pentamethylbenzene,A08_700-12-9_Pentamethylbenzene.str.tif,Aromatic Hydrocarbons,A08_700-12-9_Pentamethylbenzene.abs.txt,271.0,629,cyclohexane,,A08_700-12-9_Pentamethylbenzene.ems.txt,hexane,0.075
+8,,Hexamethylbenzene,A09_ 87-85-4_Hexamethylbenzene.str.tif,Aromatic Hydrocarbons,A09_ 87-85-4_Hexamethylbenzene.abs.txt,271.0,214,cyclohexane,,A09_ 87-85-4_Hexamethylbenzene.ems.txt,hexane,0.01
+9,,Phenol,A10_108-95-2_Phenol.str.tif,Aromatic Hydrocarbons,A10_108-95-2_Phenol.abs.txt,270.75,"2,340",cyclohexane,,A10_108-95-2_Phenol.ems.txt,hexane,0.075
+10,,Anisole,A11_100-66-3_Anisole.str.tif,Aromatic Hydrocarbons,A11_100-66-3_Anisole.abs.txt,220.0,7800,cyclohexane,,A11_100-66-3_Anisole.ems.txt,cyclohexane,0.45
+11,,Benzonitrile,A12_100-47-0_Benzonitrile.str.tif,Aromatic Hydrocarbons,A12_100-47-0_Benzonitrile.abs.txt,222.0,"13,100",cyclohexane,,A12_100-47-0_Benzonitrile.ems.txt,cyclohexane,0.23
+12,,Benzaldehyde,A13_100-52-7_Benzaldehyde.str.tif,Aromatic Hydrocarbons,A13_100-52-7_Benzaldehyde.abs.txt,242.0,"13,200",cyclohexane,,,,
+13,,Benzoic acid,A14_65-85-0_Benzoic acid.str.tif,Aromatic Hydrocarbons,A14_65-85-0_Benzoic acid.abs.txt,227.0,"8,270",methanol,,,,
+14,,Acetophenone,A15_98-86-2_Acetophenone.str.tif,Aromatic Hydrocarbons,A15_98-86-2_Acetophenone.abs.txt,241.0,"12,800",ethanol,,,,
+15,,Aniline,A16_62-53-3_Aniline.str.tif,Aromatic Hydrocarbons,A16_62-53-3_Aniline.abs.txt,288.0,"1,760",cyclohexane,,A16_62-53-3_Aniline.ems.txt,cyclohexane,0.17
+16,,"N,N-Dimethyl-aniline","A17_121-69-7_N,N-Dimethyl-aniline.str.tif",Aromatic Hydrocarbons,"A17_121-69-7_N,N-Dimethyl-aniline.abs.txt",251.0,"14,900",cyclohexane,,"A17_121-69-7_N,N-Dimethyl-aniline.ems.txt",cyclohexane,0.19
+17,,Phenylhydrazine Hydrochloride,A18_59-88-1_Phenylhydrazine_Hydrochloride.str.tif,Aromatic Hydrocarbons,A18_59-88-1_Phenylhydrazine_Hydrochloride.abs.txt,279.0,490,PBS,,,,
+18,,Chlorobenzene,A19_108-90-7_Chlorobenzene.str.tif,Aromatic Hydrocarbons,A19_108-90-7_Chlorobenzene.abs.txt,265.0,280,cyclohexane,,A19_108-90-7_Chlorobenzene.ems.txt,cyclohexane,0.0042
+19,,Iodobenzene,A20_591-50-4_Iodobenzene.str.tif,Aromatic Hydrocarbons,A20_591-50-4_Iodobenzene.abs.txt,228.0,"13,200",cyclohexane,,,,
+20,,Nitrobenzene,A21_98-95-3_Nitrobenzene.str.tif,Aromatic Hydrocarbons,A21_98-95-3_Nitrobenzene.abs.txt,258.0,"8,140",ethanol,,,,
+21,,Styrene,A22_100-42-5_Styrene.str.tif,Aromatic Hydrocarbons,A22_100-42-5_Styrene.abs.txt,248.0,"14,700",cyclohexane,,A22_100-42-5_Styrene.ems.txt,cyclohexane,0.22
+22,,Phenylacetylene,A23_536-74-3_Phenylacetylene.str.tif,Aromatic Hydrocarbons,A23_536-74-3_Phenylacetylene.abs.txt,236.0,"17,600",cyclohexane,,A23_536-74-3_Phenylacetylene.ems.txt,benzene,0.11
+23,,"1,4-Diethynylbenzene","A24_935-14-8_1,4-Diethynylbenzene.str.tif",Aromatic Hydrocarbons,"A24_935-14-8_1,4-Diethynylbenzene.abs.txt",274.0,"28,200",chloroform,,"A24_935-14-8_1,4-Diethynylbenzene.ems.txt",chloroform,0.19
+24,,Phenylpropargyl aldehyde,A25_2579-22-8_Phenylpropargyl_aldehyde.str.tif,Aromatic Hydrocarbons,A25_2579-22-8_Phenylpropargyl_aldehyde.abs.txt,277.0,"5,000",ethanol,,,,
+25,,Phenylboronic acid,A26_98-80-6_Phenylboronic_acid.str.tif,Aromatic Hydrocarbons,A26_98-80-6_Phenylboronic_acid.abs.txt,227.0,"9,520",cyclohexane,,A26_98-80-6_Phenylboronic_acid.ems.txt,cyclohexane,0.26
+26,,Vanillin,A27_121-33-5_Vanillin.str.tif,Aromatic Hydrocarbons,A27_121-33-5_Vanillin.abs.txt,222.0,"9,770",cyclohexane,,,,
+27,,3-Hydroxyacetophenone,A28_121-71-1_3-Hydroxyacetophenone.str.tif,Aromatic Hydrocarbons,A28_121-71-1_3-Hydroxyacetophenone.abs.txt,218.0,"19,000",ethanol,,,,
+28,,Ethyl 4-(dimethylamino)benzoate,A29_10287-53-3_Ethyl_4-(dimethylamino)benzoate.str.tif,Aromatic Hydrocarbons,A29_10287-53-3_Ethyl_4-(dimethylamino)benzoate.abs.txt,310.25,"23,200",ethanol,,A29_10287-53-3_Ethyl_4-(dimethylamino)benzoate.ems.txt,cyclohexane,0.29
+29,,Gallacetophenone,A30_528-21-2_Gallacetophenone.str.tif,Aromatic Hydrocarbons,A30_528-21-2_Gallacetophenone.abs.txt,291.0,"12,500",methanol,,,,
+30,,Terephthalic acid,A31_100-21-0_Terephthalic_acid.str.tif,Aromatic Hydrocarbons,A31_100-21-0_Terephthalic_acid.abs.txt,240.0,"17,000",ethanol,,,,
+31,,p-Phenylenediamine,A32_106-50-3_p-Phenylenediamine.str.tif,Aromatic Hydrocarbons,A32_106-50-3_p-Phenylenediamine.abs.txt,251.0,"6,920",acetonitrile,,A32_106-50-3_p-Phenylenediamine.ems.txt,acetonitrile,0.065
+32,,Tetraphenylmethane,A33_630-76-2_Tetraphenylmethane.str.tif,Aromatic Hydrocarbons,A33_630-76-2_Tetraphenylmethane.abs.txt,263.0,"1,910",cyclohexane,,A33_630-76-2_Tetraphenylmethane.ems.txt,cyclohexane,0.24
+33,,N-Phenylbenzylamine,A34_103-32-2_N-Phenylbenzylamine.str.tif,Aromatic Hydrocarbons,A34_103-32-2_N-Phenylbenzylamine.abs.txt,245.0,"13,200",cyclohexane,,A34_103-32-2_N-Phenylbenzylamine.ems.txt,cyclohexane,0.164
+34,,trans-Chalcone,A35_614-47-1_trans-Chalcone.str.tif,Aromatic Hydrocarbons,A35_614-47-1_trans-Chalcone.abs.txt,302.0,"28,000",cyclohexane,,,,
+35,,Benzophenone,A36_119-61-9_Benzophenone.str.tif,Aromatic Hydrocarbons,A36_119-61-9_Benzophenone.abs.txt,252.0,"19,400",ethanol,,,,
+36,,"4,4'-Dihydroxybenzophenone","A37_611-99-4_4,4'-Dihydroxybenzophenone.str.tif",Aromatic Hydrocarbons,"A37_611-99-4_4,4'-Dihydroxybenzophenone.abs.txt",283.0,"15,200",chloroform,,,,
+37,,Diethyl phthalate,A38_84-66-2_Diethyl_phthalate.str.tif,Aromatic Hydrocarbons,A38_84-66-2_Diethyl_phthalate.abs.txt,225.0,"7,110",ethanol,,,,
+38,,"1,2,4,5-Tetracyanobenzene","A39_712-74-3_1,2,4,5-Tetracyanobenzene.str.tif",Aromatic Hydrocarbons,"A39_712-74-3_1,2,4,5-Tetracyanobenzene.abs.txt",316.0,"3,400",chloroform,,"A39_712-74-3_1,2,4,5-Tetracyanobenzene.ems.txt",chloroform,0.21
+39,,Hexafluorobenzene,A40_392-56-3_Hexafluorobenzene.str.tif,Aromatic Hydrocarbons,A40_392-56-3_Hexafluorobenzene.abs.txt,230.0,684,ethanol,,A40_392-56-3_Hexafluorobenzene.ems.txt,ethanol,0.035
+40,,Ferrocene,A41_102-54-5_Ferrocene.str.tif,Aromatic Hydrocarbons,A41_102-54-5_Ferrocene.abs.txt,442.0,96,cyclohexane,,,,
+41,,Biphenyl,B01_92-52-4_Biphenyl.str.tif,Oligophenylenes,B01_92-52-4_Biphenyl.abs.txt,247.5,"16,000",cyclohexane,,B01_92-52-4_Biphenyl.ems.txt,cyclohexane,0.18
+42,,p-Terphenyl,B02_92-94-4_p-Terphenyl.str.tif,Oligophenylenes,B02_92-94-4_p-Terphenyl.abs.txt,276.25,"33,800",cyclohexane,,B02_92-94-4_p-Terphenyl.ems.txt,cyclohexane,0.93
+43,,p-Quaterphenyl,B03_135-70-6_p-Quaterphenyl.str.tif,Oligophenylenes,B03_135-70-6_p-Quaterphenyl.abs.txt,294.75,"41,000",cyclohexane,,B03_135-70-6_p-Quaterphenyl.ems.txt,cyclohexane,0.89
+44,,p-Quinquephenyl,B04_3073-05-0_p-Quinquephenyl.str.tif,Oligophenylenes,B04_3073-05-0_p-Quinquephenyl.abs.txt,312.0,"62,500",dimethylformamide,,B04_3073-05-0_p-Quinquephenyl.ems.txt,cyclohexane,0.89
+45,,"1,3,5-Triphenylbenzene ","B05_612-71-5_1,3,5-Triphenylbenzene.str.tif",Oligophenylenes,"B05_612-71-5_1,3,5-Triphenylbenzene.abs.txt",251.0,"60,000",cyclohexane,,"B05_612-71-5_1,3,5-Triphenylbenzene.ems.txt",cyclohexane,0.27
+46,,Benzidine,B06_92-87-5_Benzidine.str.tif,Oligophenylenes,B06_92-87-5_Benzidine.abs.txt,206.0,"67,500",ethanol,,B06_92-87-5_Benzidine.ems.txt,chloroform,0.16
+47,,"3,3'-Dimethylbenzidine","B07_119-93-7_3,3'-Dimethylbenzidine.str.tif",Oligophenylenes,"B07_119-93-7_3,3'-Dimethylbenzidine.abs.txt",209.0,"41,800",ethanol,,"B07_119-93-7_3,3'-Dimethylbenzidine.ems.txt",ethanol,0.33
+48,,"3,3',5,5-Tetramethylbenzidine","B08_54827-17-7_3,3',5,5-Tetramethylbenzidine.str.tif",Oligophenylenes,"B08_54827-17-7_3,3',5,5-Tetramethylbenzidine.abs.txt",212.0,"34,800",ethanol,,"B08_54827-17-7_3,3',5,5-Tetramethylbenzidine.ems.txt",ethanol,0.29
+49,,"2,5-Diphenyloxazole, [PPO]","B09_92-71-7_2,5-Diphenyloxazole_[PPO].str.tif",Oligophenylenes,"B09_92-71-7_2,5-Diphenyloxazole_[PPO].abs.txt",302.75,"35,700",cyclohexane,,"B09_92-71-7_2,5-Diphenyloxazole_[PPO].ems.txt",cyclohexane,1.0
+50,,"1,4-Bis(5-phenyl-2-oxazolyl)benzene, [POPOP]","B10_1806-34-4_1,4-Bis(5-phenyl-2-oxazolyl)benzene_[POPOP].str.tif",Oligophenylenes,"B10_1806-34-4_1,4-Bis(5-phenyl-2-oxazolyl)benzene_[POPOP].abs.txt",359.0,"47,000",cyclohexane,,"B10_1806-34-4_1,4-Bis(5-phenyl-2-oxazolyl)benzene_[POPOP].ems.txt",cyclohexane,0.93
+51,,"1,2,3,4,5-Pentaphenyl-1,3-cyclopentadiene","B11_2519-10-0_1,2,3,4,5-Pentaphenyl-1,3-cyclopentadiene.str.tif",Oligophenylenes,"B11_2519-10-0_1,2,3,4,5-Pentaphenyl-1,3-cyclopentadiene.abs.txt",245.0,"18,600",cyclohexane,,"B11_2519-10-0_1,2,3,4,5-Pentaphenyl-1,3-cyclopentadiene.ems.txt",dioxane,0.0028
+52,,rac-BINAP,B12_98327-87-8_rac-BINAP.str.tif,Oligophenylenes,B12_98327-87-8_rac-BINAP.abs.txt,223.0,"9,800",acetonitrile,,,,
+53,,(R)-BINOL,B13_18531-94-7_(R)-BINOL.str.tif,Oligophenylenes,B13_18531-94-7_(R)-BINOL.abs.txt,278.0,"8,590",acetonitrile,,B13_18531-94-7_(R)-BINOL.ems.txt,tetrahydrofuran,0.1
+54,,Naphthalene,C01_91-20-3_Naphthalene.str.tif,Polycyclic Aromatic Hydrocarbons ,C01_91-20-3_Naphthalene.abs.txt,275.0,"6,000",cyclohexane,,C01_91-20-3_Naphthalene.ems.txt,cyclohexane,0.23
+55,,Anthracene,C02_120-12-7_Anthracene.str.tif,Polycyclic Aromatic Hydrocarbons ,C02_120-12-7_Anthracene.abs.txt,356.25,"9,700",cyclohexane,,C02_120-12-7_Anthracene.ems.txt,cyclohexane,0.36
+56,,Tetracene,C03_92-24-0_Tetracene.str.tif,Polycyclic Aromatic Hydrocarbons ,C03_92-24-0_Tetracene.abs.txt,475.0,"10,000",benzene,,C03_92-24-0_Tetracene.ems.txt,benzene,0.13
+57,,Pentacene,C04_135-48-8_Pentacene.str.tif,Polycyclic Aromatic Hydrocarbons ,C04_135-48-8_Pentacene.abs.txt,578.0,"7,200",dimethylformamide,,C04_135-48-8_Pentacene.ems.txt,tetrahydrofuran,0.13
+58,,Phenanthrene,C05_85-01-8_Phenanthrene.str.tif,Polycyclic Aromatic Hydrocarbons ,C05_85-01-8_Phenanthrene.abs.txt,252.0,"69,200",cyclohexane,,C05_85-01-8_Phenanthrene.ems.txt,ethanol,0.125
+59,,Pyrene,C06_129-00-0_Pyrene.str.tif,Polycyclic Aromatic Hydrocarbons ,C06_129-00-0_Pyrene.abs.txt,241.0,"81,700",cyclohexane,,C06_129-00-0_Pyrene.ems.txt,cyclohexane,0.32
+60,,Triphenylene,C07_217-59-4_Triphenylene.str.tif,Polycyclic Aromatic Hydrocarbons ,C07_217-59-4_Triphenylene.abs.txt,258.0,"146,000",cyclohexane,,C07_217-59-4_Triphenylene.ems.txt,cyclohexane,0.08
+61,,"9,10-Diphenylanthracene","C08_1499-10-1_9,10-Diphenylanthracene.str.tif",Polycyclic Aromatic Hydrocarbons ,"C08_1499-10-1_9,10-Diphenylanthracene.abs.txt",372.5,"14,000",cyclohexane,,"C08_1499-10-1_9,10-Diphenylanthracene.ems.txt",cyclohexane,1.0
+62,,"9,10-Bis(phenylethynyl)anthracene","C09_10075-85-1_9,10-Bis(phenylethynyl)anthracene.str.tif",Polycyclic Aromatic Hydrocarbons ,"C09_10075-85-1_9,10-Bis(phenylethynyl)anthracene.abs.txt",270.25,"87,000",cyclohexane,,"C09_10075-85-1_9,10-Bis(phenylethynyl)anthracene.ems.txt",cyclohexane,1.0
+63,,Rubrene,C10_517-51-1_Rubrene.str.tif,Polycyclic Aromatic Hydrocarbons ,C10_517-51-1_Rubrene.abs.txt,303.0,"127,000",benzene,,C10_517-51-1_Rubrene.ems.txt,chloroform,0.54
+64,,"1,8-Naphthalic anhydride","C11_81-84-5_1,8-Naphthalic_anhydride.str.tif",Polycyclic Aromatic Hydrocarbons ,"C11_81-84-5_1,8-Naphthalic_anhydride.abs.txt",228.0,"26,300",acetonitrile,,"C11_81-84-5_1,8-Naphthalic_anhydride.ems.txt",acetonitrile,0.32
+65,,2-Aminonaphthalene ,C12_91-59-8_2-Aminonaphthalene.str.tif,Polycyclic Aromatic Hydrocarbons ,C12_91-59-8_2-Aminonaphthalene.abs.txt,239.0,"53,700",acetonitrile,,C12_91-59-8_2-Aminonaphthalene.ems.txt,acetonitrile,0.91
+66,,"2,3-Diaminonaphthalene","C13_771-97-1_2,3-Diaminonaphthalene.str.tif",Polycyclic Aromatic Hydrocarbons ,"C13_771-97-1_2,3-Diaminonaphthalene.abs.txt",245.0,"50,100",methanol,,"C13_771-97-1_2,3-Diaminonaphthalene.ems.txt",methanol,0.54
+67,,8-Anilino-1-naphthalenesulfonic acid,C14_82-76-8_8-Anilino-1-naphthalenesulfonic_acid.str.tif,Polycyclic Aromatic Hydrocarbons ,C14_82-76-8_8-Anilino-1-naphthalenesulfonic_acid.abs.txt,218.0,"25,100",methanol,,C14_82-76-8_8-Anilino-1-naphthalenesulfonic_acid.ems.txt,methanol,0.24
+68,,"1,4,5,8-Naphthalenetetracarboxylic dianhydride","C15_81-30-1_1,4,5,8-Naphthalenetetracarboxylic_dianhydride.str.tif",Polycyclic Aromatic Hydrocarbons ,"C15_81-30-1_1,4,5,8-Naphthalenetetracarboxylic_dianhydride.abs.txt",227.0,"37,200",acetonitrile,,"C15_81-30-1_1,4,5,8-Naphthalenetetracarboxylic_dianhydride.ems.txt",acetonitrile,0.13
+69,,Pyranine,C16_6358-69-6_Pyranine.str.tif,Polycyclic Aromatic Hydrocarbons ,C16_6358-69-6_Pyranine.abs.txt,235.0,"23,100",NaOH aq,,C16_6358-69-6_Pyranine.ems.txt,water (pH 10),1.0
+70,,"1,2-Diphenylacetylene","D01_501-65-5_1,2-Diphenylacetylene.str.tif",Polyenes/Polyynes ,"D01_501-65-5_1,2-Diphenylacetylene.abs.txt",278.75,"27,600",ethanol,,"D01_501-65-5_1,2-Diphenylacetylene.ems.txt",3-methylpentane,0.0034
+71,,cis-Stilbene,D02_645-49-8_cis-Stilbene.str.tif,Polyenes/Polyynes ,D02_645-49-8_cis-Stilbene.abs.txt,276.0,"10,200",hexane,,,,
+72,,trans-Stilbene,D03_103-30-0_trans-Stilbene.str.tif,Polyenes/Polyynes ,D03_103-30-0_trans-Stilbene.abs.txt,293.75,"28,200",hexane,,D03_103-30-0_trans-Stilbene.ems.txt,hexane,0.04
+73,,"1,4-Diphenylbutadiyne","D04_886-66-8_1,4-Diphenylbutadiyne.str.tif",Polyenes/Polyynes ,"D04_886-66-8_1,4-Diphenylbutadiyne.abs.txt",326.0,"27,800",ethanol,,"D04_886-66-8_1,4-Diphenylbutadiyne.ems.txt",ethanol,0.0016
+74,,"1,4-Diphenylbutadiene","D05_538-81-8_1,4-Diphenylbutadiene.str.tif",Polyenes/Polyynes ,"D05_538-81-8_1,4-Diphenylbutadiene.abs.txt",330.0,"33,000",hexane,,"D05_538-81-8_1,4-Diphenylbutadiene.ems.txt",cyclohexane,0.42
+75,,"1,6-Diphenylhexatriene","D06_1720-32-7_1,6-Diphenylhexatriene.str.tif",Polyenes/Polyynes ,"D06_1720-32-7_1,6-Diphenylhexatriene.abs.txt",353.25,"82,400",cyclohexane,,"D06_1720-32-7_1,6-Diphenylhexatriene.ems.txt",cyclohexane,0.65
+76,,4-Dimethylamino-4'-nitrostilbene,D07_2844-15-7_4-Dimethylamino-4'-nitrostilbene.str.tif,Polyenes/Polyynes ,D07_2844-15-7_4-Dimethylamino-4'-nitrostilbene.abs.txt,432.25,"27,000",benzene,,D07_2844-15-7_4-Dimethylamino-4'-nitrostilbene.ems.txt,benzene,0.7
+77,,Curcumin,D08_458-37-7_Curcumin.str.tif,Polyenes/Polyynes ,D08_458-37-7_Curcumin.abs.txt,425.0,"55,000",ethanol,,D08_458-37-7_Curcumin.ems.txt,ethanol,0.063
+78,,all trans-Retinal ,D09_116-31-4_all_trans-Retinal.str.tif,Polyenes/Polyynes ,D09_116-31-4_all_trans-Retinal.abs.txt,372.0,"43,500",ethanol,,,,
+79,,Beta-carotene,D10_7235-40-7_Beta-carotene.str.tif,Polyenes/Polyynes ,D10_7235-40-7_Beta-carotene.abs.txt,451.0,"139,500",hexane,,,,
+80,,Pyridine,E01_110-86-1_Pyridine.str.tif,Heterocycles,E01_110-86-1_Pyridine.abs.txt,251.0,"1,800",acetonitrile,,,,
+81,,Pyridine N-oxide,E02_694-59-7_Pyridine_N-oxide.str.tif,Heterocycles,E02_694-59-7_Pyridine_N-oxide.abs.txt,276.0,"14,300",dichloromethane,,,,
+82,,2-Acetylpyridine,E03_1122-62-9_2-Acetylpyridine.str.tif,Heterocycles,E03_1122-62-9_2-Acetylpyridine.abs.txt,227.0,"7,500",cyclohexane,,,,
+83,,4-Dimethylaminopyridine,E04_1122-58-3_4-Dimethylaminopyridine.str.tif,Heterocycles,E04_1122-58-3_4-Dimethylaminopyridine.abs.txt,257.0,"13,300",acetonitrile,,E04_1122-58-3_4-Dimethylaminopyridine.ems.txt,acetonitrile,0.017
+84,,4-(4-Nitrobenzyl)pyridine ,E05_1083-48-3_4-(4-Nitrobenzyl)pyridine.str.tif,Heterocycles,E05_1083-48-3_4-(4-Nitrobenzyl)pyridine.abs.txt,265.0,"12,300",ethanol,,,,
+85,,"1.3,5-Triazine","E06_290-87-9_1.3,5-Triazine.str.tif",Heterocycles,"E06_290-87-9_1.3,5-Triazine.abs.txt",270.0,890,ethanol,,,,
+86,,Phthalimide,E07_85-41-6_Phthalimide.str.tif,Heterocycles,E07_85-41-6_Phthalimide.abs.txt,215.0,"44,100",ethanol,,,,
+87,,"2,2'-Bipyridine","E08_366-18-7_2,2'-Bipyridine.str.tif",Heterocycles,"E08_366-18-7_2,2'-Bipyridine.abs.txt",281.0,"11,200",acetonitrile,,,,
+88,,"4,4'-Bipyridine","E09_553-26-4_4,4'-Bipyridine.str.tif",Heterocycles,"E09_553-26-4_4,4'-Bipyridine.abs.txt",238.0,"12,600",acetonitrile,,,,
+89,,Quinoline,E10_91-22-5_Quinoline.str.tif,Heterocycles,E10_91-22-5_Quinoline.abs.txt,204.0,"27,000",ethanol,,E10_91-22-5_Quinoline.ems.txt,ethanol,0.01
+90,,8-Quinoline carboxylic acid,E11_86-59-9_8-Quinoline_carboxylic_acid.str.tif,Heterocycles,E11_86-59-9_8-Quinoline_carboxylic_acid.abs.txt,219.0,"31,900",ethanol,,E11_86-59-9_8-Quinoline_carboxylic_acid.ems.txt,ethanol,0.02
+91,,3-Quinoline carboxaldehyde,E12_13669-42-6_3-Quinoline_carboxaldehyde.str.tif,Heterocycles,E12_13669-42-6_3-Quinoline_carboxaldehyde.abs.txt,245.0,"1,330",ethanol,,,,
+92,,Benzothiazole,E13_95-16-9_Benzothiazole.str.tif,Heterocycles,E13_95-16-9_Benzothiazole.abs.txt,217.0,"18,700",ethanol,,,,
+93,,Benzotriazole,E14_95-14-7_Benzotriazole.str.tif,Heterocycles,E14_95-14-7_Benzotriazole.abs.txt,253.0,"5,620",ethanol,,,,
+94,,2-Methylbenzoxazole,E15_95-21-6_2-Methylbenzoxazole.str.tif,Heterocycles,E15_95-21-6_2-Methylbenzoxazole.abs.txt,231.75,"10,200",cyclohexane,,E15_95-21-6_2-Methylbenzoxazole.ems.txt,cyclohexane,0.05
+95,,Pyrrole,E16_109-97-7_Pyrrole.str.tif,Heterocycles,E16_109-97-7_Pyrrole.abs.txt,206.0,"15,000",hexane,,,,
+96,,Pyrrole-2-carboxaldehyde,E17_1003-29-8_Pyrrole-2-carboxaldehyde.str.tif,Heterocycles,E17_1003-29-8_Pyrrole-2-carboxaldehyde.abs.txt,278.0,"15,600",hexane,,,,
+97,,Thiazole Orange ,E18_107091-89-4_Thiazole_Orange.str.tif,Heterocycles,E18_107091-89-4_Thiazole_Orange.abs.txt,502.0,"58,500",methanol,,,,
+98,,Thioflavin T ,E19_2390-54-7_Thioflavin_T.str.tif,Heterocycles,E19_2390-54-7_Thioflavin_T.abs.txt,413.0,"36,000",PBS ,,E19_2390-54-7_Thioflavin_T.ems.txt,water,0.0004
+99,,"Tris(2,2'-bipyridyl)ruthenium(II)","E20_65034-88-0_Tris(2,2'-bipyridyl)ruthenium(II).str.tif",Heterocycles,"E20_65034-88-0_Tris(2,2'-bipyridyl)ruthenium(II).abs.txt",286.0,"87,000",water,,"E20_65034-88-0_Tris(2,2'-bipyridyl)ruthenium(II).ems.txt",water,0.042
+100,,4-Chloro-7-nitrobenzofurazan ,E21_10199-89-0_4-Chloro-7-nitrobenzofurazan.str.tif,Heterocycles,E21_10199-89-0_4-Chloro-7-nitrobenzofurazan.abs.txt,336.0,"8,130",ethanol,,,,
+101,,"7-Benzylamino-4-nitrobenz-2-oxa-1,3-diazole","E22_18378-20-6_7-Benzylamino-4-nitrobenz-2-oxa-1,3-diazole.str.tif",Heterocycles,"E22_18378-20-6_7-Benzylamino-4-nitrobenz-2-oxa-1,3-diazole.abs.txt",460.5,"19,700",ethanol,,"E22_18378-20-6_7-Benzylamino-4-nitrobenz-2-oxa-1,3-diazole.ems.txt",ethanol,0.36
+102,,Carbostyril 124,E23_19840-99-4_Carbostyril_124.str.tif,Heterocycles,E23_19840-99-4_Carbostyril_124.abs.txt,219.0,"46,500",water (pH 5 to 9),,E23_19840-99-4_Carbostyril_124.ems.txt,water (pH 5 to 9 ),0.97
+103,,Quinoline Yellow ,E24_8004-92-0_Quinoline_Yellow.str.tif,Heterocycles,E24_8004-92-0_Quinoline_Yellow.abs.txt,413.0,"22,700",PBS,,,,
+104,,"2,3,5-Triphenyltetrazolium Chloride","E25_298-96-4_2,3,5-Triphenyltetrazolium_Chloride.str.tif",Heterocycles,"E25_298-96-4_2,3,5-Triphenyltetrazolium_Chloride.abs.txt",247.0,"25,600",PBS,,,,
+105,,Quinine sulfate,E26_207671-44-1_Quinine_sulfate.str.tif,Heterocycles,E26_207671-44-1_Quinine_sulfate.abs.txt,349.0,"5,700",0.5 M H2SO4,,E26_207671-44-1_Quinine_sulfate.ems.txt,H2SO4 aq (1 N),0.546
+106,,L-Alanine,F01_56-41-7_L-Alanine.str.tif,Biomolecules,F01_56-41-7_L-Alanine.abs.txt,262.0,9,methanol,,,,
+107,,L-Phenylalanine,F02_63-91-2_L-Phenylalanine.str.tif,Biomolecules,F02_63-91-2_L-Phenylalanine.abs.txt,257.5,195,water,,F02_63-91-2_L-Phenylalanine.ems.txt,water,0.022
+108,,L-Tyrosine,F03_60-18-4_L-Tyrosine.str.tif,Biomolecules,F03_60-18-4_L-Tyrosine.abs.txt,274.25,"1,405","phosphate buffer (pH 7, 0.1 M)",,F03_60-18-4_L-Tyrosine.ems.txt,"phosphate buffer (pH 7, 0.1 M)",0.13
+109,,L-Histidine,F04_71-00-1_L-Histidine.str.tif,Biomolecules,F04_71-00-1_L-Histidine.abs.txt,211.0,"5,700",water,,,,
+110,,L-Tryptophan,F05_73-22-3_L-Tryptophan.str.tif,Biomolecules,F05_73-22-3_L-Tryptophan.abs.txt,278.0,"5,579","phosphate buffer (pH 7, 0.1 M)",,F05_73-22-3_L-Tryptophan.ems.txt,"phosphate buffer (pH 7, 0.1 M)",0.12
+111,,Adenine,F06_73-24-5_Adenine.str.tif,Biomolecules,F06_73-24-5_Adenine.abs.txt,261.0,"13,000",water (pH 7),,,,
+112,,Guanine,F07_73-40-5_Guanine.str.tif,Biomolecules,F07_73-40-5_Guanine.abs.txt,243.0,"10,700",water,,,,
+113,,Cytosine,F08_71-30-7_Cytosine.str.tif,Biomolecules,F08_71-30-7_Cytosine.abs.txt,266.75,"6,100",water,,,,
+114,,Thymine,F09_65-71-4_Thymine.str.tif,Biomolecules,F09_65-71-4_Thymine.abs.txt,263.75,"7,900",water,,,,
+115,,Uracil,F10_66-22-8_Uracil.str.tif,Biomolecules,F10_66-22-8_Uracil.abs.txt,258.25,"8,200",water,,,,
+116,,2-Amino-4-methylpyrimidine ,F11_108-52-1_2-Amino-4-methylpyrimidine.str.tif,Biomolecules,F11_108-52-1_2-Amino-4-methylpyrimidine.abs.txt,228.0,"14,500",ethanol,,,,
+117,,"2,4-dihydroxy-6-methylpyrimidine","F12_626-48-2_2,4-dihydroxy-6-methylpyrimidine.str.tif",Biomolecules,"F12_626-48-2_2,4-dihydroxy-6-methylpyrimidine.abs.txt",259.0,"9,300",ethanol,,,,
+118,,D-(-)-Salicin,F13_138-52-3_D-(-)-Salicin.str.tif,Biomolecules,F13_138-52-3_D-(-)-Salicin.abs.txt,212.0,"1,000",ethanol,,,,
+119,,Riboflavin,F14_83-88-5_Riboflavin.str.tif,Biomolecules,F14_83-88-5_Riboflavin.abs.txt,263.0,"33,000",ethanol,,F14_83-88-5_Riboflavin.ems.txt,ethanol,0.3
+120,,L-Ascorbic acid,F15_50-81-7_L-Ascorbic_acid.str.tif,Biomolecules,F15_50-81-7_L-Ascorbic_acid.abs.txt,265.0,"14,000",PBS,,,,
+121,,DL-alpha-Tocopherol,F16_10191-41-0_DL-alpha-Tocopherol.str.tif,Biomolecules,F16_10191-41-0_DL-alpha-Tocopherol.abs.txt,206.0,"26,300",ethanol,,F16_10191-41-0_DL-alpha-Tocopherol.ems.txt,ethanol,0.14
+122,,Vitamin K1,F17_84-80-0_Vitamin_K1.str.tif,Biomolecules,F17_84-80-0_Vitamin_K1.abs.txt,248.0,"18,600",ethanol,,,,
+123,,Folic acid,F18_59-30-3_Folic_acid.str.tif,Biomolecules,F18_59-30-3_Folic_acid.abs.txt,281.0,"25,200",PBS,,F18_59-30-3_Folic_acid.ems.txt,water,0.005
+124,,"1,4-Benzoquinone","G01_106-51-4_1,4-Benzoquinone.str.tif",Quinones,"G01_106-51-4_1,4-Benzoquinone.abs.txt",239.75,"17,000",acetonitrile,,,,
+125,,Hydroquinone,G02_123-31-9_Hydroquinone.str.tif,Quinones,G02_123-31-9_Hydroquinone.abs.txt,225.0,"17,000",acetonitrile,,G02_123-31-9_Hydroquinone.ems.txt,acetonitrile,0.16
+126,,"2,3,5,6-Tetrachloro-1,4-benzoquinone ","G03_118-75-2_2,3,5,6-Tetrachloro-1,4-benzoquinone.str.tif",Quinones,"G03_118-75-2_2,3,5,6-Tetrachloro-1,4-benzoquinone.abs.txt",288.0,"22,400",acetonitrile,,,,
+127,,Tetrachlorohydroquinone,G04_87-87-6_Tetrachlorohydroquinone.str.tif,Quinones,G04_87-87-6_Tetrachlorohydroquinone.abs.txt,211.0,"39,900",acetonitrile,,,,
+128,,"2,3,5,6-Tetramethyl-1,4-benzoquinone","G05_527-17-3_2,3,5,6-Tetramethyl-1,4-benzoquinone.str.tif",Quinones,"G05_527-17-3_2,3,5,6-Tetramethyl-1,4-benzoquinone.abs.txt",270.0,"24,500",acetonitrile,,,,
+129,,"2,3-Dichloro-5,6-dicyano-1,4-benzoquinone","G06_84-58-2_2,3-Dichloro-5,6-dicyano-1,4-benzoquinone.str.tif",Quinones,"G06_84-58-2_2,3-Dichloro-5,6-dicyano-1,4-benzoquinone.abs.txt",287.0,"12,300",chloroform,,,,
+130,,"3,4,5,6-Tetrachloro-1,2-benzoquinone","G07_2435-53-2_3,4,5,6-Tetrachloro-1,2-benzoquinone.str.tif",Quinones,"G07_2435-53-2_3,4,5,6-Tetrachloro-1,2-benzoquinone.abs.txt",458.0,"1,480",chloroform,,,,
+131,,"2,5-Diphenyl-1,4-benzoquinone","G08_844-51-9_2,5-Diphenyl-1,4-benzoquinone.str.tif",Quinones,"G08_844-51-9_2,5-Diphenyl-1,4-benzoquinone.ab.txt",243.0,"31,100",acetonitrile,,,,
+132,,"2,5-Di-tert-butyl-1,4-benzoquinone","G09_2460-77-7_2,5-Di-tert-butyl-1,4-benzoquinone.str.tif",Quinones,"G09_2460-77-7_2,5-Di-tert-butyl-1,4-benzoquinone.abs.txt",258.0,"15,100",acetonitrile,,,,
+133,,Tetracyanoethylene,G10_670-54-2_Tetracyanoethylene.str.tif,Quinones,G10_670-54-2_Tetracyanoethylene.abs.txt,267.0,"14,500",chloroform,,,,
+134,,"7,7,8,8-Tetracyanoquinodimethane","G11_1518-16-7_7,7,8,8-Tetracyanoquinodimethane.str.tif",Quinones,"G11_1518-16-7_7,7,8,8-Tetracyanoquinodimethane.abs.txt",401.0,"42,700",chloroform,,,,
+135,,"1,4-Naphthoquinone","G12_130-15-4_1,4-Naphthoquinone.str.tif",Quinones,"G12_130-15-4_1,4-Naphthoquinone.abs.txt",246.0,"21,300",ethanol,,,,
+136,,"1,4-Naphthoquinone-2-sulfonic acid, Potassium salt","G13_34169-62-5_1,4-Naphthoquinone-2-sulfonic_acid_Potassium_salt.str.tif",Quinones,"G13_34169-62-5_1,4-Naphthoquinone-2-sulfonic_acid_Potassium_salt.abs.txt",255.0,"19,100",water,,,,
+137,,"2,3-Dichloro-1,4-naphthoquinone","G14_117-80-6_2,3-Dichloro-1,4-naphthoquinone.str.tif",Quinones,"G14_117-80-6_2,3-Dichloro-1,4-naphthoquinone.abs.txt",280.0,"18,400",ethanol,,,,
+138,,"2-Methyl-1,4-naphthoquinone","G15_58-27-5_2-Methyl-1,4-naphthoquinone.str.tif",Quinones,"G15_58-27-5_2-Methyl-1,4-naphthoquinone.abs.txt",251.0,"18,200",ethanol,,,,
+139,,"9,10-Phenanthrenequinone ","G16_84-11-7_9,10-Phenanthrenequinone.str.tif",Quinones,"G16_84-11-7_9,10-Phenanthrenequinone.abs.txt",268.0,"29,000",chloroform,,,,
+140,,"1,2-Naphthoquinone","G17_524-42-5_1,2-Naphthoquinone.str.tif",Quinones,"G17_524-42-5_1,2-Naphthoquinone.abs.txt",249.0,"19,200",methanol,,,,
+141,,"1,2-Naphthoquinone-4-sulfonic acid, sodium salt","G18_521-24-4_1,2-Naphthoquinone-4-sulfonic_acid_sodium_salt.str.tif",Quinones,"G18_521-24-4_1,2-Naphthoquinone-4-sulfonic_acid_sodium_salt.abs.txt",250.0,"8,570",methanol,,,,
+142,,"9,10-Anthraquinone","G19_84-65-1_9,10-Anthraquinone.str.tif",Quinones,"G19_84-65-1_9,10-Anthraquinone.abs.txt",251.25,"56,800",ethanol,,,,
+143,,Alizarin,G20_72-48-0_Alizarin.str.tif,Quinones,G20_72-48-0_Alizarin.abs.txt,248.0,"28,400",ethanol,,,,
+144,,Alizarin Red S,G21_130-22-3_Alizarin_Red_S.str.tif,Quinones,G21_130-22-3_Alizarin_Red_S.abs.txt,250.0,"20,000",ethanol,,,,
+145,,"1,4-Anthraquinone","G22_635-12-1_1,4-Anthraquinone.str.tif",Quinones,"G22_635-12-1_1,4-Anthraquinone.abs.txt",233.0,"46,800",ethanol,,,,
+146,,"5,12-Naphthacenequinone","G23_1090-13-7_5,12-Naphthacenequinone.str.tif",Quinones,"G23_1090-13-7_5,12-Naphthacenequinone.abs.txt",296.0,"36,300",benzene,,"G23_1090-13-7_5,12-Naphthacenequinone.ems.txt",benzene,0.43
+147,,"6,13-Pentacenequinone","G24_3029-32-1_6,13-Pentacenequinone.str.tif",Quinones,"G24_3029-32-1_6,13-Pentacenequinone.abs.txt",303.0,"107,000",benzene,,"G24_3029-32-1_6,13-Pentacenequinone.ems.txt",benzene,0.54
+148,,Coumarin,H01_91-64-5_Coumarin.str.tif,Coumarins,H01_91-64-5_Coumarin.abs.txt,275.0,"11,000",ethanol,,,,
+149,,4-Hydroxycoumarin,H02_1076-38-6_4-Hydroxycoumarin.str.tif,Coumarins,H02_1076-38-6_4-Hydroxycoumarin.abs.txt,280.0,"8,470",ethanol,,H02_1076-38-6_4-Hydroxycoumarin.ems.txt,ethanol,0.003
+150,,7-Hydroxycoumarin,H03_93-35-6_7-Hydroxycoumarin.str.tif,Coumarins,H03_93-35-6_7-Hydroxycoumarin.abs.txt,326.0,"16,800",ethanol,,H03_93-35-6_7-Hydroxycoumarin.ems.txt,methanol,0.08
+151,,7-Hydroxy-4-(trifluoromethyl)coumarin,H04_575-03-1_7-Hydroxy-4-(trifluoromethyl)coumarin.str.tif,Coumarins,H04_575-03-1_7-Hydroxy-4-(trifluoromethyl)coumarin.abs.txt,338.0,"12,600",ethanol,,H04_575-03-1_7-Hydroxy-4-(trifluoromethyl)coumarin.ems.txt,ethanol,0.2
+152,,7-Methoxycoumarin-4-acetic acid,H05_62935-72-2_7-Methoxycoumarin-4-acetic_acid.str.tif,Coumarins,H05_62935-72-2_7-Methoxycoumarin-4-acetic_acid.abs.txt,323.75,"11,820",methanol,,H05_62935-72-2_7-Methoxycoumarin-4-acetic_acid.ems.txt,methanol,0.18
+153,,Coumarin 1,H06_91-44-1_Coumarin_1.str.tif,Coumarins,H06_91-44-1_Coumarin_1.abs.txt,373.25,"23,500",ethanol,,H06_91-44-1_Coumarin_1.ems.txt,ethanol,0.5
+154,,Coumarin 6,H07_38215-36-0_Coumarin_6.str.tif,Coumarins,H07_38215-36-0_Coumarin_6.abs.txt,459.25,"54,000",ethanol,,H07_38215-36-0_Coumarin_6.ems.txt,ethanol,0.78
+155,,Coumarin 7,H08_27425-55-4_Coumarin_7.str.tif,Coumarins,H08_27425-55-4_Coumarin_7.abs.txt,436.0,"52,500",ethanol,,H08_27425-55-4_Coumarin_7.ems.txt,methanol,0.82
+156,,Coumarin 30,H09_41044-12-6_Coumarin_30.str.tif,Coumarins,H09_41044-12-6_Coumarin_30.abs.txt,407.5,"54,000",acetonitrile,,H09_41044-12-6_Coumarin_30.ems.txt,ethanol,0.8
+157,,Coumarin 151,H10_53518-15-3_Coumarin_151.str.tif,Coumarins,H10_53518-15-3_Coumarin_151.abs.txt,384.0,"17,000",ethanol,,H10_53518-15-3_Coumarin_151.ems.txt,ethanol,0.53
+158,,Coumarin 314,H11_55804-66-5_Coumarin_314.str.tif,Coumarins,H11_55804-66-5_Coumarin_314.abs.txt,436.0,"46,800",ethanol,,H11_55804-66-5_Coumarin_314.ems.txt,ethanol,0.68
+159,,Coumarin 343,H12_55804-65-4_Coumarin_343.str.tif,Coumarins,H12_55804-65-4_Coumarin_343.abs.txt,444.75,"44,300",ethanol,,H12_55804-65-4_Coumarin_343.ems.txt,ethanol,0.63
+160,,Calcein Blue,H13_54375-47-2_Calcein_Blue.str.tif,Coumarins,H13_54375-47-2_Calcein_Blue.abs.txt,361.0,"16,100",PBS,,H13_54375-47-2_Calcein_Blue.ems.txt,PBS,0.59
+161,,Urolithin B,H14_1139-83-9_Urolithin_B.str.tif,Coumarins,H14_1139-83-9_Urolithin_B.abs.txt,278.0,"11,300",ethanol,,H14_1139-83-9_Urolithin_B.ems.txt,dimethylformamide,0.21
+162,,Acridine ,I01_260-94-6_Acridine.str.tif,Acridines,I01_260-94-6_Acridine.abs.txt,247.0,"178,000",ethanol,,I01_260-94-6_Acridine.ems.txt,ethanol,0.0079
+163,,Proflavine hydrochloride,I02_952-23-8_Proflavine_hydrochloride.str.tif,Acridines,I02_952-23-8_Proflavine_hydrochloride.abs.txt,261.0,"53,700",water (pH 7),,I02_952-23-8_Proflavine_hydrochloride.ems.txt,water (pH 4),0.34
+164,,Acridine Orange,I03_65-61-2_Acridine_Orange.str.tif,Acridines,I03_65-61-2_Acridine_Orange.abs.txt,270.5,"49,100",ethanol (basic),,I03_65-61-2_Acridine_Orange.ems.txt,ethanol (basic),0.2
+165,,Acridine Yellow G,I04_135-49-9_Acridine_Yellow_G.str.tif,Acridines,I04_135-49-9_Acridine_Yellow_G.abs.txt,264.0,"51,100",ethanol,,I04_135-49-9_Acridine_Yellow_G.ems.txt,ethanol,0.47
+166,,Acridone,I05_578-95-0_Acridone.str.tif,Acridines,I05_578-95-0_Acridone.abs.txt,249.0,"99,900",ethanol,,I05_578-95-0_Acridone.ems.txt,ethanol,0.42
+167,,Phenazine,I06_92-82-0_Phenazine.str.tif,Acridines,I06_92-82-0_Phenazine.abs.txt,248.0,"107,000",ethanol,,,,
+168,,Phenosafranin,I07_81-93-6_Phenosafranin.str.tif,Acridines,I07_81-93-6_Phenosafranin.abs.txt,533.0,"35,600",ethanol,,I07_81-93-6_Phenosafranin.ems.txt,methanol,0.2
+169,,Neutral Red,I08_553-24-2_Neutral_Red.str.tif,Acridines,I08_553-24-2_Neutral_Red.abs.txt,278.0,"43,700",ethanol (basic),,I08_553-24-2_Neutral_Red.ems.txt,ethanol ,0.044
+170,,Janus Green B,I09_2869-83-2_Janus_Green_B.str.tif,Acridines,I09_2869-83-2_Janus_Green_B.abs.txt,587.0,"35,000",PBS,,,,
+171,,Phenothiazine,I10_92-84-2_Phenothiazine.str.tif,Acridines,I10_92-84-2_Phenothiazine.abs.txt,253.0,"47,600",cyclohexane,,I10_92-84-2_Phenothiazine.ems.txt,cyclohexane,0.006
+172,,Thionin,I11_26754-93-8_Thionin.str.tif,Acridines,I11_26754-93-8_Thionin.abs.txt,605.0,"77,600",ethanol,,I11_26754-93-8_Thionin.ems.txt,ethanol,0.04
+173,,Methylene blue,I12_61-73-4_Methylene_blue.str.tif,Acridines,I12_61-73-4_Methylene_blue.abs.txt,656.0,"40,700",ethanol,,I12_61-73-4_Methylene_blue.ems.txt,ethanol,0.04
+174,,Azure II,I13_37247-10-2_Azure_II.str.tif,Acridines,I13_37247-10-2_Azure_II.abs.txt,654.0,"81,300",ethanol,,I13_37247-10-2_Azure_II.ems.txt,ethanol,0.04
+175,,Toluidine Blue O,I14_92-31-9_Toluidine_Blue_O.str.tif,Acridines,I14_92-31-9_Toluidine_Blue_O.abs.txt,628.0,"74,000",ethanol,,I14_92-31-9_Toluidine_Blue_O.ems.txt,ethanol,0.076
+176,,Phenoxathiin,I15_262-20-4_Phenoxathiin.str.tif,Acridines,I15_262-20-4_Phenoxathiin.abs.txt,237.0,"28,500",ethanol,,,,
+177,,Phenoxazine,I16_135-67-1_Phenoxazine.str.tif,Acridines,I16_135-67-1_Phenoxazine.abs.txt,239.0,"39,800",ethanol,,I16_135-67-1_Phenoxazine.ems.txt,ethanol,0.025
+178,,Oxazine 1,I17_24796-94-9_Oxazine_1.str.tif,Acridines,I17_24796-94-9_Oxazine_1.abs.txt,642.5,"117,000",methanol,,I17_24796-94-9_Oxazine_1.ems.txt,ethanol,0.11
+179,,Cresyl Violet perchlorate,I18_41830-80-2_Cresyl_Violet_perchlorate.str.tif,Acridines,I18_41830-80-2_Cresyl_Violet_perchlorate.abs.txt,603.0,"28,000",ethanol,,I18_41830-80-2_Cresyl_Violet_perchlorate.ems.txt,methanol,0.54
+180,,Nile Red,I19_7385-67-3_Nile_Red.str.tif,Acridines,I19_7385-67-3_Nile_Red.abs.txt,519.4,"38,000",dioxane,,I19_7385-67-3_Nile_Red.ems.txt,dioxane,0.7
+181,,Nile Blue ,I20_53340-16-2_Nile_Blue.str.tif,Acridines,I20_53340-16-2_Nile_Blue.abs.txt,627.5,"67,000",ethanol,,I20_53340-16-2_Nile_Blue.ems.txt,ethanol,0.27
+182,,Oxazine 170,I21_62669-60-7_Oxazine_170.str.tif,Acridines,I21_62669-60-7_Oxazine_170.abs.txt,613.25,"83,000",methanol,,I21_62669-60-7_Oxazine_170.ems.txt,methanol,0.63
+183,,Azobenzene,J01_103-33-3_Azobenzene.str.tif,Azo Dyes ,J01_103-33-3_Azobenzene.abs.txt,319.0,"22,400",benzene,,,,
+184,,Acid Red 2,J02_493-52-7_Acid_Red_2.str.tif,Azo Dyes ,J02_493-52-7_Acid_Red_2.abs.txt,430.0,"18,500",PBS,,,,
+185,,Methyl Orange,J03_547-58-0_Methyl_Orange.str.tif,Azo Dyes ,J03_547-58-0_Methyl_Orange.abs.txt,466.0,"25,900",PBS,,,,
+186,,Orange G,J04_1936-15-8_Orange_G.str.tif,Azo Dyes ,J04_1936-15-8_Orange_G.abs.txt,478.0,"20,900",PBS,,,,
+187,,Orange II,J05_633-96-5_Orange_II.str.tif,Azo Dyes ,J05_633-96-5_Orange_II.abs.txt,486.0,"15,400",PBS,,,,
+188,,Acid Red 88,J06_1658-56-6_Acid_Red_88.str.tif,Azo Dyes ,J06_1658-56-6_Acid_Red_88.abs.txt,503.0,"11,700",PBS,,,,
+189,,Sudan I,J07_842-07-9_Sudan_I.str.tif,Azo Dyes ,J07_842-07-9_Sudan_I.abs.txt,481.0,"14,500",ethanol,,,,
+190,,Sudan II,J08_3118-97-6_Sudan_II.str.tif,Azo Dyes ,J08_3118-97-6_Sudan_II.abs.txt,498.0,"15,800",ethanol,,,,
+191,,Acid Violet 3,J09_1681-60-3_Acid_Violet_3.str.tif,Azo Dyes ,J09_1681-60-3_Acid_Violet_3.abs.txt,555.0,"36,000",PBS,,,,
+192,,Acid Red 1,J10_3734-67-6_Acid_Red_1.str.tif,Azo Dyes ,J10_3734-67-6_Acid_Red_1.abs.txt,530.0,"31,900",PBS,,,,
+193,,Acid Red 14,J11_3567-69-9_Acid_Red_14.str.tif,Azo Dyes ,J11_3567-69-9_Acid_Red_14.abs.txt,512.0,"24,000",PBS,,,,
+194,,Acid Blue 92,J12_3861-73-2_Acid_Blue_92.str.tif,Azo Dyes ,J12_3861-73-2_Acid_Blue_92.abs.txt,563.0,"32,300",PBS,,,,
+195,,Sudan III,J13_85-86-9_Sudan_III.str.tif,Azo Dyes ,J13_85-86-9_Sudan_III.abs.txt,504.0,"30,000",ethanol,,,,
+196,,Sudan IV,J14_85-83-6_Sudan_IV.str.tif,Azo Dyes ,J14_85-83-6_Sudan_IV.abs.txt,518.0,"32,500",ethanol,,,,
+197,,Acid Black 1,J15_1064-48-8_Acid_Black_1.str.tif,Azo Dyes ,J15_1064-48-8_Acid_Black_1.abs.txt,619.0,"51,600",PBS,,,,
+198,,Ponceau S,J16_6226-79-5_Ponceau_S.str.tif,Azo Dyes ,J16_6226-79-5_Ponceau_S.abs.txt,513.0,"42,000",PBS,,,,
+199,,Congo Red,J17_573-58-0_Congo_Red.str.tif,Azo Dyes ,J17_573-58-0_Congo_Red.abs.txt,483.0,"48,000",PBS,,,,
+200,,Benzopurpurin 4B,J18_992-59-6_Benzopurpurin_4B.str.tif,Azo Dyes ,J18_992-59-6_Benzopurpurin_4B.abs.txt,497.0,"23,900",water,,,,
+201,,Evans Blue,J19_314-13-6_Evans_Blue.str.tif,Azo Dyes ,J19_314-13-6_Evans_Blue.abs.txt,606.0,"86,000",PBS,,,,
+202,,"1,1'-Diethyl-2,2'-cyanine iodide","K01_977-96-8_1,1'-Diethyl-2,2'-cyanine_iodide.str.tif",Cyanine Dyes,"K01_977-96-8_1,1'-Diethyl-2,2'-cyanine_iodide.abs.txt",524.25,"54,000",ethanol,,,,
+203,,"1,1'-Diethyl-2,2'-carbocyanine iodide ","K02_605-91-4_1,1'-Diethyl-2,2'-carbocyanine_iodide.str.tif",Cyanine Dyes,"K02_605-91-4_1,1'-Diethyl-2,2'-carbocyanine_iodide.abs.txt",603.5,"128,000",methanol,,"K02_605-91-4_1,1'-Diethyl-2,2'-carbocyanine_iodide.ems.txt",methanol,0.001
+204,,"1,1'-Diethyl-2,2'-dicarbocyanine iodide","K03_14187-31-6_1,1'-Diethyl-2,2'-dicarbocyanine_iodide.str.tif",Cyanine Dyes,"K03_14187-31-6_1,1'-Diethyl-2,2'-dicarbocyanine_iodide.abs.txt",711.0,"326,000",ethanol,,"K03_14187-31-6_1,1'-Diethyl-2,2'-dicarbocyanine_iodide.ems.txt",ethanol,0.0028
+205,,"1,1'-Diethyl-4,4'-cyanine iodide","K04_4727-49-5_1,1'-Diethyl-4,4'-cyanine_iodide.str.tif",Cyanine Dyes,"K04_4727-49-5_1,1'-Diethyl-4,4'-cyanine_iodide.abs.txt",592.0,"75,000",ethanol,,,,
+206,,"1,1'-Diethyl-4,4'-carbocyanine iodide","K05_4727-50-8_1,1'-Diethyl-4,4'-carbocyanine_iodide.str.tif",Cyanine Dyes,"K05_4727-50-8_1,1'-Diethyl-4,4'-carbocyanine_iodide.abs.txt",709.5,"210,000",ethanol,,"K05_4727-50-8_1,1'-Diethyl-4,4'-carbocyanine_iodide.ems.txt",ethanol,0.007
+207,,"1,1'-Diethyl-4,4'-dicarbocyanine iodide","K06_18300-31-7_1,1'-Diethyl-4,4'-dicarbocyanine_iodide.str.tif",Cyanine Dyes,"K06_18300-31-7_1,1'-Diethyl-4,4'-dicarbocyanine_iodide.abs.txt",818.0,"213,000",ethanol,,"K06_18300-31-7_1,1'-Diethyl-4,4'-dicarbocyanine_iodide.ems.txt",DMSO,0.033
+208,,"3,3'-Diethyloxacarbocyanine iodide","K07_905-96-4_3,3'-Diethyloxacarbocyanine_iodide.str.tif",Cyanine Dyes,"K07_905-96-4_3,3'-Diethyloxacarbocyanine_iodide.abs.txt",485.0,"149,000",ethanol,,"K07_905-96-4_3,3'-Diethyloxacarbocyanine_iodide.ems.txt",methanol,0.05
+209,,"3,3'-Diethyloxadicarbocyanine iodide","K08_14806-50-9_3,3'-Diethyloxadicarbocyanine_iodide.str.tif",Cyanine Dyes,"K08_14806-50-9_3,3'-Diethyloxadicarbocyanine_iodide.abs.txt",582.0,"237,000",ethanol,,"K08_14806-50-9_3,3'-Diethyloxadicarbocyanine_iodide.ems.txt",ethanol,0.49
+210,,"3,3'-Diethyloxatricarbocyanine iodide","K09_15185-43-0_3,3'-Diethyloxatricarbocyanine_iodide.str.tif",Cyanine Dyes,"K09_15185-43-0_3,3'-Diethyloxatricarbocyanine_iodide.abs.txt",687.5,"220,000",ethanol,,"K09_15185-43-0_3,3'-Diethyloxatricarbocyanine_iodide.ems.txt",ethanol,0.49
+211,,"1,1'-Diethyl-3,3,3',3'-tetramethylindocarbocyanine Iodide","K10_14696-39-0_1,1'-Diethyl-3,3,3',3'-tetramethylindocarbocyanine_iodide.str.tif",Cyanine Dyes,"K10_14696-39-0_1,1'-Diethyl-3,3,3',3'-tetramethylindocarbocyanine_iodide.abs.txt",544.25,"133,000",methanol,,"K10_14696-39-0_1,1'-Diethyl-3,3,3',3'-tetramethylindocarbocyanine_iodide.ems.txt",methanol,0.07
+212,,"1,1'-Diethyl-3,3,3',3'-tetramethylindodicarbocyanine Iodide","K11_17094-16-5_1,1'-Diethyl-3,3,3',3'-tetramethylindodicarbocyanine_iodide.str.tif",Cyanine Dyes,"K11_17094-16-5_1,1'-Diethyl-3,3,3',3'-tetramethylindodicarbocyanine_iodide.abs.txt",637.5,"200,000",methanol,,"K11_17094-16-5_1,1'-Diethyl-3,3,3',3'-tetramethylindodicarbocyanine_iodide.ems.txt",methanol,0.4
+213,,"1,1'-Diethyl-3,3,3',3'-tetramethylindotricarbocyanine Iodide","K12_15185-47-4_1,1'-Diethyl-3,3,3',3'-tetramethylindotricarbocyanine_iodide.str.tif",Cyanine Dyes,"K12_15185-47-4_1,1'-Diethyl-3,3,3',3'-tetramethylindotricarbocyanine_iodide.abs.txt",742.25,"240,000",ethanol,,"K12_15185-47-4_1,1'-Diethyl-3,3,3',3'-tetramethylindotricarbocyanine_iodide.ems.txt",ethanol,0.28
+214,,Indocyanine Green,K13_3599-32-4_Indocyanine_Green.str.tif,Cyanine Dyes,K13_3599-32-4_Indocyanine_Green.abs.txt,789.0,"194,000",ethanol,,K13_3599-32-4_Indocyanine_Green.ems.txt,ethanol,0.05
+215,,"3,3'-Diethylthiacarbocyanine iodide","K14_905-97-5_3,3'-Diethylthiacarbocyanine_iodide.str.tif",Cyanine Dyes,"K14_905-97-5_3,3'-Diethylthiacarbocyanine_iodide.abs.txt",559.25,"161,000",ethanol,,"K14_905-97-5_3,3'-Diethylthiacarbocyanine_iodide.ems.txt",ethanol,0.05
+216,,"3,3'-Diethylthiadicarbocyanine iodide ","K15_514-73-8_3,3'-Diethylthiadicarbocyanine_iodide.str.tif",Cyanine Dyes,"K15_514-73-8_3,3'-Diethylthiadicarbocyanine_iodide.abs.txt",655.75,"249,000",ethanol,,"K15_514-73-8_3,3'-Diethylthiadicarbocyanine_iodide.ems.txt",ethanol,0.35
+217,,"3,3'-Diethylthiatricarbocyanine iodide ","K16_3071-70-3_3,3'-Diethylthiatricarbocyanine_iodide.str.tif",Cyanine Dyes,"K16_3071-70-3_3,3'-Diethylthiatricarbocyanine_iodide.abs.txt",763.25,"212,000",isopropanol,,,,
+218,,Merocyanine 540,K17_62796-23-0_Merocyanine_540.str.tif,Cyanine Dyes,K17_62796-23-0_Merocyanine_540.abs.txt,559.5,"138,000",ethanol,,K17_62796-23-0_Merocyanine_540.ems.txt,ethanol,0.39
+219,,"4-(dicyanomethylene)-2-methyl-6-(p-dimethylaminostyryl)-4H-pyran, [DCM] ",K18_51325-91-8_[DCM].str.tif,Cyanine Dyes,K18_51325-91-8_[DCM].abs.txt,468.0,"42,000",methanol,,K18_51325-91-8_[DCM].ems.txt,methanol,0.43
+220,,Stains all,K19_7423-31-6_Stains_all.str.tif,Cyanine Dyes,K19_7423-31-6_Stains_all.abs.txt,575.5,"96,500",ethanol,,K19_7423-31-6_Stains_all.ems.txt,,
+221,,Auramine O,L01_2465-27-2_Auramine_O.str.tif,Arylmethane Dyes,L01_2465-27-2_Auramine_O.abs.txt,431.25,"25,300",water,,L01_2465-27-2_Auramine_O.ems.txt,glycerol,0.03
+222,,Malachite Green,L02_2437-29-8_Malachite_Green.str.tif,Arylmethane Dyes,L02_2437-29-8_Malachite_Green.abs.txt,616.5,"77,200",water,,,,
+223,,Crystal Violet,L03_548-62-9_Crystal_Violet.str.tif,Arylmethane Dyes,L03_548-62-9_Crystal_Violet.abs.txt,590.5,"75,800",water,,L03_548-62-9_Crystal_Violet.ems.txt,glycerol,0.019
+224,,p-Fuchsin,L04_632-99-5_p-Fuchsin.str.tif,Arylmethane Dyes,L04_632-99-5_p-Fuchsin.abs.txt,543.0,"80,600",PBS,,,,
+225,,Methyl Violet,L05_8004-87-3_Methy_Violet.str.tif,Arylmethane Dyes,L05_8004-87-3_Methy_Violet.abs.txt,585.0,"84,300",PBS,,,,
+226,,Methyl Green,L06_7114-03-6_Methyl_Green.str.tif,Arylmethane Dyes,L06_7114-03-6_Methyl_Green.abs.txt,632.0,"77,800",PBS,,,,
+227,,Methyl Blue,L07_28983-56-4_Methyl_Blue.str.tif,Arylmethane Dyes,L07_28983-56-4_Methyl_Blue.abs.txt,590.0,"12,250",PBS,,,,
+228,,Phenolphthalein,L08_77-09-8_Phenolphthalein.str.tif,Arylmethane Dyes,L08_77-09-8_Phenolphthalein.abs.txt,554.0,"21,500",0.1 N NaOH aq,,,,
+229,,Phenol Red,L09_143-74-8_Phenol_Red.str.tif,Arylmethane Dyes,L09_143-74-8_Phenol_Red.abs.txt,558.0,"40,000",0.1 N NaOH aq,,,,
+230,,Cresol Red,L10_1733-12-6_Cresol_Red.str.tif,Arylmethane Dyes,L10_1733-12-6_Cresol_Red.abs.txt,573.0,"46,300",0.1 N NaOH aq,,,,
+231,,Thymol Blue,L11_76-61-9_Thymol_Blue.str.tif,Arylmethane Dyes,L11_76-61-9_Thymol_Blue.abs.txt,597.0,"17,600",0.1 N NaOH aq,,,,
+232,,Perylene,M01_198-55-0_Perylene.str.tif,Perylenes,M01_198-55-0_Perylene.abs.txt,435.75,"38,500",cyclohexane,,M01_198-55-0_Perylene.ems.txt,cyclohexane,0.94
+233,,"Perylene, PMI",M02_165550-61-8_Perylene_PMI.str.tif,Perylenes,M02_165550-61-8_Perylene_PMI.abs.txt,507.0,"32,000",toluene,,M02_165550-61-8_Perylene_PMI.ems.txt,toluene,0.91
+234,,"Perylene, PMI(OR)",M03_Perylene_PMI(OR).str.tif,Perylenes,M03_Perylene_PMI(OR).abs.txt,507.0,"32,000",toluene,,M03_Perylene_PMI(OR).ems.txt,toluene,0.82
+235,,"Perylene, PMI(OR)3",M04_468083-01-4_Perylene_PMI(OR)3.str.tif,Perylenes,M04_468083-01-4_Perylene_PMI(OR)3.abs.txt,536.0,"40,000",toluene,,M04_468083-01-4_Perylene_PMI(OR)3.ems.txt,toluene,0.86
+236,,"Perylene, PDI",M05_83054-80-2_Perylene_PDI.str.tif,Perylenes,M05_83054-80-2_Perylene_PDI.abs.txt,528.0,"50,000",toluene,,M05_83054-80-2_Perylene_PDI.ems.txt,toluene,0.97
+237,,Fluorescein ,N01_2321-07-5_Fluorescein.str.tif,Xanthenes,N01_2321-07-5_Fluorescein.abs.txt,500.25,"92,300",ethanol(basic),,N01_2321-07-5_Fluorescein.ems.txt,ethanol (basic),0.97
+238,,"2',7'-Dichlorofluorescein","N02_76-54-0_2',7'-Dichlorofluorescein.str.tif",Xanthenes,"N02_76-54-0_2',7'-Dichlorofluorescein.abs.txt",502.0,"75,000",PBS,,"N02_76-54-0_2',7'-Dichlorofluorescein.ems.txt",30% tris buffered (in DMSO),0.58
+239,,"3,4,5,6-Tetrachlorofluorescein","N03_6262-21-1_3,4,5,6-Tetrachlorofluorescein.str.tif",Xanthenes,"N03_6262-21-1_3,4,5,6-Tetrachlorofluorescein.abs.txt",509.0,"65,500",PBS,,"N03_6262-21-1_3,4,5,6-Tetrachlorofluorescein.ems.txt",PBS,0.65
+240,,Eosin B,N04_548-24-3_Eosin_B.str.tif,Xanthenes,N04_548-24-3_Eosin_B.abs.txt,527.0,"95,000",ethanol,,N04_548-24-3_Eosin_B.ems.txt,ethanol,0.63
+241,,Eosin Y,N05_17372-87-1_Eosin_Y.str.tif,Xanthenes,N05_17372-87-1_Eosin_Y.abs.txt,524.75,"112,000",ethanol (basic),,N05_17372-87-1_Eosin_Y.ems.txt,ethanol,0.67
+242,,Phloxine B,N06_18472-87-2_Phloxine_B.str.tif,Xanthenes,N06_18472-87-2_Phloxine_B.abs.txt,550.0,"83,000",ethanol,,N06_18472-87-2_Phloxine_B.ems.txt,ethanol,0.67
+243,,Erythrosine B,N07_16423-68-0_Erythrosine_B.str.tif,Xanthenes,N07_16423-68-0_Erythrosine_B.abs.txt,535.0,"107,000",ethanol,,N07_16423-68-0_Erythrosine_B.ems.txt,ethanol,0.08
+244,,Rose bengal,N08_11121-48-5_Rose_bengal.str.tif,Xanthenes,N08_11121-48-5_Rose_bengal.abs.txt,559.0,"90,400",ethanol (basic),,N08_11121-48-5_Rose_bengal.ems.txt,ethanol (basic),0.11
+245,,Xantphos,N09_161265-03-8_Xantphos.str.tif,Xanthenes,N09_161265-03-8_Xantphos.abs.txt,261.0,"23,700",dichloromethane,,N09_161265-03-8_Xantphos.ems.txt,dichloromethane,0.16
+246,,Rhodamine 123,N10_62669-70-9_Rhodamine_123.str.tif,Xanthenes,N10_62669-70-9_Rhodamine_123.abs.txt,511.75,"85,700",ethanol,,N10_62669-70-9_Rhodamine_123.ems.txt,ethanol,0.86
+247,,Rhodamine B,N11_81-88-9_Rhodamine_B.str.tif,Xanthenes,N11_81-88-9_Rhodamine_B.abs.txt,542.75,"106,000",ethanol,,N11_81-88-9_Rhodamine_B.ems.txt,ethanol,0.7
+248,,Sulforhodamine B,N12_3520-42-1_Sulforhodamine_B.str.tif,Xanthenes,N12_3520-42-1_Sulforhodamine_B.abs.txt,553.0,"99,000",ethanol,,N12_3520-42-1_Sulforhodamine_B.ems.txt,ethanol,0.7
+249,,Rhodamine 6G,N13_989-38-8_Rhodamine_6G.str.tif,Xanthenes,N13_989-38-8_Rhodamine_6G.abs.txt,529.75,"116,000",ethanol,,N13_989-38-8_Rhodamine_6G.ems.txt,ethanol,0.95
+250,,Rhodamine 101 inner salt ,N14_41175-43-3_Rhodamine_101_inner_salt.str.tif,Xanthenes,N14_41175-43-3_Rhodamine_101_inner_salt.abs.txt,565.0,"95,000",ethanol,,N14_41175-43-3_Rhodamine_101_inner_salt.ems.txt,ethanol,0.98
+251,,Sulforhodamine 101,N15_60311-02-6_Sulforhodamine_101.str.tif,Xanthenes,N15_60311-02-6_Sulforhodamine_101.abs.txt,576.0,"110,000",ethanol,,N15_60311-02-6_Sulforhodamine_101.ems.txt,ethanol,0.9
+252,,Dansylglycine  ,O01_1091-85-6_Dansylglycine.str.tif,Miscellaneous Dyes,O01_1091-85-6_Dansylglycine.abs.txt,338.5,"4,300",dioxane,,O01_1091-85-6_Dansylglycine.ems.txt,dioxane,0.66
+253,,Lucifer Yellow CH,O02_67769-47-5_Lucifer_Yellow_CH.str.tif,Miscellaneous Dyes,O02_67769-47-5_Lucifer_Yellow_CH.abs.txt,279.75,"24,200",water,,O02_67769-47-5_Lucifer_Yellow_CH.ems.txt,water,0.21
+254,,Piroxicam,O03_36322-90-4_Piroxicam.str.tif,Miscellaneous Dyes,O03_36322-90-4_Piroxicam.abs.txt,325.0,"13,000",hexane,,O03_36322-90-4_Piroxicam.ems.txt,hexane,0.035
+255,,"1,2,3,4,5-Pentamethylcyclopentadiene","O04_4045-44-7_1,2,3,4,5-Pentamethylcyclopentadiene.str.tif",Miscellaneous Dyes,"O04_4045-44-7_1,2,3,4,5-Pentamethylcyclopentadiene.abs.txt",249.0,"12,200",ethanol,,,,
+256,,Ethidium Bromide,O05_1239-45-8_Ethidium_Bromide.str.tif,Miscellaneous Dyes,O05_1239-45-8_Ethidium_Bromide.abs.txt,285.0,"56,800",PBS,,O05_1239-45-8_Ethidium_Bromide.ems.txt,water,0.039
+257,,"4',6-Diamidino-2-phenylindole, [DAPI]","O06_28718-90-3_4',6-Diamidino-2-phenylindole_[DAPI].str.tif",Miscellaneous Dyes,"O06_28718-90-3_4',6-Diamidino-2-phenylindole_[DAPI].abs.txt",344.0,"27,800",water,,"O06_28718-90-3_4',6-Diamidino-2-phenylindole_[DAPI].ems.txt",water,0.043
+258,,Hoechst 33258 ,O07_23491-45-4_Hoechst_33258.str.tif,Miscellaneous Dyes,O07_23491-45-4_Hoechst_33258.abs.txt,345.5,"40,100",water,,O07_23491-45-4_Hoechst_33258.ems.txt,water,0.034
+259,,Squarylium dye III,O08_43134-09-4_Squarylium_dye_III.str.tif,Miscellaneous Dyes,O08_43134-09-4_Squarylium_dye_III.abs.txt,627.25,"309,000",dichloromethane,,O08_43134-09-4_Squarylium_dye_III.ems.txt,dichloromethane,0.65
+260,,Ellagic Acid Dihydrate,O09_133039-73-3_Ellagic_Acid_Dihydrate.str.tif,Miscellaneous Dyes,O09_133039-73-3_Ellagic_Acid_Dihydrate.abs.txt,276.0,"35,600",PBS,,,,
+261,,Betalamic Acid,O10_18766-66-0_Betalamic_Acid.str.tif,Miscellaneous Dyes,O10_18766-66-0_Betalamic_Acid.abs.txt,424.0,"27,000",water,,,,
+262,,Betanin,O11_7659-95-2_Betanin.str.tif,Miscellaneous Dyes,O11_7659-95-2_Betanin.abs.txt,535.0,"65,000",PBS,,,,
+263,,Rutin trihydrate,O12_153-18-4_Rutin_trihydrate.str.tif,Miscellaneous Dyes,O12_153-18-4_Rutin_trihydrate.abs.txt,205.0,"25,000",methanol,,,,
+264,,Hesperidin,O13_520-26-3_Hesperidin.str.tif,Miscellaneous Dyes,O13_520-26-3_Hesperidin.abs.txt,203.0,"41,700",methanol,,,,
+265,,5-Phenyldipyrromethane,P01_107798-98-1_5-Phenyldipyrromethane.str.tif,Dipyrrins,P01_107798-98-1_5-Phenyldipyrromethane.abs.txt,208.0,"36,000",hexane,,,,
+266,,5-Phenyldipyrrin,P02_118762-53-1_5-Phenyldipyrrin.str.tif,Dipyrrins,P02_118762-53-1_5-Phenyldipyrrin.abs.txt,432.0,"19,000",toluene,,,,
+267,,"N,N'-Difluoroboryl-1,9-dimethyl-5-phenydipyrrin","P03_N,N'-Difluoroboryl-1,9-dimethyl-5-phenydipyrrin.str.tif",Dipyrrins,"P03_N,N'-Difluoroboryl-1,9-dimethyl-5-phenydipyrrin.abs.txt",502.75,"54,000",toluene,,"P03_N,N'-Difluoroboryl-1,9-dimethyl-5-phenydipyrrin.ems.txt",toluene,0.053
+268,,"N,N'-Difluoroboryl-1,9-dimethyl-5-(4-iodophenyl)dipyrrin","P04_N,N'-Difluoroboryl-1,9-dimethyl-5-(4-iodophenyl)dipyrrin.str.tif",Dipyrrins,"P04_N,N'-Difluoroboryl-1,9-dimethyl-5-(4-iodophenyl)dipyrrin.abs.txt",515.5,"59,000",toluene,,"P04_N,N'-Difluoroboryl-1,9-dimethyl-5-(4-iodophenyl)dipyrrin.ems.txt",toluene,0.23
+269,,"N,N'-Difluoroboryl-1,9-dimethyl-5-[(4-(2-trimethylsilylethynyl)pheny]dipyrrin","P05_N,N'-Difluoroboryl-1,9-dimethyl-5-[(4-(2-TMS-ethynyl)pheny]dipyrrin.str.tif",Dipyrrins,"P05_N,N'-Difluoroboryl-1,9-dimethyl-5-[(4-(2-TMS-ethynyl)pheny]dipyrrin.abs.txt",515.75,"48,800",toluene,,"P05_N,N'-Difluoroboryl-1,9-dimethyl-5-[(4-(2-TMS-ethynyl)pheny]dipyrrin.ems.txt",toluene,0.078
+270,,Bis(5-phenyldipyrrinato)zinc,P06_Bis(5-phenyldipyrrinato)zinc.str.tif,Dipyrrins,P06_Bis(5-phenyldipyrrinato)zinc.abs.txt,485.0,"115,000",toluene,,P06_Bis(5-phenyldipyrrinato)zinc.ems.txt,toluene,0.006
+271,,Bis(5-mesityldipyrrinato)zinc,P07_Bis(5-mesityldipyrrinato)zinc.str.tif,Dipyrrins,P07_Bis(5-mesityldipyrrinato)zinc.abs.txt,487.0,"115,000",toluene,,P07_Bis(5-mesityldipyrrinato)zinc.ems.txt,toluene,0.36
+272,,H2P,Q01_101-60-0_H2P.str.tif,Porphyrins,Q01_101-60-0_H2P.abs.txt,396.25,"261,000",toluene,,Q01_101-60-0_H2P.ems.txt,toluene,0.043
+273,,MgP,Q02_MgP.str.tif,Porphyrins,Q02_MgP.abs.txt,402.0,"487,000",toluene,,Q02_MgP.ems.txt,propanol,0.058
+274,,ZnP,Q03_ZnP.str.tif,Porphyrins,Q03_ZnP.abs.txt,399.0,"380,000",toluene,,Q03_ZnP.ems.txt,ethanol,0.0084
+275,,H2OEP,Q04_2683-82-1_H2OEP.str.tif,Porphyrins,Q04_2683-82-1_H2OEP.abs.txt,400.0,"159,000",benzene,,Q04_2683-82-1_H2OEP.ems.txt,benzene,0.13
+276,,MgOEP,Q05_20910-35-4_MgOEP.str.tif,Porphyrins,Q05_20910-35-4_MgOEP.abs.txt,409.75,"408,000",toluene,,Q05_20910-35-4_MgOEP.ems.txt,toluene,0.15
+277,,CuOEP,Q06_14409-63-3_CuOEP.str.tif,Porphyrins,Q06_14409-63-3_CuOEP.abs.txt,400.0,"347,000",toluene,,,,
+278,,ZnOEP,Q07_17632-18-7_ZnOEP.str.tif,Porphyrins,Q07_17632-18-7_ZnOEP.abs.txt,404.25,"417,000",toluene,,Q07_17632-18-7_ZnOEP.ems.txt,benzene,0.045
+279,,H2TPP,Q08_917-23-7_H2TPP.str.tif,Porphyrins,Q08_917-23-7_H2TPP.abs.txt,419.25,"443,000",toluene,,Q08_917-23-7_H2TPP.ems.txt,toluene,0.11
+280,,MgTPP,Q09_14640-21-2_MgTPP.str.tif,Porphyrins,Q09_14640-21-2_MgTPP.abs.txt,426.0,"562,000",toluene,,Q09_14640-21-2_MgTPP.ems.txt,toluene,0.15
+281,,ZnTPP,Q10_14074-80-7_ZnTPP.str.tif,Porphyrins,Q10_14074-80-7_ZnTPP.abs.txt,422.75,"574,000",toluene,,Q10_14074-80-7_ZnTPP.ems.txt,toluene,0.033
+282,,H2TMP,Q11_56396-12-4_H2TMP.str.tif,Porphyrins,Q11_56396-12-4_H2TMP.abs.txt,419.0,"427,000",toluene,,Q11_56396-12-4_H2TMP.ems.txt,toluene,0.088
+283,,MgTMP,Q12_MgTMP.str.tif,Porphyrins,Q12_MgTMP.abs.txt,426.5,"446,700",toluene,,Q12_MgTMP.ems.txt,toluene,0.17
+284,,ZnTMP,Q13_ZnTMP.str.tif,Porphyrins,Q13_ZnTMP.abs.txt,421.5,"385,000",toluene,,Q13_ZnTMP.ems.txt,toluene,0.039
+285,,H2TTP,Q14_14527-51-6_H2TTP.str.tif,Porphyrins,Q14_14527-51-6_H2TTP.abs.txt,420.0,"495,000",toluene,,Q14_14527-51-6_H2TTP.ems.txt,benzene,0.12
+286,,(o-H2NPh)H2P,Q15_52199-35-6_(o-H2NPh)H2P.str.tif,Porphyrins,Q15_52199-35-6_(o-H2NPh)H2P.abs.txt,420.75,"186,000",toluene,,Q15_52199-35-6_(o-H2NPh)H2P.ems.txt,toluene,0.091
+287,,(ODC)H2P,Q16_37083-37-7_(ODC)H2P.str.tif,Porphyrins,Q16_37083-37-7_(ODC)H2P.abs.txt,419.0,"299,000",benzene,,Q16_37083-37-7_(ODC)H2P.ems.txt,toluene,0.0019
+288,,C6F5-H2P,Q17_25440-14-6_C6F5-H2P.str.tif,Porphyrins,Q17_25440-14-6_C6F5-H2P.abs.txt,417.0,"236,900",toluene,,Q17_25440-14-6_C6F5-H2P.ems.txt,benzene,0.032
+289,,N-Confused tetraphenylporphyrin,Q18_N-Confused_tetraphenylporphyrin.str.tif,Porphyrins,Q18_N-Confused_tetraphenylporphyrin.abs.txt,440.0,"159,000",chloroform,,Q18_N-Confused_tetraphenylporphyrin.ems.txt,chloroform,0.00156
+290,,H4TPP2+,Q19_H4TPP2+.str.tif,Porphyrins,Q19_H4TPP2+.abs.txt,444.5,"431,000",chloroform + HCl,,Q19_H4TPP2+.ems.txt,benzene + TFA,0.14
+291,,ZnTMP.+,Q20_ZnTMP+.str.tif,Porphyrins,Q20_ZnTMP+.abs.txt,412.0,"190,000",dichloromethane,,,,
+292,,Protoporphyrin IX dimethyl ester,Q21_5522-66-7_Protoporphyrin_IX_dimethyl_ester.str.tif,Porphyrins,Q21_5522-66-7_Protoporphyrin_IX_dimethyl_ester.abs.txt,408.0,"166,000",chloroform,,Q21_5522-66-7_Protoporphyrin_IX_dimethyl_ester.ems.txt,methanol,0.1
+293,,Hematin,Q22_15489-90-4_Hematin.str.tif,Porphyrins,Q22_15489-90-4_Hematin.abs.txt,385.9,"85,000",acetic acid,,,,
+294,,Tetrabenzoporphine,Q23_52952-31-5_Tetrabenzoporphine.str.tif,Porphyrins,Q23_52952-31-5_Tetrabenzoporphine.abs.txt,429.0,"66,100",dimethylformamide,,Q23_52952-31-5_Tetrabenzoporphine.ems.txt,dimethylformamide,0.41
+295,,H2TBP(CO2Bu),Q24_H2TBP(CO2Bu).str.tif,Porphyrins,Q24_H2TBP(CO2Bu).abs.txt,447.0,"324,000",dimethylformamide,,Q24_H2TBP(CO2Bu).ems.txt,dimethylformamide,0.27
+296,,ZnTBP(CO2Bu),Q25_ZnTBP(CO2Bu).str.tif,Porphyrins,Q25_ZnTBP(CO2Bu).abs.txt,452.0,"437,000",pyridine,,Q25_ZnTBP(CO2Bu).ems.txt,pyridine,0.15
+297,,PdTBP(CO2Bu),Q26_PdTBP(CO2Bu).str.tif,Porphyrins,Q26_PdTBP(CO2Bu).abs.txt,426.0,"302,000",dimethylformamide,,Q26_PdTBP(CO2Bu).ems.txt,dimethylformamide,0.23
+298,,H2TBP(CO2Me)Ph,Q27_H2TBP(CO2Me)Ph.str.tif,Porphyrins,Q27_H2TBP(CO2Me)Ph.abs.txt,469.0,"220,000",dimethylformamide,,Q27_H2TBP(CO2Me)Ph.ems.txt,dimethylformamide,0.027
+299,,ZnTBP(CO2Me)Ph,Q28_ZnTBP(CO2Me)Ph.str.tif,Porphyrins,Q28_ZnTBP(CO2Me)Ph.abs.txt,471.0,"300,000",dimethylformamide,,Q28_ZnTBP(CO2Me)Ph.ems.txt,dimethylformamide,0.01
+300,,PdTBP(CO2Me)Ph,Q29_PdTBP(CO2Me)Ph.str.tif,Porphyrins,Q29_PdTBP(CO2Me)Ph.abs.txt,443.0,"240,000",dimethylformamide,,Q29_PdTBP(CO2Me)Ph.ems.txt,dimethylformamide,0.106
+301,,ZnTCPH(CO2Me)Ph,Q30_ZnTCPH(CO2Me)Ph.str.tif,Porphyrins,Q30_ZnTCPH(CO2Me)Ph.abs.txt,453.0,"210,000",dimethylformamide,,Q30_ZnTCPH(CO2Me)Ph.ems.txt,dimethylformamide,0.0005
+302,,PdTCPH(CO2Me)Ph,Q31_PdTCPH(CO2Me)Ph.str.tif,Porphyrins,Q31_PdTCPH(CO2Me)Ph.abs.txt,428.0,"200,000",dimethylformamide,,,,
+303,,H2TBP(CO2Bu)Ph,Q32_H2TBP(CO2Bu)Ph.str.tif,Porphyrins,Q32_H2TBP(CO2Bu)Ph.abs.txt,483.0,"229,000",dimethylformamide,,Q32_H2TBP(CO2Bu)Ph.ems.txt,dimethylformamide,0.018
+304,,ZnTBP(CO2Bu)Ph,Q33_ZnTBP(CO2Bu)Ph.str.tif,Porphyrins,Q33_ZnTBP(CO2Bu)Ph.abs.txt,487.0,"389,000",dimethylformamide,,Q33_ZnTBP(CO2Bu)Ph.ems.txt,dimethylformamide,0.03
+305,,PdTBP(CO2Bu)Ph,Q34_PdTBP(CO2Bu)Ph.str.tif,Porphyrins,Q34_PdTBP(CO2Bu)Ph.abs.txt,460.0,"250,000",dimethylformamide,,Q34_PdTBP(CO2Bu)Ph.ems.txt,dimethylformamide,0.03
+306,,Ph-Corrole,R01_246231-45-8_Ph-Corrole.str.tif,Oligopyrroles,R01_246231-45-8_Ph-Corrole.abs.txt,416.0,"110,000",dichloromethane,,R01_246231-45-8_Ph-Corrole.ems.txt,dichloromethane,0.14
+307,,C6F5-Corrole,R02_262280-80-8_C6F5-Corrole.str.tif,Oligopyrroles,R02_262280-80-8_C6F5-Corrole.abs.txt,408.0,"114,000",dichloromethane,,R02_262280-80-8_C6F5-Corrole.ems.txt,dichloromethane,0.11
+308,,Sapphyrin,R03_Sapphyrin.str.tif,Oligopyrroles,R03_Sapphyrin.abs.txt,491.0,"74,900",dichloromethane,,,,
+309,,Bilirubin,R04_635-65-4_Bilirubin.str.tif,Oligopyrroles,R04_635-65-4_Bilirubin.abs.txt,450.75,"55,000",chloroform,,,,
+310,,Biliverdin dimethyl ester,R05_10035-62-8_Biliverdin_dimethyl_ester.str.tif,Oligopyrroles,R05_10035-62-8_Biliverdin_dimethyl_ester.abs.txt,377.0,"56,200",ethanol,,,,
+311,,Cyanocobalamin,R06_68-19-9_Cyanocobalamin.str.tif,Oligopyrroles,R06_68-19-9_Cyanocobalamin.abs.txt,361.0,"27,500",borate buffer (pH 10),,,,
+312,,H2Pc,S01_574-93-6_H2Pc.str.tif,Phthalocyanines,S01_574-93-6_H2Pc.abs.txt,698.5,"162,000",chloronaphthalene,,S01_574-93-6_H2Pc.ems.txt,chloronaphthalene,0.6
+313,,MgPc,S02_1661-03-6_MgPc.str.tif,Phthalocyanines,S02_1661-03-6_MgPc.abs.txt,674.0,"87,100",pyridine,,S02_1661-03-6_MgPc.ems.txt,chloronaphthalene,0.48
+314,,FePc,S03_132-16-1_FePc.str.tif,Phthalocyanines,S03_132-16-1_FePc.abs.txt,662.0,"69,200",dimethylformamide,,,,
+315,,ZnPc,S04_14320-04-8_ZnPc.str.tif,Phthalocyanines,S04_14320-04-8_ZnPc.abs.txt,674.0,"281,800",pyridine,,S04_14320-04-8_ZnPc.ems.txt,pyridine,0.3
+316,,H2Pc(OBu),S05_116453-73-7_H2Pc(OBu).str.tif,Phthalocyanines,S05_116453-73-7_H2Pc(OBu).abs.txt,763.0,"134,000",toluene,,S05_116453-73-7_H2Pc(OBu).ems.txt,chloroform,0.13
+317,,H2Pc(tBu),S06_35984-93-1_H2Pc(tBu).str.tif,Phthalocyanines,S06_35984-93-1_H2Pc(tBu).abs.txt,699.0,"178,000",toluene,,S06_35984-93-1_H2Pc(tBu).ems.txt,benzene,0.77
+318,,ZnPc(tBu),S07_39001-65-5_ZnPc(tBu).str.tif,Phthalocyanines,S07_39001-65-5_ZnPc(tBu).abs.txt,677.0,"380,000",toluene,,S07_39001-65-5_ZnPc(tBu).ems.txt,benzene,0.37
+319,,H2Nc(OnBu),S08_105528-25-4_H2Nc(OnBu).str.tif,Phthalocyanines,S08_105528-25-4_H2Nc(OnBu).abs.txt,865.0,"181,000",toluene,,,,
+320,,H2Nc(tBu),S09_58687-99-3_H2Nc(tBu).str.tif,Phthalocyanines,S09_58687-99-3_H2Nc(tBu).abs.txt,784.37,"269,000",chlorobenzene,,S09_58687-99-3_H2Nc(tBu).ems.txt,chloroform,0.01
+321,,H2N4P(tBu),S10_64987-70-8_H2N4P(tBu).str.tif,Phthalocyanines,S10_64987-70-8_H2N4P(tBu).abs.txt,624.38,"72,600",chlorobenzene,,S10_64987-70-8_H2N4P(tBu).ems.txt,chloroform,0.21
+322,,Boron subphthalocyanine chloride,S11_36530-06-0_Boron_subphthalocyanine_chloride.str.tif,Phthalocyanines,S11_36530-06-0_Boron_subphthalocyanine_chloride.abs.txt,569.0,"63,000",benzene,,S11_36530-06-0_Boron_subphthalocyanine_chloride.ems.txt,benzene,0.25
+323,,Chlorophyll a  ,T01_479-61-8_Chlorophyll_a.str.tif,Chlorins/Bacteriochlorins,T01_479-61-8_Chlorophyll_a.abs.txt,429.0,"111,700",diethyl ether,,T01_479-61-8_Chlorophyll_a.ems.txt,diethyl ether,0.32
+324,,Chlorophyll b,T02_519-62-0_Chlorophyll_b.str.tif,Chlorins/Bacteriochlorins,T02_519-62-0_Chlorophyll_b.abs.txt,453.0,"160,000",diethyl ether,,T02_519-62-0_Chlorophyll_b.ems.txt,diethyl ether,0.117
+325,,Pheophorbide a,T03_15664-29-6_Pheophorbide_a.str.tif,Chlorins/Bacteriochlorins,T03_15664-29-6_Pheophorbide_a.abs.txt,410.0,"93,000",ethanol,,T03_15664-29-6_Pheophorbide_a.ems.txt,ethanol,0.28
+326,,Pyropheophorbide a,T04_24533-72-0_Pyropheophorbide_a.str.tif,Chlorins/Bacteriochlorins,T04_24533-72-0_Pyropheophorbide_a.abs.txt,413.0,"105,000",dichloromethane,,T04_24533-72-0_Pyropheophorbide_a.ems.txt,dimethylformamide,0.31
+327,,Pyropheophorbide a methyl ester,T05_6453-67-4_Pyropheophorbide_a_methyl_ester.str.tif,Chlorins/Bacteriochlorins,T05_6453-67-4_Pyropheophorbide_a_methyl_ester.abs.txt,414.0,"108,000",dichloromethane,,T05_6453-67-4_Pyropheophorbide_a_methyl_ester.ems.txt,dichloromethane,0.21
+328,,Chlorin e6 ,T06_19660-77-6_Chlorin_e6.str.tif,Chlorins/Bacteriochlorins,T06_19660-77-6_Chlorin_e6.abs.txt,401.0,"169,000",ethanol,,T06_19660-77-6_Chlorin_e6.ems.txt,ethanol,0.16
+329,,Purpurin 18,T07_25465-77-4_Purpurin_18.str.tif,Chlorins/Bacteriochlorins,T07_25465-77-4_Purpurin_18.abs.txt,413.0,"83,200",toluene,,T07_25465-77-4_Purpurin_18.ems.txt,toluene,0.08
+330,,H2TPC,T08_2669-65-0_H2TPC.str.tif,Chlorins/Bacteriochlorins,T08_2669-65-0_H2TPC.abs.txt,421.0,"165,000",toluene,,T08_2669-65-0_H2TPC.ems.txt,toluene,0.28
+331,,H2C-1,T09_H2C-1.str.tif,Chlorins/Bacteriochlorins,T09_H2C-1.abs.txt,414.0,"89,100",toluene,,T09_H2C-1.ems.txt,toluene,0.26
+332,,CuC-1,T10_CuC-1.str.tif,Chlorins/Bacteriochlorins,T10_CuC-1.abs.txt,409.0,"162,000",toluene,,,,
+333,,ZnC-1,T11_ZnC-1.str.tif,Chlorins/Bacteriochlorins,T11_ZnC-1.abs.txt,411.0,"186,000",toluene,,T11_ZnC-1.ems.txt,toluene,0.083
+334,,H2COxo-1,T12_H2COxo-1.str.tif,Chlorins/Bacteriochlorins,T12_H2COxo-1.abs.txt,415.0,"174,000",toluene,,T12_H2COxo-1.ems.txt,toluene,0.13
+335,,MgCOxo-1,T13_MgCOxo-1.str.tif,Chlorins/Bacteriochlorins,T13_MgCOxo-1.abs.txt,425.0,"191,000",toluene,,T13_MgCOxo-1.ems.txt,toluene,0.1
+336,,CuCOxo-1,T14_CuCOxo-1.str.tif,Chlorins/Bacteriochlorins,T14_CuCOxo-1.abs.txt,420.0,"174,000",toluene,,,,
+337,,ZnCOxo-1,T15_ZnCOxo-1.str.tif,Chlorins/Bacteriochlorins,T15_ZnCOxo-1.abs.txt,423.0,"209,000",toluene,,T15_ZnCOxo-1.ems.txt,toluene,0.04
+338,,Bacteriochlorophyll a,T16_17499-98-8_Bacteriochlorophyll_a.str.tif,Chlorins/Bacteriochlorins,T16_17499-98-8_Bacteriochlorophyll_a.abs.txt,780.2,"92,000",toluene,,T16_17499-98-8_Bacteriochlorophyll_a.ems.txt,toluene,0.2
