@@ -19,7 +19,7 @@ tqdm.notebook.tqdm_notebook.pandas()
 from . import utils
 from . import labels
 from . import train
-def ovall_randomforest_regrassion():
+def overall_RandomForest_Regrassion():
 
     pbar = ProgressBar()
     pbar.register()  # global registration
