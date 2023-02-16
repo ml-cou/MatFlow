@@ -25,7 +25,7 @@ tqdm.notebook.tqdm_notebook.pandas()
 from . import utils
 from . import labels
 from . import train
-def ovall_randomforest_classifaications():
+def overall_RandomForest_Classifaications():
 
     sns.set_theme(style="whitegrid", font_scale=1.1, font='Calibri')
     sns.despine(left=True)
