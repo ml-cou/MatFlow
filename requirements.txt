@@ -14,7 +14,7 @@ sweetviz
 scipy
 pandas-profiling
 streamlit-pandas-profiling
-streamlit_extras
+streamlit-extras==0.2.5
 pyarrow
 ipywidgets
 hydralit-components
