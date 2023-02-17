@@ -3,9 +3,9 @@ import streamlit as st
 if 'current_page' not in st.session_state:
     st.session_state.current_page = 'login'
 if st.session_state.current_page=='project_files':
-    st.set_page_config(layout='wide', initial_sidebar_state='expanded')
+    st.set_page_config(layout='wide',page_title='Start', initial_sidebar_state='expanded')
 else:
-    st.set_page_config(layout='wide', initial_sidebar_state='collapsed')
+    st.set_page_config(layout='wide',page_title='Start', initial_sidebar_state='collapsed')
 
 from subpage.navbar import navbar,vspace,body_padding
 from subpage import create_project, project_files
