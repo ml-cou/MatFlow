@@ -1,6 +1,6 @@
 import streamlit as st
 from pathlib import Path
-st.set_page_config(layout='wide', initial_sidebar_state='expanded')
+st.set_page_config(layout='wide',page_title='Demo', initial_sidebar_state='expanded')
 from subpage.navbar import navbar,body_padding
 navbar()
 base_path = Path().absolute()
