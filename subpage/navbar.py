@@ -62,7 +62,13 @@ def navbar():
                             menu_icon="cast", default_index=st.session_state.page_index, orientation="horizontal",
                             styles={
                                 "container": {"padding": "5px 20% 5px 20% !important", "background-color": "#86E5FF","width":"100vw",
-                                              "border-radius": "0rem", "display": "block !important", "margin": "0px","z-index":"999991"}}
+                                              "border-radius": "0rem", "display": "block !important", "margin": "0px","z-index":"999991"},
+        #                     "icon": {"color": "orange", "font-size": "25px"},
+        # "nav-link": {"font-size": "25px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+        # "nav-link-selected": {"background-color": "green"},
+        #                         "menu-icon":{"background-image": "url(https://picsum.photos/id/237/200/300)"},
+        #                         "separator":{"color":"red"},
+                            }
                             )
     st.markdown('''
              <style>
@@ -73,6 +79,7 @@ def navbar():
         }
          </style>
             ''', unsafe_allow_html=True)
+
     menu_id = menu.index(selected2)
     if menu_id != st.session_state.page_index:
 
@@ -83,6 +90,8 @@ def navbar():
             switch_page('project')
         elif menu_id == 1:
             switch_page('demo')
+        elif menu_id==2:
+            switch_page('contact')
         st._rerun()
 
 
@@ -95,3 +104,5 @@ def body_padding(len, px):
     # }}
     # </style>
     ''', unsafe_allow_html=True)
+
+
