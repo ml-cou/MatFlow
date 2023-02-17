@@ -1,5 +1,6 @@
 import streamlit as st
 from subpage.navbar import navbar
+st.set_page_config(layout='wide',page_title='Contact', initial_sidebar_state='collapsed')
 
 def form():
     navbar()
