@@ -3,7 +3,6 @@ import time
 import streamlit as st
 import pandas as pd
 from modules import utils
-from feature import change_dtype,change_fieldname
 import streamlit as st
 import pandas as pd
 import time
@@ -42,41 +41,31 @@ def info(data):
 			""")
 	except:
 		st.write('')
-def show_table(file_):
-	if 'btn_state' not in st.session_state:
-		st.session_state.btn_state=False
-	if 'alt_val' not in st.session_state:
-		st.session_state.alt_val = {}
-	col1,col3,col2=st.columns([7,1,3])
-	with st.container():
-		with col1:
-			st.markdown(f'<h6> {file_.file_name} </h6>',unsafe_allow_html=True)
-			file_data=file_.file_data
-			st.table(file_data.head())
-		with col2:
-			info(file_data)
-		co1, co3 , co2 = st.columns([7, 2, 2])
-		with co3:
-			if st.button('edit',type='primary'):
-				st.session_state.btn_state=True
-		with co2:
-			save=st.button('save',type='primary')
-		if st.session_state.btn_state:
-			opn = st.radio('', options=['field name', 'data type'])
-			if opn == 'data type':
-				change_dtype.change_dtype(file_.file_data,0)
-			elif opn == 'field name':
-				change_fieldname.change_field_name(file_)
-		if save:
+# def show_table(file_):
+# 	if 'btn_state' not in st.session_state:
+# 		st.session_state.btn_state=False
 
-			if len(set(st.session_state.alt_val.values())) != len(st.session_state.alt_val.values()):
-					st.warning('field can\'t be same')
-			else:
-				for k, v in st.session_state.alt_val.items():
-					if len(v)>0:
-						file_.file_data.rename(columns={k: v}, inplace=True)
-				st.session_state.btn_state = False
-				st._rerun()
+# 	col1,col3,col2=st.columns([7,1,3])
+# 	with st.container():
+# 		with col1:
+# 			st.markdown(f'<h6> {file_.file_name} </h6>',unsafe_allow_html=True)
+# 			file_data=file_.file_data
+# 			st.table(file_data.head())
+# 		with col2:
+# 			info(file_data)
+# 		co1, co3 , co2 = st.columns([7, 2, 2])
+# 		with co3:
+# 			if st.button('edit',type='primary'):
+# 				st.session_state.btn_state=True
+# 		with co2:
+# 			save=st.button('save',type='primary')
+# 		if st.session_state.btn_state:
+# 			opn = st.radio('', options=['field name', 'data type'])
+# 			if opn == 'data type':
+# 				change_dtype.change_dtype(file_.file_data,0)
+# 			elif opn == 'field name':
+# 				change_fieldname.change_field_name(file_)
+
 
 
 st.markdown('''
