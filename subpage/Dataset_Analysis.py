@@ -5,7 +5,7 @@ from modules import utils
 from modules.dataframe import display, info, stats, correlation, duplicate, group
 def ds_analysis(ds):
 	try:
-		data=ds
+		data=ds.file_data
 		data_opt=0
 	except KeyError:
 		st.header("No Dataset Found")
@@ -34,6 +34,4 @@ def ds_analysis(ds):
 		duplicate.duplicate(data, data_opt)
 
 	with tabs[5]:
-		# Bug: Return None when some columns dropped
-
 		group.group(data)
