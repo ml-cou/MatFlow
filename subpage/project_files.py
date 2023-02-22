@@ -8,6 +8,8 @@ from modules.dataset import display
 from pathlib import Path
 from .Dataset_Analysis import ds_analysis
 from .Dataset_Visualization import ds_visualization
+from .Feature_Engineering import ds_feature_engineering
+from .Final_Data_Analysis import ds_final_data_analysis
 from feature import change_dtype
 
 
@@ -73,6 +75,7 @@ def run():
     except:
         pass
     if not selected == 'No Files':
+
         main_funtionality=['Dataset Analysis','Visualizations','Feature Engineering','Final Data Analysis']
         selected_function=option_menu(None, main_funtionality, menu_icon="folder2-open",orientation="horizontal",
                     styles=
@@ -80,14 +83,25 @@ def run():
                                    "background-color": "#ECF2FF", "width": "100vw",
                                   "border-radius": "0rem", "display": "block !important",
                                   "margin": "0px", "z-index": "999991"}})
+
+
         for i in st.session_state.project_files:
             if i.file_name == selected:
                 c0, col2, c1 = st.columns([0.5, 7, 0.3])
                 with col2:
                     if selected_function==main_funtionality[0]:
-                        ds_analysis(i.file_data)
+                        ds_analysis(i)
                     elif selected_function==main_funtionality[1]:
-                        ds_visualization(i.file_data)
+                        ds_visualization(i)
+                    elif selected_function==main_funtionality[2]:
+                        ds_feature_engineering(i)
+                    elif selected_function==main_funtionality[3]:
+                        pass
+                        # ds_final_data_analysis(i)
+
+
+
+
 
 
 

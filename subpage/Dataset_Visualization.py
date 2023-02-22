@@ -4,7 +4,7 @@ from modules import utils
 from modules.graph import barplot, pieplot, countplot, histogram, boxplot, violinplot, scatterplot, regplot, lineplot
 def ds_visualization(ds):
     try:
-        data = ds
+        data = ds.file_data
         data_opt = 0
 
     except KeyError:
