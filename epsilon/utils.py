@@ -182,7 +182,7 @@ def SaveDataToOutput(data, name):
         os.mkdir(outputDirectory)
     data.to_parquet(os.path.join(outputDirectory, name + '.gzip.parquet'), compression='gzip')
 
-
+@st.cache_data
 def LoadDataFromOutput(name):
     return pd.read_parquet(os.path.join(outputDirectory, name + '.gzip.parquet'))
 
