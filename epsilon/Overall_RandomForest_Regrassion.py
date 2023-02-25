@@ -51,13 +51,14 @@ def overall_RandomForest_Regrassion():
     regressorModelUsed = pd.read_parquet('./code/modelUsed-RandomForestRegressor.gzip.parquet').iloc[0]
     utils.show_dataset_with_info(regressorModelUsed,'modelUsed: RandomForestRegressor')
     regressorModelUsed['Thresholds'] = ast.literal_eval(regressorModelUsed['Thresholds'])
+    print('regession step 1 done')
 
     regressorModelUsed['Model'] = train.TrainRandomForestRegressor(regressorModelUsed['Model Params'],
                                                                    regressorModelUsed['Trial Type'],
                                                                    regressorModelUsed['High Epsilon Weight']
                                                                    , regressorModelUsed['Thresholds'], data)
 
-    # print('Model Used:')
+    print('regession step 2 done')
     # print(regressorModelUsed['Trial Type'])
     # if (regressorModelUsed['Trial Type'] == 'Thresholds Trial'):
     #     print('Thresholds: ' + str(regressorModelUsed['Thresholds']))
@@ -80,10 +81,9 @@ def overall_RandomForest_Regrassion():
         chart.axvline(150, color='#5e3c99')
         chart.axhline(150, color='#5e3c99')
 
-
-        fig, axes = plt.subplots(ncols=2, figsize=(8, 4), constrained_layout=True, sharey=True, sharex=True)
-        GraphResults(development, regressorModelUsed, 'Development', axes[0])
-        GraphResults(validation, regressorModelUsed, 'Validation', axes[1])
-        # st.pyplot(fig.get_figure())
-        fig.savefig('./output/chart-overall-RandomForestRegressor.png', bbox_inches='tight', dpi=600)
-        utils.savefigure('chart-overall-RandomForestRegressor', fig.get_figure())
+    fig, axes = plt.subplots(ncols=2, figsize=(8, 4), constrained_layout=True, sharey=True, sharex=True)
+    GraphResults(development, regressorModelUsed, 'Development', axes[0])
+    GraphResults(validation, regressorModelUsed, 'Validation', axes[1])
+    # st.pyplot(fig.get_figure())
+    fig.savefig('./output/chart-overall-RandomForestRegressor.png', bbox_inches='tight', dpi=600)
+    utils.savefigure('chart-overall-RandomForestRegressor', fig.get_figure())
