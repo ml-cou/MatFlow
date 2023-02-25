@@ -3,13 +3,14 @@
 import pandas as pd
 
 from sklearn.ensemble import RandomForestRegressor
-
+import streamlit as st
 def GetXandY(data):
     X = data.drop(['Epsilon'], axis = 'columns')
     y = data['Epsilon']
 
     return X, y
 
+@st.cache_resource
 def TrainRandomForestRegressor(modelParams, trialType, highEpsilonWeight, thresholds, data):
     if (modelParams == 'foo'):
         return RandomForestRegressor()
@@ -25,7 +26,7 @@ from sklearn.ensemble import RandomForestClassifier
 def ComputeLabel(y, threshold):
     return y.apply(lambda x: 'high ε' if x >= threshold else 'low ε')
 
-
+@st.cache_resource
 def TrainRandomForestClassifier(modelParams, threshold, data):
     if (modelParams == 'foo'):
         return RandomForestClassifier()
