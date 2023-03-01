@@ -9,11 +9,16 @@ from pathlib import Path
 from .Dataset_Analysis import ds_analysis
 from .Dataset_Visualization import ds_visualization
 from .Feature_Engineering import ds_feature_engineering
+from modules.classes import data as dataaa
+
 from .Final_Data_Analysis import ds_final_data_analysis
 from feature import change_dtype
 
 
 def run():
+    if 'dataset' not in st.session_state:
+        st.session_state["dataset"]=dataaa.Dataset()
+
     path = Path().absolute()
     if 'sample_taken' not in st.session_state:
         st.session_state.sample_taken = False
@@ -115,12 +120,19 @@ def run():
                         st.session_state.project_files = []
                         dt = pd.read_csv(new_file)
                         st.session_state.project_files.append(funFile(new_file.name, dt))
+                        st.session_state["dataset"].add(st.session_state.project_files[-1].file_name,
+                                                        st.session_state.project_files[-1].file_data)
+
                     else:
                         data = pd.read_csv(new_file)
                         if validiate_data(data, new_file.name):
                             st.session_state.project_files.append(funFile(new_file.name, data))
+                            st.session_state["dataset"].add(st.session_state.project_files[-1].file_name,
+                                                            st.session_state.project_files[-1].file_data)
+
                 except:
                     pass
+                print(st.session_state.dataset)
                 st._rerun()
         rad = st.radio('Use default data set', options=['Yes', 'No'], index=1)
         if rad == 'Yes' and st.session_state.sample_taken == False:
@@ -137,7 +149,9 @@ def run():
                     if 'project_files' not in st.session_state:
                         st.session_state.project_files = []
                         st.session_state.project_files.append(funFile(new_file_name, dt))
+                        st.session_state["dataset"].add(st.session_state.project_files[-1].file_name,st.session_state.project_files[-1].file_data)
                     elif validiate_data(dt, new_file_name):
                         st.session_state.project_files.append(funFile(new_file_name, dt))
+                        st.session_state["dataset"].add(st.session_state.project_files[-1].file_name,st.session_state.project_files[-1].file_data)
 
             st._rerun()
