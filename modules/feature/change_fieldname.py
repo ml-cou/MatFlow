@@ -3,8 +3,7 @@ import streamlit as st
 
 def change_field_name(file_,opt):
 
-    if 'alt_val' not in st.session_state:
-        st.session_state.alt_val = {}
+
 
     fixed_li = file_.columns.values.tolist()
     col1,col2,col3=st.columns(3)
@@ -20,24 +19,28 @@ def change_field_name(file_,opt):
     for i in range(n_iter):
         with col1:
             var = st.selectbox(
-                "Field name",
+                "Field Name",
                 options=fixed_li,
                 key=f"change_fname_var_{i}"
             )
             selected.append(var)
             fixed_li = [key for key in fixed_li if key not in selected]
         with col2:
-            var2 = st.text_input('New field name',
+            var2 = st.text_input('New Field Name',
                 key=f"change_fname_rename_{i}"
             )
-        st.session_state.alt_val.__setitem__(var,var2)
 
     if st.button('save'):
-        if len(set(st.session_state.alt_val.values())) != len(st.session_state.alt_val.values()):
-            st.warning('field can\'t be same')
+        change=True
+        for i in range(n_iter):
+            for j in range(n_iter):
+                if st.session_state['change_fname_var_'+str(i)]==st.session_state['change_fname_rename_'+str(i)] or len(st.session_state['change_fname_rename_'+str(i)])==0:
+                    change=False
+        if not change:
+            st.warning('Field name can\'t be same or empty')
         else:
-            for k, v in st.session_state.alt_val.items():
-                if len(v) > 0:
-                    file_.rename(columns={k: v}, inplace=True)
+            for i in range(n_iter):
+                    file_.rename(columns={st.session_state['change_fname_var_'+str(i)]:st.session_state['change_fname_rename_'+str(i)]}, inplace=True)
             st.session_state.btn_state = False
             st._rerun()
+
