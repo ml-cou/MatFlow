@@ -75,6 +75,10 @@ def get_nunique(data, column=None):
 
 def update_value(data_opt, new_value):
     st.session_state["dataset"].data[data_opt] = new_value
+    for i in st.session_state.project_files:
+        if i.file_name==data_opt:
+            i.file_data=new_value
+            break
 
 
 def add_pipeline(name, class_obj):
