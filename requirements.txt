@@ -2,7 +2,7 @@ pandas
 scikit-learn
 seaborn
 matplotlib
-streamlit~=1.18.0
+streamlit==1.18.0
 rdkit
 tqdm
 pdfminer==20191125
@@ -21,4 +21,5 @@ notebook
 ipython
 streamlit_option_menu
 streamlit-extras
+category_encoders
 
