@@ -25,8 +25,9 @@ def ds_feature_engineering(ds):
             return False
 
     try:
+
         data = ds.file_data
-        data_opt = 0
+        data_opt = ds.file_name
     except KeyError:
         st.header("No Dataset Found")
         st.stop()
@@ -77,7 +78,10 @@ def ds_feature_engineering(ds):
                     tmp=pd.DataFrame(ds.file_data)
                     for i in st.session_state.project_files:
                         if i.file_name==merge_name:
-                            tmp.merge(i.file_data)
+                            try:
+                                tmp.merge(i.file_data)
+                            except Exception as e:
+                                st.error(e)
                     if validiate_data(tmp, file_name):
                         st.session_state.project_files.append(funFile(file_name, tmp))
                         st._rerun()
