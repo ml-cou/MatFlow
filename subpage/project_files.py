@@ -81,10 +81,11 @@ def run():
         pass
     if not selected == 'No Files':
 
-        main_funtionality=['Dataset Analysis','Visualizations','Feature Engineering','Final Data Analysis']
+        main_funtionality=['Dataset','EDA','Feature Engineering','Final Dataset','Pipeline','Model Building','Model Deployment','Reverse ML']
         selected_function=option_menu(None, main_funtionality, menu_icon="folder2-open",orientation="horizontal",
                     styles=
-                    {"container": {"padding": "5px 20% 5px 20% !important",
+                    {"container": {"padding": "5px 2% 5px 2% !important",
+                                   "font-size": "15px",
                                    "background-color": "#ECF2FF", "width": "100vw",
                                   "border-radius": "0rem", "display": "block !important",
                                   "margin": "0px", "z-index": "999991"}})
