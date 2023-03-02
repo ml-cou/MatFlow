@@ -1,4 +1,4 @@
-import streamlit as st 
+import streamlit as st
 import pandas as pd 
 import numpy as np
 
@@ -6,7 +6,9 @@ from modules import utils
 from modules.classes import creator
 
 def creation(data, data_opt):
+	temp_name=''
 	variables = utils.get_variables(data)
+
 
 	col1, col2, col3, col4 = st.columns([1.6, 3, 2.4, 2.4])
 	add_or_mod = col1.selectbox(
@@ -14,6 +16,15 @@ def creation(data, data_opt):
 			["Add", "Modify"],
 			key="add_or_modify"
 		)
+
+	method_name = ["Math Operation", "Extract Text", "Group Categorical", "Group Numerical"]
+	if add_or_mod == "Modify":
+		method_name.append("Replace Values")
+	method = col3.selectbox(
+		"Method", method_name,
+		key="creation_method"
+	)
+
 
 	if add_or_mod == "Add":
 		var = col2.text_input(
@@ -27,14 +38,10 @@ def creation(data, data_opt):
 				key="modify_column_name"
 			)
 
-	method = col3.selectbox(
-			"Method",
-			["Math Operation", "Extract Text", "Group Categorical", "Group Numerical"],
-			key="creation_method"
-		)
 
 	col4.markdown("#")
 	add_pipeline = col4.checkbox("Add To Pipeline", True, key="creation_add_pipeline")
+
 
 	var = var.strip() # remove whitespace
 	if method == "Math Operation":
@@ -45,8 +52,11 @@ def creation(data, data_opt):
 		group_categorical(data, data_opt, var, add_pipeline, add_or_mod)
 	elif method == "Group Numerical":
 		group_numerical(data, data_opt, var, add_pipeline, add_or_mod)
+	elif add_or_mod=="Modify" and method=="Replace Values":
+		replace_values(data,data_opt,var,add_pipeline)
 
 def math_operation(data, data_opt, var, add_pipeline, add_or_mod):
+	temp_name=''
 	col1, col2 = st.columns([7,3])
 	operation = col1.text_area(
 			"New Value Operation",
@@ -64,6 +74,12 @@ def math_operation(data, data_opt, var, add_pipeline, add_or_mod):
 		new_value = crt.fit_transform(data)
 		st.dataframe(new_value.head())
 
+	col1, col2,c0 = st.columns([2,2,2])
+	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
+
+	if save_as:
+		temp_name = col2.text_input('New Dataset Name',key="temp_name")
+
 	if st.button("Submit", key="math_submit"):
 		if var:
 			crt = creator.Creator("Math Operation", column=var, operation_string=operation)
@@ -73,7 +89,7 @@ def math_operation(data, data_opt, var, add_pipeline, add_or_mod):
 				name = f"{add_or_mod} column {var}"
 				utils.add_pipeline(name, crt)
 
-			utils.update_value(data_opt, new_value)
+			utils.update_value(data_opt, new_value,temp_name,save_as=False)
 			st.success("Success")
 
 			utils.rerun()
@@ -103,6 +119,12 @@ def extract_text(data, data_opt, var, add_pipeline, add_or_mod):
 		crt = creator.Creator("Extract String", column=var, extract_col=extract_var, regex_pattern=regex)
 		new_value = crt.fit_transform(data)
 		st.dataframe(new_value.head())
+
+	col1, col2, c0 = st.columns([2, 2, 2])
+	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
+
+	if save_as:
+		temp_name = col2.text_input('New Dataset Name', key="temp_name")
 	
 	if st.button("Submit", key="extract_submit"):
 		if var:
@@ -113,7 +135,7 @@ def extract_text(data, data_opt, var, add_pipeline, add_or_mod):
 				name = f"{add_or_mod} column {var}"
 				utils.add_pipeline(name, crt)
 
-			utils.update_value(data_opt, new_value)
+			utils.update_value(data_opt, new_value,temp_name,save_as=False)
 			st.success("Success")
 
 			utils.rerun()
@@ -122,6 +144,7 @@ def extract_text(data, data_opt, var, add_pipeline, add_or_mod):
 			st.warning("New column name cannot be empty!")
 
 def group_categorical(data, data_opt, var, add_pipeline, add_or_mod):
+	temp_name=''
 	columns = utils.get_variables(data)
 	group_dict = {}
 
@@ -181,6 +204,12 @@ def group_categorical(data, data_opt, var, add_pipeline, add_or_mod):
 	if show_group:
 		col2.write(group_dict)
 
+	col1, col2, c0 = st.columns([2, 2, 2])
+	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
+
+	if save_as:
+		temp_name = col2.text_input('New Dataset Name', key='drop_row')
+
 	if col1.button("Submit", key="group_submit"):
 		if var:
 			crt = creator.Creator("Group Categorical", column=var, group_col=group_var, group_dict=group_dict)
@@ -190,7 +219,7 @@ def group_categorical(data, data_opt, var, add_pipeline, add_or_mod):
 				name = f"{add_or_mod} column {var}"
 				utils.add_pipeline(name, crt)
 
-			utils.update_value(data_opt, new_value)
+			utils.update_value(data_opt, new_value,temp_name,save_as=False)
 			st.success("Success")
 
 			utils.rerun()
@@ -199,6 +228,7 @@ def group_categorical(data, data_opt, var, add_pipeline, add_or_mod):
 			st.warning("New column name cannot be empty!")
 
 def group_numerical(data, data_opt, var, add_pipeline, add_or_mod):
+	temp_name=''
 	num_var = utils.get_numerical(data)
 
 	col1, col2, col3 = st.columns(3)
@@ -259,6 +289,12 @@ def group_numerical(data, data_opt, var, add_pipeline, add_or_mod):
 
 		group_dict[group_val] = (val1, val2)
 
+	col1, col2, c0 = st.columns([2, 2, 2])
+	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
+
+	if save_as:
+		temp_name = col2.text_input('New Dataset Name', key='drop_row')
+
 	if st.button("Submit"):
 		if var:
 			crt = creator.Creator("Group Numerical", column=var, group_col=group_var, group_dict=group_dict)
@@ -268,7 +304,7 @@ def group_numerical(data, data_opt, var, add_pipeline, add_or_mod):
 				name = f"{add_or_mod} column {var}"
 				utils.add_pipeline(name, crt)
 
-			utils.update_value(data_opt, new_value)
+			utils.update_value(data_opt, new_value,temp_name,save_as=False)
 			st.success("Success")
 
 			utils.rerun()
@@ -278,3 +314,67 @@ def group_numerical(data, data_opt, var, add_pipeline, add_or_mod):
 
 	if show_group :
 		st.json(group_dict)
+
+def replace_values(data,data_opt,var,add_pipeline):
+	temp_name=''
+	temp = data
+	column=st.session_state.modify_column_name
+	new_value_input = st.selectbox('New Values', ['Text Input', 'Numpy Funtions','Fill Null'])
+	if new_value_input!='Fill Null':
+		if new_value_input == 'Text Input':
+			li = []
+			for i in temp[column]:
+				if not isinstance(i, str) and not np.isnan(i):
+					li.append(i)
+				elif isinstance(i, str):
+					li.append(i)
+
+			old_value = st.selectbox('Old Value',set(li))
+			new_value = st.text_input('New Value', np.nan)
+		else:
+			new_value = st.selectbox('Numpy Funtions', [
+				'np.log10',
+				'np.sin',
+				'np.cos',
+				'np.tan',
+				'np.exp'
+			])
+	else:
+		# Select method to fill null values
+		fill_method = st.selectbox(
+			"Select method to fill null values:",
+			["Custom Value", "Mean", "Median", "Mode", "From Another Column"],
+		)
+		if fill_method == "Custom Value":
+			custom_value = st.text_input("Enter custom value")
+		elif fill_method == "From Another Column":
+			column_to_use = st.selectbox("Select column to use:", temp.columns)
+
+
+
+	col1, col2, c0 = st.columns([2, 2, 2])
+	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
+
+	if save_as:
+		temp_name = col2.text_input('New Dataset Name', key='drop_row')
+
+	if st.button('submit', key='replace', type='primary'):
+		if new_value_input == 'Text Input':
+			temp[column] = temp[column].replace(old_value, new_value)
+		elif new_value_input=='Numpy Funtions':
+			temp[column] = temp[column].astype('float').apply(eval(new_value))
+		else:
+			# Fill null values based on selected method
+			if fill_method == "Custom Value":
+				temp[column] = temp[column].fillna(custom_value)
+			elif fill_method == "Mean":
+				temp[column] = temp[column].fillna(temp[column].mean())
+			elif fill_method == "Median":
+				temp[column] = temp[column].fillna(temp[column].median())
+			elif fill_method == "Mode":
+				temp[column] = temp[column].fillna(temp[column].mode().iloc[0])
+			elif fill_method == "From Another Column":
+				temp[column] = temp[column].fillna(temp[column_to_use])
+		utils.update_value(data_opt, temp,temp_name,save_as=False)
+		st.success("Success")
+		utils.rerun()
