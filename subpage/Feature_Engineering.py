@@ -94,9 +94,6 @@ def ds_feature_engineering(ds):
                                 st.warning(e)
                     if validiate_data(temp2, file_name):
                         st.session_state.project_files.append(funFile(file_name, temp2))
+                        st.session_state.dataset.add(file_name,temp2)
                         st._rerun()
-
-
-
-
-
+                        
