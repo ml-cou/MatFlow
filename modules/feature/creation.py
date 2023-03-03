@@ -392,8 +392,8 @@ def replace_values(data,data_opt,var,add_pipeline):
 				temp[column] = temp[column].fillna(temp[column].mode().iloc[0])
 			elif fill_method == "From Another Column":
 				temp[column] = temp[column].fillna(temp[column_to_use])
-			else:
-				temp[column] = temp[column].apply(options[operation])
+		else:
+			temp[column] = temp[column].apply(options[operation])
 
 		utils.update_value(data_opt, temp,temp_name,save_as)
 		st.success("Success")
