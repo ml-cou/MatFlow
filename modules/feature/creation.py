@@ -208,7 +208,7 @@ def group_categorical(data, data_opt, var, add_pipeline, add_or_mod):
 	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
 
 	if save_as:
-		temp_name = col2.text_input('New Dataset Name', key='drop_row')
+		temp_name = col2.text_input('New Dataset Name', key='creation')
 
 	if col1.button("Submit", key="group_submit"):
 		if var:
@@ -293,7 +293,7 @@ def group_numerical(data, data_opt, var, add_pipeline, add_or_mod):
 	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
 
 	if save_as:
-		temp_name = col2.text_input('New Dataset Name', key='drop_row')
+		temp_name = col2.text_input('New Dataset Name', key='create_data')
 
 	if st.button("Submit"):
 		if var:
@@ -373,7 +373,7 @@ def replace_values(data,data_opt,var,add_pipeline):
 	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
 
 	if save_as:
-		temp_name = col2.text_input('New Dataset Name', key='drop_row')
+		temp_name = col2.text_input('New Dataset Name', key='creation')
 
 	if st.button('submit', key='replace', type='primary'):
 		if new_value_input == 'Text Input':
@@ -392,9 +392,9 @@ def replace_values(data,data_opt,var,add_pipeline):
 				temp[column] = temp[column].fillna(temp[column].mode().iloc[0])
 			elif fill_method == "From Another Column":
 				temp[column] = temp[column].fillna(temp[column_to_use])
-		else:
-			temp[column] = temp[column].apply(options[operation])
+			else:
+				temp[column] = temp[column].apply(options[operation])
 
-		utils.update_value(data_opt, temp,temp_name,save_as=False)
+		utils.update_value(data_opt, temp,temp_name,save_as)
 		st.success("Success")
 		utils.rerun()
