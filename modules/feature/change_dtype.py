@@ -73,7 +73,7 @@ def change_dtype(data, data_opt):
 				name = f"Change {', '.join(change_dict.keys())} column dtype"
 				utils.add_pipeline(name, chg)
 
-			utils.update_value(data_opt, new_value)
+			utils.update_value(data_opt, new_value,'',False)
 			st.success("Success")
 
 			utils.rerun()
