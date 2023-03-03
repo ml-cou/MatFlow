@@ -99,7 +99,7 @@ def update_value(data_opt, new_value,temp_name,save_as=False):
     try:
         if save_as:
             if validiate_data(temp_name, new_value):
-                st.session_state.dataset.add(temp_name, st.session_state.dataset.data[data_opt])
+                st.session_state.dataset.add(temp_name, new_value)
                 st.session_state.project_files.append(funFile(temp_name, new_value))
             else:
                 return
