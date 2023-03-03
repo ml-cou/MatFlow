@@ -102,7 +102,7 @@ def run():
                     elif selected_function==main_funtionality[2]:
                         ds_feature_engineering(i)
                     elif selected_function==main_funtionality[3]:
-                        st.table(i.file_data)
+                        st.write(i.file_data)
                         # ds_final_data_analysis(i)
 
 
