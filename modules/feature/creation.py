@@ -135,7 +135,7 @@ def extract_text(data, data_opt, var, add_pipeline, add_or_mod):
 				name = f"{add_or_mod} column {var}"
 				utils.add_pipeline(name, crt)
 
-			utils.update_value(data_opt, new_value,temp_name,save_as=False)
+			utils.update_value(data_opt, new_value,temp_name,save_as)
 			st.success("Success")
 
 			utils.rerun()
@@ -317,7 +317,7 @@ def group_numerical(data, data_opt, var, add_pipeline, add_or_mod):
 
 def replace_values(data,data_opt,var,add_pipeline):
 	temp_name=''
-	temp = data
+	temp = data.copy(deep=True)
 	column=st.session_state.modify_column_name
 	new_value_input = st.selectbox('New Values', ['Text Input', 'Numpy Operations','Fill Null','String Operations'])
 	if new_value_input!='Fill Null':
