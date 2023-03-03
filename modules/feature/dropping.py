@@ -96,7 +96,7 @@ def drop_raw(data,data_opt):
 	save_as = col1.checkbox('Save as New Dataset', True)
 
 	if save_as:
-		temp_name = col2.text_input('New Dataset Name',key='drop_row')
+		temp_name = col2.text_input('New Dataset Name',key='drop_row1')
 	if st.button("Submit", key="drop_submit_row"):
 		if drop_var:
 			print(drop_var)
