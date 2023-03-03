@@ -319,7 +319,7 @@ def replace_values(data,data_opt,var,add_pipeline):
 	temp_name=''
 	temp = data
 	column=st.session_state.modify_column_name
-	new_value_input = st.selectbox('New Values', ['Text Input', 'Numpy Functions','Fill Null','String Functions'])
+	new_value_input = st.selectbox('New Values', ['Text Input', 'Numpy Operations','Fill Null','String Operations'])
 	if new_value_input!='Fill Null':
 		if new_value_input == 'Text Input':
 			li = []
@@ -331,8 +331,8 @@ def replace_values(data,data_opt,var,add_pipeline):
 
 			old_value = st.selectbox('Old Value',set(li))
 			new_value = st.text_input('New Value', np.nan)
-		elif new_value_input=='Numpy Functions':
-			new_value = st.selectbox('Numpy Funtions', [
+		elif new_value_input=='Numpy Operations':
+			new_value = st.selectbox('Select an operation:', [
 				'np.log10',
 				'np.sin',
 				'np.cos',
@@ -348,12 +348,14 @@ def replace_values(data,data_opt,var,add_pipeline):
 				'Remove leading whitespace': str.lstrip,
 				'Remove trailing whitespace': str.rstrip,
 				# 'Replace substring with another string': str.replace,
-				# 'Remove characters': lambda s: s.str.replace('[\W_]+', ''),
+				'Remove characters': lambda s, char: s.replace(char, ''),
 				# 'Split text into multiple columns': lambda s: s.str.split(expand=True),
 			}
 
 			# Create the select box in Streamlit
 			operation = st.selectbox('Select an operation:', list(options.keys()))
+			if operation=='Remove characters':
+				char_to_remove= st.text_input('Enter character to remove:', '')
 
 			# Apply the selected operation to the selected column of the dataframe
 	else:
@@ -378,7 +380,7 @@ def replace_values(data,data_opt,var,add_pipeline):
 	if st.button('submit', key='replace', type='primary'):
 		if new_value_input == 'Text Input':
 			temp[column] = temp[column].replace(old_value, new_value)
-		elif new_value_input=='Numpy Funtions':
+		elif new_value_input=='Numpy Operations':
 			temp[column] = temp[column].astype('float').apply(eval(new_value))
 		elif new_value_input=='Fill Null':
 			# Fill null values based on selected method
@@ -393,7 +395,10 @@ def replace_values(data,data_opt,var,add_pipeline):
 			elif fill_method == "From Another Column":
 				temp[column] = temp[column].fillna(temp[column_to_use])
 		else:
-			temp[column] = temp[column].apply(options[operation])
+			if 'Remove characters' in operation:
+				temp[column] = temp[column].apply(options[operation], char=char_to_remove)
+			else:
+				temp[column] = temp[column].apply(options[operation])
 
 		utils.update_value(data_opt, temp,temp_name,save_as)
 		st.success("Success")
