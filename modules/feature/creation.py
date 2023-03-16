@@ -1,14 +1,12 @@
 import streamlit as st
 import pandas as pd 
 import numpy as np
-
-from modules import utils  
+from modules import utils
 from modules.classes import creator
 
 def creation(data, data_opt):
 	temp_name=''
 	variables = utils.get_variables(data)
-
 
 	col1, col2, col3, col4 = st.columns([1.6, 3, 2.4, 2.4])
 	add_or_mod = col1.selectbox(
@@ -16,10 +14,12 @@ def creation(data, data_opt):
 			["Add", "Modify"],
 			key="add_or_modify"
 		)
+	st.session_state.add=add_or_mod=='Add'
 
 	method_name = ["Math Operation", "Extract Text", "Group Categorical", "Group Numerical"]
 	if add_or_mod == "Modify":
 		method_name.append("Replace Values")
+		method_name.append("Progress Apply")
 	method = col3.selectbox(
 		"Method", method_name,
 		key="creation_method"
@@ -54,6 +54,8 @@ def creation(data, data_opt):
 		group_numerical(data, data_opt, var, add_pipeline, add_or_mod)
 	elif add_or_mod=="Modify" and method=="Replace Values":
 		replace_values(data,data_opt,var,add_pipeline)
+	elif method=='Progress Apply':
+		my_progress_apply(data,data_opt,var,add_pipeline)
 
 def math_operation(data, data_opt, var, add_pipeline, add_or_mod):
 	temp_name=''
@@ -89,7 +91,7 @@ def math_operation(data, data_opt, var, add_pipeline, add_or_mod):
 				name = f"{add_or_mod} column {var}"
 				utils.add_pipeline(name, crt)
 
-			utils.update_value(data_opt, new_value,temp_name,save_as=False)
+			utils.update_value(data_opt, new_value,temp_name,save_as)
 			st.success("Success")
 
 			utils.rerun()
@@ -219,7 +221,7 @@ def group_categorical(data, data_opt, var, add_pipeline, add_or_mod):
 				name = f"{add_or_mod} column {var}"
 				utils.add_pipeline(name, crt)
 
-			utils.update_value(data_opt, new_value,temp_name,save_as=False)
+			utils.update_value(data_opt, new_value,temp_name,save_as)
 			st.success("Success")
 
 			utils.rerun()
@@ -304,7 +306,7 @@ def group_numerical(data, data_opt, var, add_pipeline, add_or_mod):
 				name = f"{add_or_mod} column {var}"
 				utils.add_pipeline(name, crt)
 
-			utils.update_value(data_opt, new_value,temp_name,save_as=False)
+			utils.update_value(data_opt, new_value,temp_name,save_as)
 			st.success("Success")
 
 			utils.rerun()
@@ -403,3 +405,37 @@ def replace_values(data,data_opt,var,add_pipeline):
 		utils.update_value(data_opt, temp,temp_name,save_as)
 		st.success("Success")
 		utils.rerun()
+
+
+from tqdm import tqdm
+from epsilon import features
+tqdm.pandas()
+from rdkit import Chem
+
+def my_progress_apply(data,data_opt,var,add_pipeline):
+	temp_name = ''
+	temp = data.copy(deep=True)
+	col2,cx, col3 = st.columns([4,2, 2])
+	if col3.button("Show Sample", key="creation_show_sample"):
+		pass
+
+	col1, col2, c0 = st.columns([2, 2, 2])
+	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
+
+	if save_as:
+		temp_name = col2.text_input('New Dataset Name', key="temp_name")
+	fun=[
+		'Compute All Features using RDKit',
+		'Chem.inchi.MolToInchiKey']
+	selected_fun=st.selectbox('Select Function',fun)
+	st.write('#')
+
+	if st.button("Submit", key="progress_apply"):
+		if selected_fun==fun[0]:
+			new_value=temp.join(temp[var].progress_apply(features.ComputeAllFeatures).apply(
+        lambda x: pd.Series(x, dtype='object')))
+		# elif selected_fun==fun[1]:
+		# 	new_value=temp[var].progress_apply(lambda x: Chem.inchi.MolToInchiKey(Chem.MolFromSmiles(x))).to_list()
+		utils.update_value(data_opt, new_value, temp_name, save_as)
+		utils.rerun()
+
