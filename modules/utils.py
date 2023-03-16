@@ -109,6 +109,7 @@ def update_value(data_opt, new_value,temp_name,save_as=False):
                 if i.file_name == data_opt:
                     i.file_data = new_value
                     break
+            st.success('Successful')
     except Exception as e:
         st.error(e)
 
