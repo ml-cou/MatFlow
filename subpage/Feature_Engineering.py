@@ -40,7 +40,7 @@ def ds_feature_engineering(ds):
         st.warning(e)
         st.stop()
 
-    menus = ["Add/Modify", "Change Dtype","Alter Field Name", "Imputation", "Encoding", "Scaling", "Drop Column","Drop Rows","Merge Dataset"]
+    menus = ["Add/Modify", "Change Dtype","Alter Field Name", "Imputation", "Encoding", "Scaling", "Drop Column","Drop Rows","Merge Dataset","Append Dataset"]
     tabs = [tab for tab in st.tabs(menus)]
 
     with tabs[0]:
@@ -96,4 +96,31 @@ def ds_feature_engineering(ds):
                         st.session_state.project_files.append(funFile(file_name, temp2))
                         st.session_state.dataset.add(file_name,temp2)
                         st._rerun()
+    with tabs[9]:
+        li = []
+        for i in st.session_state.project_files:
+            if i.file_name != ds.file_name:
+                li.append(i.file_name)
+        merge_name = st.selectbox('Select Dataset You Wanna Append', li)
+
+        file_name = st.text_input('New Dataset Name', autocomplete='off',key='append')
+        st.write('#')
+        if st.button('Append', type='primary'):
+            if len(file_name) == 0:
+                st.error('Name can\'t be empty')
+            else:
+                tmp = pd.DataFrame(ds.file_data)
+                for i in st.session_state.project_files:
+                    if i.file_name == merge_name:
+                        try:
+                            temp2 = tmp.append(i.file_data)
+                            temp2=temp2.reset_index()
+                        except Exception as e:
+                            st.warning(e)
+                if validiate_data(temp2, file_name):
+                    st.session_state.project_files.append(funFile(file_name, temp2))
+                    st.session_state.dataset.add(file_name, temp2)
+                    st._rerun()
+
+
                         
