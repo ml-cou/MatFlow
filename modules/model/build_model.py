@@ -171,10 +171,7 @@ def build_model(dataset,data_opt, models):
 			elif (i=="svm"):
 				listCls.insert(i,svm())
 
-
-
-
-		models.insert(loc=5, column="Model name", value=[1,2,3,4,5,6,7,1,2,3,4,5,6,7,1,2,3,4,5,6,7,1,2,3,4])
+		models.insert(loc=5, column="Model name", value=[i%7+1 for i in range(len(models.index))])
 		st.write(models)
 		# svm.svm()
 
