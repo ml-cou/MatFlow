@@ -16,8 +16,9 @@ def creation(data, data_opt):
 		)
 	st.session_state.add=add_or_mod=='Add'
 
-	method_name = ["Math Operation", "Extract Text", "Group Categorical", "Group Numerical"]
+	method_name = ["New Column","Math Operation", "Extract Text", "Group Categorical", "Group Numerical"]
 	if add_or_mod == "Modify":
+		method_name.pop(0)
 		method_name.append("Replace Values")
 		method_name.append("Progress Apply")
 	method = col3.selectbox(
@@ -56,6 +57,9 @@ def creation(data, data_opt):
 		replace_values(data,data_opt,var,add_pipeline)
 	elif method=='Progress Apply':
 		my_progress_apply(data,data_opt,var,add_pipeline)
+	elif method=="New Column":
+		add_new(data,data_opt,var,add_pipeline)
+
 
 def math_operation(data, data_opt, var, add_pipeline, add_or_mod):
 	temp_name=''
@@ -64,6 +68,7 @@ def math_operation(data, data_opt, var, add_pipeline, add_or_mod):
 			"New Value Operation",
 			key="new_value"
 		)
+	col1.caption("<math expression> <column name>. example: 10 ** Height " )
 
 	col1.caption(
 			"Separate all expression with space (including parenthesis).<br>Example: Weight / ( Height ** 2 )", 
@@ -437,5 +442,33 @@ def my_progress_apply(data,data_opt,var,add_pipeline):
 		# elif selected_fun==fun[1]:
 		# 	new_value=temp[var].progress_apply(lambda x: Chem.inchi.MolToInchiKey(Chem.MolFromSmiles(x))).to_list()
 		utils.update_value(data_opt, new_value, temp_name, save_as)
+		utils.rerun()
+
+def add_new(data,data_opt,var,add_pipeline):
+	temp_name = ''
+	temp = data.copy(deep=True)
+	col2,cx, col3 = st.columns([4,2, 2])
+	if col3.button("Show Sample", key="creation_show_sample"):
+		pass
+	slt_=st.radio('Select Method',['Input String','Copy Another Field'])
+	if slt_=='Input String':
+		value=st.text_input('Input String')
+	else:
+		col_name=st.selectbox('Select Field',temp.columns)
+
+
+	col1, col2, c0 = st.columns([2, 2, 2])
+	save_as = col1.checkbox('Save as New Dataset', True, key="save_as_new")
+
+	if save_as:
+		temp_name = col2.text_input('New Dataset Name', key="temp_name")
+
+
+	if st.button("Submit", key="add_new"):
+		if slt_ == 'Input String':
+			temp[var]=value
+		else:
+			temp[var]=temp[col_name]
+		utils.update_value(data_opt, temp, temp_name, save_as)
 		utils.rerun()
 
