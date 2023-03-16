@@ -104,6 +104,12 @@ def run():
                     elif selected_function==main_funtionality[3]:
                         st.write(i.file_data)
                         # ds_final_data_analysis(i)
+                    elif selected_function==main_funtionality[5]:
+                        # st.write(i.file_data)
+                        model_builder(i)
+                    elif selected_function==main_funtionality[4]:
+                        # st.write(i.file_data)
+                        pipeline(i)
 
 
 
