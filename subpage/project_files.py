@@ -10,7 +10,8 @@ from .Dataset_Analysis import ds_analysis
 from .Dataset_Visualization import ds_visualization
 from .Feature_Engineering import ds_feature_engineering
 from modules.classes import data as dataaa
-from subpage import model_builder,pipeline
+from .model_builder import model_builder
+from .pipeline import pipeline
 
 from .Final_Data_Analysis import ds_final_data_analysis
 from feature import change_dtype
