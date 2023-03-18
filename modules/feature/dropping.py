@@ -9,12 +9,12 @@ def dropping(data, data_opt):
 	variables = utils.get_variables(data)
 	cat_var = utils.get_categorical(data)
 	null_var = utils.get_null(data)
-
+	blank_var=utils.get_blank_column(data)
 	option_dict = {
 			"All": variables,
 			"Categorical": cat_var, 
 			"With Null": null_var, 
-			"Blank": []
+			"Blank": blank_var
 		}
 
 	option = st.radio(
