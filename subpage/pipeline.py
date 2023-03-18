@@ -3,9 +3,9 @@ import pandas as pd
 import pickle
 
 from modules import utils
-def pipeline(ds):
+def pipeline(dataset,table_name):
     try:
-        dataset = st.session_state["dataset"]
+        dataset = dataset
         pipe = st.session_state["pipeline"]
 
     except KeyError:
