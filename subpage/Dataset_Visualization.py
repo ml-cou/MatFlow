@@ -2,18 +2,20 @@ import streamlit as st
 
 from modules import utils
 from modules.graph import barplot, pieplot, countplot, histogram, boxplot, violinplot, scatterplot, regplot, lineplot
-def ds_visualization(ds):
-    try:
-        data = ds.file_data
-        data_opt = 0
 
+
+def ds_visualization(dataset, table_name):
+    try:
+        data = dataset[table_name]
+        data_opt = table_name
     except KeyError:
         st.header("No Dataset Found")
         st.stop()
 
     except Exception as e:
-        st.warning(e)
+        st.write(e)
         st.stop()
+
 
     menus = ["Bar Plot", "Pie Plot", "Count Plot", "Histogram", "Box Plot", "Violin Plot", "Scatter Plot", "Reg Plot",
              "Line Plot"]
