@@ -19,29 +19,20 @@ from feature import change_dtype
 
 def run():
     if 'dataset' not in st.session_state:
-        st.session_state["dataset"]=dataaa.Dataset()
+        st.session_state["dataset"] = dataaa.Dataset()
+        selected_table_name="No Files"
+        st.session_state.selected_table_name='No Files'
+    else:
+        selected_table_name=st.session_state.selected_table_name
+
+    opn=[i for i in st.session_state.dataset.data.keys()]
+
+    if len(opn)==0:
+        opn.append('No Files')
 
     path = Path().absolute()
     if 'sample_taken' not in st.session_state:
         st.session_state.sample_taken = False
-
-    class funFile:
-        def __init__(self, file_name, file_data):
-            self.file_name = file_name
-            self.file_data = file_data
-
-    def validiate_data(data, name):
-        try:
-            for i in st.session_state.project_files:
-                if name == i.file_name:
-                    if data.equals(i.file_data):
-                        st.error('File already exists')
-                        time.sleep(2)
-                        st._rerun()
-                    return False
-            return True
-        except:
-            return False
 
     sample_data = [
         f"{path}/rawData/Deep4Chem/DB for chromophore_Sci_Data_rev02.csv",
@@ -55,20 +46,13 @@ def run():
     if 'project_name' not in st.session_state:
         st.error('Create a project first')
         time.sleep(2)
-        # switch_page('create_project')
-    opn = []
 
-    try:
-        for i in st.session_state.project_files:
-            opn.append(i.file_name)
-    except:
-        opn.append('No Files')
 
     try:
         with st.sidebar:
-            selected = option_menu(st.session_state.project_name, opn, menu_icon="folder2-open",
+            selected_table_name = option_menu(st.session_state.project_name, opn, menu_icon="folder2-open",
                                    styles={"container": {"padding-top": "10px !important",
-                                                     "background-color": "transparent"}})
+                                                         "background-color": "transparent"}})
             st.markdown('''
             <style>
             .css-110bie7
@@ -81,86 +65,55 @@ def run():
 
     except:
         pass
-    if not selected == 'No Files':
+    if not selected_table_name == 'No Files':
 
-        main_funtionality=['Dataset','EDA','Feature Engineering','Final Dataset','Pipeline','Model Building','Model Deployment','Reverse ML']
-        selected_function=option_menu(None, main_funtionality, menu_icon="folder2-open",orientation="horizontal",
-                    styles=
-                    {"container": {"padding": "5px 2% 5px 2% !important",
-                                   "font-size": "15px",
-                                   "background-color": "#ECF2FF", "width": "100vw",
-                                  "border-radius": "0rem", "display": "block !important",
-                                  "margin": "0px", "z-index": "999991"}})
+        main_funtionality = ['Dataset', 'EDA', 'Feature Engineering', 'Final Dataset', 'Pipeline', 'Model Building',
+                             'Model Deployment', 'Reverse ML']
+        selected_function = option_menu(None, main_funtionality, menu_icon="folder2-open", orientation="horizontal",
+                                        styles=
+                                        {"container": {"padding": "5px 2% 5px 2% !important",
+                                                       "font-size": "15px",
+                                                       "background-color": "#ECF2FF", "width": "100vw",
+                                                       "border-radius": "0rem", "display": "block !important",
+                                                       "margin": "0px", "z-index": "999991"}})
 
-
-        for i in st.session_state.project_files:
-            if i.file_name == selected:
-                c0, col2, c1 = st.columns([0.5, 7, 0.3])
-                with col2:
-                    if selected_function==main_funtionality[0]:
-                        ds_analysis(i)
-                    elif selected_function==main_funtionality[1]:
-                        ds_visualization(i)
-                    elif selected_function==main_funtionality[2]:
-                        ds_feature_engineering(i)
-                    elif selected_function==main_funtionality[3]:
-                        st.write(i.file_data)
-                        # ds_final_data_analysis(i)
-                    elif selected_function==main_funtionality[5]:
-                        # st.write(i.file_data)
-                        model_builder(i)
-                    elif selected_function==main_funtionality[4]:
-                        # st.write(i.file_data)
-                        pipeline(i)
-
-
-
-
-
-
+        c0, col2, c1 = st.columns([0.5, 7, 0.3])
+        with col2:
+            if selected_function == main_funtionality[0]:
+                ds_analysis(st.session_state.dataset.data, selected_table_name)
+            elif selected_function==main_funtionality[1]:
+                ds_visualization(st.session_state.dataset.data, selected_table_name)
+            elif selected_function==main_funtionality[2]:
+                ds_feature_engineering(st.session_state.dataset.data, selected_table_name)
+            elif selected_function==main_funtionality[3]:
+                st.write(st.session_state.dataset.data[selected_table_name])
+                # ds_final_data_analysis(st.session_state.dataset.data, selected_table_name)
+            elif selected_function==main_funtionality[5]:
+                # st.write(i.file_data)
+                model_builder(st.session_state.dataset.data, selected_table_name)
+            elif selected_function==main_funtionality[4]:
+                # st.write(i.file_data)
+                pipeline(st.session_state.dataset.data, selected_table_name)
 
     with st.sidebar:
         new_file = st.file_uploader('Upload a file')
         vspace(2)
         if st.button('Upload'):
             if new_file:
-                try:
-                    if 'project_files' not in st.session_state:
-                        st.session_state.project_files = []
-                        dt = pd.read_csv(new_file)
-                        st.session_state.project_files.append(funFile(new_file.name, dt))
-                        st.session_state["dataset"].add(st.session_state.project_files[-1].file_name,
-                                                        st.session_state.project_files[-1].file_data)
-
-                    else:
-                        data = pd.read_csv(new_file)
-                        if validiate_data(data, new_file.name):
-                            st.session_state.project_files.append(funFile(new_file.name, data))
-                            st.session_state["dataset"].add(st.session_state.project_files[-1].file_name,
-                                                            st.session_state.project_files[-1].file_data)
-
-                except:
-                    pass
-                print(st.session_state.dataset)
-                st._rerun()
-        rad = st.radio('Use default data set', options=['Yes', 'No'], index=1)
-        if rad == 'Yes' and st.session_state.sample_taken == False:
-            st.session_state.sample_taken = True
-            for i in sample_data:
-                x = i.rfind('\\')
-                y = i.rfind('/')
-                if x < y:
-                    x = y
-                x += 1
-                if i.endswith('.csv'):
-                    new_file_name = i[x:]
-                    dt = pd.read_csv(i)
-                    if 'project_files' not in st.session_state:
-                        st.session_state.project_files = []
-                        st.session_state.project_files.append(funFile(new_file_name, dt))
-                        st.session_state["dataset"].add(st.session_state.project_files[-1].file_name,st.session_state.project_files[-1].file_data)
-                    elif validiate_data(dt, new_file_name):
-                        st.session_state.project_files.append(funFile(new_file_name, dt))
-                        st.session_state["dataset"].add(st.session_state.project_files[-1].file_name,st.session_state.project_files[-1].file_data)
-
+                new_file_data = pd.read_csv(new_file)
+                st.session_state["dataset"].add(new_file.name, new_file_data)
             st._rerun()
+        rad = st.radio('Use default data set', options=['Yes', 'No'], index=1)
+    if rad == 'Yes' and st.session_state.sample_taken == False:
+        st.session_state.sample_taken = True
+        for i in sample_data:
+            x = i.rfind('\\')
+            y = i.rfind('/')
+            if x < y:
+                x = y
+            x += 1
+            if i.endswith('.csv'):
+                new_file_name = i[x:]
+                new_file_data = pd.read_csv(st.session_state.dataset.data, selected_table_name)
+                st.session_state["dataset"].add(new_file_name, new_file_data)
+        st._rerun()
