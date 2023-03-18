@@ -7,31 +7,14 @@ from modules.feature import encoding, imputation, scaling, creation, dropping, c
 from modules.feature import change_fieldname
 from .navbar import vspace
 
-def ds_feature_engineering(ds):
+
+def ds_feature_engineering(dataset, table_name):
     if 'save_as' not in st.session_state:
         st.session_state.save_as = True
-    class funFile:
-        def __init__(self, file_name, file_data):
-            self.file_name = file_name
-            self.file_data = file_data
-
-    def validiate_data(data, name):
-        try:
-            for i in st.session_state.project_files:
-                if name == i.file_name:
-                    if data.equals(i.file_data):
-                        st.error('File already exists')
-                        time.sleep(2)
-                        st._rerun()
-                    return False
-            return True
-        except:
-            return False
-
     try:
 
-        data = ds.file_data
-        data_opt = ds.file_name
+        data = dataset[table_name]
+        data_opt = table_name
     except KeyError:
         st.header("No Dataset Found")
         st.stop()
@@ -40,7 +23,8 @@ def ds_feature_engineering(ds):
         st.warning(e)
         st.stop()
 
-    menus = ["Add/Modify", "Change Dtype","Alter Field Name", "Imputation", "Encoding", "Scaling", "Drop Column","Drop Rows","Merge Dataset","Append Dataset"]
+    menus = ["Add/Modify", "Change Dtype", "Alter Field Name", "Imputation", "Encoding", "Scaling", "Drop Column",
+             "Drop Rows", "Merge Dataset", "Append Dataset"]
     tabs = [tab for tab in st.tabs(menus)]
 
     with tabs[0]:
@@ -64,63 +48,57 @@ def ds_feature_engineering(ds):
     with tabs[6]:
         dropping.dropping(data, data_opt)
     with tabs[7]:
-        dropping.drop_raw(data,data_opt)
-    if len(st.session_state.project_files)<=1:
+        dropping.drop_raw(data, data_opt)
+    if len(dataset) <= 1:
         with tabs[8]:
             st.header('Please add at least two datasets !')
     else:
         with tabs[8]:
-            li=[]
-            for i in st.session_state.project_files:
-                if i.file_name!=ds.file_name:
-                    li.append(i.file_name)
-            merge_name=st.selectbox('Select Dataset You Wanna Merge With',li)
+            li = []
+            for i in st.session_state.dataset.data.keys():
+                if i != table_name:
+                    li.append(i)
+            merge_name = st.selectbox('Select Dataset You Wanna Merge With', li)
 
             file_name = st.text_input('New Dataset Name', autocomplete='off')
             how = st.selectbox('How', ['left', 'right', 'outer', 'inner', 'cross'], index=3)
-            left_on = st.selectbox("Select column name for left dataframe:", ds.file_data.columns)
-            right_on = st.selectbox("Select column name for right dataframe:", st.session_state.dataset.data[merge_name].columns)
+            left_on = st.selectbox("Select column name for left dataframe:", data.columns)
+            right_on = st.selectbox("Select column name for right dataframe:",
+                                    st.session_state.dataset.data[merge_name].columns)
             vspace(5)
             if st.button('Merge', type='primary'):
                 if len(file_name) == 0:
                     st.error('Name can\'t be empty')
                 else:
-                    tmp = pd.DataFrame(ds.file_data)
-                    for i in st.session_state.project_files:
-                        if i.file_name == merge_name:
-                            try:
-                                temp2=tmp.merge(i.file_data, left_on=left_on,right_on=right_on, how=how)
-                            except Exception as e:
-                                st.warning(e)
-                    if validiate_data(temp2, file_name):
-                        st.session_state.project_files.append(funFile(file_name, temp2))
-                        st.session_state.dataset.add(file_name,temp2)
+                    tmp = pd.DataFrame(data)
+                    try:
+                        temp2 = tmp.merge(dataset[file_name], left_on=left_on, right_on=right_on, how=how)
+                        st.session_state.dataset.add(file_name, temp2)
                         st._rerun()
-    with tabs[9]:
-        li = []
-        for i in st.session_state.project_files:
-            if i.file_name != ds.file_name:
-                li.append(i.file_name)
-        merge_name = st.selectbox('Select Dataset You Wanna Append', li)
+                    except Exception as e:
+                        st.warning(e)
+    if len(dataset) <= 1:
+        with tabs[9]:
+            st.header('Please add at least two datasets !')
+    else:
+        with tabs[9]:
+            li = []
+            for i in st.session_state.dataset.data.keys():
+                if i != table_name:
+                    li.append(i)
 
-        file_name = st.text_input('New Dataset Name', autocomplete='off',key='append')
-        st.write('#')
-        if st.button('Append', type='primary'):
-            if len(file_name) == 0:
-                st.error('Name can\'t be empty')
-            else:
-                tmp = pd.DataFrame(ds.file_data)
-                for i in st.session_state.project_files:
-                    if i.file_name == merge_name:
-                        try:
-                            temp2 = tmp.append(i.file_data)
-                            temp2=temp2.reset_index()
-                        except Exception as e:
-                            st.warning(e)
-                if validiate_data(temp2, file_name):
-                    st.session_state.project_files.append(funFile(file_name, temp2))
-                    st.session_state.dataset.add(file_name, temp2)
-                    st._rerun()
-
-
-                        
+            append_name = st.selectbox('Select Dataset You Wanna Append', li)
+            file_name = st.text_input('New Dataset Name', autocomplete='off', key='append')
+            st.write('#')
+            if st.button('Append', type='primary'):
+                if len(file_name) == 0:
+                    st.error('Name can\'t be empty')
+                else:
+                    tmp = pd.DataFrame(data)
+                    try:
+                        temp2 = tmp.append(dataset.data[append_name])
+                        temp2 = temp2.reset_index()
+                        st.session_state.dataset.add(file_name, temp2)
+                    except Exception as e:
+                        st.warning(e)
+                st._rerun()
