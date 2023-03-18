@@ -3,14 +3,12 @@ import streamlit as st
 
 from modules import utils
 from modules.dataframe import display, info, stats, correlation, duplicate, group
-def ds_analysis(ds):
+def ds_analysis(dataset,table_name):
 	try:
-		data=ds.file_data
-		data_opt=0
+		data=dataset[table_name]
 	except KeyError:
 		st.header("No Dataset Found")
 		st.stop()
-
 	except Exception as e:
 		st.write(e)
 		st.stop()
@@ -31,7 +29,7 @@ def ds_analysis(ds):
 		correlation.correlation(data)
 
 	with tabs[4]:
-		duplicate.duplicate(data, data_opt)
+		duplicate.duplicate(data, table_name)
 
 	with tabs[5]:
 		group.group(data)
