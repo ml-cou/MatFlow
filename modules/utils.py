@@ -3,29 +3,6 @@ import time
 
 from modules.classes import pipeline
 
-
-class funFile:
-    def __init__(self, file_name, file_data):
-        self.file_name = file_name
-        self.file_data = file_data
-
-
-def validiate_data(name, data):
-    try:
-        if len(name)==0:
-            st.warning('Field Name Can\'t be Empty')
-            return False
-        for i in st.session_state.project_files:
-            if name == i.file_name:
-                if data.equals(i.file_data):
-                    st.error('File already exists')
-                    time.sleep(2)
-                    st._rerun()
-                return False
-        return True
-    except:
-        return False
-
 def dataset_opt(list_data, default_idx):
     col1, _ = st.columns([4, 6])
     data_opt = col1.selectbox(
@@ -95,20 +72,12 @@ def get_nunique(data, column=None):
     return n_unique
 
 
-def update_value(data_opt, new_value,temp_name,save_as=False):
+def update_value(data_opt, new_value, temp_name, save_as=False):
     try:
         if save_as:
-            if validiate_data(temp_name, new_value):
-                st.session_state.dataset.add(temp_name, new_value)
-                st.session_state.project_files.append(funFile(temp_name, new_value))
-            else:
-                return
+            st.session_state.dataset.add(temp_name, new_value)
         else:
             st.session_state["dataset"].data[data_opt] = new_value
-            for i in st.session_state.project_files:
-                if i.file_name == data_opt:
-                    i.file_data = new_value
-                    break
             st.success('Successful')
     except Exception as e:
         st.error(e)
@@ -132,3 +101,11 @@ def split_xy(data, target_var):
 def rerun(delay=1.5):
     time.sleep(delay)
     st.experimental_rerun()
+
+
+def get_blank_column(data):
+    columnsToDrop = []
+    for column in data.columns:
+        if data[column].isnull().values.all():
+            columnsToDrop.append(column)
+    return columnsToDrop
