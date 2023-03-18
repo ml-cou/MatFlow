@@ -5,7 +5,7 @@ from modules import utils
 from modules.classes import model
 from modules.model import build_model, model_report, prediction, delete_model
 
-def model_builder(ds):
+def model_builder(dataset,table_name):
 	try:
 		models = st.session_state["models"]
 	except:
@@ -29,7 +29,7 @@ def model_builder(ds):
 	print(models)
 	#
 	with tabs[0]:
-		build_model.build_model(dataset,ds.file_name, models)
+		build_model.build_model(dataset,table_name, models)
 	#
 	with tabs[1]:
 		model_report.model_report(models)
