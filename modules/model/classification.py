@@ -4,9 +4,12 @@ from modules import utils
 from modules.classifier import knn, svm, log_reg, decision_tree, random_forest, perceptron
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-def classification(dataset, models, train_name, test_name, target_var):
+def classification(dataset, models):
 	try:
-		X_train, X_test, y_train, y_test = split_data(dataset, train_name, test_name, target_var)
+		X_train, X_test, y_train, y_test = st.session_state.splitted_data['X_train'], st.session_state.splitted_data['X_test'], st.session_state.splitted_data['y_train'], st.session_state.splitted_data['y_test']
+		train_name=st.session_state.train_test_name['train_name']
+		test_name=st.session_state.train_test_name['test_name']
+		target_var=st.session_state.splitted_data["target_var"]
 	except:
 		st.warning("Train and Test data doesn't match")
 		st.stop()
@@ -68,7 +71,11 @@ def classification(dataset, models, train_name, test_name, target_var):
 
 	if st.button("Submit", key="model_submit"):
 		if model_name not in models.list_name():
-			model.fit(X_train, y_train)
+			try:
+				model.fit(X_train, y_train)
+			except Exception as e:
+				st.error(e)
+				return
 
 			selected_metrics = get_result(model, X_test, y_test, metrics, multi_average)
 			for met in metrics:
