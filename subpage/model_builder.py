@@ -3,8 +3,7 @@ import pandas as pd
 
 from modules import utils
 from modules.classes import model
-from modules.model import build_model, model_report, prediction, delete_model,split_dataset,model_evolution,feature_selection
-
+from modules.model import build_model, model_report, prediction, delete_model,split_dataset,model_evolution,feature_selection,classification
 def model_builder(dataset,table_name):
 	try:
 		models = st.session_state["models"]
@@ -37,14 +36,12 @@ def model_builder(dataset,table_name):
 	# with tabs[2]:
 	# 	prediction.prediction(dataset, models)
 
-	# with tabs[3]:
-	# 	build_model.build_model(dataset,table_name, models)
-	# #
-	# with tabs[4]:
-	# 	model_report.model_report(models)
-	#
-	# with tabs[5]:
-	# 	prediction.prediction(dataset, models)
-	#
-	# with tabs[6]:
-	# 	delete_model.delete_model(models)
+	with tabs[3]:
+		classification.classification(dataset,models)
+	with tabs[4]:
+		model_report.model_report(models)
+
+	with tabs[5]:
+		prediction.prediction(dataset, models)
+	with tabs[6]:
+		delete_model.delete_model(models)
