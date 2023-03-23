@@ -19,6 +19,7 @@ def split_dataset(dataset,data_opt, models):
             f"test_{data_opt}",
             key="test_data_name"
         )
+        st.session_state.train_test_name={'train_name':train_name,'test_name':test_name}
         data = dataset.get_data(data_opt)
         variables = utils.get_variables(data, add_hypen=True)
         stratify = col3.selectbox(
