@@ -32,17 +32,16 @@ def model_evolution():
         models, predictions = reg.fit(X_train, X_test,y_train, y_test)
         st.dataframe(models)
 
-        r2_scores = {}
-        for key, value in models.items():
-            r2_scores[key] = models.score(X_test, y_test)
+        try:
 
-        plt.figure(figsize=(10, 5))
-        plt.xticks(rotation=90)
-        sns.barplot(x=list(r2_scores.values()), y=list(r2_scores.keys()))
-        plt.xlabel('R-squared score')
-        plt.title('LazyRegressor Model Comparison')
-        plt.tight_layout()
-        plt.show()
+            st.header("LazyRegressor Results - R-Squared Comparison")
+            plt.figure(figsize=(4, 8))
+            sns.set_theme(style="whitegrid")
+            ax = sns.barplot(y=models.index, x="R-Squared", data=models)
+            ax.set(xlim=(0, 1))
+            st.pyplot(plt)
+        except:
+            st.error('Choose target variable properly.')
 
         # st.write(predictions)
 
@@ -55,10 +54,16 @@ def model_evolution():
         clf = LazyClassifier(verbose=0, ignore_warnings=True, custom_metric=None)
         models, predictions = clf.fit(X_train, X_test,y_train, y_test)
         st.dataframe(models)
-        fig, ax = plt.subplots()
-        ax.barh(models.index, models['Accuracy'])
-        ax.set_xlabel('Accuracy')
-        ax.set_title('Model Performance')
-        st.pyplot(fig)
+
+        try:
+            st.header("Accuracy Comparison of Models")
+            plt.figure(figsize=(4, 8))
+            sns.set_theme(style="whitegrid")
+            ax = sns.barplot(y=models.index, x="Accuracy", data=models)
+            ax.set(xlim=(0, 1))
+            plt.xticks(rotation=90)
+            st.pyplot(plt)
+        except:
+            st.error('Choose target variable properly.')
 
         # st.write(predictions)
