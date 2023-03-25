@@ -19,7 +19,6 @@ def split_dataset(dataset,data_opt, models):
             f"test_{data_opt}",
             key="test_data_name"
         )
-        st.session_state.train_test_name={'train_name':train_name,'test_name':test_name}
         data = dataset.get_data(data_opt)
         variables = utils.get_variables(data, add_hypen=True)
         stratify = col3.selectbox(
@@ -57,9 +56,9 @@ def split_dataset(dataset,data_opt, models):
                 stratify = None if (stratify == "-") else stratify
                 X = data
                 y = data[target_var]
-                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size,random_state=random_state)
-
-                st.session_state.splitted_data = {'y_test': y_test, 'y_train': y_train, 'X_train': X_train, 'X_test': X_test,'target_var':target_var}
+                X_train, X_test = train_test_split(X, test_size=test_size,random_state=random_state)
+                st.session_state.splitted_data = {'train_name': train_name, 'test_name': test_name,
+                                                  'target_var':target_var}
                 dataset.add(train_name, X_train)
                 dataset.add(test_name, X_test)
                 st.success("Success")
