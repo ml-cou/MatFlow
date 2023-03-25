@@ -9,6 +9,9 @@ class Classification:
 				"Test Accuracy", "Test Precision", "Test Recall", "Test F1-Score"
 			])
 		self.target_var = []
+	def get_model(self,model_name):
+
+		return self.model[model_name]
 
 	def add_model(self, model_name, model, train_name, test_name, target_var, result):
 		self.model[model_name] = model
@@ -29,8 +32,6 @@ class Classification:
 		return []
 
 	def delete_model(self, model_name):
-		for name in model_name:
-			del self.model[name]
-
-			drop_idx = self.result.index[self.result["Model Name"] == name][0]
-			self.result = self.result.drop(drop_idx).reset_index(drop=True)
+		del self.model[model_name]
+		drop_idx = self.result.index[self.result["Model Name"] == model_name][0]
+		self.result = self.result.drop(drop_idx).reset_index(drop=True)
