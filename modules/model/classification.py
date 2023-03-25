@@ -1,18 +1,26 @@
 import streamlit as st
-
-from modules import utils
+import pickle
+from modules.utils import split_xy
 from modules.classifier import knn, svm, log_reg, decision_tree, random_forest, perceptron
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 def classification(dataset, models):
 	try:
-		X_train, X_test, y_train, y_test = st.session_state.splitted_data['X_train'], st.session_state.splitted_data['X_test'], st.session_state.splitted_data['y_train'], st.session_state.splitted_data['y_test']
-		train_name=st.session_state.train_test_name['train_name']
-		test_name=st.session_state.train_test_name['test_name']
+		train_name=st.session_state.splitted_data['train_name']
+		test_name=st.session_state.splitted_data['test_name']
+		train_data = st.session_state.dataset.get_data(st.session_state.splitted_data['train_name'])
+		test_data = st.session_state.dataset.get_data(st.session_state.splitted_data['test_name'])
 		target_var=st.session_state.splitted_data["target_var"]
+		X_train, y_train = split_xy(train_data, target_var)
+		X_test, y_test = split_xy(test_data, target_var)
 	except:
-		st.warning("Train and Test data doesn't match")
-		st.stop()
+		st.header("Properly Split Dataset First")
+		return
+
+	try:
+		X_train, X_test = X_train.drop(target_var, axis=1), X_test.drop(target_var, axis=1)
+	except:
+		pass
 
 	classifiers = {
 		"K-Nearest Neighbors": "KNN", 
@@ -69,6 +77,7 @@ def classification(dataset, models):
 	else:
 		multi_average = "binary"
 
+
 	if st.button("Submit", key="model_submit"):
 		if model_name not in models.list_name():
 			try:
@@ -87,18 +96,10 @@ def classification(dataset, models):
 				result += list(temp.values())
 
 			models.add_model(model_name, model, train_name, test_name, target_var, result)
-
 		else:
 			st.warning("Model name already exist!")
 
-def split_data(dataset, train_name, test_name, target_var):
-	train_data = dataset.get_data(train_name)
-	test_data = dataset.get_data(test_name)
 
-	X_train, y_train = utils.split_xy(train_data, target_var)
-	X_test, y_test = utils.split_xy(test_data, target_var)
-
-	return X_train, X_test, y_train, y_test
 
 def get_result(model, X, y, metrics, multi_average):
 	y_pred = model.predict(X)
