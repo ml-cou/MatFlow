@@ -75,7 +75,11 @@ def get_nunique(data, column=None):
 def update_value(data_opt, new_value, temp_name, save_as=False):
     try:
         if save_as:
-            st.session_state.dataset.add(temp_name, new_value)
+            if len(temp_name)>0:
+                st.session_state.dataset.add(temp_name, new_value)
+                st.success('Successful')
+            else:
+                st.warning('Name can\'t be empty')
         else:
             st.session_state["dataset"].data[data_opt] = new_value
             st.success('Successful')
