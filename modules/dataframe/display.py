@@ -20,12 +20,11 @@ def display(data):
 
 	if display_opt != "Custom":
 		if display_opt == "Head":
-			idx_end = 4
+			st.dataframe(data.head())
 		elif display_opt == "Tail":
-			idx_start = idx_end - 5
-
-		st.dataframe(data.loc[idx_start:idx_end, var])
-
+			st.dataframe(data.tail())
+		else:
+			st.dataframe(data)
 	else:
 		custom(data)
 
