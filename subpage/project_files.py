@@ -22,6 +22,7 @@ def run():
         st.session_state["dataset"] = dataaa.Dataset()
         selected_table_name="No Files"
         st.session_state.selected_table_name='No Files'
+        st.session_state.del_btn=True
     else:
         selected_table_name=st.session_state.selected_table_name
 
@@ -86,7 +87,9 @@ def run():
             elif selected_function==main_funtionality[2]:
                 ds_feature_engineering(st.session_state.dataset.data, selected_table_name)
             elif selected_function==main_funtionality[3]:
-                st.write(st.session_state.dataset.data[selected_table_name])
+                for i,j in st.session_state.dataset.data.items():
+                    with st.expander(i,expanded= True if i==selected_table_name else False):
+                        st.dataframe(j)
                 # ds_final_data_analysis(st.session_state.dataset.data, selected_table_name)
             elif selected_function==main_funtionality[5]:
                 # st.write(i.file_data)
@@ -103,6 +106,30 @@ def run():
                 new_file_data = pd.read_csv(new_file)
                 st.session_state["dataset"].add(new_file.name, new_file_data)
             st._rerun()
+        st.write('#')
+
+        if not st.session_state.del_btn:
+            del_list=st.multiselect('Select Files to Delete',options=list(st.session_state.dataset.data.keys()))
+            st.write('#')
+        del_file=False
+        if st.session_state.del_btn:
+            if st.button('Delete',type='primary'):
+                st.session_state.del_btn = False
+                st._rerun()
+        else:
+            c0,c1=st.columns(2)
+            with c1:
+                if st.button('Cancel',type='primary'):
+                    st.session_state.del_btn=True
+                    st._rerun()
+            with c0:
+                if st.button('Submit'):
+                    for i in del_list:
+                        st.session_state.dataset.remove(i)
+                    st._rerun()
+
+
+
         rad = st.radio('Use default data set', options=['Yes', 'No'], index=1)
     if rad == 'Yes' and st.session_state.sample_taken == False:
         st.session_state.sample_taken = True
