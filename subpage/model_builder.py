@@ -13,17 +13,16 @@ def model_builder(dataset,table_name):
 
 	try:
 		dataset = st.session_state["dataset"]
-		# st.write(dataset)
 
 	except KeyError:
 		st.header("No Dataset Found")
-		st.stop()
+		return
 
 	except Exception as e:
 		st.warning(e)
-		st.stop()
+		return
 
-	menus = ["Split Dataset","Model Evolution","Feature Selection","Build Model", "Model Report", "Model Prediction", "Delete Model"]
+	menus = ["Split Dataset","Model Evolution","Feature Selection","Build Model", "Model Report", "Model Prediction", "Models"]
 	tabs = st.tabs(menus)
 	print(models)
 	#
@@ -35,12 +34,13 @@ def model_builder(dataset,table_name):
 	#
 	# with tabs[2]:
 	# 	prediction.prediction(dataset, models)
-
 	with tabs[3]:
-		classification.classification(dataset,models)
+		if 'splitted_data' in st.session_state:
+			classification.classification(dataset,models)
+		else:
+			st.header('Split Dataset First')
 	with tabs[4]:
 		model_report.model_report(models)
-
 	with tabs[5]:
 		prediction.prediction(dataset, models)
 	with tabs[6]:
