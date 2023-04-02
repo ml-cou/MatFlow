@@ -3,9 +3,7 @@ import pickle
 from modules import utils
 
 def delete_model(models):
-	# change funtion name
-	if len(models.list_name())==0:
-		st.header('No Model Found')
+
 
 	for model_name in models.list_name():
 		st.write('#')
@@ -32,4 +30,3 @@ def delete_model(models):
 				key=model_name+'download',
 			)
 		st.markdown("<hr>", unsafe_allow_html=True)
-
