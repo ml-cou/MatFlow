@@ -3,7 +3,7 @@ import time
 import pandas as pd
 from modules import utils
 import numpy as np
-from modules.feature import encoding, imputation, scaling, creation, dropping, change_dtype
+from modules.feature import encoding, imputation, scaling, creation, dropping, change_dtype,feature_selection
 from modules.feature import change_fieldname
 from .navbar import vspace
 
@@ -24,7 +24,7 @@ def ds_feature_engineering(dataset, table_name):
         st.stop()
 
     menus = ["Add/Modify", "Change Dtype", "Alter Field Name", "Imputation", "Encoding", "Scaling", "Drop Column",
-             "Drop Rows", "Merge Dataset", "Append Dataset"]
+             "Drop Rows", "Merge Dataset", "Append Dataset","Feature Selection"]
     tabs = [tab for tab in st.tabs(menus)]
 
     with tabs[0]:
@@ -102,3 +102,6 @@ def ds_feature_engineering(dataset, table_name):
                     except Exception as e:
                         st.warning(e)
                 st._rerun()
+    with tabs[10]:
+        feature_selection.feature_selection(data,data_opt)
+
