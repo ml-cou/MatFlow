@@ -3,7 +3,7 @@ from modules.dataset import read
 from modules import utils
 from sklearn.model_selection import train_test_split
 
-def split_dataset(dataset,data_opt, models):
+def split_dataset(dataset,data_opt):
     list_data = dataset.list_name()
     if list_data:
         col1, col2, col3 = st.columns(3)
@@ -45,6 +45,14 @@ def split_dataset(dataset,data_opt, models):
             utils.get_variables(data),
             key="model_target_var"
         )
+        type=''
+        with col3:
+            if data[target_var].dtype == "float64" or data[target_var].dtype == "int64":
+                st.write(f"{target_var} is Regressor")
+                type='Regressor'
+            else:
+                st.write(f"{target_var} is Classifier")
+                type='Classifier'
 
         col4.markdown("#")
         shuffle = col4.checkbox("Shuffle", True, key="split_shuffle")
@@ -58,7 +66,7 @@ def split_dataset(dataset,data_opt, models):
                 y = data[target_var]
                 X_train, X_test = train_test_split(X, test_size=test_size,random_state=random_state)
                 st.session_state.splitted_data = {'train_name': train_name, 'test_name': test_name,
-                                                  'target_var':target_var}
+                                                  'target_var':target_var,'type':type}
                 dataset.add(train_name, X_train)
                 dataset.add(test_name, X_test)
                 st.success("Success")
