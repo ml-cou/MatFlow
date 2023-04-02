@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 from modules.utils import split_xy
 import seaborn as sns
 
-def model_evolution():
+def model_evaluation():
     try:
         train_data= st.session_state.dataset.get_data(st.session_state.splitted_data['train_name'])
         test_data=st.session_state.dataset.get_data(st.session_state.splitted_data['test_name'])
@@ -65,5 +65,3 @@ def model_evolution():
             st.pyplot(plt)
         except:
             st.error('Choose target variable properly.')
-
-        # st.write(predictions)
