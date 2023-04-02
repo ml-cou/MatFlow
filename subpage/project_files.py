@@ -12,6 +12,7 @@ from .Feature_Engineering import ds_feature_engineering
 from modules.classes import data as dataaa
 from .model_builder import model_builder
 from .pipeline import pipeline
+from .model_deployment import model_deployment
 
 from .Final_Data_Analysis import ds_final_data_analysis
 from feature import change_dtype
@@ -96,7 +97,10 @@ def run():
                 model_builder(st.session_state.dataset.data, selected_table_name)
             elif selected_function==main_funtionality[4]:
                 # st.write(i.file_data)
-                pipeline(st.session_state.dataset.data, selected_table_name)
+                pipeline(st.session_state.dataset, selected_table_name)
+            elif selected_function==main_funtionality[6]:
+                model_deployment()
+
 
     with st.sidebar:
         new_file = st.file_uploader('Upload a file')
