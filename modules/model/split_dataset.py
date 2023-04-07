@@ -7,7 +7,7 @@ def split_dataset(dataset,data_opt):
     list_data = dataset.list_name()
 
     if list_data:
-        col1,col2=st.columns(2)
+        col1,col2,col3=st.columns(3)
         with col1:
             split_dataset_root_name=st.text_input('Split Dataset Name')
 
@@ -21,12 +21,15 @@ def split_dataset(dataset,data_opt):
                     utils.get_variables(data),
                     key="model_target_var"
                 )
+            with col3:
                 if data[target_var].dtype == "float64" or data[target_var].dtype == "int64":
                     type = 'Regressor'
-                    st.success(f"{target_var} is Regressor")
+                    st.write('#')
+                    st.write(f" ##### {target_var} _is **:blue[Continuous]**._")
                 else:
-                    type='Classification'
-                    st.success(f"{target_var} is Classifier")
+                    type = 'Classification'
+                    st.write('#')
+                    st.write(f" ##### {target_var} _is **:orange[Categorical]**._ ")
 
             col1, col2, col3 = st.columns(3)
 
