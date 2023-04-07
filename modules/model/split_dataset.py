@@ -22,8 +22,10 @@ def split_dataset(dataset,data_opt):
                     key="model_target_var"
                 )
                 if data[target_var].dtype == "float64" or data[target_var].dtype == "int64":
+                    type = 'Regressor'
                     st.success(f"{target_var} is Regressor")
                 else:
+                    type='Classification'
                     st.success(f"{target_var} is Classifier")
 
             col1, col2, col3 = st.columns(3)
