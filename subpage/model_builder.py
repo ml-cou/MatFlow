@@ -23,8 +23,6 @@ def model_builder(dataset,table_name):
 
 	with tabs[0]:
 		split_dataset.split_dataset(dataset,table_name)
-	with tabs[4]:
-			model_evaluation.model_evaluation()
 	with tabs[1]:
 		if 'splitted_data' in st.session_state:
 			split_name=st.selectbox('Select Train Test Dataset',st.session_state.splitted_data.keys())
@@ -66,6 +64,11 @@ def model_builder(dataset,table_name):
 				prediction_regression.prediction(dataset,models,model_name)
 		else:
 			st.header('No Model Found')
+	with tabs[4]:
+		if 'all_models' not in st.session_state:
+			st.header('Create a Model First')
+		else:
+			model_evaluation.model_evaluation()
 	with tabs[5]:
 		if "models" in st.session_state:
 			delete_model.delete_model(models)
