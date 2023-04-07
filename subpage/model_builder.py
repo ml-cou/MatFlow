@@ -28,7 +28,7 @@ def model_builder(dataset,table_name):
 	with tabs[1]:
 		if 'splitted_data' in st.session_state:
 			split_name=st.selectbox('Select Train Test Dataset',st.session_state.splitted_data.keys())
-			if st.session_state.splitted_data[split_name]['type']=='Classifier':
+			if st.session_state.splitted_data[split_name]['type']=='Classification':
 				try:
 					models = st.session_state["models"]
 				except:
