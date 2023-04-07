@@ -6,6 +6,10 @@ def linear_regression():
     normalize = st.checkbox("Normalize", False, key="lr_normalize")
     n_jobs = st.number_input("Number of Jobs", -1, 100, -1, key="lr_n_jobs")
 
-    model = LinearRegression(fit_intercept=fit_intercept, normalize=normalize, n_jobs=n_jobs)
+    try:
+        model = LinearRegression(fit_intercept=fit_intercept, n_jobs=n_jobs)
+    except ValueError as e:
+        st.error(f"Error: {e}")
+        model = None
 
     return model

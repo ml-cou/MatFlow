@@ -47,6 +47,14 @@ def decision_tree_regressor():
     )
 
     max_depth = None if auto_max_depth else max_depth
-    model = DecisionTreeRegressor(criterion=criterion, max_depth=max_depth, min_samples_split=min_samples_split, min_samples_leaf=min_samples_leaf, random_state=random_state)
+    from sklearn.tree import DecisionTreeRegressor
+
+    try:
+        model = DecisionTreeRegressor(criterion=criterion, max_depth=max_depth, min_samples_split=min_samples_split,
+                                      min_samples_leaf=min_samples_leaf, random_state=random_state)
+    except ValueError as e:
+        print(f"Error creating DecisionTreeRegressor: {str(e)}")
+    except:
+        print("Unexpected error creating DecisionTreeRegressor")
 
     return model

@@ -12,9 +12,12 @@ def random_forest_regressor():
         max_depth = st.slider("Max depth:", 1, 100, 10, 1, key="rfr_max_depth")
         random_state = st.number_input("Random state:", 0, 1000000, 0, key="rfr_random_state")
         min_samples_leaf = st.slider("Min. samples leaf:", 1, 10, 1, 1, key="rfr_min_samples_leaf")
-
-    model = RandomForestRegressor(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features,
-                                   min_samples_split=min_samples_split, min_samples_leaf=min_samples_leaf,
-                                   random_state=random_state)
+    try:
+        model = RandomForestRegressor(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features,
+                                      min_samples_split=min_samples_split, min_samples_leaf=min_samples_leaf,
+                                      random_state=random_state)
+    except Exception as e:
+        print("Error during model instantiation:", e)
+        # Handle the exception here
 
     return model

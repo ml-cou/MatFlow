@@ -8,6 +8,12 @@ def ridge_regression():
     max_iter = st.number_input("Max Iterations", 1, 100000, 1000, key="rr_max_iter")
     solver = st.selectbox("Solver", ["auto", "svd", "cholesky", "lsqr", "sparse_cg", "sag", "saga"], index=0, key="rr_solver")
 
-    model = Ridge(alpha=alpha, fit_intercept=fit_intercept, normalize=normalize, max_iter=max_iter, solver=solver)
+
+    try:
+        model = Ridge(alpha=alpha, fit_intercept=fit_intercept, normalize=normalize, max_iter=max_iter,
+                      solver=solver)
+    except ValueError as e:
+        print(f"Error creating Ridge model: {e}")
+        model = None
 
     return model
