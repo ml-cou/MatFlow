@@ -7,26 +7,45 @@ from modules.utils import split_xy
 import seaborn as sns
 
 def model_evaluation():
+    if 'all_models' not in st.session_state:
+        st.header('Create a Model First')
+        return
+
+    all_models=st.session_state.all_models
+    model_name=st.selectbox('Select Model',all_models,key='model_evaluation')
+
     try:
-        train_data= st.session_state.dataset.get_data(st.session_state.splitted_data['train_name'])
-        test_data=st.session_state.dataset.get_data(st.session_state.splitted_data['test_name'])
-        target_var=st.session_state.splitted_data['target_var']
-        X_train,y_train=split_xy(train_data,target_var)
-        X_test,y_test=split_xy(test_data,target_var)
-        target_var_type=train_data[target_var].dtype
+        dataset=all_models[model_name][1]
     except:
         st.header("Properly Split Dataset First")
         return
 
-    st.write("ML type: ")
+    try:
+        train_data= st.session_state.dataset.get_data(dataset['train_name'])
+        test_data=st.session_state.dataset.get_data(dataset['test_name'])
+        target_var=dataset['target_var']
+        X_train,y_train=split_xy(train_data,target_var)
+        X_test,y_test=split_xy(test_data,target_var)
+        target_var_type=train_data[target_var].dtype
+
+    except:
+        st.header("Properly Split Dataset First")
+        return
+
+
     col1, col2 = st.columns([4, 4])
-    options = ["Regresion", "Classification"]
 
     if target_var_type == "float64" or target_var_type == "int64":
-        st.write(f"{target_var} is numerical")
-        default_option = "Regresion"
-        with col1:
-            selected_option = st.radio("", options, index=options.index(default_option))
+        st.subheader('Model Type: Regression')
+        st.write('#')
+        st.markdown(f'''
+                <h5>
+                <span>Target Variable: </span>
+                <span style='color:blue'>{target_var}</span>
+                <span>is Not Numerical</span>
+                </h5>
+                ''', unsafe_allow_html=True)
+        st.write('#')
 
         reg = LazyRegressor(verbose=0, ignore_warnings=False, custom_metric=None)
         models, predictions = reg.fit(X_train, X_test,y_train, y_test)
@@ -46,11 +65,20 @@ def model_evaluation():
         # st.write(predictions)
 
     else:
-        default_option = "Classification"
-        with col1:
-            selected_option = st.radio("", options, index=options.index(default_option))
-            st.write(f"{target_var} is not numerical")
 
+
+        st.subheader('Model Type: Classification')
+        st.write('#')
+
+        st.markdown(f'''
+        <h5>
+        <span>Target Variable: </span>
+        <span style='color:blue'>{target_var}</span>
+        <span>is Not Numerical</span>
+        </h5>
+        ''', unsafe_allow_html=True)
+
+        st.write('#')
         clf = LazyClassifier(verbose=0, ignore_warnings=True, custom_metric=None)
         models, predictions = clf.fit(X_train, X_test,y_train, y_test)
         st.dataframe(models)

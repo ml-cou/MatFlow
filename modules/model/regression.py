@@ -7,11 +7,11 @@ from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
 def regression(dataset, models):
     try:
-        train_name=st.session_state.splitted_data['train_name']
-        test_name=st.session_state.splitted_data['test_name']
-        train_data = st.session_state.dataset.get_data(st.session_state.splitted_data['train_name'])
-        test_data = st.session_state.dataset.get_data(st.session_state.splitted_data['test_name'])
-        target_var=st.session_state.splitted_data["target_var"]
+        train_name=dataset['train_name']
+        test_name=dataset['test_name']
+        train_data = st.session_state.dataset.get_data(dataset['train_name'])
+        test_data = st.session_state.dataset.get_data(dataset['test_name'])
+        target_var=dataset["target_var"]
         X_train, y_train = split_xy(train_data, target_var)
         X_test, y_test = split_xy(test_data, target_var)
     except:
@@ -60,7 +60,7 @@ def regression(dataset, models):
     metrics = col1.multiselect(
             "Display Metrics",
             metric_list,
-            ["Mean Squared Error"],
+            metric_list,
             key="model_reg_metrics"
         )
 
@@ -71,6 +71,10 @@ def regression(dataset, models):
             except Exception as e:
                 st.error(e)
                 return
+            if 'all_models' not in st.session_state:
+                st.session_state.all_models = {}
+
+            all_models = st.session_state.all_models
 
             selected_metrics = get_result(model, X_test, y_test, metrics)
             for met in metrics:
@@ -81,6 +85,8 @@ def regression(dataset, models):
                 temp = get_result(model, X, y, metrics)
                 result += list(temp.values())
             models.add_model(model_name, model, train_name, test_name, target_var, result)
+            all_models.update({model_name:('Regression',dataset)})
+
         else:
             st.warning("Model name already exist!")
 
