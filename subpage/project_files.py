@@ -107,7 +107,15 @@ def run():
         vspace(2)
         if st.button('Upload'):
             if new_file:
-                new_file_data = pd.read_csv(new_file)
+                filename = new_file.name
+                extension = filename.split('.')[-1]
+
+                if extension == 'csv':
+                    new_file_data = pd.read_csv(new_file)
+                elif extension == 'xls' or extension == 'xlsx':
+                    new_file_data = pd.read_excel(new_file)
+                elif extension == 'tsv':
+                    new_file_data = pd.read_csv(new_file, sep='\t')
                 st.session_state["dataset"].add(new_file.name, new_file_data)
             st._rerun()
         st.write('#')
