@@ -72,7 +72,7 @@ def get_nunique(data, column=None):
     return n_unique
 
 
-def update_value(data_opt, new_value, temp_name, save_as=False):
+def update_value(data_opt, new_value, temp_name='', save_as=False):
     try:
         if save_as:
             if len(temp_name)>0:
