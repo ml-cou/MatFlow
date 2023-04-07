@@ -7,7 +7,6 @@ def imputation(data, data_opt):
 	num_var = utils.get_numerical(data)
 	null_var = utils.get_null(data)
 	low_cardinality = utils.get_low_cardinality(data, add_hypen=True)
-
 	col1, col2 = st. columns([7.5, 2.5])
 	if null_var != []:
 		var = col1.selectbox(
