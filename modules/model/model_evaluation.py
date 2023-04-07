@@ -24,13 +24,7 @@ def model_evaluation(dataset):
 
     if target_var_type == "float64" or target_var_type == "int64":
 
-        st.markdown(f'''
-                <h5>
-                <span>As the target variable </span>
-                <span style='color:blue'>{target_var}</span>
-                <span>is continuous, Regression models are chosen.</span>
-                </h5>
-                ''', unsafe_allow_html=True)
+        st.write(f''' ##### As the target variable '***{target_var}***' is :blue[Continuous], Regression models are chosen.''')
         st.write('#')
 
         reg = LazyRegressor(verbose=0, ignore_warnings=False, custom_metric=None)
@@ -52,15 +46,9 @@ def model_evaluation(dataset):
 
     else:
 
-        st.markdown(f'''
-                        <h5>
-                        <span>As the target variable </span>
-                        <span style='color:blue'>{target_var}</span>
-                        <span>is categorical, Classification models are chosen.</span>
-                        </h5>
-                        ''', unsafe_allow_html=True)
-
+        st.write(f''' ##### As the target variable '***{target_var}***' is :orange[Categorical], Classification models are chosen.''')
         st.write('#')
+
         clf = LazyClassifier(verbose=0, ignore_warnings=True, custom_metric=None)
         models, predictions = clf.fit(X_train, X_test, y_train, y_test)
         st.dataframe(models)
