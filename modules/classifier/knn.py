@@ -19,6 +19,11 @@ def knn():
 			["minkowski", "euclidean", "manhattan"]
 		)
 
-	model = KNeighborsClassifier(n_neighbors=n_neighbors, weights=weights, metric=metric)
+	try:
+		model = KNeighborsClassifier(n_neighbors=n_neighbors, weights=weights, metric=metric)
+	except ValueError as e:
+		print("An error occurred while creating the KNeighborsClassifier model: ", e)
+	except Exception as e:
+		print("An unexpected error occurred: ", e)
 
 	return model

@@ -58,6 +58,14 @@ def perceptron():
 
 		hidden_layer_sizes.append(neuron_size)
 
-	model = MLPClassifier(hidden_layer_sizes=hidden_layer_sizes, activation=activation, alpha=alpha, learning_rate_init=learning_rate, max_iter=max_iter, tol=tol)
+	try:
+		model = MLPClassifier(hidden_layer_sizes=hidden_layer_sizes, activation=activation, alpha=alpha,
+							  learning_rate_init=learning_rate, max_iter=max_iter, tol=tol)
+	except ValueError as ve:
+		print(f"ValueError: {ve}")
+	except TypeError as te:
+		print(f"TypeError: {te}")
+	except Exception as e:
+		print(f"Error: {e}")
 
 	return model

@@ -54,6 +54,12 @@ def random_forest():
 		)
 
 	max_depth = None if auto_max_depth else max_depth
-	model = RandomForestClassifier(n_estimators=n_estimators, criterion=criterion, max_depth=max_depth, min_samples_split=min_samples_split, min_samples_leaf=min_samples_leaf, random_state=random_state)
+	try:
+		model = RandomForestClassifier(n_estimators=n_estimators, criterion=criterion,
+									   max_depth=max_depth, min_samples_split=min_samples_split,
+									   min_samples_leaf=min_samples_leaf, random_state=random_state)
+	except Exception as e:
+		print("An error occurred while initializing the RandomForestClassifier model:", e)
+	# Handle the error in an appropriate way (e.g., log the error, display a message to the user, etc.)
 
 	return model

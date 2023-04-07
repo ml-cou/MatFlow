@@ -59,6 +59,13 @@ def svm():
 						key="svm_degree"
 					)
 
-	model = SVC(C=C, kernel=kernel, degree=degree, gamma=gamma, tol=tol)
+	try:
+		model = SVC(C=C, kernel=kernel, degree=degree, gamma=gamma, tol=tol)
+	except ValueError as ve:
+		print("ValueError:", ve)
+	except TypeError as te:
+		print("TypeError:", te)
+	except:
+		print("An unexpected error occurred.")
 
 	return model

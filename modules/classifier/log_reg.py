@@ -47,6 +47,17 @@ def log_reg():
 				key="lr_random_state"
 			)
 
-	model = LogisticRegression(penalty=penalty, C=C, tol=tol, solver=solver, max_iter=max_iter, random_state=random_state)
+	try:
+		model = LogisticRegression(penalty=penalty, C=C, tol=tol, solver=solver, max_iter=max_iter,
+								   random_state=random_state)
+	except ValueError as e:
+		print(f"Error: {e}")
+	# Handle the ValueError exception here
+	except TypeError as e:
+		print(f"Error: {e}")
+	# Handle the TypeError exception here
+	except Exception as e:
+		print(f"Error: {e}")
+	# Handle any other exception here
 
 	return model

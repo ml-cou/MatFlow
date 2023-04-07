@@ -48,6 +48,15 @@ def decision_tree():
 		)
 
 	max_depth = None if auto_max_depth else max_depth
-	model = DecisionTreeClassifier(criterion=criterion, max_depth=max_depth, min_samples_split=min_samples_split, min_samples_leaf=min_samples_leaf, random_state=random_state)
+
+	try:
+		model = DecisionTreeClassifier(criterion=criterion, max_depth=max_depth, min_samples_split=min_samples_split,
+									   min_samples_leaf=min_samples_leaf, random_state=random_state)
+	except ValueError as e:
+		print("ValueError occurred while initializing the model:", e)
+	except TypeError as e:
+		print("TypeError occurred while initializing the model:", e)
+	except:
+		print("An error occurred while initializing the model.")
 
 	return model
