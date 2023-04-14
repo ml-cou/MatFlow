@@ -38,18 +38,30 @@ def prediction(dataset, models,model_opt):
 
         )
 
+        # try:
+        #     if y.nunique() > 2:
+        #         multi_average = col2.selectbox(
+        #             "Multiclass Average",
+        #             ["micro", "macro", "weighted"],
+        #             key="prediction_multi_average"
+        #         )
+        #     else:
+        #         multi_average = "binary"
+        #
+        #     show_result(y, y_pred, result_opt, multi_average)
+        #
+        # except ValueError as e:
+        #     st.warning(str(e))
+        #
+        # except TypeError as e:
+        #     st.warning(str(e))
         try:
             if y.nunique() > 2:
-                multi_average = col2.selectbox(
-                    "Multiclass Average",
-                    ["micro", "macro", "weighted"],
-                    key="prediction_multi_average"
-                )
+                # multiclass case (denied)
+                show_result(y, y_pred, result_opt, None)
             else:
-                multi_average = "binary"
-
-            show_result(y, y_pred, result_opt, multi_average)
-
+                # binary case
+                show_result(y, y_pred, result_opt, "binary")
         except ValueError as e:
             st.warning(str(e))
 
@@ -76,7 +88,6 @@ def show_result(y, y_pred, result_opt, multi_average):
             "Actual": y,
             "Predicted": y_pred
         })
-
         st.dataframe(result)
 
     elif result_opt == "Classification Report":
