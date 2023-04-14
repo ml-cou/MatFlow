@@ -19,9 +19,15 @@ def model_builder(dataset, table_name):
         st.warning(e)
         return
 
-    menus = ["Split Dataset", "Build Model", "Model Report", "Model Prediction", "Model Evaluation", "Models"]
+    menus = ["Split Dataset", "Build Model","Model Evaluation", "Model Prediction",  "Models"]
     tabs = st.tabs(menus)
     #
+
+    try:
+        models = st.session_state["models"]
+    except:
+        st.session_state["models"] = model.Models()
+        models = st.session_state["models"]
 
     with tabs[0]:
         split_dataset.split_dataset(dataset, table_name)
@@ -29,27 +35,19 @@ def model_builder(dataset, table_name):
         if 'splitted_data' in st.session_state:
             split_name = st.selectbox('Select Train Test Dataset', st.session_state.splitted_data.keys())
             if st.session_state.splitted_data[split_name]['type'] == 'Classification':
-                try:
-                    models = st.session_state["models"]
-                except:
-                    st.session_state["models"] = model.Classification()
-                    models = st.session_state["models"]
-                classification.classification(st.session_state.splitted_data[split_name], models)
+                classification.classification(split_name, models)
             else:
-                try:
-                    models = st.session_state["models"]
-                except:
-                    st.session_state["models"] = model.Regressor()
-                    models = st.session_state["models"]
-                regression.regression(st.session_state.splitted_data[split_name], models)
+                regression.regression(split_name, models)
         else:
             st.header('Split Dataset First')
     with tabs[2]:
-        if "models" in st.session_state:
-
-            model_report.model_report(models)
+        if 'all_models' in st.session_state:
+            split_name = st.selectbox('Select Train Test Dataset', st.session_state.splitted_data.keys(),
+                                      key='evaluation')
+            if split_name:
+                model_report.model_report(split_name,models)
         else:
-            st.header('No Model To Report')
+            st.header('Build Model First')
     with tabs[3]:
         ## try catch needed here
         if "all_models" in st.session_state:
@@ -59,7 +57,6 @@ def model_builder(dataset, table_name):
                 "Select Model",
                 all_models.keys()
             )
-
             if all_models[model_name][0] == 'Classification':
                 prediction_classification.prediction(dataset, models, model_name)
             else:
@@ -67,14 +64,6 @@ def model_builder(dataset, table_name):
         else:
             st.header('No Model Found')
     with tabs[4]:
-        if 'splitted_data' in st.session_state:
-            split_name = st.selectbox('Select Train Test Dataset', st.session_state.splitted_data.keys(),
-                                      key='evaluation')
-            if split_name:
-                model_evaluation.model_evaluation(st.session_state.splitted_data[split_name])
-        else:
-            st.header('Split Dataset First')
-    with tabs[5]:
         if "models" in st.session_state:
             delete_model.delete_model(models)
         else:
