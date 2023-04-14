@@ -4,8 +4,12 @@ from modules.utils import split_xy
 from modules.classifier import knn, svm, log_reg, decision_tree, random_forest, perceptron
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-def classification(dataset, models):
+def classification(split_name, models):
+
+
     try:
+        dataset=st.session_state.splitted_data[split_name]
+
         train_name = dataset['train_name']
         test_name = dataset['test_name']
         train_data = st.session_state.dataset.get_data(dataset['train_name'])
@@ -16,6 +20,9 @@ def classification(dataset, models):
     except:
         st.header("Properly Split Dataset First")
         return
+
+    if "has_models"  not in st.session_state:
+        st.session_state.has_models={}
 
     try:
         X_train, X_test = X_train.drop(target_var, axis=1), X_test.drop(target_var, axis=1)
@@ -55,9 +62,9 @@ def classification(dataset, models):
     elif classifier == "Logistic Regression":
         model = log_reg.log_reg()
     elif classifier == "Decision Tree":
-        model = decision_tree.decision_tree()
+        model = decision_tree.decision_tree(X_train, y_train)
     elif classifier == "Random Forest":
-        model = random_forest.random_forest()
+        model = random_forest.random_forest(X_train, y_train)
     elif classifier == "Multilayer Perceptron":
         model = perceptron.perceptron()
 
@@ -102,8 +109,14 @@ def classification(dataset, models):
                 temp = get_result(model, X, y, metrics, multi_average)
                 result += list(temp.values())
 
-            models.add_model(model_name, model, train_name, test_name, target_var, result)
+            models.add_model(model_name, model, train_name, test_name, target_var, result,"classification")
+
+            if split_name not in st.session_state.has_models.keys():
+                st.session_state.has_models[split_name]=[]
+            st.session_state.has_models[split_name].append(model_name)
+
             all_models.update({model_name:('Classification',dataset)})
+
         else:
             st.warning("Model name already exist!")
 
