@@ -28,11 +28,11 @@ def regression(split_name, models):
         pass
 
     regressors = {
-        "Linear Regression": "LR",
-        "Ridge Regression": "Ridge",
-        "Lasso Regression": "Lasso",
-        "Decision Tree Regression": "DT",
-        "Random Forest Regression": "RF"
+        "Linear Regression": "LR_Regression",
+        "Ridge Regression": "Ridge_Regression",
+        "Lasso Regression": "Lasso_Regression",
+        "Decision Tree Regression": "DT_Regression",
+        "Random Forest Regression": "RF_Regression"
     }
     metric_list = ["R-Squared", "Mean Absolute Error", "Mean Squared Error", "Root Mean Squared Error"]
     st.markdown("#")
@@ -50,11 +50,11 @@ def regression(split_name, models):
         )
 
     if regressor == "Linear Regression":
-        model = linear_regression.linear_regression()
+        model = linear_regression.linear_regression(X_train, y_train)
     elif regressor == "Ridge Regression":
-        model = ridge_regression.ridge_regression()
+        model = ridge_regression.ridge_regression(X_train, y_train)
     elif regressor == "Lasso Regression":
-        model = lasso_regression.lasso_regression()
+        model = lasso_regression.lasso_regression(X_train, y_train)
     elif regressor == "Decision Tree Regression":
         model = decision_tree_regression.decision_tree_regressor(X_train, y_train)
     elif regressor == "Random Forest Regression":
