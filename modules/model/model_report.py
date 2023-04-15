@@ -7,6 +7,9 @@ import seaborn as sns
 def model_report(split_dataset_name, models):
 
     result_df = pd.DataFrame()
+    if split_dataset_name not  in st.session_state.has_models.keys():
+        st.header('Build Model First')
+        return
     for i in st.session_state.has_models[split_dataset_name]:
         result_df = pd.concat([result_df, models.get_result(i)], ignore_index=True)
 
@@ -67,7 +70,7 @@ def report_graph(result_df, col):
         "Select an option",
         ("All Columns", "Custom Columns")
     )
-    if graph_cols_option == "All Columns":
+    if graph_cols_option.value == "All Columns":
         graph_cols = result_df.columns[3:]
     else:
         graph_cols = col.multiselect(
@@ -84,7 +87,7 @@ def report_graph(result_df, col):
 
         if annot:
             for rect in ax.patches:
-                plt.text(1.05 * rect.get_width(),
+                ax.text(1.05 * rect.get_width(),
                          rect.get_y() + 0.5 * rect.get_height(),
                          '%.3f' % float(rect.get_width()),
                          ha='center', va='center'
