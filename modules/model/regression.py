@@ -28,11 +28,11 @@ def regression(split_name, models):
         pass
 
     regressors = {
-        "Linear Regression": "LR_Regression",
-        "Ridge Regression": "Ridge_Regression",
-        "Lasso Regression": "Lasso_Regression",
-        "Decision Tree Regression": "DT_Regression",
-        "Random Forest Regression": "RF_Regression"
+        "Linear Regression": "LR",
+        "Ridge Regression": "Ridge",
+        "Lasso Regression": "Lasso",
+        "Decision Tree Regression": "DT",
+        "Random Forest Regression": "RF"
     }
     metric_list = ["R-Squared", "Mean Absolute Error", "Mean Squared Error", "Root Mean Squared Error"]
     st.markdown("#")
@@ -45,7 +45,7 @@ def regression(split_name, models):
 
     model_name = col2.text_input(
             "Model Name",
-            regressors[regressor],
+            f"{regressors[regressor]}_Regression",
             key="model_name"
         )
 
