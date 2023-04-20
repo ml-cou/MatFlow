@@ -1,15 +1,10 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-
 
 def model_report(split_dataset_name, models):
 
     result_df = pd.DataFrame()
-    if split_dataset_name not  in st.session_state.has_models.keys():
-        st.header('Build Model First')
-        return
     for i in st.session_state.has_models[split_dataset_name]:
         result_df = pd.concat([result_df, models.get_result(i)], ignore_index=True)
 
@@ -61,80 +56,48 @@ def report_table(result_df, include_data):
             cols,
             ["Model Name"]
         )
-
     st.dataframe(result_df[cols])
 
 
-def report_graph(result_df, col):
-    graph_cols_option = col.radio(
-        "Select an option",
-        ("All Columns", "Custom Columns")
-    )
-    if graph_cols_option.value == "All Columns":
-        graph_cols = result_df.columns[3:]
-    else:
-        graph_cols = col.multiselect(
-            "Display Columns",
-            result_df.columns[3:],
-            default=result_df.columns[3:]
-        )
-    annot = st.checkbox("Annotate")
 
-    fig, axs = plt.subplots(ncols=len(graph_cols), figsize=(20, 8))
-    for i, graph_col in enumerate(graph_cols):
-        result_df_sorted = result_df.sort_values(graph_col, ascending=False)
-        ax = sns.barplot(data=result_df_sorted, x=graph_col, y="Model Name", ax=axs[i])
 
-        if annot:
-            for rect in ax.patches:
-                ax.text(1.05 * rect.get_width(),
-                         rect.get_y() + 0.5 * rect.get_height(),
-                         '%.3f' % float(rect.get_width()),
-                         ha='center', va='center'
-                         )
+def report_graph(data, col):
+    model_data = data.drop(columns=['Train Data', 'Test Data', 'Model Name'])
 
-        ax.set_title(graph_col)
+    # Create the figure and axis objects
+    fig, ax = plt.subplots(nrows=1, ncols=len(model_data.columns), figsize=(16,0.65*(len(model_data.columns))))
+    fig.subplots_adjust(hspace=0.5, wspace=0.5)
+    # Define the color map
+    cmap = plt.cm.get_cmap('Set3', len(model_data))
 
+    for i, col in enumerate(model_data.columns):
+        # Loop over the rows and plot the bars with different colors for each row
+        for j, row in enumerate(model_data.iterrows()):
+            ax[i].bar(j, row[1][i], color=cmap(j), label=list(data['Model Name'].values)[j])
+            ax[i].set_xlabel(col)
+            ax[i].set_xticklabels([])
+    ax[0].set_ylabel("Value")
+    ax[-1].legend(loc='upper left', bbox_to_anchor=(0, 1.5))
+    # Add some padding to the top of the plot to make space for the legend
+    fig.subplots_adjust(top=0.85 + 0.05 * len(data))
+    # Add some padding to the plot
+    plt.tight_layout()
     st.pyplot(fig)
 
-# annot = st.checkbox("Annotate")
-#
-# for graph_col in graph_cols:
-# 	fig, ax = plt.subplots()
-# 	result_df_sorted = result_df.sort_values(graph_col, ascending=False)
-# 	ax = sns.barplot(data=result_df_sorted, x=graph_col, y="Model Name")
-#
-# 	if annot:
-# 		for rect in ax.patches:
-# 			plt.text(1.05 * rect.get_width(),
-# 					 rect.get_y() + 0.5 * rect.get_height(),
-# 					 '%.3f' % float(rect.get_width()),
-# 					 ha='center', va='center'
-# 					 )
-#
-# 	ax.set_title(graph_col)
-# 	st.pyplot(fig)
 
-# graph_cols = col.multiselect(
-# 	"Display Columns",
-# 	result_df.columns[3:],
-# 	default=result_df.columns[3:]
-# )
-#
-# annot = st.checkbox("Annotate")
-# for graph_col in graph_cols:
-# 	fig, ax = plt.subplots()
-# 	result_df_sorted = result_df.sort_values(graph_col, ascending=False)
-# 	ax = sns.barplot(data=result_df_sorted, x=graph_col, y="Model Name")
-#
-# 	if annot:
-# 		for rect in ax.patches:
-# 			plt.text(1.05 * rect.get_width(),
-# 					 rect.get_y() + 0.5 * rect.get_height(),
-# 					 '%.3f' % float(rect.get_width()),
-# 					 ha='center', va='center'
-# 					 )
-#
-# 	ax.set_title(graph_col)
-# 	st.pyplot(fig)
-#
+    ### rotation
+
+    # for i, col in enumerate(model_data.columns):
+    #     # Loop over the rows and plot the bars with different colors for each row
+    #     for j, row in enumerate(model_data.iterrows()):
+    #         ax[i].barh(j, row[1][i], color=cmap(j), label=list(data['Model Name'].values)[j])
+    #         ax[i].set_xlabel(col)
+    # ax[0].set_ylabel("Value")
+    # ax[-1].legend(loc='upper left', bbox_to_anchor=(0, 0.35 * len(data) + 1))
+    # # Add some padding to the top of the plot to make space for the legend
+    # fig.subplots_adjust(top=0.85 + 0.05 * len(data))
+    # # Add some padding to the plot
+    # plt.tight_layout()
+    #
+    # # Display the plot in the Streamlit app
+    # st.pyplot(fig)
