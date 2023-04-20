@@ -13,6 +13,7 @@ from modules.classes import data as dataaa
 from .model_builder import model_builder
 from .pipeline import pipeline
 from .model_deployment import model_deployment
+from .Feature_Selection import feature_selection,feature_graph
 
 from .Final_Data_Analysis import ds_final_data_analysis
 from feature import change_dtype
@@ -100,6 +101,13 @@ def run():
                 pipeline(st.session_state.dataset, selected_table_name)
             elif selected_function==main_funtionality[6]:
                 model_deployment()
+            elif selected_function==main_funtionality[7]:
+                feature_select_data=feature_selection(st.session_state.dataset.data, selected_table_name)
+                if not feature_select_data.empty:
+                    feature_graph(feature_select_data)
+
+
+
 
 
     with st.sidebar:
@@ -156,3 +164,4 @@ def run():
                 new_file_data = pd.read_csv(st.session_state.dataset.data, selected_table_name)
                 st.session_state["dataset"].add(new_file_name, new_file_data)
         st._rerun()
+
