@@ -19,6 +19,7 @@ def split_dataset(dataset,data_opt):
                 utils.get_variables(data),
                 key="model_target_var"
             )
+
             if data[target_var].dtype == "float64" or data[target_var].dtype == "int64":
                 type = 'Regressor'
                 st.write('#')
@@ -52,7 +53,7 @@ def split_dataset(dataset,data_opt):
             0, 1000, 1,
             key="split_random_state"
         )
-        col1, col2, col3 = st.columns(3)
+        col1, col2 = st.columns(2)
         shuffle = col4.checkbox("Shuffle", True, key="split_shuffle")
         if(shuffle):
             s="suffled"
@@ -75,8 +76,14 @@ def split_dataset(dataset,data_opt):
         )
 
         col4.markdown("#")
+        col1,col2=st.columns(2)
+        split_dataset_name=col1.text_input(
+            "**Splitted Dataset Name**",
+           split_dataset_name ,
+            key="split_name"
+        )
+        # f"{ds_name}-:blue[{target_var}]-:violet[{stfy}] - :green[{test_size}] - :orange[{random_state}] -{s}"
 
-        st.warning (f"**:black[Splitted Dataset Name is : ]** {ds_name}- :blue[{target_var}]-:violet[{stfy}] - :green[{test_size}] - :orange[{random_state}] -{s}")
         if st.button("Submit", key="split_submit_button"):
 
             if 'splitted_data' not in st.session_state:
