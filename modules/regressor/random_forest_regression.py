@@ -5,7 +5,6 @@ import streamlit as st
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import RandomizedSearchCV
 
-
 def hyperparameter_optimization(X_train, y_train):
     st.subheader("Hyperparameter Optimization Settings")
     n_iter = st.number_input("Number of iterations for hyperparameter search", min_value=1, value=10, step=1)
@@ -15,19 +14,17 @@ def hyperparameter_optimization(X_train, y_train):
     st.write('#')
 
     if st.button('Run Optimization'):
-
         st.write('#')
         param_dist = {
             "n_estimators": [10, 50, 100],
-            "criterion": ["mse", "mae"],
+            "criterion": ["friedman_mse", "squared_error", "absolute_error", "poisson"],
             "max_features": ["sqrt", "log2", None],
             "max_depth": [3, 5, 10, 15, 20, 25, None],
             "min_samples_split": [2, 5, 10],
             "min_samples_leaf": [1, 2, 4],
             "n_jobs": [-1],
         }
-        model = RandomForestRegressor()
-
+        model = RandomForestRegressor(random_state=0)
         with st.spinner('Doing hyperparameter optimization...'):
             for i in range(100):
                 time.sleep(0.1)
@@ -36,18 +33,15 @@ def hyperparameter_optimization(X_train, y_train):
                                      random_state=random_state)
             st.spinner("Fitting the model...")
             clf.fit(X_train, y_train)
-
         st.success("Hyperparameter optimization completed!")
         best_params = clf.best_params_
-
         st.write('Best estimator:')
-
         rows = []
         for param in best_params:
             rows.append([param, best_params[param]])
         st.table(pd.DataFrame(rows, columns=['Parameter', 'Value']))
-
         return clf.best_estimator_
+
 
 def random_forest_regressor(X_train, y_train):
     do_hyperparameter_optimization = st.checkbox("Do Hyperparameter Optimization?")
