@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def model_report(split_dataset_name, models):
 
+def model_report(split_dataset_name, models):
     result_df = pd.DataFrame()
     for i in st.session_state.has_models[split_dataset_name]:
         result_df = pd.concat([result_df, models.get_result(i)], ignore_index=True)
@@ -59,45 +59,40 @@ def report_table(result_df, include_data):
     st.dataframe(result_df[cols])
 
 
-
-
 def report_graph(data, col):
     model_data = data.drop(columns=['Train Data', 'Test Data', 'Model Name'])
 
-    # Create the figure and axis objects
-    fig, ax = plt.subplots(nrows=1, ncols=len(model_data.columns), figsize=(16,0.65*(len(model_data.columns))))
-    fig.subplots_adjust(hspace=0.5, wspace=0.5)
-    # Define the color map
     cmap = plt.cm.get_cmap('Set3', len(model_data))
 
-    for i, col in enumerate(model_data.columns):
-        # Loop over the rows and plot the bars with different colors for each row
-        for j, row in enumerate(model_data.iterrows()):
-            ax[i].bar(j, row[1][i], color=cmap(j), label=list(data['Model Name'].values)[j])
-            ax[i].set_xlabel(col)
-            ax[i].set_xticklabels([])
-    ax[0].set_ylabel("Value")
-    ax[-1].legend(loc='upper left', bbox_to_anchor=(0, 1.5))
-    # Add some padding to the top of the plot to make space for the legend
-    fig.subplots_adjust(top=0.85 + 0.05 * len(data))
-    # Add some padding to the plot
+    orientation = st.selectbox('Select Orientation', ['Vertical', 'Horizontal'])
+    for i in range(4):
+        st.write('#')
+    if orientation == 'Vertical':
+        fig, ax = plt.subplots(nrows=1, ncols=len(model_data.columns), figsize=(16,8))
+        fig.subplots_adjust(hspace=0.5, wspace=0.5)
+
+        for i, col in enumerate(model_data.columns):
+            for j, row in enumerate(model_data.iterrows()):
+                # Create the bar plot for the current column
+                ax[i].bar(j, row[1][i], color=cmap(j), label=list(data['Model Name'].values)[j])
+                ax[i].set_xticklabels([])
+                ax[i].set_xlabel(col)
+        ax[0].set_ylabel("Value")
+        ax[-1].legend(loc='upper left', bbox_to_anchor=(0, 1.3))
+        fig.subplots_adjust(top=0.85 + 0.05 * len(data))
+
+    elif orientation == 'Horizontal':
+        fig, ax = plt.subplots(nrows=len(model_data.columns), ncols=1, figsize=(7,16+len(model_data.columns)))
+        fig.subplots_adjust(hspace=0.5, wspace=0.5)
+        for i, col in enumerate(model_data.columns):
+            for j, row in enumerate(model_data.iterrows()):
+                # Create the bar plot for the current column
+                ax[i].barh(j, row[1][i], color=cmap(j), label=list(data['Model Name'].values)[j])
+                ax[i].set_yticklabels([])
+                ax[i].set_ylabel(col)
+        ax[-1].set_xlabel("Value")
+        ax[0].legend(loc='upper left', bbox_to_anchor=(0, 1.5))
+        fig.subplots_adjust(top=0.85 + 0.05 * len(data))
+
     plt.tight_layout()
     st.pyplot(fig)
-
-
-    ### rotation
-
-    # for i, col in enumerate(model_data.columns):
-    #     # Loop over the rows and plot the bars with different colors for each row
-    #     for j, row in enumerate(model_data.iterrows()):
-    #         ax[i].barh(j, row[1][i], color=cmap(j), label=list(data['Model Name'].values)[j])
-    #         ax[i].set_xlabel(col)
-    # ax[0].set_ylabel("Value")
-    # ax[-1].legend(loc='upper left', bbox_to_anchor=(0, 0.35 * len(data) + 1))
-    # # Add some padding to the top of the plot to make space for the legend
-    # fig.subplots_adjust(top=0.85 + 0.05 * len(data))
-    # # Add some padding to the plot
-    # plt.tight_layout()
-    #
-    # # Display the plot in the Streamlit app
-    # st.pyplot(fig)
