@@ -102,9 +102,7 @@ def run():
             elif selected_function==main_funtionality[6]:
                 model_deployment()
             elif selected_function==main_funtionality[7]:
-                feature_select_data=feature_selection(st.session_state.dataset.data, selected_table_name)
-                if not feature_select_data.empty:
-                    feature_graph(feature_select_data)
+                pass
 
 
 
