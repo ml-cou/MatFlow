@@ -63,7 +63,7 @@ def split_dataset(dataset,data_opt):
             stfy= ""
         else :
             stfy=f"-stratify= {stratify}"
-        split_dataset_name = f"{split_dataset_name}{stfy}-[{test_size}]-[{random_state}]-{s}"
+        # split_dataset_name = f"{split_dataset_name}{stfy}-[{test_size}]-[{random_state}]-{s}"
         train_name = col1.text_input(
             "Train Data Name",
             f"train_{split_dataset_name}",
