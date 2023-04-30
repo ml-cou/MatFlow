@@ -3,11 +3,17 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import LabelEncoder
-
+from sklearn.preprocessing import label_binarize
+from sklearn.multiclass import OneVsRestClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import roc_curve, auc
+from sklearn.preprocessing import MinMaxScaler
 from modules import utils
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, \
-    confusion_matrix, roc_curve, precision_recall_curve
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report,confusion_matrix, roc_curve, precision_recall_curve, auc, average_precision_score
 
 
 def prediction(dataset, models,model_opt):
@@ -58,10 +64,11 @@ def prediction(dataset, models,model_opt):
         try:
             if y.nunique() > 2:
                 # multiclass case (denied)
-                show_result(y, y_pred, result_opt, None)
+                # show_multiclass(y,y_pred)
+                show_result(y, y_pred, result_opt, None,X)
             else:
                 # binary case
-                show_result(y, y_pred, result_opt, "binary")
+                show_result(y, y_pred, result_opt, "binary",X)
         except ValueError as e:
             st.warning(str(e))
 
@@ -69,7 +76,7 @@ def prediction(dataset, models,model_opt):
             st.warning(str(e))
 
 
-def show_result(y, y_pred, result_opt, multi_average):
+def show_result(y, y_pred, result_opt, multi_average,X):
     le = LabelEncoder()
 
     if result_opt in ["Accuracy", "Precision", "Recall", "F1-Score"]:
@@ -126,7 +133,47 @@ def show_result(y, y_pred, result_opt, multi_average):
     elif result_opt == "Precision-Recall Curve":
 
         if y.nunique() > 2:
-            st.warning("Precision-Recall curve is not supported for multiclass classification")
+            # st.warning("Precision-Recall curve is not supported for multiclass classification")
+
+            label_encoder = LabelEncoder()
+            label_encoder.fit(y)
+            y = label_encoder.transform(y)
+            classes = label_encoder.classes_
+
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+            min_max_scaler = MinMaxScaler()
+            X_train_norm = min_max_scaler.fit_transform(X_train)
+            X_test_norm = min_max_scaler.fit_transform(X_test)
+
+            RF = OneVsRestClassifier(RandomForestClassifier(max_features=0.2))
+            RF.fit(X_train_norm, y_train)
+            y_pred = RF.predict(X_test_norm)
+            pred_prob = RF.predict_proba(X_test_norm)
+
+            y_test_binarized = label_binarize(y_test, classes=np.unique(y_test))
+
+            precision = {}
+            recall = {}
+            average_precision = dict()
+
+            n_class = classes.shape[0]
+
+            for i in range(n_class):
+                precision[i], recall[i], _ = precision_recall_curve(y_test_binarized[:, i], pred_prob[:, i])
+                average_precision[i] = average_precision_score(y_test_binarized[:, i], pred_prob[:, i])
+
+                plt.plot(recall[i], precision[i], linestyle='--',
+                         label='%s (AP=%0.2f)' % (classes[i], average_precision[i]))
+
+            plt.xlim([0, 1])
+            plt.ylim([0, 1.05])
+            plt.title('Multiclass Precision-Recall curve')
+            plt.xlabel('Recall')
+            plt.ylabel('Precision')
+            plt.legend(loc='lower left')
+            plt.show()
+            st.pyplot(plt.gcf())
 
             return
 
@@ -151,9 +198,90 @@ def show_result(y, y_pred, result_opt, multi_average):
     elif result_opt == "ROC Curve":
 
         if y.nunique() > 2:
-            st.warning("ROC curve is not supported for multiclass classification")
+            label_encoder = LabelEncoder()
+            label_encoder.fit(y)
+            y = label_encoder.transform(y)
+            classes = label_encoder.classes_
 
-            return
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+            min_max_scaler = MinMaxScaler()
+            X_train_norm = min_max_scaler.fit_transform(X_train)
+            X_test_norm = min_max_scaler.fit_transform(X_test)
+
+            RF = OneVsRestClassifier(RandomForestClassifier(max_features=0.2))
+            RF.fit(X_train_norm, y_train)
+            y_pred = RF.predict(X_test_norm)
+            pred_prob = RF.predict_proba(X_test_norm)
+
+            y_test_binarized = label_binarize(y_test, classes=np.unique(y_test))
+
+            fpr = {}
+            tpr = {}
+            thresh = {}
+            roc_auc = dict()
+
+            n_class = classes.shape[0]
+
+            for i in range(n_class):
+                fpr[i], tpr[i], thresh[i] = roc_curve(y_test_binarized[:, i], pred_prob[:, i])
+                roc_auc[i] = auc(fpr[i], tpr[i])
+
+                plt.plot(fpr[i], tpr[i], linestyle='--', label='%s vs Rest (AUC=%0.2f)' % (classes[i], roc_auc[i]))
+
+            plt.plot([0, 1], [0, 1], 'b--')
+            plt.xlim([0, 1])
+            plt.ylim([0, 1.05])
+            plt.title('Multiclass ROC curve')
+            plt.xlabel('False Positive Rate')
+            plt.ylabel('True Positive rate')
+            plt.legend(loc='lower right')
+            st.pyplot(plt.gcf())
+
+        # if y.nunique() > 2:
+        #     label_encoder = LabelEncoder()
+        #     label_encoder.fit(y)
+        #     y = label_encoder.transform(y)
+        #     classes = label_encoder.classes_
+        #
+        #     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+        #
+        #     min_max_scaler = MinMaxScaler()
+        #     X_train_norm = min_max_scaler.fit_transform(X_train)
+        #     X_test_norm = min_max_scaler.fit_transform(X_test)
+        #
+        #     mlp = MLPClassifier(hidden_layer_sizes=(100, 50))
+        #     mlp.fit(X_train_norm, y_train)
+        #     y_pred = mlp.predict(X_test_norm)
+        #     pred_prob = mlp.predict_proba(X_test_norm)
+        #
+        #     y_test_binarized = label_binarize(y_test, classes=np.unique(y_test))
+        #
+        #     fpr = {}
+        #     tpr = {}
+        #     thresh = {}
+        #     roc_auc = dict()
+        #
+        #     n_class = classes.shape[0]
+        #
+        #     for i in range(n_class):
+        #         fpr[i], tpr[i], thresh[i] = roc_curve(y_test_binarized[:, i], pred_prob[:, i])
+        #         roc_auc[i] = auc(fpr[i], tpr[i])
+        #
+        #         plt.plot(fpr[i], tpr[i], linestyle='--', label='%s vs Rest (AUC=%0.2f)' % (classes[i], roc_auc[i]))
+        #
+        #     plt.plot([0, 1], [0, 1], 'b--')
+        #     plt.xlim([0, 1])
+        #     plt.ylim([0, 1.05])
+        #     plt.title('Multiclass ROC curve')
+        #     plt.xlabel('False Positive Rate')
+        #     plt.ylabel('True Positive rate')
+        #     plt.legend(loc='lower right')
+        #     plt.show()
+        #
+        #     st.pyplot(plt.gcf())
+        #
+        #     return
 
         y_encoded = le.fit_transform(y)
         y_pred_encoded = le.transform(y_pred)
@@ -201,3 +329,40 @@ def show_result(y, y_pred, result_opt, multi_average):
     #     ax.set_title("Feature Importances")
     #
     #     st.pyplot(fig)
+
+
+# def show_multiclass(y, y_pred):
+#
+#     # Binarize the y and y_pred labels
+#     y_binarized = label_binarize(y, classes=np.unique(y))
+#     y_pred_binarized = label_binarize(y_pred, classes=np.unique(y))
+#
+#     # Compute the false positive rate, true positive rate, and area under the curve for each class
+#     n_classes = y_binarized.shape[1]
+#     fpr = dict()
+#     tpr = dict()
+#     roc_auc = dict()
+#     for i in range(n_classes):
+#         fpr[i], tpr[i], _ = roc_curve(y_binarized[:, i], y_pred_binarized[:, i])
+#         roc_auc[i] = auc(fpr[i], tpr[i])
+#
+#     # Compute micro-average ROC curve and area under the curve
+#     fpr["micro"], tpr["micro"], _ = roc_curve(y_binarized.ravel(), y_pred_binarized.ravel())
+#     roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
+#
+#     # Plot the ROC curve for each class and micro-average ROC curve
+#     fig, ax = plt.subplots()
+#     for i in range(n_classes):
+#         ax.plot(fpr[i], tpr[i], label='ROC curve of class {0} (area = {1:0.2f})'.format(i, roc_auc[i]))
+#
+#     ax.plot([0, 1], [0, 1], 'k--', label='random guess')
+#     ax.plot(fpr["micro"], tpr["micro"], label='micro-average ROC curve (area = {0:0.2f})'.format(roc_auc["micro"]))
+#
+#     # Set the x and y limits and labels, and add a legend
+#     ax.set_xlim([0.0, 1.0])
+#     ax.set_ylim([0.0, 1.05])
+#     ax.set_xlabel('False Positive Rate')
+#     ax.set_ylabel('True Positive Rate')
+#     ax.set_title('Multiclass ROC Curve')
+#     ax.legend(loc="lower right")
+#     plt.show()
