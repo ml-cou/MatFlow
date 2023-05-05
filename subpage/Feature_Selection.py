@@ -105,8 +105,6 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         st.header("There are None values in the DataFrame.")
         return pd.DataFrame
 
-    # st.dataframe(df_result)
-    # st.dataframe(initial_df)
 
     if "df_result" not in st.session_state:
         st.session_state.df_result = df_result
@@ -165,7 +163,7 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
     data = pd.concat([df_result[['Features']], df_result[matrices_to_display]], axis=1)
     # data1 = pd.concat([initial_df[['Features']], initial_df[matrices_to_display]], axis=1)
 
-    fig, axs = plt.subplots(len(matrices_to_display), 1, figsize=(10, 6 * len(matrices_to_display)))
+    fig, axs = plt.subplots(len(matrices_to_display)+1, 1, figsize=(10, 7 * len(matrices_to_display)))
 
     plt.subplots_adjust(hspace=0.5)
 
@@ -177,6 +175,7 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
     c0, col1, col2, c1 = st.columns([0.1, 4, 2, .1])
 
     with col1:
+        st.subheader("Selected Features:")
         st.table(data)
 
     with col2:
@@ -190,5 +189,6 @@ def plot_matrix_comparison(merged_df, matrix_name, ax):
     ax.plot(merged_df['Features'], merged_df[f'{matrix_name}_Improved'], label='Improved', alpha=0.7, marker='.')
     ax.set_xlabel('Features')
     ax.set_ylabel(matrix_name)
+    plt.xticks(fontsize=10)
     ax.tick_params(axis='x', rotation=45)
     ax.legend()
