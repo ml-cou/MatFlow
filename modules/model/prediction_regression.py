@@ -37,13 +37,29 @@ def prediction(dataset, models,model_opt):
         show_result(y, y_pred, result_opt)
 
 def show_result(y, y_pred, result_opt):
+
+
     if result_opt == "Target Value":
+        c1,c2=st.columns(2)
+        with c1:
+            graph_header = st.text_input("Enter graph header", "Actual vs. Predicted Values")
+        st.markdown("#")
         result = pd.DataFrame({
             "Actual": y,
             "Predicted": y_pred
         })
-
-        st.dataframe(result)
+        st.markdown("#")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.dataframe(result)
+        with col2:
+            fig, ax = plt.subplots(figsize=(8, 6))
+            ax = sns.lineplot(x=range(len(y)), y=y, label="Actual")
+            ax = sns.lineplot(x=range(len(y_pred)), y=y_pred, label="Predicted")
+            ax.set_xlabel("Index")
+            ax.set_ylabel("Value")
+            ax.set_title(graph_header)
+            st.pyplot(fig)
 
     elif result_opt == "R2 Score":
         result = r2_score(y, y_pred)
@@ -61,23 +77,8 @@ def show_result(y, y_pred, result_opt):
         result = np.sqrt(mean_squared_error(y, y_pred))
         st.metric(result_opt, result)
 
-
     elif result_opt == "Actual vs. Predicted":
-
-        fig, ax = plt.subplots(figsize=(8, 6))
-
-        ax = sns.lineplot(x=range(len(y)), y=y, label="Actual")
-
-        ax = sns.lineplot(x=range(len(y_pred)), y=y_pred, label="Predicted")
-
-        ax.set_xlabel("Index")
-
-        ax.set_ylabel("Value")
-
-        ax.set_title("Actual vs. Predicted Values")
-
-        st.pyplot(fig)
-
+        actualvspred(y,y_pred,graph_header="Actual vs. Predicted Values")
 
     elif result_opt == "Residuals vs. Predicted":
 
@@ -157,3 +158,18 @@ def show_result(y, y_pred, result_opt):
         ax.set_title("Regression Line Plot")
 
         st.pyplot(fig)
+
+def actualvspred(y,y_pred,graph_header):
+    fig, ax = plt.subplots(figsize=(8, 6))
+
+    ax = sns.lineplot(x=range(len(y)), y=y, label="Actual")
+
+    ax = sns.lineplot(x=range(len(y_pred)), y=y_pred, label="Predicted")
+
+    ax.set_xlabel("Index")
+
+    ax.set_ylabel("Value")
+
+    ax.set_title(graph_header)
+
+    st.pyplot(fig)
