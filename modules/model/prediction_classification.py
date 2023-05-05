@@ -3,28 +3,28 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import label_binarize
+from sklearn.preprocessing import LabelEncoder,label_binarize
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import roc_curve, auc
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
+
 from modules import utils
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report,confusion_matrix, roc_curve, precision_recall_curve, auc, average_precision_score
 
 
 def prediction(dataset, models,model_opt):
-
     col1, col2, col3 = st.columns(3)
 
     data_opt = col1.selectbox(
         "Select Data",
         dataset.list_name()
     )
-
     target_var = col2.selectbox(
         "Target Variable",
         models.target_var
@@ -65,10 +65,10 @@ def prediction(dataset, models,model_opt):
             if y.nunique() > 2:
                 # multiclass case (denied)
                 # show_multiclass(y,y_pred)
-                show_result(y, y_pred, result_opt, None,X)
+                show_result(y, y_pred, result_opt, None,X,model_opt)
             else:
                 # binary case
-                show_result(y, y_pred, result_opt, "binary",X)
+                show_result(y, y_pred, result_opt, "binary",X,model_opt)
         except ValueError as e:
             st.warning(str(e))
 
@@ -76,7 +76,8 @@ def prediction(dataset, models,model_opt):
             st.warning(str(e))
 
 
-def show_result(y, y_pred, result_opt, multi_average,X):
+def show_result(y, y_pred, result_opt, multi_average,X,model_name):
+    # global pred_prob
     le = LabelEncoder()
 
     if result_opt in ["Accuracy", "Precision", "Recall", "F1-Score"]:
@@ -91,11 +92,19 @@ def show_result(y, y_pred, result_opt, multi_average,X):
         st.metric(result_opt, result)
 
     elif result_opt == "Target Value":
+        col=st.columns(1)
+        graph_header = st.text_input("Enter graph header", "Actual vs. Predicted Values")
+        st.markdown("#")
         result = pd.DataFrame({
             "Actual": y,
             "Predicted": y_pred
         })
-        st.dataframe(result)
+        col1,col2=st.columns(2)
+
+        with col1:
+            st.dataframe(result)
+        with col2:
+            actvspred(y,y_pred,graph_header)
 
     elif result_opt == "Classification Report":
         result = classification_report(y, y_pred)
@@ -120,16 +129,7 @@ def show_result(y, y_pred, result_opt, multi_average,X):
         st.pyplot(fig)
 
     elif result_opt == "Actual vs. Predicted":
-        fig, ax = plt.subplots(figsize=(8, 6))
-        ax = sns.lineplot(x=range(len(y)), y=y, label="Actual")
-        ax = sns.lineplot(x=range(len(y_pred)), y=y_pred, label="Predicted")
-        ax.set_xlabel("Index")
-        ax.set_ylabel("Value")
-        ax.set_title("Actual vs. Predicted Values")
-        st.pyplot(fig)
-
-
-
+        actvspred(y,y_pred)
     elif result_opt == "Precision-Recall Curve":
 
         if y.nunique() > 2:
@@ -196,7 +196,6 @@ def show_result(y, y_pred, result_opt, multi_average,X):
         st.pyplot(fig)
 
     elif result_opt == "ROC Curve":
-
         if y.nunique() > 2:
             label_encoder = LabelEncoder()
             label_encoder.fit(y)
@@ -209,10 +208,40 @@ def show_result(y, y_pred, result_opt, multi_average,X):
             X_train_norm = min_max_scaler.fit_transform(X_train)
             X_test_norm = min_max_scaler.fit_transform(X_test)
 
-            RF = OneVsRestClassifier(RandomForestClassifier(max_features=0.2))
-            RF.fit(X_train_norm, y_train)
-            y_pred = RF.predict(X_test_norm)
-            pred_prob = RF.predict_proba(X_test_norm)
+            if (model_name == "RF_Classification"):
+                RF = OneVsRestClassifier(RandomForestClassifier(max_features=0.2))
+                RF.fit(X_train_norm, y_train)
+                y_pred = RF.predict(X_test_norm)
+                pred_prob = RF.predict_proba(X_test_norm)
+            elif (model_name == "MLP_Classification"):
+                mlp = MLPClassifier(hidden_layer_sizes=(100, 50))
+                mlp.fit(X_train_norm, y_train)
+                y_pred = mlp.predict(X_test_norm)
+                pred_prob = mlp.predict_proba(X_test_norm)
+            elif (model_name == "KNN_Classification"):
+                k = 5
+                knn = KNeighborsClassifier(n_neighbors=k)
+                knn.fit(X_train_norm, y_train)
+                y_pred = knn.predict(X_test_norm)
+                pred_prob = knn.predict_proba(X_test_norm)
+            elif (model_name == "SVM_Classification"):
+                svm = OneVsRestClassifier(SVC(kernel='linear', probability=True))
+                svm.fit(X_train_norm, y_train)
+                y_pred = svm.predict(X_test_norm)
+                pred_prob = svm.predict_proba(X_test_norm)
+            elif (model_name == "LR_Classification"):
+                lr = OneVsRestClassifier(LogisticRegression(solver='lbfgs'))
+                lr.fit(X_train_norm, y_train)
+                y_pred = lr.predict(X_test_norm)
+                pred_prob = lr.predict_proba(X_test_norm)
+            elif (model_name == "DT_Classification"):
+                dt = OneVsRestClassifier(DecisionTreeClassifier())
+                dt.fit(X_train_norm, y_train)
+                y_pred = dt.predict(X_test_norm)
+                pred_prob = dt.predict_proba(X_test_norm)
+            else:
+                raise ValueError(
+                    "Invalid model name specified. Please choose one of 'Random Forest Classification', 'Multilayer Perceptron', 'K-Nearest Neighbors', 'Support Vector Machine', 'Logistic Regression', 'Decision Tree Classification'.")
 
             y_test_binarized = label_binarize(y_test, classes=np.unique(y_test))
 
@@ -282,23 +311,23 @@ def show_result(y, y_pred, result_opt, multi_average,X):
         #     st.pyplot(plt.gcf())
         #
         #     return
+        else:
+            y_encoded = le.fit_transform(y)
+            y_pred_encoded = le.transform(y_pred)
 
-        y_encoded = le.fit_transform(y)
-        y_pred_encoded = le.transform(y_pred)
+            fpr, tpr, _ = roc_curve(y_encoded.ravel(), y_pred_encoded.ravel())
 
-        fpr, tpr, _ = roc_curve(y_encoded.ravel(), y_pred_encoded.ravel())
+            fig, ax = plt.subplots()
 
-        fig, ax = plt.subplots()
+            sns.lineplot(x=fpr, y=tpr,ax=ax)
 
-        sns.lineplot(x=fpr, y=tpr,ax=ax)
+            ax.set_xlabel("False Positive Rate")
 
-        ax.set_xlabel("False Positive Rate")
+            ax.set_ylabel("True Positive Rate")
 
-        ax.set_ylabel("True Positive Rate")
+            ax.set_title("ROC Curve")
 
-        ax.set_title("ROC Curve")
-
-        st.pyplot(fig)
+            st.pyplot(fig)
 
     # elif result_opt == "Feature Importances":
     #
@@ -329,7 +358,14 @@ def show_result(y, y_pred, result_opt, multi_average,X):
     #     ax.set_title("Feature Importances")
     #
     #     st.pyplot(fig)
-
+def actvspred(y,y_pred,graph_header):
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax = sns.lineplot(x=range(len(y)), y=y, label="Actual")
+    ax = sns.lineplot(x=range(len(y_pred)), y=y_pred, label="Predicted")
+    ax.set_xlabel("Index")
+    ax.set_ylabel("Value")
+    ax.set_title(graph_header)
+    st.pyplot(fig)
 
 # def show_multiclass(y, y_pred):
 #
