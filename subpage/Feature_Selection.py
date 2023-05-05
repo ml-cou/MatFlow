@@ -1,5 +1,6 @@
 import time
 
+import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.ensemble import ExtraTreesRegressor, ExtraTreesClassifier
 from sklearn.model_selection import cross_validate
@@ -11,11 +12,13 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         if "prev_table" not in st.session_state:
             st.session_state.prev_table = table_name
         elif st.session_state.prev_table == table_name:
-            feature_graph(st.session_state.df_result, problem_type,st.session_state.dropped_columns)
+            feature_graph(st.session_state.df_result, st.session_state.initial_df, problem_type,
+                          st.session_state.dropped_columns)
             return
         else:
             st.session_state.prev_table = table_name
             del st.session_state.df_result
+            del st.session_state.initial_df
     except:
         pass
 
@@ -53,6 +56,21 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         st.error(f"Error while initializing variables: {str(e)}")
         return pd.DataFrame
 
+    initial_df = df_result
+
+    for i in range(len(list_X)):
+        first_n_column_list = list_X[:i + 1]
+        first_n_column = X_n[first_n_column_list]
+
+        scores = cross_validate(estimator, first_n_column, Y_n, cv=kfold, scoring=scoring)
+        try:
+            initial_df.loc[list_X[i]] = [
+                round(scores['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score in
+                scoring]
+        except Exception as e:
+            st.error(f"Error while adding data to result dataframe: {str(e)}")
+            return pd.DataFrame
+
     dropped_columns = []
     for i in range(len(list_X)):
         first_n_column_list = list_X[:i + 1]
@@ -66,7 +84,6 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         except Exception as e:
             st.error(f"Error while adding data to result dataframe: {str(e)}")
             return pd.DataFrame
-
         # create a list to store dropped columns
         if i >= 1:
             if problem_type == 'regression':
@@ -88,26 +105,25 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         st.header("There are None values in the DataFrame.")
         return pd.DataFrame
 
+    # st.dataframe(df_result)
+    # st.dataframe(initial_df)
+
     if "df_result" not in st.session_state:
         st.session_state.df_result = df_result
-        st.session_state.dropping_col=dropped_columns
+        st.session_state.initial_df = initial_df
+        st.session_state.dropping_col = dropped_columns
 
-    feature_graph(df_result, problem_type,dropped_columns)
+    feature_graph(df_result, initial_df, problem_type, dropped_columns)
 
 
-
-
-def feature_graph(df_result, problem_type,dropped_columns):
-    chart = st.line_chart()
-    chart.x_axis_label = 'Number of Features'
-    chart.y_axis_label = 'Score'
-
+def feature_graph(df_result, initial_df, problem_type, dropped_columns):
     if problem_type == "regression":
         # Define the chart and axis labels for regression
         matrices_to_display = st.multiselect('Select matrices to display', ['MAE', 'MAPE', 'MSE', 'RMSE'],
                                              default=['RMSE'])
         try:
             df_result = df_result.sort_values('RMSE', ascending=False).reset_index()
+            initial_df = initial_df.sort_values('RMSE', ascending=False).reset_index()
         except:
             st.error('Can\'t perform operation successfully')
             return
@@ -117,29 +133,62 @@ def feature_graph(df_result, problem_type,dropped_columns):
                                              default=['Accuracy'])
         try:
             df_result = df_result.sort_values('Accuracy', ascending=True).reset_index()
+            initial_df = initial_df.sort_values('Accuracy', ascending=True).reset_index()
         except:
             st.error('Can\'t perform operation successfully')
             return
-    for i in range(len(df_result)):
+
+    df_result = df_result.rename(columns={'index': 'Features'})
+    initial_df = initial_df.rename(columns={'index': 'Features'})
+
+
+    merged_df = pd.merge(initial_df, df_result, on='Features', how='outer', suffixes=('_Baseline', '_Improved'))
+
+    if problem_type == "regression":
         try:
-            # Select specific matrices to display in the line chart
-            time.sleep(0.1)
-            data = df_result[matrices_to_display]
-            chart.add_rows(data.iloc[[i], :])
-        except Exception as e:
-            st.error(f"Error while adding rows to the chart: {str(e)}")
+            merged_df = merged_df.sort_values('RMSE_Baseline', ascending=False).reset_index()
+        except:
+            st.error('Can\'t perform operation successfully')
             return
+    else:
+        try:
+            merged_df = merged_df.sort_values('Accuracy_Baseline', ascending=True).reset_index()
+        except:
+            st.error('Can\'t perform operation successfully')
+            return
+
+    st.write(df_result)
+
+
     st.write('#')
+
+    data = pd.concat([df_result[['Features']], df_result[matrices_to_display]], axis=1)
+    # data1 = pd.concat([initial_df[['Features']], initial_df[matrices_to_display]], axis=1)
+
+    fig, axs = plt.subplots(len(matrices_to_display), 1, figsize=(10, 6 * len(matrices_to_display)))
+
+    plt.subplots_adjust(hspace=0.5)
+
+    for i, matrix_name in enumerate(matrices_to_display):
+        plot_matrix_comparison(merged_df, matrix_name, axs[i])
+        axs[i].set_title(matrix_name)
+    st.pyplot(fig)
 
     c0, col1, col2, c1 = st.columns([0.1, 4, 2, .1])
 
-    data = pd.concat([df_result['index'], data], axis=1)
     with col1:
-        st.dataframe(data)
+        st.table(data)
 
     with col2:
         if len(dropped_columns) > 0:
-            st.subheader("The following columns were dropped:")
-            for col_name in dropped_columns:
-                st.write(f"- {col_name} was dropped")
+            st.subheader("Dropped Features:")
+            st.table(dropped_columns)
 
+
+def plot_matrix_comparison(merged_df, matrix_name, ax):
+    ax.plot(merged_df['Features'], merged_df[f'{matrix_name}_Baseline'], label='Baseline', alpha=0.7, marker='.')
+    ax.plot(merged_df['Features'], merged_df[f'{matrix_name}_Improved'], label='Improved', alpha=0.7, marker='.')
+    ax.set_xlabel('Features')
+    ax.set_ylabel(matrix_name)
+    ax.tick_params(axis='x', rotation=45)
+    ax.legend()
