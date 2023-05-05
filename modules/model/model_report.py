@@ -124,3 +124,4 @@ def report_graph(data, col):
 
     plt.tight_layout()
     st.pyplot(fig)
+    plt.close(fig)
