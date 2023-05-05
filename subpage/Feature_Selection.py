@@ -163,12 +163,12 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
     data = pd.concat([df_result[['Features']], df_result[matrices_to_display]], axis=1)
     # data1 = pd.concat([initial_df[['Features']], initial_df[matrices_to_display]], axis=1)
 
-    fig, axs = plt.subplots(len(matrices_to_display)+1, 1, figsize=(10, 7 * len(matrices_to_display)))
+    fig, axs = plt.subplots(len(matrices_to_display), 1, figsize=(10, 7 * len(matrices_to_display)))
 
     plt.subplots_adjust(hspace=0.5)
 
     for i, matrix_name in enumerate(matrices_to_display):
-        plot_matrix_comparison(merged_df, matrix_name, axs[i])
+        plot_matrix_comparison(merged_df, matrix_name, axs[i] if len(matrices_to_display)>1 else axs)
         axs[i].set_title(matrix_name)
     st.pyplot(fig)
 
@@ -189,5 +189,5 @@ def plot_matrix_comparison(merged_df, matrix_name, ax):
     ax.plot(merged_df['Features'], merged_df[f'{matrix_name}_Improved'], label='Improved', alpha=0.7, marker='.')
     ax.set_xlabel('Features')
     ax.set_ylabel(matrix_name)
-    ax.tick_params(axis='x', rotation=45,which='major', pad=20)
+    ax.tick_params(axis='x', rotation=45,labelsize=10)
     ax.legend()
