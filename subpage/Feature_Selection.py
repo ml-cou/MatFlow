@@ -189,6 +189,5 @@ def plot_matrix_comparison(merged_df, matrix_name, ax):
     ax.plot(merged_df['Features'], merged_df[f'{matrix_name}_Improved'], label='Improved', alpha=0.7, marker='.')
     ax.set_xlabel('Features')
     ax.set_ylabel(matrix_name)
-    plt.xticks(fontsize=10)
-    ax.tick_params(axis='x', rotation=45)
+    ax.tick_params(axis='x', rotation=45,which='major', pad=20)
     ax.legend()
