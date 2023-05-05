@@ -92,7 +92,7 @@ def show_result(y, y_pred, result_opt, multi_average,X,model_name):
         st.metric(result_opt, result)
 
     elif result_opt == "Target Value":
-        col=st.columns(1)
+        # col=st.columns(1)
         graph_header = st.text_input("Enter graph header", "Actual vs. Predicted Values")
         st.markdown("#")
         result = pd.DataFrame({
@@ -129,9 +129,8 @@ def show_result(y, y_pred, result_opt, multi_average,X,model_name):
         st.pyplot(fig)
 
     elif result_opt == "Actual vs. Predicted":
-        actvspred(y,y_pred)
+        actvspred(y,y_pred,graph_header="Actual vs. Predicted Values")
     elif result_opt == "Precision-Recall Curve":
-
         if y.nunique() > 2:
             # st.warning("Precision-Recall curve is not supported for multiclass classification")
 
@@ -176,24 +175,24 @@ def show_result(y, y_pred, result_opt, multi_average,X,model_name):
             st.pyplot(plt.gcf())
 
             return
+        else:
+            # encode y and y_pred
+            y_encoded = le.fit_transform(y)
+            y_pred_encoded = le.transform(y_pred)
 
-        # encode y and y_pred
-        y_encoded = le.fit_transform(y)
-        y_pred_encoded = le.transform(y_pred)
+            precision, recall, _ = precision_recall_curve(y_encoded.ravel(), y_pred_encoded.ravel())
 
-        precision, recall, _ = precision_recall_curve(y_encoded.ravel(), y_pred_encoded.ravel())
+            fig, ax = plt.subplots()
 
-        fig, ax = plt.subplots()
+            sns.lineplot(x=recall, y=precision, ax=ax)
 
-        sns.lineplot(x=recall, y=precision, ax=ax)
+            ax.set_xlabel("Recall")
 
-        ax.set_xlabel("Recall")
+            ax.set_ylabel("Precision")
 
-        ax.set_ylabel("Precision")
+            ax.set_title("Precision-Recall Curve")
 
-        ax.set_title("Precision-Recall Curve")
-
-        st.pyplot(fig)
+            st.pyplot(fig)
 
     elif result_opt == "ROC Curve":
         if y.nunique() > 2:
@@ -266,7 +265,7 @@ def show_result(y, y_pred, result_opt, multi_average,X,model_name):
             plt.ylabel('True Positive rate')
             plt.legend(loc='lower right')
             st.pyplot(plt.gcf())
-
+            return
         # if y.nunique() > 2:
         #     label_encoder = LabelEncoder()
         #     label_encoder.fit(y)
@@ -366,6 +365,7 @@ def actvspred(y,y_pred,graph_header):
     ax.set_ylabel("Value")
     ax.set_title(graph_header)
     st.pyplot(fig)
+    plt.close((fig))
 
 # def show_multiclass(y, y_pred):
 #
