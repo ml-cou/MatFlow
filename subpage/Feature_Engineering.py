@@ -23,7 +23,7 @@ def ds_feature_engineering(dataset, table_name):
         st.stop()
 
     menus = ["Add/Modify", "Change Dtype", "Alter Field Name", "Imputation", "Encoding", "Scaling", "Drop Column",
-             "Drop Rows", "Merge Dataset", "Append Dataset","Feature Selection","Cluster","Time series Analysis"]
+             "Drop Rows", "Merge Dataset", "Append Dataset","Feature Selection","Cluster"]
     tabs = [tab for tab in st.tabs(menus)]
 
     with tabs[0]:
@@ -105,6 +105,4 @@ def ds_feature_engineering(dataset, table_name):
         feature_selection.feature_selection(data,data_opt)
     with tabs[11]:
         cluster.cluster_dataset(dataset[table_name])
-    with tabs[12]:
-        # time_series.time_s(dataset[table_name])
-        pass
+   
