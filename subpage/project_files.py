@@ -71,7 +71,7 @@ def run():
     if not selected_table_name == 'No Files':
 
         main_funtionality = ['Dataset', 'EDA', 'Feature Engineering', 'Final Dataset', 'Pipeline', 'Model Building',
-                             'Model Deployment', 'Reverse ML']
+                             'Model Deployment','Time series analysis','Reverse ML']
         selected_function = option_menu(None, main_funtionality, menu_icon="folder2-open", orientation="horizontal",
                                         styles=
                                         {"container": {"padding": "5px 2% 5px 2% !important",
@@ -83,6 +83,8 @@ def run():
         c0, col2, c1 = st.columns([0.5, 7, 0.3])
         with col2:
             if selected_function == main_funtionality[0]:
+                st.write(type(st.session_state.dataset.data))
+                st.write(type(st.session_state.dataset))
                 ds_analysis(st.session_state.dataset.data, selected_table_name)
             elif selected_function==main_funtionality[1]:
                 ds_visualization(st.session_state.dataset.data, selected_table_name)
@@ -102,6 +104,10 @@ def run():
             elif selected_function==main_funtionality[6]:
                 model_deployment()
             elif selected_function==main_funtionality[7]:
+                #time seies
+                pass
+            elif selected_function==main_funtionality[7]:
+                #reverse ml
                 pass
 
 
