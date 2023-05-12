@@ -83,8 +83,6 @@ def run():
         c0, col2, c1 = st.columns([0.5, 7, 0.3])
         with col2:
             if selected_function == main_funtionality[0]:
-                st.write(type(st.session_state.dataset.data))
-                st.write(type(st.session_state.dataset))
                 ds_analysis(st.session_state.dataset.data, selected_table_name)
             elif selected_function==main_funtionality[1]:
                 ds_visualization(st.session_state.dataset.data, selected_table_name)
@@ -168,4 +166,3 @@ def run():
                 new_file_data = pd.read_csv(st.session_state.dataset.data, selected_table_name)
                 st.session_state["dataset"].add(new_file_name, new_file_data)
         st._rerun()
-
