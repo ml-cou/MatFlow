@@ -1,10 +1,9 @@
-import time
-
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.ensemble import ExtraTreesRegressor, ExtraTreesClassifier
 from sklearn.model_selection import cross_validate
 import streamlit as st
+import numpy as np
 
 
 def feature_selection(dataset, table_name, target_var, problem_type):
@@ -120,8 +119,8 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
         matrices_to_display = st.multiselect('Select matrices to display', ['MAE', 'MAPE', 'MSE', 'RMSE'],
                                              default=['RMSE'])
         try:
-            df_result = df_result.sort_values('RMSE', ascending=False).reset_index()
-            initial_df = initial_df.sort_values('RMSE', ascending=False).reset_index()
+            df_result = df_result.reset_index()
+            initial_df = initial_df.reset_index()
         except:
             st.error('Can\'t perform operation successfully')
             return
@@ -130,8 +129,8 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
         matrices_to_display = st.multiselect('Select matrices to display', ['Accuracy', 'Precision', 'Recall', 'F1'],
                                              default=['Accuracy'])
         try:
-            df_result = df_result.sort_values('Accuracy', ascending=True).reset_index()
-            initial_df = initial_df.sort_values('Accuracy', ascending=True).reset_index()
+            df_result = df_result.reset_index()
+            initial_df = initial_df.reset_index()
         except:
             st.error('Can\'t perform operation successfully')
             return
@@ -144,23 +143,23 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
 
     if problem_type == "regression":
         try:
-            merged_df = merged_df.sort_values('RMSE_Baseline', ascending=False).reset_index()
+            merged_df = merged_df.reset_index()
         except:
             st.error('Can\'t perform operation successfully')
             return
     else:
         try:
-            merged_df = merged_df.sort_values('Accuracy_Baseline', ascending=True).reset_index()
+            merged_df = merged_df.reset_index()
         except:
             st.error('Can\'t perform operation successfully')
             return
 
-    st.write(df_result)
 
 
     st.write('#')
 
     data = pd.concat([df_result[['Features']], df_result[matrices_to_display]], axis=1)
+
     # data1 = pd.concat([initial_df[['Features']], initial_df[matrices_to_display]], axis=1)
 
     fig, axs = plt.subplots(len(matrices_to_display), 1, figsize=(10, 7 * len(matrices_to_display)))
@@ -168,8 +167,9 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
     plt.subplots_adjust(hspace=0.5)
 
     for i, matrix_name in enumerate(matrices_to_display):
-        plot_matrix_comparison(merged_df, matrix_name, axs[i] if len(matrices_to_display)>1 else axs)
-        axs[i].set_title(matrix_name)
+        ax=axs[i] if len(matrices_to_display) > 1 else axs
+        plot_matrix_comparison(merged_df, matrix_name, ax)
+        ax.set_title(matrix_name)
     st.pyplot(fig)
 
     c0, col1, col2, c1 = st.columns([0.1, 4, 2, .1])
@@ -178,16 +178,27 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
         st.subheader("Selected Features:")
         st.table(data)
 
+
     with col2:
         if len(dropped_columns) > 0:
             st.subheader("Dropped Features:")
             st.table(dropped_columns)
 
 
+
+
+
+
 def plot_matrix_comparison(merged_df, matrix_name, ax):
-    ax.plot(merged_df['Features'], merged_df[f'{matrix_name}_Baseline'], label='Baseline', alpha=0.7, marker='.')
-    ax.plot(merged_df['Features'], merged_df[f'{matrix_name}_Improved'], label='Improved', alpha=0.7, marker='.')
-    ax.set_xlabel('Features')
-    ax.set_ylabel(matrix_name)
-    ax.tick_params(axis='x', rotation=45,labelsize=10)
+    # Mask the missing values
+    mask = np.isfinite(merged_df[f'{matrix_name}_Improved'])
+
+    # Plot the data
+
+    ax.plot(merged_df['Features'], merged_df[f'{matrix_name}_Baseline'], label='Baseline', linestyle=':', marker='.',color="#FF4949")
+    ax.plot(merged_df['Features'][mask], merged_df[f'{matrix_name}_Improved'][mask], label='Improved', marker='o',color="#19A7CE")
+
+    ax.set_xlabel('Features',fontsize=12)
+    ax.set_ylabel(matrix_name,fontsize=12)
+    ax.tick_params(axis='x', rotation=45,labelsize=9)
     ax.legend()
