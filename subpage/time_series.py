@@ -1,9 +1,8 @@
-import pandas as pd
-import numpy as np
 import streamlit as st
+import pandas as pd
 import matplotlib.pyplot as plt
-from statsmodels.tsa.seasonal import seasonal_decompose
-from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.arima.model import ARIMA
+from datetime import datetime, timedelta
 
 
 def time_series_analysis(dataset, table_name):
@@ -22,201 +21,92 @@ def time_series_analysis(dataset, table_name):
 
     st.subheader("Time Series Analysis")
 
+    date_columns = []
+
+    for column_name in data.columns:
+        if data[column_name].dtype == 'object' or data[column_name].dtype == 'datetime64[ns]':
+            try:
+                pd.to_datetime(data[column_name])
+                date_columns.append(column_name)
+            except ValueError:
+                pass
+
     # Display the dataset
     st.write("Original Dataset:")
     st.write(data)
-    data['date'] = pd.to_datetime(data['date'])
+    if len(date_columns) == 0:
+        st.warning(
+            "No datetime columns found in the dataset. Please check your data or specify the correct column types.")
+        return
+    data.rename(columns={date_columns[0]:"date"},inplace=True)
+    data['date'] = pd.to_datetime(data["date"])
 
     data = data.set_index('date')
+
+    # Define the time range slider
+    min_date_range = data.index.min() - timedelta(days=365 * 20)
+    max_date_range = data.index.max() + timedelta(days=365 * 20)
+
+    selected_range = st.slider("Select a time range:", min_value=min_date_range, max_value=max_date_range,
+                               value=(data.index.min().to_pydatetime(), data.index.max().to_pydatetime()))
+
+    # Convert selected range to Timestamp objects
+    selected_start = pd.Timestamp(selected_range[0])
+    selected_end = pd.Timestamp(selected_range[1])
+
+    # Filter the data based on the selected range
+    filtered_data = data.loc[selected_start:selected_end]
     # Plot the time series
     st.write("Time Series Plot:")
-    if isinstance(data, pd.DataFrame):
-        for column in data.columns:
+    if isinstance(filtered_data, pd.DataFrame):
+        for column in filtered_data.columns:
             plt.figure(figsize=(10, 6))
-            plt.plot(data[column])
+            plt.plot(filtered_data[column])
             plt.xlabel("Time")
             plt.ylabel("Value")
             plt.title(f"Time Series Plot - {column}")
+
+            # Perform forecasting
+            model = ARIMA(filtered_data[column], order=(1, 1, 1))
+            model_fit = model.fit()
+
+            # Define the prediction range
+            prediction_start = selected_start
+            prediction_end = selected_end    #prediction_start + timedelta(days=365 * 10)  # Predict for 10 years (1990)
+
+            forecast = model_fit.predict(start=prediction_start, end=prediction_end)
+
+            # Plot the forecasted values
+            plt.plot(forecast.index, forecast.values, label="Forecasted")
+            plt.legend()
+
+            # Set the x-axis limits for data and forecast
+            plt.xlim(selected_start, prediction_end)
+
             st.pyplot(plt)
-    elif isinstance(data, pd.Series):
+    elif isinstance(filtered_data, pd.Series):
         plt.figure(figsize=(10, 6))
-        plt.plot(data)
+        plt.plot(filtered_data)
         plt.xlabel("Time")
         plt.ylabel("Value")
         plt.title("Time Series Plot")
+
+        # Perform forecasting
+        model = ARIMA(filtered_data, order=(1, 1, 1))
+        model_fit = model.fit()
+
+        # Define the prediction range
+        prediction_start = selected_end + timedelta(days=1)
+        prediction_end = prediction_start + timedelta(days=365 * 10)  # Predict for 10 years (1990)
+
+        forecast = model_fit.predict(start=prediction_start, end=prediction_end)
+
+        # Plot the forecasted values
+        plt.plot(forecast.index, forecast.values, label="Forecasted")
+        plt.legend()
+        # Set the x-axis limits for data and forecast
+        plt.xlim(selected_start, prediction_end)
+
         st.pyplot(plt)
     else:
         st.write("Invalid dataset. Please provide a DataFrame or Series.")
-
-    # Perform seasonal decomposition
-    st.write("Seasonal Decomposition:")
-    if isinstance(data, pd.DataFrame):
-        for column in data.columns:
-            decomposition = seasonal_decompose(data[column], model='additive', period=12)
-            fig, ax = plt.subplots(nrows=4, ncols=1, figsize=(10, 8))
-            decomposition.observed.plot(ax=ax[0], legend=False)
-            ax[0].set_ylabel('Observed')
-            decomposition.trend.plot(ax=ax[1], legend=False)
-            ax[1].set_ylabel('Trend')
-            decomposition.seasonal.plot(ax=ax[2], legend=False)
-            ax[2].set_ylabel('Seasonal')
-            decomposition.resid.plot(ax=ax[3], legend=False)
-            ax[3].set_ylabel('Residuals')
-            plt.tight_layout()
-            st.pyplot(plt)
-    elif isinstance(data, pd.Series):
-        decomposition = seasonal_decompose(data, model='additive', period=12)
-        fig, ax = plt.subplots(nrows=4, ncols=1, figsize=(10, 8))
-        decomposition.observed.plot(ax=ax[0], legend=False)
-        ax[0].set_ylabel('Observed')
-        decomposition.trend.plot(ax=ax[1], legend=False)
-        ax[1].set_ylabel('Trend')
-        decomposition.seasonal.plot(ax=ax[2], legend=False)
-        ax[2].set_ylabel('Seasonal')
-        decomposition.resid.plot(ax=ax[3], legend=False)
-        ax[3].set_ylabel('Residuals')
-        plt.tight_layout()
-        st.pyplot(plt)
-    else:
-        st.write("Invalid dataset. Please provide a DataFrame or Series.")
-
-    # Perform Augmented Dickey-Fuller test
-    st.write("Augmented Dickey-Fuller Test:")
-    if isinstance(data, pd.DataFrame):
-        for column in data.columns:
-            result = adfuller(data[column].squeeze())
-            st.write("Column:", column)
-            st.write("ADF Statistic:", result[0])
-            st.write("p-value:", result[1])
-            st.write("Critical Values:")
-            for key, value in result[4].items():
-                st.write(f"{key}: {value}")
-    elif isinstance(data, pd.Series):
-        result = adfuller(data.squeeze())
-        st.write("ADF Statistic:", result[0])
-        st.write("p-value:", result[1])
-        st.write("Critical Values:")
-        for key, value in result[4].items():
-            st.write(f"{key}: {value}")
-    else:
-        st.write("Invalid dataset. Please provide a DataFrame or Series.")
-
-# def time_series_analysis(dataset,table_name):
-#
-#     if 'save_as' not in st.session_state:
-#         st.session_state.save_as = True
-#     try:
-#
-#         data = dataset[table_name]
-#         data_opt = table_name
-#     except KeyError:
-#         st.header("No Dataset Found")
-#         st.stop()
-#
-#     except Exception as e:
-#         st.warning(e)
-#         st.stop()
-#
-#     st.subheader("Time Series Analysis")
-#
-#     # Display the dataset
-#     st.write("Original Dataset:")
-#     st.write(data)
-#
-#     # # Plot the time series
-#     # st.write("Time Series Plot:")
-#     # plt.figure(figsize=(10, 6))
-#     # plt.plot(data)
-#     # plt.xlabel("Time")
-#     # plt.ylabel("Value")
-#     # plt.title("Time Series Plot")
-#     # st.pyplot(plt)
-#     #
-#     # # Perform seasonal decomposition
-#     # st.write("Seasonal Decomposition:")
-#     # decomposition = seasonal_decompose(data, model='additive', period=12)  # Adjust the period based on your dataset
-#     # fig, ax = plt.subplots(nrows=4, ncols=1, figsize=(10, 8))
-#     # decomposition.observed.plot(ax=ax[0], legend=False)
-#     # ax[0].set_ylabel('Observed')
-#     # decomposition.trend.plot(ax=ax[1], legend=False)
-#     # ax[1].set_ylabel('Trend')
-#     # decomposition.seasonal.plot(ax=ax[2], legend=False)
-#     # ax[2].set_ylabel('Seasonal')
-#     # decomposition.resid.plot(ax=ax[3], legend=False)
-#     # ax[3].set_ylabel('Residuals')
-#     # plt.tight_layout()
-#     # st.pyplot(plt)
-#     #
-#     # # Perform Augmented Dickey-Fuller test
-#     # st.write("Augmented Dickey-Fuller Test:")
-#     # result = adfuller(data.squeeze())
-#     # st.write("ADF Statistic:", result[0])
-#     # st.write("p-value:", result[1])
-#     # st.write("Critical Values:")
-#     # for key, value in result[4].items():
-#     #     st.write(f"{key}: {value}")
-#     #
-#     #
-#
-#
-#     #-------multivariatee-------
-#     st.write(type(data))
-#     if isinstance(data, pd.Series):
-#         data=pd.Series(data)
-#         data = data.to_frame()
-#     fig, axes = plt.subplots(nrows=4, ncols=2, dpi=120, figsize=(10, 6))
-#     for i, ax in enumerate(axes.flatten()):
-#         data = data[data.columns[i]]
-#         ax.plot(data, color='red', linewidth=1)
-#         # Decorations
-#         ax.set_title(data.columns[i])
-#         ax.xaxis.set_ticks_position('none')
-#         ax.yaxis.set_ticks_position('none')
-#         ax.spines["top"].set_alpha(0)
-#         ax.tick_params(labelsize=6)
-#
-#     plt.tight_layout()
-
-    # # Load the Air Passengers dataset
-    # # data = pd.read_csv('air_passengers.csv')
-    # data['Month'] = pd.to_datetime(data['Month'])
-    # data.set_index('Month', inplace=True)
-    #
-    # # Visualize the time series data
-    # plt.figure(figsize=(10, 6))
-    # plt.plot(data)
-    # plt.xlabel('Year')
-    # plt.ylabel('Passenger Count')
-    # plt.title('Air Passengers Dataset')
-    # plt.show()
-    #
-    # # Perform seasonal decomposition
-    # decomposition = seasonal_decompose(data, model='additive')
-    # trend = decomposition.trend
-    # seasonal = decomposition.seasonal
-    # residual = decomposition.resid
-    #
-    # # Visualize the decomposed components
-    # plt.figure(figsize=(10, 10))
-    # plt.subplot(411)
-    # plt.plot(data, label='Original')
-    # plt.legend(loc='best')
-    # plt.subplot(412)
-    # plt.plot(trend, label='Trend')
-    # plt.legend(loc='best')
-    # plt.subplot(413)
-    # plt.plot(seasonal, label='Seasonality')
-    # plt.legend(loc='best')
-    # plt.subplot(414)
-    # plt.plot(residual, label='Residuals')
-    # plt.legend(loc='best')
-    # plt.tight_layout()
-    # plt.show()
-    #
-    # # Perform Augmented Dickey-Fuller test for stationarity
-    # result = adfuller(data['#Passengers'])
-    # print('ADF Statistic:', result[0])
-    # print('p-value:', result[1])
-    # print('Critical Values:')
-    # for key, value in result[4].items():
-    #     print('\t', key, ':', value)
