@@ -9,6 +9,7 @@ from pathlib import Path
 from .Dataset_Analysis import ds_analysis
 from .Dataset_Visualization import ds_visualization
 from .Feature_Engineering import ds_feature_engineering
+from .time_series import time_series_analysis
 from modules.classes import data as dataaa
 from .model_builder import model_builder
 from .pipeline import pipeline
@@ -103,6 +104,7 @@ def run():
                 model_deployment()
             elif selected_function==main_funtionality[7]:
                 #time seies
+                time_series_analysis(st.session_state.dataset.data,selected_table_name)
                 pass
             elif selected_function==main_funtionality[7]:
                 #reverse ml
