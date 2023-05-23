@@ -48,12 +48,34 @@ def feature_selection(dataset, table_name, target_var, problem_type):
 
     try:
         list_X = list(X_n.columns)
-        k = list_X[0]
         df_result = pd.DataFrame(columns=df_columns)
 
     except Exception as e:
         st.error(f"Error while initializing variables: {str(e)}")
         return pd.DataFrame
+
+    to_sort_df=df_result
+
+    for i in range(len(list_X)):
+        first_n_column_list = list_X[i]
+        first_n_column = X_n[first_n_column_list]
+        scores = cross_validate(estimator, first_n_column.values.reshape(-1, 1), Y_n, cv=kfold, scoring=scoring)
+        try:
+            to_sort_df.loc[list_X[i]] = [
+                round(scores['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score in
+                scoring]
+        except Exception as e:
+            st.error(f"Error while adding data to result dataframe: {str(e)}")
+            return pd.DataFrame
+
+    if problem_type == 'classification':
+        to_sort_df = to_sort_df.sort_values('F1',ascending=False)
+    else:
+        to_sort_df=to_sort_df.sort_values('RMSE')
+
+    list_X = to_sort_df.index.tolist()
+
+    k = list_X[0]
 
     initial_df = df_result
 
@@ -141,14 +163,17 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
 
     merged_df = pd.merge(initial_df, df_result, on='Features', how='outer', suffixes=('_Baseline', '_Improved'))
 
+
     if problem_type == "regression":
         try:
+            merged_df=merged_df.sort_values('RMSE_Improved',ascending=False)
             merged_df = merged_df.reset_index()
         except:
             st.error('Can\'t perform operation successfully')
             return
     else:
         try:
+            merged_df=merged_df.sort_values('F1_Improved')
             merged_df = merged_df.reset_index()
         except:
             st.error('Can\'t perform operation successfully')
