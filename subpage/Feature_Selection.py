@@ -12,7 +12,7 @@ def feature_selection(dataset, table_name, target_var, problem_type):
             st.session_state.prev_table = table_name
         elif st.session_state.prev_table == table_name:
             feature_graph(st.session_state.df_result, st.session_state.initial_df, problem_type,
-                          st.session_state.dropped_columns)
+                          st.session_state.dropped_columns, st.session_state.selected_features)
             return
         else:
             st.session_state.prev_table = table_name
@@ -123,7 +123,7 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         # display dropped columns and reasons in Streamlit frontend
 
     if df_result.isnull().values.any():
-        st.header("There are None values in the DataFrame.")
+        st.header("There are Null values in the DataFrame.")
         return pd.DataFrame
 
 
@@ -131,11 +131,9 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         st.session_state.df_result = df_result
         st.session_state.initial_df = initial_df
         st.session_state.dropping_col = dropped_columns
+    feature_graph(df_result, initial_df, problem_type, dropped_columns, list_X)
 
-    feature_graph(df_result, initial_df, problem_type, dropped_columns)
-
-
-def feature_graph(df_result, initial_df, problem_type, dropped_columns):
+def feature_graph(df_result, initial_df, problem_type, dropped_columns, list_X):
     if problem_type == "regression":
         # Define the chart and axis labels for regression
         matrices_to_display = st.multiselect('Select matrices to display', ['MAE', 'MAPE', 'MSE', 'RMSE'],
@@ -157,12 +155,27 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
             st.error('Can\'t perform operation successfully')
             return
 
+    #------------
+    display_opt = st.radio(
+        "",["All","Custom"],index=0,key="display_opt",
+        horizontal=True
+    )
+    selected_features=[]
+    if(display_opt=="All"):
+        selected_features=''
+    elif(display_opt=="Custom"):
+        selected_features = st.multiselect("Select features to display", list_X)
+        # if st.button('submit'):
+        #     feature_graph(df_result, initial_df, problem_type, dropped_columns, selected_features)
+    #---------------
     df_result = df_result.rename(columns={'index': 'Features'})
     initial_df = initial_df.rename(columns={'index': 'Features'})
 
+    if selected_features:
+        df_result = df_result[df_result['Features'].isin(selected_features)]
+        initial_df = initial_df[initial_df['Features'].isin(selected_features)]
 
     merged_df = pd.merge(initial_df, df_result, on='Features', how='outer', suffixes=('_Baseline', '_Improved'))
-
 
     if problem_type == "regression":
         try:
@@ -178,8 +191,6 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
         except:
             st.error('Can\'t perform operation successfully')
             return
-
-
 
     st.write('#')
 
@@ -210,16 +221,11 @@ def feature_graph(df_result, initial_df, problem_type, dropped_columns):
             st.table(dropped_columns)
 
 
-
-
-
-
 def plot_matrix_comparison(merged_df, matrix_name, ax):
     # Mask the missing values
     mask = np.isfinite(merged_df[f'{matrix_name}_Improved'])
 
     # Plot the data
-
     ax.plot(merged_df['Features'], merged_df[f'{matrix_name}_Baseline'], label='Baseline', linestyle=':', marker='.',color="#FF4949")
     ax.plot(merged_df['Features'][mask], merged_df[f'{matrix_name}_Improved'][mask], label='Improved', marker='o',color="#19A7CE")
 
