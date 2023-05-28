@@ -38,16 +38,18 @@ def feature_selection(dataset, table_name):
         data = dataset
     except ValueError:
         return
-    c0,col1,col2,c1=st.columns([0.1,2,2,0.1])
-    _c0,_col1,_col2,_c1=st.columns([0.1,3,2,0.1])
+    c0,col1,col2,c1=st.columns([0.1,4,4,0.1])
+    _c0,_col1,_col2,_c1=st.columns([0.1,6,2,0.1])
 
     with col1:
         target_var = st.selectbox(
             "Target Variable",
-            utils.get_variables(data),
-            index=len(data.columns)-1,
+            ['None']+utils.get_variables(data),
+            index=0,
             key="model_target_var"
         )
+    if target_var=='None':
+        return
     # Separate target variable and features
     X = data.drop(columns=target_var)
     y = data[target_var]
@@ -139,7 +141,7 @@ def feature_selection(dataset, table_name):
         st.write('#')
         show_graph=st.checkbox('Show Graph')
 
-    c0,col1,c1=st.columns([0.1,4,0.1])
+    c0,col1,c1=st.columns([0.1,7,0.1])
     with col1:
         st.write('Selected Features and Scores:')
 
