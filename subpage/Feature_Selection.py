@@ -54,12 +54,29 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         st.error(f"Error while initializing variables: {str(e)}")
         return pd.DataFrame
 
+    display_opt = st.radio("", ["All", "Custom", "None"], index=2, key="display_opt", horizontal=True)
+
+    if display_opt == 'None':
+        return
+
+    if display_opt == "Custom":
+        list_X = st.multiselect("Select features to display", list_X)
+
     to_sort_df=df_result
 
+    st.info("Stage 1: Calculating scores for each feature...")
+
+    total_iterations = len(list_X)
+
+    progress_bar = st.progress(0)
+
     for i in range(len(list_X)):
-        first_n_column_list = list_X[i]
-        first_n_column = X_n[first_n_column_list]
-        scores = cross_validate(estimator, first_n_column.values.reshape(-1, 1), Y_n, cv=kfold, scoring=scoring)
+
+        scores = cross_validate(estimator, X_n[list_X[i]].values.reshape(-1, 1), Y_n, cv=kfold, scoring=scoring)
+        progress_percentage = (i + 1) / total_iterations * 100
+
+        # Update the progress bar
+        progress_bar.progress(progress_percentage)
         try:
             to_sort_df.loc[list_X[i]] = [
                 round(scores['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score in
@@ -67,6 +84,7 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         except Exception as e:
             st.error(f"Error while adding data to result dataframe: {str(e)}")
             return pd.DataFrame
+    st.success("Stage 1 completed!")
 
     if problem_type == 'classification':
         to_sort_df = to_sort_df.sort_values('F1',ascending=False)
@@ -74,51 +92,83 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         to_sort_df=to_sort_df.sort_values('RMSE')
 
     list_X = to_sort_df.index.tolist()
-
     k = list_X[0]
 
     initial_df = df_result
 
-    for i in range(len(list_X)):
-        first_n_column_list = list_X[:i + 1]
-        first_n_column = X_n[first_n_column_list]
+    st.info("Stage 2: Dropping least important features...")
 
-        scores = cross_validate(estimator, first_n_column, Y_n, cv=kfold, scoring=scoring)
-        try:
-            initial_df.loc[list_X[i]] = [
-                round(scores['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score in
-                scoring]
-        except Exception as e:
-            st.error(f"Error while adding data to result dataframe: {str(e)}")
-            return pd.DataFrame
+    total_iterations = len(list_X)
+
+    progress_bar = st.progress(0)
 
     dropped_columns = []
-    for i in range(len(list_X)):
-        first_n_column_list = list_X[:i + 1]
-        first_n_column = X_n[first_n_column_list]
 
-        scores = cross_validate(estimator, first_n_column, Y_n, cv=kfold, scoring=scoring)
-        try:
-            df_result.loc[list_X[i]] = [
-                round(scores['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score in
-                scoring]
-        except Exception as e:
-            st.error(f"Error while adding data to result dataframe: {str(e)}")
-            return pd.DataFrame
+    all_column_data_first=pd.DataFrame
+    selected_column_data=pd.DataFrame
+
+    for i in range(len(list_X)):
+        all_column_data_first[list_X[i]] = X_n[list_X[i]]
+        selected_column_data[list_X[i]] = X_n[list_X[i]]
+
+        if len(dropped_columns)>0:
+            scores_all = cross_validate(estimator, all_column_data_first, Y_n, cv=kfold, scoring=scoring)
+            scores_selected = cross_validate(estimator, selected_column_data, Y_n, cv=kfold, scoring=scoring)
+            try:
+
+                df_result.loc[list_X[i]] = [
+                    round(scores_selected['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                    in
+                    scoring]
+                initial_df.loc[list_X[i]] = [
+                    round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                    in
+                    scoring]
+            except Exception as e:
+                st.error(f"Error while adding data to result dataframe: {str(e)}")
+                return pd.DataFrame
+        else:
+            scores_all = cross_validate(estimator, all_column_data_first, Y_n, cv=kfold, scoring=scoring)
+            try:
+
+                df_result.loc[list_X[i]] = [
+                    round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                    in
+                    scoring]
+                initial_df.loc[list_X[i]] = [
+                    round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                    in
+                    scoring]
+            except Exception as e:
+                st.error(f"Error while adding data to result dataframe: {str(e)}")
+                return pd.DataFrame
+
+
+        progress_percentage = (i + 1) / total_iterations * 100
+
+        # Update the progress bar
+        progress_bar.progress(progress_percentage)
+
+
         # create a list to store dropped columns
         if i >= 1:
             if problem_type == 'regression':
                 if df_result.loc[list_X[i], 'RMSE'] >= df_result.loc[k, 'RMSE']:
                     dropped_columns.append(list_X[i])  # add column name to list
                     df_result = df_result.drop(list_X[i])
+                    selected_column_data.drop(list_X[i])
                 else:
                     k = list_X[i]
             else:
                 if df_result.loc[list_X[i], 'F1'] <= df_result.loc[k, 'F1']:
                     dropped_columns.append(list_X[i])  # add column name to list
                     df_result = df_result.drop(list_X[i])
+                    selected_column_data.drop(list_X[i])
                 else:
                     k = list_X[i]
+
+    st.success("Feature selection process completed!")
+
 
         # display dropped columns and reasons in Streamlit frontend
 
