@@ -4,6 +4,7 @@ from sklearn.model_selection import RandomizedSearchCV
 import time
 import pandas as pd
 
+
 def hyperparameter_optimization(X_train, y_train):
     st.subheader("Hyperparameter Optimization Settings")
     n_iter = st.number_input("Number of iterations for hyperparameter search", min_value=1, value=10, step=1)
@@ -12,8 +13,17 @@ def hyperparameter_optimization(X_train, y_train):
 
     st.write('#')
 
-    if st.button('Run Optimization'):
+    if "ridge_best_param" not in st.session_state:
+        st.session_state.ridge_best_param = {
+            "alpha": 1.0,
+            "fit_intercept": True,
+            "solver": "auto",
+            "max_iter": 1000,
+            "tol": 0.0001,
+            "random_state": 0
+        }
 
+    if st.button('Run Optimization'):
         st.write('#')
         param_dist = {
             "alpha": [0.001, 0.01, 0.1, 1, 10, 100],
@@ -39,28 +49,33 @@ def hyperparameter_optimization(X_train, y_train):
         st.write('Best estimator:')
 
         rows = []
-        for param in best_params:
-            rows.append([param, best_params[param]])
+        for param, value in best_params.items():
+            rows.append([param, value])
         st.table(pd.DataFrame(rows, columns=['Parameter', 'Value']))
 
-        return clf.best_estimator_
+        st.session_state.ridge_best_param = best_params
+
+    return st.session_state.ridge_best_param
+
 
 def ridge_regression(X_train, y_train):
-    do_hyperparameter_optimization = st.checkbox("Do Hyperparameter Optimization?")
+    best_params = hyperparameter_optimization(X_train, y_train)
 
-    if do_hyperparameter_optimization:
-        hyperparameter_optimization(X_train, y_train)
-
-    alpha = st.number_input("Alpha", 0.0, 100.0, 1.0, key="rr_alpha")
-    fit_intercept = st.checkbox("Fit Intercept", True, key="rr_fit_intercept")
-    normalize = st.checkbox("Normalize", False, key="rr_normalize")
-    max_iter = st.number_input("Max Iterations", 1, 100000, 1000, key="rr_max_iter")
-    solver = st.selectbox("Solver", ["auto", "svd", "cholesky", "lsqr", "sparse_cg", "sag", "saga"], index=0, key="rr_solver")
-
+    alpha = st.number_input("Alpha", 0.0, 100.0, key="rr_alpha",
+                            value=float(best_params.get('alpha', 1.0)))
+    fit_intercept = st.checkbox("Fit Intercept", key="rr_fit_intercept",
+                                value=best_params.get('fit_intercept', True))
+    max_iter = st.number_input("Max Iterations", 1, 100000, key="rr_max_iter",
+                               value=best_params.get('max_iter', 1000))
+    solver = st.selectbox("Solver", ["auto", "svd", "cholesky", "lsqr", "sparse_cg", "sag", "saga"],
+                          key="rr_solver",
+                          index=["auto", "svd", "cholesky", "lsqr", "sparse_cg", "sag", "saga"].index(best_params.get('solver', 'auto')))
+    tol = st.number_input("Tolerance", 1e-6, 1.0, key="rr_tol",
+                          value=float(best_params.get('tol', 0.0001)))
 
     try:
         model = Ridge(alpha=alpha, fit_intercept=fit_intercept, max_iter=max_iter,
-                      solver=solver)
+                      solver=solver, tol=tol, random_state=best_params.get('random_state', 0))
     except ValueError as e:
         print(f"Error creating Ridge model: {e}")
         model = None
