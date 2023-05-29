@@ -53,11 +53,11 @@ def reverse_ml(dataset, table_name):
 
     all_columns = data.columns.to_list()
 
-    target_variables = st.multiselect('Select Target Variables', data.columns.to_list(), key='target')
+    target_variables = st.multiselect('Select Features', data.columns.to_list(), key='target')
     for target in target_variables:
         all_columns.remove(target)
 
-    features = st.multiselect('Select Features', all_columns, key='features')
+    features = st.multiselect('Select Target Variables', all_columns, key='features')
 
     st.write('#')
 
