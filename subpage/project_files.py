@@ -14,6 +14,7 @@ from modules.classes import data as dataaa
 from .model_builder import model_builder
 from .pipeline import pipeline
 from .model_deployment import model_deployment
+from .Reverse_ML import reverse_ml
 from .Feature_Selection import feature_selection,feature_graph
 
 from .Final_Data_Analysis import ds_final_data_analysis
@@ -105,10 +106,10 @@ def run():
             elif selected_function==main_funtionality[7]:
                 #time seies
                 time_series_analysis(st.session_state.dataset.data,selected_table_name)
-                pass
-            elif selected_function==main_funtionality[7]:
-                #reverse ml
-                pass
+            elif selected_function==main_funtionality[8]:
+                reverse_ml(st.session_state.dataset.data,selected_table_name)
+
+
 
 
 
