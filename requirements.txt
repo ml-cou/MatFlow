@@ -23,3 +23,5 @@ streamlit_option_menu
 streamlit-extras
 category_encoders
 lazypredict
+tensorflow
+
