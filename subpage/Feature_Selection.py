@@ -8,21 +8,23 @@ import numpy as np
 
 def feature_selection(dataset, table_name, target_var, problem_type):
 
-    try:
-        if "prev_table" not in st.session_state:
-            st.session_state.prev_table = table_name
-        elif st.session_state.prev_table == table_name:
-            feature_graph(st.session_state.df_result, st.session_state.df_all_result, problem_type,
-                          st.session_state.dropped_columns)
-
-            return
-        else:
-            st.session_state.prev_table = table_name
-            del st.session_state.df_result
-            del st.session_state.df_all_result
-            del st.session_state.dropped_columns
-    except:
-        pass
+    # try:
+    #     if "prev_table" not in st.session_state:
+    #         st.session_state.prev_table = table_name
+    #         st.session_state.prev_target=target_var
+    #     elif st.session_state.prev_table == table_name and st.session_state.prev_target==target_var:
+    #         feature_graph(st.session_state.df_result, st.session_state.df_all_result, problem_type,
+    #                       st.session_state.dropped_columns)
+    #
+    #         return
+    #     else:
+    #         st.session_state.prev_table = table_name
+    #         del st.session_state.df_result
+    #         del st.session_state.df_all_result
+    #         del st.session_state.dropped_columns
+    #         del st.session_state.prev_target
+    # except:
+    #     pass
 
     try:
         tab = dataset[table_name]
@@ -70,7 +72,7 @@ def feature_selection(dataset, table_name, target_var, problem_type):
     if display_opt == "Custom":
         list_X = st.multiselect("Select features to display", list_X)
 
-    to_sort_df=df_result
+    to_sort_df=df_result.copy()
 
     st.write('#')
 
@@ -104,32 +106,88 @@ def feature_selection(dataset, table_name, target_var, problem_type):
     list_X = to_sort_df.index.tolist()
     k = list_X[0]
 
-    df_all_result = df_result
+    df_all_result = df_result.copy()
+    df_all_result_group = df_result.copy()
+    df_result_group=df_result.copy()
+
+
 
     st.write('#')
 
     progress_bar = st.progress(0,':blue[Stage 2: Dropping least important features]')
 
+
+    mx_len=len(list_X)
+
+    dropped_columns_group=[]
+
+    k='first '+str(5)
+
+    for i in range(0,len(list_X),5):
+        selected_column_data = X_n[list_X[:min(i+5,mx_len)]]
+
+        scores_all = cross_validate(estimator, selected_column_data, Y_n, cv=kfold, scoring=scoring)
+        try:
+
+            df_result_group.loc['first '+str(i+5)] = [
+                round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                in
+                scoring]
+            df_all_result_group.loc['first ' + str(i + 5)] = [
+                round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                in
+                scoring]
+        except Exception as e:
+            st.error(f"Error while adding data to result dataframe: {str(e)}")
+            return pd.DataFrame
+
+        if i >= 1:
+            if problem_type == 'regression':
+                if df_result_group.loc['first '+str(i+5), 'RMSE'] >= df_result_group.loc[k, 'RMSE']:
+                    dropped_columns_group.append(selected_column_data)  # add column name to list
+                    df_result_group = df_result_group.drop('first '+str(i+5))
+                else:
+                    k = 'first '+str(i+5)
+            else:
+                if df_result_group.loc['first '+str(i+5), 'F1'] <= df_result_group.loc[k, 'F1']:
+                    dropped_columns_group.append(selected_column_data)  # add column name to list
+                    df_result_group = df_result_group.drop('first '+str(i+5))
+                else:
+                    k = 'first '+str(i+5)
+
+        progress_percentage = (min(i + 5,total_iterations)) / total_iterations
+
+        # Update the progress bar
+        progress_bar.progress(progress_percentage,text=':blue[Stage 2: Dropping least important features]'+ '..'*(i%3))
+
+    progress_bar.progress(1.0,"Feature selection process completed!")
+
+
+
     dropped_columns = []
 
-    all_column_data_first=pd.DataFrame()
-    selected_column_data=pd.DataFrame()
+    all_column_data_first = pd.DataFrame()
+    selected_column_data = pd.DataFrame()
+
+    k=list_X[0]
 
     for i in range(len(list_X)):
         all_column_data_first[list_X[i]] = X_n[list_X[i]]
         selected_column_data[list_X[i]] = X_n[list_X[i]]
 
-        if len(dropped_columns)>0:
+        if len(dropped_columns) > 0:
             scores_all = cross_validate(estimator, all_column_data_first, Y_n, cv=kfold, scoring=scoring)
             scores_selected = cross_validate(estimator, selected_column_data, Y_n, cv=kfold, scoring=scoring)
             try:
 
                 df_result.loc[list_X[i]] = [
-                    round(scores_selected['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                    round(scores_selected['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4)
+                    for score
                     in
                     scoring]
                 df_all_result.loc[list_X[i]] = [
-                    round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                    round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for
+                    score
                     in
                     scoring]
             except Exception as e:
@@ -140,22 +198,24 @@ def feature_selection(dataset, table_name, target_var, problem_type):
             try:
 
                 df_result.loc[list_X[i]] = [
-                    round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                    round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for
+                    score
                     in
                     scoring]
                 df_all_result.loc[list_X[i]] = [
-                    round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for score
+                    round(scores_all['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for
+                    score
                     in
                     scoring]
             except Exception as e:
                 st.error(f"Error while adding data to result dataframe: {str(e)}")
                 return pd.DataFrame
 
-
         progress_percentage = (i + 1) / total_iterations
 
         # Update the progress bar
-        progress_bar.progress(progress_percentage,text=':blue[Stage 2: Dropping least important features]'+ '..'*(i%3))
+        progress_bar.progress(progress_percentage,
+                              text=':blue[Stage 2: Dropping least important features]' + '..' * (i % 3))
 
         # create a list to store dropped columns
         if i >= 1:
@@ -163,40 +223,40 @@ def feature_selection(dataset, table_name, target_var, problem_type):
                 if df_result.loc[list_X[i], 'RMSE'] >= df_result.loc[k, 'RMSE']:
                     dropped_columns.append(list_X[i])  # add column name to list
                     df_result = df_result.drop(list_X[i])
-                    selected_column_data=selected_column_data.drop(columns=list_X[i])
+                    selected_column_data = selected_column_data.drop(columns=list_X[i])
                 else:
                     k = list_X[i]
             else:
                 if df_result.loc[list_X[i], 'F1'] <= df_result.loc[k, 'F1']:
                     dropped_columns.append(list_X[i])  # add column name to list
                     df_result = df_result.drop(list_X[i])
-                    selected_column_data=selected_column_data.drop(columns=list_X[i])
+                    selected_column_data = selected_column_data.drop(columns=list_X[i])
                 else:
                     k = list_X[i]
 
-    progress_bar.progress(1.0,"Feature selection process completed!")
+    progress_bar.progress(1.0, "Feature selection process completed!")
 
     st.write('#')
     st.write('#')
 
-
-        # display dropped columns and reasons in Streamlit frontend
 
     st.session_state.df_result = df_result
     st.session_state.df_all_result = df_all_result
     st.session_state.dropped_columns = dropped_columns
 
-    feature_graph(df_result, df_all_result, problem_type, dropped_columns)
+    feature_graph(df_result_group,df_all_result_group,problem_type,dropped_columns_group,'group')
+    feature_graph(df_result, df_all_result, problem_type, dropped_columns,'single')
+
 
 import plotly.graph_objects as go
 
-def feature_graph(df_result, df_all_result, problem_type, dropped_columns):
+def feature_graph(df_result, df_all_result, problem_type, dropped_columns,keys):
 
     # st.write(df_result)
     if problem_type == "regression":
         # Define the chart and axis labels for regression
         matrices_to_display = st.multiselect('Select matrices to display', ['MAE', 'MAPE', 'MSE', 'RMSE'],
-                                             default=['RMSE'])
+                                             default=['RMSE'],key=keys)
         try:
             df_result = df_result.reset_index()
             df_all_result = df_all_result.reset_index()
@@ -206,7 +266,7 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns):
     else:
         # Define the chart and axis labels for classification
         matrices_to_display = st.multiselect('Select matrices to display', ['Accuracy', 'Precision', 'Recall', 'F1'],
-                                             default=['Accuracy'])
+                                             default=['Accuracy'],key=keys)
         try:
             df_result = df_result.reset_index()
             df_all_result = df_all_result.reset_index()
@@ -283,4 +343,7 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns):
     with col2:
         if len(dropped_columns) > 0:
             st.subheader("Dropped Features:")
-            st.table(dropped_columns)
+            try:
+                st.table(dropped_columns)
+            except:
+                pass
