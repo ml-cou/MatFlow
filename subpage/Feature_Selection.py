@@ -144,13 +144,13 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         if i >= 1:
             if problem_type == 'regression':
                 if df_result_group.loc['first '+str(i+5), 'RMSE'] >= df_result_group.loc[k, 'RMSE']:
-                    dropped_columns_group.append(selected_column_data)  # add column name to list
+                    dropped_columns_group.append('first '+str(i+5))  # add column name to list
                     df_result_group = df_result_group.drop('first '+str(i+5))
                 else:
                     k = 'first '+str(i+5)
             else:
                 if df_result_group.loc['first '+str(i+5), 'F1'] <= df_result_group.loc[k, 'F1']:
-                    dropped_columns_group.append(selected_column_data)  # add column name to list
+                    dropped_columns_group.append('first '+str(i+5))  # add column name to list
                     df_result_group = df_result_group.drop('first '+str(i+5))
                 else:
                     k = 'first '+str(i+5)
