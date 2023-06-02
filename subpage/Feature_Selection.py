@@ -1,3 +1,5 @@
+import base64
+
 import pandas as pd
 from sklearn.ensemble import ExtraTreesRegressor, ExtraTreesClassifier
 from sklearn.model_selection import cross_validate
@@ -357,7 +359,13 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys)
             data = data.rename(columns={'Features': 'Features-k'})
 
         st.table(data)
-
+        csv_data = data.to_csv(index=False)
+        st.download_button(
+            label="Download CSV",
+            data=csv_data,
+            file_name="dropped_columns.csv",
+            mime="text/csv"
+        )
     with col2:
         if len(dropped_columns) > 0:
             st.subheader("Dropped Features:")
@@ -365,5 +373,12 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys)
                 if keys == 'group':
                     dropped_columns = dropped_columns.rename(columns={'Features': 'Features-k'})
                 st.table(dropped_columns)
+                csv_data = dropped_columns.to_csv(index=False)
+                st.download_button(
+                    label="Download CSV",
+                    data=csv_data,
+                    file_name="dropped_columns.csv",
+                    mime="text/csv"
+                )
             except:
                 pass
