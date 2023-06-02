@@ -6,23 +6,27 @@ import numpy as np
 
 
 def feature_selection(dataset, table_name, target_var, problem_type):
-    # try:
-    #     if "prev_table" not in st.session_state:
-    #         st.session_state.prev_table = table_name
-    #         st.session_state.prev_target=target_var
-    #     elif st.session_state.prev_table == table_name and st.session_state.prev_target==target_var:
-    #         feature_graph(st.session_state.df_result, st.session_state.df_all_result, problem_type,
-    #                       st.session_state.dropped_columns)
-    #
-    #         return
-    #     else:
-    #         st.session_state.prev_table = table_name
-    #         del st.session_state.df_result
-    #         del st.session_state.df_all_result
-    #         del st.session_state.dropped_columns
-    #         del st.session_state.prev_target
-    # except:
-    #     pass
+    try:
+        if "prev_table" not in st.session_state:
+            st.session_state.prev_table = table_name
+            st.session_state.prev_target=target_var
+        elif st.session_state.prev_table == table_name and st.session_state.prev_target==target_var:
+            feature_graph(st.session_state.df_result_group, st.session_state.df_all_result_group, problem_type,
+                          st.session_state.dropped_columns_group,'group',
+                          table_name)
+            feature_graph(st.session_state.df_result, st.session_state.df_all_result, problem_type,
+                                      st.session_state.dropped_columns,'single',
+                          table_name)
+
+            return
+        else:
+            st.session_state.prev_table = table_name
+            del st.session_state.df_result
+            del st.session_state.df_all_result
+            del st.session_state.dropped_columns
+            del st.session_state.prev_target
+    except:
+        pass
 
     try:
         tab = dataset[table_name]
@@ -238,6 +242,9 @@ def feature_selection(dataset, table_name, target_var, problem_type):
     st.session_state.df_result = df_result
     st.session_state.df_all_result = df_all_result
     st.session_state.dropped_columns = dropped_columns
+    st.session_state.df_result_group = df_result_group
+    st.session_state.df_all_result_group = df_all_result_group
+    st.session_state.dropped_columns_group = dropped_columns_group
 
     feature_graph(df_result_group, df_all_result_group, problem_type, dropped_columns_group, 'group',table_name)
     feature_graph(df_result, df_all_result, problem_type, dropped_columns, 'single',table_name)
