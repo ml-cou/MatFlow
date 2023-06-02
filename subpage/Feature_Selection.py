@@ -1,5 +1,3 @@
-import base64
-
 import pandas as pd
 from sklearn.ensemble import ExtraTreesRegressor, ExtraTreesClassifier
 from sklearn.model_selection import cross_validate
@@ -83,7 +81,7 @@ def feature_selection(dataset, table_name, target_var, problem_type):
 
     for i in range(len(list_X)):
 
-        scores = cross_validate(estimator, X_n[list_X[i]].values.reshape(-1, 1), Y_n, cv=kfold, scoring=scoring)
+        scores = cross_validate(estimator, X_n[list_X[i]].values.reshape(-1, 1), Y_n, cv=kfold, scoring=scoring,n_jobs=-1)
         progress_percentage = (i + 1) / total_iterations
 
         # Update the progress bar
@@ -124,7 +122,7 @@ def feature_selection(dataset, table_name, target_var, problem_type):
     for i in range(0, len(list_X), 5):
         selected_column_data = X_n[list_X[:min(i + 5, mx_len)]]
 
-        scores_all = cross_validate(estimator, selected_column_data, Y_n, cv=kfold, scoring=scoring)
+        scores_all = cross_validate(estimator, selected_column_data, Y_n, cv=kfold, scoring=scoring,n_jobs=-1)
         try:
 
             df_result_group.loc[str(i + 5)] = [
@@ -173,8 +171,8 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         selected_column_data[list_X[i]] = X_n[list_X[i]]
 
         if len(dropped_columns) > 0:
-            scores_all = cross_validate(estimator, all_column_data_first, Y_n, cv=kfold, scoring=scoring)
-            scores_selected = cross_validate(estimator, selected_column_data, Y_n, cv=kfold, scoring=scoring)
+            scores_all = cross_validate(estimator, all_column_data_first, Y_n, cv=kfold, scoring=scoring,n_jobs=-1)
+            scores_selected = cross_validate(estimator, selected_column_data, Y_n, cv=kfold, scoring=scoring,n_jobs=-1)
             try:
 
                 df_result.loc[list_X[i]] = [
@@ -191,7 +189,7 @@ def feature_selection(dataset, table_name, target_var, problem_type):
                 st.error(f"Error while adding data to result dataframe: {str(e)}")
                 return pd.DataFrame
         else:
-            scores_all = cross_validate(estimator, all_column_data_first, Y_n, cv=kfold, scoring=scoring)
+            scores_all = cross_validate(estimator, all_column_data_first, Y_n, cv=kfold, scoring=scoring,n_jobs=-1)
             try:
 
                 df_result.loc[list_X[i]] = [
