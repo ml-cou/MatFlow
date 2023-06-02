@@ -239,14 +239,14 @@ def feature_selection(dataset, table_name, target_var, problem_type):
     st.session_state.df_all_result = df_all_result
     st.session_state.dropped_columns = dropped_columns
 
-    feature_graph(df_result_group, df_all_result_group, problem_type, dropped_columns_group, 'group')
-    feature_graph(df_result, df_all_result, problem_type, dropped_columns, 'single')
+    feature_graph(df_result_group, df_all_result_group, problem_type, dropped_columns_group, 'group',table_name)
+    feature_graph(df_result, df_all_result, problem_type, dropped_columns, 'single',table_name)
 
 
 import plotly.graph_objects as go
 
 
-def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys):
+def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys,table_name):
     # st.write(df_result)
 
     try:
@@ -361,7 +361,7 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys)
         st.download_button(
             label="Download CSV",
             data=csv_data,
-            file_name="dropped_columns.csv",
+            file_name=f"selected_columns{table_name}{keys}.csv",
             mime="text/csv"
         )
     with col2:
@@ -375,7 +375,7 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys)
                 st.download_button(
                     label="Download CSV",
                     data=csv_data,
-                    file_name="dropped_columns.csv",
+                    file_name=f"dropped_columns{table_name}{keys}.csv",
                     mime="text/csv"
                 )
             except:
