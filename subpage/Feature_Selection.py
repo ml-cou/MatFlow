@@ -247,6 +247,10 @@ import plotly.graph_objects as go
 
 
 def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys,table_name):
+    try:
+        table_name=table_name.split('.')[0]
+    except:
+        pass
     # st.write(df_result)
 
     try:
