@@ -94,6 +94,14 @@ def run():
                 for i,j in st.session_state.dataset.data.items():
                     with st.expander(i,expanded= True if i==selected_table_name else False):
                         st.dataframe(j)
+                        csv_data = j.to_csv(index=False)
+                        file_name = selected_table_name.split('.')[0]
+                        st.download_button(
+                            label="Download CSV",
+                            data=csv_data,
+                            file_name=f"{file_name}.csv",
+                            mime="text/csv"
+                        )
                 # ds_final_data_analysis(st.session_state.dataset.data, selected_table_name)
             elif selected_function==main_funtionality[5]:
                 # st.write(i.file_data)
