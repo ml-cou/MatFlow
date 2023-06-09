@@ -71,7 +71,7 @@ def lasso_regression(X_train, y_train):
         "Fit Intercept", key="ls_fit_intercept",
         value=best_params.get('fit_intercept', True)
     )
-    normalize = st.checkbox("Normalize", False, key="ls_normalize")
+
     max_iter = st.number_input(
         "Max Iterations", 1, 100000, key="ls_max_iter",
         value=int(best_params.get('max_iter', 1000))
@@ -88,7 +88,7 @@ def lasso_regression(X_train, y_train):
 
     try:
         model = Lasso(
-            alpha=alpha, fit_intercept=fit_intercept, normalize=normalize, max_iter=max_iter,
+            alpha=alpha, fit_intercept=fit_intercept,  max_iter=max_iter,
             selection=selection, tol=tol, warm_start=warm_start
         )
     except ValueError as e:
