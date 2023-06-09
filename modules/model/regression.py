@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 from modules.utils import split_xy
-from modules.regressor import linear_regression, ridge_regression, lasso_regression, decision_tree_regression, random_forest_regression
+from modules.regressor import linear_regression, ridge_regression, lasso_regression, decision_tree_regression, random_forest_regression,svr
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
 
@@ -32,7 +32,8 @@ def regression(split_name, models):
         "Ridge Regression": "Ridge",
         "Lasso Regression": "Lasso",
         "Decision Tree Regression": "DT",
-        "Random Forest Regression": "RF"
+        "Random Forest Regression": "RF",
+        "Support Vector Regressor": "svr"
     }
     metric_list = ["R-Squared", "Mean Absolute Error", "Mean Squared Error", "Root Mean Squared Error"]
     st.markdown("#")
@@ -59,6 +60,8 @@ def regression(split_name, models):
         model = decision_tree_regression.decision_tree_regressor(X_train, y_train)
     elif regressor == "Random Forest Regression":
         model = random_forest_regression.random_forest_regressor(X_train, y_train)
+    elif regressor=="Support Vector Regressor":
+        model=svr.support_vector_regressor(X_train,y_train)
 
     col1, col2 = st.columns([6.66, 3.33])
     metrics = col1.multiselect(
