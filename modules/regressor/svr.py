@@ -8,9 +8,7 @@ from sklearn.model_selection import RandomizedSearchCV
 
 def hyperparameter_optimization(X_train, y_train):
     st.subheader("Hyperparameter Optimization Settings")
-    n_iter = st.number_input("Number of iterations for hyperparameter search", min_value=1, value=10, step=1)
-    cv = st.number_input("Number of cross-validation folds", min_value=2, value=5, step=1)
-    random_state = st.number_input("Random state for hyperparameter search", min_value=0, value=0, step=1)
+    cv = st.number_input("Number of cross-validation folds", min_value=2, value=3, step=1)
 
     st.write('#')
 
@@ -32,9 +30,8 @@ def hyperparameter_optimization(X_train, y_train):
         with st.spinner('Doing hyperparameter optimization...'):
             for i in range(100):
                 time.sleep(0.1)
-                st.spinner(f"Running iteration {i + 1} of {n_iter}...")
-            clf = RandomizedSearchCV(model, param_distributions=param_dist, n_iter=n_iter, cv=cv,
-                                     random_state=random_state)
+                st.spinner(f"Running iteration {i + 1}...")
+            clf = RandomizedSearchCV(model, param_distributions=param_dist, n_jobs=-1, cv=cv)
             st.spinner("Fitting the model...")
             clf.fit(X_train, y_train)
         st.success("Hyperparameter optimization completed!")
