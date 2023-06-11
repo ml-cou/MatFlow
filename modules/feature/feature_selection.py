@@ -5,7 +5,7 @@ import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.feature_selection import SelectKBest, f_classif, mutual_info_classif, f_regression, mutual_info_regression, \
     SelectFromModel
-from subpage import Feature_Selection
+from subpage import Feature_Selection,Feature_Selection_All
 from modules import utils
 
 def visualize(X, y, selected_features_df):
@@ -61,7 +61,7 @@ def feature_selection(dataset, table_name):
         task = 'regression'
     with col2:
         try:
-            method = st.selectbox('Select feature selection method:', ['Best Overall Features','SelectKBest', 'Mutual Information'], key='feature_selection_method')
+            method = st.selectbox('Select feature selection method:', ['Best Overall Features','SelectKBest', 'Mutual Information','Progressive Feature Selection with Cross-Validation'], key='feature_selection_method')
         except ValueError:
             st.error("Invalid value for feature selection method.")
             return
@@ -70,7 +70,10 @@ def feature_selection(dataset, table_name):
     # Select feature selection method and score function based on task
     if task == 'classification':
 
-        if method=='Best Overall Features':
+        if method=='Progressive Feature Selection with Cross-Validation':
+            Feature_Selection_All.feature_selection(st.session_state.dataset.data,table_name,target_var, 'classification')
+            return
+        elif method=='Best Overall Features':
             Feature_Selection.feature_selection(st.session_state.dataset.data,table_name,target_var, 'classification')
             # if not feature_select_data.empty:
             #     Feature_Selection.feature_graph(feature_select_data,'classification')
@@ -89,8 +92,10 @@ def feature_selection(dataset, table_name):
         else:
             score_func = 'mutual_info_classif'
     else:
-
-        if method=='Best Overall Features':
+        if method=='Progressive Feature Selection with Cross-Validation':
+            Feature_Selection_All.feature_selection(st.session_state.dataset.data,table_name,target_var, 'regression')
+            return
+        elif method=='Best Overall Features':
             Feature_Selection.feature_selection(st.session_state.dataset.data,table_name,target_var, 'regression')
             # if not feature_select_data.empty:
             #     Feature_Selection.feature_graph(feature_select_data,'regression')
@@ -145,7 +150,7 @@ def feature_selection(dataset, table_name):
     with col1:
         st.write('Selected Features and Scores:')
 
-        st.dataframe(selected_features_df)
+        st.table(selected_features_df)
 
         if show_graph:
             visualize(X,y,selected_features_df)
