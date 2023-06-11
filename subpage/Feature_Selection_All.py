@@ -98,6 +98,7 @@ def feature_selection(dataset, table_name, target_var, problem_type):
     else:
         to_sort_df = to_sort_df.sort_values('RMSE')
 
+    progress_bar = st.progress(0, text=':blue[Feature Selection in progress]')
 
     list_X = to_sort_df.index.tolist()
     selected = [list_X[0]]
@@ -117,12 +118,19 @@ def feature_selection(dataset, table_name, target_var, problem_type):
         var = var.sort_values('RMSE')
         selected.append(var.index[0])
         list_X.remove(var.index[0])
+
+        progress_percentage = (len(selected) + 1) / (total_iterations + len(selected))
+        progress_bar.progress(progress_percentage, text=':blue[Feature Selection in progress]')
+
         if var.iloc[0]['RMSE'] < selected_feature_scores['RMSE'].iloc[-1]:
             selected_feature_scores.loc[var.index[0]] = var.iloc[0]
             all_features_scores.loc[var.index[0]] = var.iloc[0]
         else:
             all_features_scores.loc[var.index[0]] = var.iloc[0]
             dropped_columns.loc[var.index[0]] = var.iloc[0]
+
+    progress_bar.progress(1.0, "Feature Selection completed!")
+
 
     feature_graph(selected_feature_scores,all_features_scores,problem_type,dropped_columns,'single',table_name)
 
