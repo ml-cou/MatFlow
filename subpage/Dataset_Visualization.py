@@ -1,7 +1,7 @@
 import streamlit as st
 
 from modules import utils
-from modules.graph import barplot, pieplot, countplot, histogram, boxplot, violinplot, scatterplot, regplot, lineplot
+from modules.graph import barplot, pieplot, countplot, histogram, boxplot, violinplot, scatterplot, regplot, lineplot,customplot
 
 
 def ds_visualization(dataset, table_name):
@@ -18,7 +18,7 @@ def ds_visualization(dataset, table_name):
 
 
     menus = ["Bar Plot", "Pie Plot", "Count Plot", "Histogram", "Box Plot", "Violin Plot", "Scatter Plot", "Reg Plot",
-             "Line Plot"]
+             "Line Plot","Custom Plot"]
     tabs = [tab for tab in st.tabs(menus)]
 
     with tabs[0]:
@@ -47,3 +47,7 @@ def ds_visualization(dataset, table_name):
 
     with tabs[8]:
         lineplot.lineplot(data)
+
+    with tabs[9]:
+        customplot.comparison_plot(data,table_name)
+
