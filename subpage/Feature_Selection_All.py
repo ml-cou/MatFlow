@@ -131,6 +131,8 @@ def feature_selection(dataset, table_name, target_var, problem_type):
 
     progress_bar.progress(1.0, "Feature Selection completed!")
 
+    st.session_state.selected_feature[table_name]=list(selected_feature_scores.index.values)
+
 
     feature_graph(selected_feature_scores,all_features_scores,problem_type,dropped_columns,'single',table_name)
 
