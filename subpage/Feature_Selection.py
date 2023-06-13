@@ -245,6 +245,7 @@ def feature_selection(dataset, table_name, target_var, problem_type):
     st.session_state.df_result_group = df_result_group
     st.session_state.df_all_result_group = df_all_result_group
     st.session_state.dropped_columns_group = dropped_columns_group
+    st.session_state.selected_feature[table_name]=selected_column_data.columns.to_list()
 
     feature_graph(df_result_group, df_all_result_group, problem_type, dropped_columns_group, 'group',table_name)
     feature_graph(df_result, df_all_result, problem_type, dropped_columns, 'single',table_name)
