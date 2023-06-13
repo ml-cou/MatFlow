@@ -41,6 +41,8 @@ def feature_selection(dataset, table_name):
     c0,col1,col2,c1=st.columns([0.1,4,4,0.1])
     _c0,_col1,_col2,_c1=st.columns([0.1,6,2,0.1])
 
+    if 'selected_feature' not in st.session_state:
+        st.session_state['selected_feature']={}
     with col1:
         target_var = st.selectbox(
             "Target Variable",
