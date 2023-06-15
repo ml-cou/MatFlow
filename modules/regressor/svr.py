@@ -69,7 +69,7 @@ def support_vector_regressor(X_train, y_train):
 
     epsilon = st.number_input(
         "Epsilon",
-        min_value=0.01,
+        min_value=0.001,
         value=best_params["epsilon"] if best_params else 0.1,
         step=0.01,
         key="svr_epsilon",
