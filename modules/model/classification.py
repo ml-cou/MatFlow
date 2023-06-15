@@ -135,6 +135,10 @@ def get_result(model, X, y, metrics, multi_average, pos_label=None):
         pos_label = y[1]
     except:
         pass
+    try:
+        pos_label = y.iloc[1]
+    except:
+        pass
 
     # calculate accuracy
     try:
