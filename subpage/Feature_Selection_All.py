@@ -9,6 +9,41 @@ from xgboost import XGBRegressor, XGBClassifier
 
 
 def feature_selection(dataset, table_name, target_var, problem_type):
+
+    try:
+        if "progress_prev_table" not in st.session_state:
+            st.session_state.progress_prev_table = table_name
+            st.session_state.progress_prev_target = target_var
+        elif st.session_state.progress_prev_table == table_name and st.session_state.progress_prev_target == target_var:
+
+            feature_graph(st.session_state.progress_df_result, st.session_state.progress_df_all_result, problem_type,
+                          st.session_state.progress_dropped_columns, 'single_progress',
+                          table_name)
+
+            try:
+                copy_df = dataset[table_name].drop(st.session_state.progress_dropped_columns.index.values.tolist(), axis=1)
+                csv_data = copy_df.to_csv(index=False)
+                st.download_button(
+                    label=f"Download Feature Selected {table_name}",
+                    data=csv_data,
+                    file_name=f"feature_selected_{table_name}.csv",
+                    mime="text/csv"
+                )
+            except:
+                pass
+
+            return
+
+        else:
+            st.session_state.progress_prev_table = table_name
+            del st.session_state.progress_df_result
+            del st.session_state.progress_df_all_result
+            del st.session_state.progress_dropped_columns
+            del st.session_state.progress_prev_target
+    except:
+        pass
+
+
     try:
         tab = dataset[table_name]
     except KeyError:
@@ -133,8 +168,24 @@ def feature_selection(dataset, table_name, target_var, problem_type):
 
     st.session_state.selected_feature[table_name]=list(selected_feature_scores.index.values)
 
+    st.session_state.progress_df_result = selected_feature_scores
+    st.session_state.progress_dropped_columns = dropped_columns
+    st.session_state.progress_df_all_result=all_features_scores
 
-    feature_graph(selected_feature_scores,all_features_scores,problem_type,dropped_columns,'single',table_name)
+
+    feature_graph(selected_feature_scores,all_features_scores,problem_type,dropped_columns,'single_progress',table_name)
+
+    try:
+        copy_df = dataset[table_name].drop(st.session_state.progress_dropped_columns.index.values.tolist(), axis=1)
+        csv_data = copy_df.to_csv(index=False)
+        st.download_button(
+            label=f"Download Feature Selected {table_name}",
+            data=csv_data,
+            file_name=f"feature_selected_{table_name}.csv",
+            mime="text/csv"
+        )
+    except:
+        pass
 
 
 
@@ -216,16 +267,6 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys,
                                  marker=dict(symbol='circle', size=5, color='#19A7CE')
                                  ))
 
-    if keys == 'group':
-        dc = dict(title='<b>Features</b>',
-                  tickangle=0,
-                  tickmode='linear',
-                  tick0=0,
-                  dtick=5,
-                  tickvals=list(range(0, len(merged_df['Features']), 5)),
-                  ticktext=[merged_df['Features'].iloc[i] for i in range(0, len(merged_df['Features']), 5)]
-                  )
-    else:
         dc = dict(title='<b>Features</b>',
                   tickangle=45 if keys != 'group' else 0,
                   )
@@ -250,29 +291,25 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys,
 
     with col1:
         st.subheader("Selected Features:")
-        if keys == 'group':
-            data = data.rename(columns={'Features': 'Features-k'})
 
         st.table(data)
         csv_data = data.to_csv(index=False)
         st.download_button(
             label="Download CSV",
             data=csv_data,
-            file_name=f"selected_columns{table_name}{keys}.csv",
+            file_name=f"selected_columns_{table_name}_{keys}.csv",
             mime="text/csv"
         )
     with col2:
         if len(dropped_columns) > 0:
             st.subheader("Dropped Features:")
             try:
-                if keys == 'group':
-                    dropped_columns = dropped_columns.rename(columns={'Features': 'Features-k'})
                 st.table(dropped_columns)
                 csv_data = dropped_columns.to_csv(index=False)
                 st.download_button(
                     label="Download CSV",
                     data=csv_data,
-                    file_name=f"dropped_columns{table_name}{keys}.csv",
+                    file_name=f"dropped_columns_{table_name}_{keys}.csv",
                     mime="text/csv"
                 )
             except:
