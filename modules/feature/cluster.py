@@ -1,4 +1,4 @@
-
+import base64
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -51,7 +51,6 @@ def cluster_dataset(data):
             key="model_target"
         )
         feature_cols = [col for col in utils.get_variables(data) if col != target_col]
-
         if st.button("Submit", key="split_submit_button"):
             X = df[feature_cols].values
             y = df[target_col].values
@@ -65,11 +64,9 @@ def cluster_dataset(data):
             scatter = ax.scatter(y,X_pca[:, 0], c=kmeans.labels_)
             handles, labels = scatter.legend_elements()
             cluster_labels = class_nms
-            centroid_labels = ["" for _ in range(n_cls)]
+            #centroid_labels = ["" for _ in range(n_cls)]
             ax.legend(handles, lgn_nms)
             # ax.set_title('Extinction Coefficients(ε)')
-            # Set x-axis and y-axis label names
-            # ax.set_xlabel(target_col)
             # ax.set_xlabel(target_col)
             ax.set_xlabel('Extinction Coefficients(ε)')
             # ax.set_ylabel("Principal Component 2")
@@ -80,9 +77,6 @@ def cluster_dataset(data):
             # formatted_number = "{:.0f}k".format(number / 1000)
             tmp_df=df.copy()
             tmp_df['Category'] = [cluster_labels[label] for label in kmeans.labels_]
-            # tmp_df.to_csv('clustered_data.csv', index=False)
-            # (Previous code...)
-
             # Calculate the count of each cluster element
             cluster_counts = tmp_df['Category'].value_counts()
 
@@ -96,30 +90,22 @@ def cluster_dataset(data):
             # Add annotations to the bars
             for i, count in enumerate(cluster_counts.values):
                 ax2.annotate(format_number(count), xy=(i, count), ha='center', va='bottom')
-            df = tmp_df
-
-            # # Split the dataset based on a column value
-            # value_1 = 'Value 1'  # Column value to filter
-            # df_high = df[df['Category'] == "High"]
-
-            # value_2 = 'Value 2'  # Another column value to filter
-            # df_Low = df[df['Category'] == "Low"]
-
-            # Optional: Reset the index of the new datasets
-            # df_high = df_high.reset_index(drop=True)
-            # df_Low = df_Low.reset_index(drop=True)
-
-            # # Save the split datasets to new files
-            # df_high.to_csv('dataset_High.csv', index=False)
-            # df_Low.to_csv('dataset_Low.csv', index=False)
 
             if display_type == "Table":
-                col2.markdown("#")
+                st.write('#')
+                col,col1=st.columns(2)
+                col.markdown(download_csv(tmp_df), unsafe_allow_html=True)
+                st.write('#')
                 st.dataframe(tmp_df)
             else:
                 st.pyplot(fig)
-                # Display the bar plot
                 st.write("#")
                 st.pyplot(fig2)
     except Exception as e:
         st.error(e)
+
+def download_csv(df):
+    csv = df.to_csv(index=False)
+    b64 = base64.b64encode(csv.encode()).decode()
+    href = f"<a href='data:file/csv;base64,{b64}' download='clustered_dataset.csv'>Download Clustered Dataset</a>"
+    return href
