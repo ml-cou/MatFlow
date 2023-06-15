@@ -17,6 +17,17 @@ def feature_selection(dataset, table_name, target_var, problem_type):
             feature_graph(st.session_state.df_result, st.session_state.df_all_result, problem_type,
                                       st.session_state.dropped_columns,'single',
                           table_name)
+            try:
+                copy_df = dataset[table_name].drop(st.session_state.dropped_columns.index.values.tolist(), axis=1)
+                csv_data = copy_df.to_csv(index=False)
+                st.download_button(
+                    label=f"Download Feature Selected {table_name}",
+                    data=csv_data,
+                    file_name=f"feature_selected_{table_name}.csv",
+                    mime="text/csv"
+                )
+            except:
+                pass
 
             return
         else:
@@ -250,6 +261,20 @@ def feature_selection(dataset, table_name, target_var, problem_type):
     feature_graph(df_result_group, df_all_result_group, problem_type, dropped_columns_group, 'group',table_name)
     feature_graph(df_result, df_all_result, problem_type, dropped_columns, 'single',table_name)
 
+    try:
+        copy_df = tab.drop(dropped_columns.index.values.tolist(), axis=1)
+        csv_data = copy_df.to_csv(index=False)
+        st.download_button(
+            label=f"Download Feature Selected {table_name}",
+            data=csv_data,
+            file_name=f"feature_selected_{table_name}.csv",
+            mime="text/csv"
+        )
+    except:
+        pass
+
+
+
 
 import plotly.graph_objects as go
 
@@ -373,7 +398,7 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys,
         st.download_button(
             label="Download CSV",
             data=csv_data,
-            file_name=f"selected_columns{table_name}{keys}.csv",
+            file_name=f"selected_columns{table_name}_{keys}.csv",
             mime="text/csv"
         )
     with col2:
@@ -387,7 +412,7 @@ def feature_graph(df_result, df_all_result, problem_type, dropped_columns, keys,
                 st.download_button(
                     label="Download CSV",
                     data=csv_data,
-                    file_name=f"dropped_columns{table_name}{keys}.csv",
+                    file_name=f"dropped_columns{table_name}_{keys}.csv",
                     mime="text/csv"
                 )
             except:
