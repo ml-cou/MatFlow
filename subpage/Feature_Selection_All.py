@@ -151,18 +151,21 @@ def feature_selection(dataset, table_name, target_var, problem_type):
             var.loc[i] = [round(scores['test_' + score].mean() * (1 if problem_type == 'classification' else -1), 4) for
                           score in scoring]
         var = var.sort_values('RMSE')
-        selected.append(var.index[0])
         list_X.remove(var.index[0])
 
-        progress_percentage = (len(selected) + 1) / (total_iterations + len(selected))
+        progress_percentage = (1.0- (len(list_X) /total_iterations))
+
         progress_bar.progress(progress_percentage, text=':blue[Feature Selection in progress]')
 
         if var.iloc[0]['RMSE'] < selected_feature_scores['RMSE'].iloc[-1]:
             selected_feature_scores.loc[var.index[0]] = var.iloc[0]
             all_features_scores.loc[var.index[0]] = var.iloc[0]
+            selected.append(var.index[0])
         else:
-            all_features_scores.loc[var.index[0]] = var.iloc[0]
-            dropped_columns.loc[var.index[0]] = var.iloc[0]
+            for j in range(len(var.index.values.tolist())):
+                all_features_scores.loc[var.index[j]] = var.iloc[j]
+                dropped_columns.loc[var.index[j]] = var.iloc[j]
+            break
 
     progress_bar.progress(1.0, "Feature Selection completed!")
 
