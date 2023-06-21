@@ -14,21 +14,31 @@ def split_dataset(dataset,data_opt):
 
         data = dataset.get_data(data_opt)
         with col1:
-            target_var = col1.selectbox(
+            target_var = col1.multiselect(
                 f":blue[Target Variable]",
                 utils.get_variables(data),
                 key="model_target_var"
             )
+            if len(target_var)==1:
+                target_var=target_var[0]
+                if data[target_var].dtype == "float64" or data[target_var].dtype == "int64":
+                    type = 'Regressor'
+                    st.write('#')
+                    st.write(f" ##### {target_var} _is **:blue[Continuous]**._")
 
-            if data[target_var].dtype == "float64" or data[target_var].dtype == "int64":
-                type = 'Regressor'
-                st.write('#')
-                st.write(f" ##### {target_var} _is **:blue[Continuous]**._")
-
+                else:
+                    type='Classification'
+                    st.write('#')
+                    st.write(f" ##### {target_var} _is **:red[Categorical]**._")
             else:
-                type='Classification'
-                st.write('#')
-                st.write(f" ##### {target_var} _is **:red[Categorical]**._")
+                if all(data[i].dtype == "float64" for i in target_var):
+                    type = 'Multi-Regressor'
+                    st.write('#')
+                    st.write(f" ##### All selected target variables are **:blue[Continuous]**.")
+                else:
+                    type = 'Multi-Classification'
+                    st.write('#')
+                    st.write(f" ##### **:red[Categorical]**.")
 
         split_dataset_name = f"{ds_name}_{target_var}"
         with col2:
@@ -54,6 +64,7 @@ def split_dataset(dataset,data_opt):
             key="split_random_state"
         )
         col1, col2 = st.columns(2)
+
         shuffle = col4.checkbox("Shuffle", True, key="split_shuffle")
         if(shuffle):
             s="suffled"
@@ -64,6 +75,7 @@ def split_dataset(dataset,data_opt):
         else :
             stfy=f"-stratify= {stratify}"
         # split_dataset_name = f"{split_dataset_name}{stfy}-[{test_size}]-[{random_state}]-{s}"
+
         train_name = col1.text_input(
             "Train Data Name",
             f"train_{split_dataset_name}",
