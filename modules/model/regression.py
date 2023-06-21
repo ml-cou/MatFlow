@@ -1,5 +1,8 @@
 import streamlit as st
 import pickle
+
+from sklearn.multioutput import MultiOutputRegressor
+
 from modules.utils import split_xy
 from modules.regressor import linear_regression, ridge_regression, lasso_regression, decision_tree_regression, random_forest_regression,svr
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
@@ -15,6 +18,7 @@ def regression(split_name, models):
         target_var=dataset["target_var"]
         X_train, y_train = split_xy(train_data, target_var)
         X_test, y_test = split_xy(test_data, target_var)
+        type = dataset['type']
     except:
         st.header("Properly Split Dataset First")
         return
@@ -74,6 +78,8 @@ def regression(split_name, models):
     if st.button("Submit", key="model_submit"):
         if model_name not in models.list_name():
             try:
+                if type == 'Multi-Classification':
+                    model = MultiOutputRegressor(model)
                 model.fit(X_train, y_train)
             except Exception as e:
                 st.error(e)
