@@ -21,7 +21,9 @@ def model_deployment():
     try:
         model = st.session_state["models"]
         train_data_name = dataset['train_name']
+        test_data_name=dataset['test_name']
         train_data = st.session_state.dataset.get_data(train_data_name)
+        test_data = st.session_state.dataset.get_data(train_data_name)
         target_var = dataset['target_var']
     except:
         st.header('Create a Model First')
@@ -44,12 +46,19 @@ def model_deployment():
 
     with col1:
         st.header('INPUT')
+        correlations = train_data[col_names+[target_var]].corr()[target_var]
         for i in col_names:
-            st.number_input(i, key=i)
+            threshold=train_data[i].abs().max()
+            arrow,threshold = ('**:green[↑]**',threshold) if correlations[i] >= 0 else ('**:red[↓]**',-threshold)
+            space='&nbsp;'*100
+            st.number_input(i + space + str(threshold)+' ' + arrow, key=i)
+
         st.write('#')
         if st.button('Submit', type="primary"):
             X = [st.session_state[i] if i in col_names else 0 for i in col_names_all]
             prediction = model.get_prediction(model_name, [X])
+
+        st.write(correlations)
     with col3:
         st.header('PREDICTION')
         st.header('#')
@@ -59,3 +68,4 @@ def model_deployment():
         st.markdown(f'<h4> {target_var.upper()} : {prediction[0]}</h4>',
                     unsafe_allow_html=True
                     )
+
