@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from modules.feature import encoding, imputation, scaling, creation, dropping, change_dtype,feature_selection,cluster
-from . import time_series
 from modules.feature import change_fieldname
 from .navbar import vspace
 
@@ -71,7 +70,7 @@ def ds_feature_engineering(dataset, table_name):
                 else:
                     tmp = pd.DataFrame(data)
                     try:
-                        temp2 = tmp.merge(dataset[file_name], left_on=left_on, right_on=right_on, how=how)
+                        temp2 = tmp.merge(dataset[merge_name], left_on=left_on, right_on=right_on, how=how)
                         st.session_state.dataset.add(file_name, temp2)
                         st._rerun()
                     except Exception as e:
@@ -95,12 +94,12 @@ def ds_feature_engineering(dataset, table_name):
                 else:
                     tmp = pd.DataFrame(data)
                     try:
-                        temp2 = tmp.append(dataset.data[append_name])
+                        temp2 = tmp.append(dataset[append_name])
                         temp2 = temp2.reset_index()
                         st.session_state.dataset.add(file_name, temp2)
+                        st._rerun()
                     except Exception as e:
                         st.warning(e)
-                st._rerun()
     with tabs[10]:
         feature_selection.feature_selection(data,data_opt)
     with tabs[11]:
