@@ -41,24 +41,32 @@ def model_deployment():
     else:
         col_names = st.multiselect('Custom Columns', col_names_all, help='Other values will be 0 as default value')
 
-    col1, col2, col3, col4 = st.columns([4, 0.5, 2, 0.5])
+    col1, col2, col3, col4 = st.columns([4, 1, 2, 0.5])
     prediction = ['']
+    correlations = train_data[col_names + [target_var]].corr()[target_var]
 
     with col1:
         st.header('INPUT')
-        correlations = train_data[col_names+[target_var]].corr()[target_var]
         for i in col_names:
             threshold=train_data[i].abs().max()
             arrow,threshold = ('**:green[↑]**',threshold) if correlations[i] >= 0 else ('**:red[↓]**',-threshold)
-            space='&nbsp;'*100
-            st.number_input(i + space + str(threshold)+' ' + arrow, key=i)
+            space='&nbsp;'*150
+            st.number_input(i + space + str(threshold)+' ' + arrow,value=threshold, key=i)
 
         st.write('#')
         if st.button('Submit', type="primary"):
             X = [st.session_state[i] if i in col_names else 0 for i in col_names_all]
             prediction = model.get_prediction(model_name, [X])
 
-        st.write(correlations)
+    # with col2:
+    #     st.write('#')
+    #     for i in col_names:
+    #         threshold = train_data[i].abs().max()
+    #         arrow, threshold = ('**:green[↑]**', threshold) if correlations[i] >= 0 else ('**:red[↓]**', -threshold)
+    #         st.write(str(threshold)+' '+arrow)
+    #         st.write('#')
+
+
     with col3:
         st.header('PREDICTION')
         st.header('#')
