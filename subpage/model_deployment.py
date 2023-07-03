@@ -1,3 +1,4 @@
+import pandas as pd
 import streamlit as st
 
 
@@ -7,6 +8,7 @@ def model_deployment():
         return
 
     all_models = st.session_state.all_models
+
 
     col1, col2, col3, col4 = st.columns([4, 0.5, 2, 0.5])
     with col1:
@@ -45,6 +47,9 @@ def model_deployment():
     prediction = ['']
     correlations = train_data[col_names + [target_var]].corr()[target_var]
 
+    df_correlations=pd.DataFrame(correlations)
+    df_correlations['Threshold']=''
+
     with col1:
         st.header('INPUT')
         for i in col_names:
@@ -52,11 +57,26 @@ def model_deployment():
             arrow,threshold = ('**:green[↑]**',threshold) if correlations[i] >= 0 else ('**:red[↓]**',-threshold)
             space='&nbsp;'*150
             st.number_input(i + space + str(threshold)+' ' + arrow,value=threshold, key=i)
+            df_correlations.at[i,'Threshold']=threshold
+
 
         st.write('#')
         if st.button('Submit', type="primary"):
             X = [st.session_state[i] if i in col_names else 0 for i in col_names_all]
             prediction = model.get_prediction(model_name, [X])
+    df_correlations = df_correlations.drop(df_correlations.index[-1])
+
+    st.dataframe(df_correlations)
+
+    csv_data = df_correlations.to_csv(index=False)
+
+    st.download_button(
+        label="Download CSV",
+        data=csv_data,
+        file_name=f"correlation_with_threshold_{test_data_name}.csv",
+        mime="text/csv"
+    )
+
 
     # with col2:
     #     st.write('#')
