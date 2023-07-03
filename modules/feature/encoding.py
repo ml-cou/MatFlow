@@ -8,12 +8,13 @@ from modules.classes import encoder
 def encoding(data, data_opt):
     cat_var = utils.get_categorical(data)
     num_var = utils.get_numerical(data)
-    low_cardinality = utils.get_low_cardinality(data, max_unique=5)
+    # low_cardinality = utils.get_low_cardinality(data, max_unique=5)
+
 
     col1, col2, col3 = st.columns([4, 3.6, 2.4])
     var = col1.selectbox(
         "Select column",
-        set(cat_var + low_cardinality),
+        set(cat_var),
         key="encoding_var"
     )
 
