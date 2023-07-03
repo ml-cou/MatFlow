@@ -48,7 +48,8 @@ def comparison_plot(data, table_name):
             renamed_feature = st.text_input(f"Rename '{feature}' to:", feature)
             feature_dict[feature] = renamed_feature
 
-    fig, axs = plt.subplots(1, 2, figsize=(20, max(min(len(x_var), 15), 9)))
+    graph_type = st.multiselect('Select Graph Type', ['Line Plot', 'Scatter Plot'], default=["Line Plot"])
+
 
     colors = sns.color_palette('husl', (len(x_var) + 1) * (1 if hue_var == 'None' else len(data[hue_var].unique())))
     try:
@@ -76,49 +77,69 @@ def comparison_plot(data, table_name):
         pass
 
     try:
+        if len(graph_type) > 1:
+            fig, axs = plt.subplots(1, 2, figsize=(20, max(min(len(x_var), 15), 9)))
+            line_plot(x_var, hue_var, data, y_var, feature_dict, legend_colors, axs[0], labels)
+            scatter_plot(x_var, hue_var, data, y_var, feature_dict, legend_colors, axs[1], labels, False)
+        elif 'Line' in graph_type[0]:
+            fig, axs = plt.subplots(1, 1, figsize=(20, max(min(len(x_var), 15), 9)))
+            line_plot(x_var, hue_var, data, y_var, feature_dict, legend_colors, axs, labels)
+        else:
+            fig, axs = plt.subplots(1, 1, figsize=(20, max(min(len(x_var), 15), 9)))
+            scatter_plot(x_var, hue_var, data, y_var, feature_dict, legend_colors, axs, labels, True)
 
-        for i, feature in enumerate(x_var):
-            if hue_var == 'None':
-                sns.lineplot(data=data, x=feature, y=y_var, label=feature_dict.get(feature, feature),
-                             color=legend_colors[feature], ax=axs[0],linewidth=2.5)
-            else:
-                hue_labels = data[hue_var].unique()
-                hue_labels.sort()
-                for j, label in enumerate(hue_labels):
-                    hue_data = data[data[hue_var] == label]
-                    label_suffix = f"{feature_dict.get(feature, feature)} {label}"
-                    sns.lineplot(data=hue_data, x=feature, y=y_var, label=label_suffix,
-                                 color=legend_colors[label_suffix], ax=axs[0],linewidth=2.5)
-
-        axs[0].set_xlabel('Features')
-        axs[0].set_ylabel(feature_dict[y_var])
-
-        axs[0].legend(bbox_to_anchor=(0.5, -0.1), loc='upper center', labels=labels,
-                      ncol=1 if hue_var == 'None' else len(data[hue_var].unique()))
-        for legend_handle, feature_label in zip(axs[0].get_legend().legendHandles, labels):
-            legend_handle.set_color(legend_colors.get(feature_label, 'black'))
-
-        # Scatter plot for combined data
-        for i, feature in enumerate(x_var):
-            if hue_var == 'None':
-                sns.scatterplot(data=data, x=feature, y=y_var, label=feature_dict.get(feature, feature),
-                                color=legend_colors[feature], ax=axs[1])
-            else:
-                hue_labels = data[hue_var].unique()
-                hue_labels.sort()
-                for j, label in enumerate(hue_labels):
-                    hue_data = data[data[hue_var] == label]
-                    label_suffix = f"{feature_dict.get(feature, feature)} {label}"
-                    sns.scatterplot(data=hue_data, x=feature, y=y_var, label=label_suffix,
-                                    color=legend_colors[label_suffix], ax=axs[1])
-
-        axs[1].set_xlabel('Features')
-        axs[1].set_ylabel(feature_dict[y_var])
-        axs[1].legend(bbox_to_anchor=(0.5, -0.1), loc='upper center', labels=labels,
-                      ncol=1 if hue_var == 'None' else len(data[hue_var].unique()))
-
-        plt.tight_layout()
         st.pyplot(plt)
     except Exception as e:
         st.error("An error occurred while plotting the data.")
         st.warning(str(e))
+
+
+def line_plot(x_var, hue_var, data, y_var, feature_dict, legend_colors, axs, labels):
+    for i, feature in enumerate(x_var):
+        if hue_var == 'None':
+            sns.lineplot(data=data, x=feature, y=y_var, label=feature_dict.get(feature, feature),
+                         color=legend_colors[feature], ax=axs, linewidth=2.5)
+        else:
+            hue_labels = data[hue_var].unique()
+            hue_labels.sort()
+            for j, label in enumerate(hue_labels):
+                hue_data = data[data[hue_var] == label]
+                label_suffix = f"{feature_dict.get(feature, feature)} {label}"
+                sns.lineplot(data=hue_data, x=feature, y=y_var, label=label_suffix,
+                             color=legend_colors[label_suffix], ax=axs, linewidth=2.5)
+
+    axs.set_xlabel('Features')
+    axs.set_ylabel(feature_dict[y_var])
+
+    axs.legend(bbox_to_anchor=(0.5, -0.1), loc='upper center', labels=labels,
+                  ncol=1 if hue_var == 'None' else len(data[hue_var].unique()))
+    for legend_handle, feature_label in zip(axs.get_legend().legendHandles, labels):
+        legend_handle.set_color(legend_colors.get(feature_label, 'black'))
+    plt.tight_layout()
+
+
+def scatter_plot(x_var, hue_var, data, y_var, feature_dict, legend_colors, axs, labels, show_legend):
+    # Scatter plot for combined data
+    for i, feature in enumerate(x_var):
+        if hue_var == 'None':
+            sns.scatterplot(data=data, x=feature, y=y_var, label=feature_dict.get(feature, feature),
+                            color=legend_colors[feature], ax=axs)
+        else:
+            hue_labels = data[hue_var].unique()
+            hue_labels.sort()
+            for j, label in enumerate(hue_labels):
+                hue_data = data[data[hue_var] == label]
+                label_suffix = f"{feature_dict.get(feature, feature)} {label}"
+                sns.scatterplot(data=hue_data, x=feature, y=y_var, label=label_suffix,
+                                color=legend_colors[label_suffix], ax=axs)
+
+    axs.set_xlabel('Features')
+    axs.set_ylabel(feature_dict[y_var])
+    if show_legend:
+        axs.legend(bbox_to_anchor=(0.5, -0.1), loc='upper center', labels=labels,
+                      ncol=1 if hue_var == 'None' else len(data[hue_var].unique()))
+    else:
+        axs.legend().set_visible(False)
+
+    plt.tight_layout()
+    
