@@ -66,6 +66,9 @@ def model_deployment():
             prediction = model.get_prediction(model_name, [X])
     df_correlations = df_correlations.drop(df_correlations.index[-1])
 
+    df_correlations=df_correlations.rename(columns={target_var:f'Correlation({target_var})'})
+    df_correlations = df_correlations.rename_axis("Name of Features", axis="index")
+    
     st.dataframe(df_correlations)
 
     csv_data = df_correlations.to_csv(index=False)
